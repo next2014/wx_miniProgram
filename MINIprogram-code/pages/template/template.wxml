@@ -4,8 +4,7 @@
     <image class="content_img" src="{{headImgSrc}}"></image>
     <view class="love_attention">
       <view class="company">{{title}}</view>
-      <image src="{{detail_love_image1}}"></image>
-      <text>{{love_count}}</text>
+      <text class='price'>￥{{price}}</text>
     </view>
   </view>
 </template>

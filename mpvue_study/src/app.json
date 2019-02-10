@@ -1,5 +1,9 @@
 {
     "pages": [
+        "pages/list/main",
         "pages/index/main"
-    ]
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#8ed145"
+    }
 }

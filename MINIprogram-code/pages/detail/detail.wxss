@@ -45,7 +45,6 @@
   position: relative;
 }
 
-
 .col_share_img {
   float: right;
   margin-right: 60rpx;
@@ -56,7 +55,6 @@
   height:90rpx;
   margin-right:10rpx;
 }
-
 
 .line {
   position: absolute;
