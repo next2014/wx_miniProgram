@@ -10,7 +10,8 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
 	"isGameTourist": false,
-	"appid": "/** this is your appid **/",
+	"appid": "wxf4346269b2e05957",
+	"projectname": "client",
 	"condition": {
 		"search": {
 			"current": -1,

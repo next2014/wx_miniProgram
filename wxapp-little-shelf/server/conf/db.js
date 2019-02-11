@@ -1,9 +1,9 @@
 module.exports = {
     mysql: {
-        host: '/** your database server ip **/',
-        user: '/** your database user **/',
-        password: '/** your database account password **/',
-        database: '/** your database **/',
+        host: '192.168.31.34',
+        user: 'root',
+        password: '123',
+        database: 'wxapp',
         port: 3306  // your database server port, default is 3306
     }
 }
