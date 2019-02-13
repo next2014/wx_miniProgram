@@ -54,8 +54,7 @@
 }
 
 .love_attention text {
-  font-size: 14px;
-  color: #666;
+  font-size: 20px;
+  color: red;
   vertical-align: middle;
-  margin:0 16rpx;
 }

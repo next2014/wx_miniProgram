@@ -48,6 +48,7 @@
 .col_share_img {
   float: right;
   margin-right: 60rpx;
+  margin-bottom: 20rpx;
 }
 
 .col_share_img image {
@@ -69,7 +70,10 @@
 .detail_content {
   font-size: 14px;
   line-height: 28px;
-  text-indent: 14px;
+  text-indent: 2em;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
 }
 
 button{

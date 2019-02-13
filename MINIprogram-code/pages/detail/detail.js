@@ -9,26 +9,16 @@ Page({
   data: {
     detailObj: {},
     isCollected: false,
-    index: 0,
-    isPlay: false
+    index: 0
   },
   // 点击处理收藏文章的方法
   handleCollection(){
     let isCollected = !this.data.isCollected;
-    // 思考：
-    /*
-    * 1. 用户没有点过收藏
-    *   1) 存储到storage
-    *
-    *
-    * 2. 用户点击过收藏
-    * */
-
-    //1) 存储到storage
 
     // 存储之前先获取之前的数据
     let obj = wx.getStorageSync('isCollected');
     obj[this.data.index] = isCollected;
+    
     // 提示用户收藏的状态
     let title = isCollected?'收藏成功': '取消收藏';
     wx.showToast({
@@ -64,33 +54,6 @@ Page({
       // 更新isCollected的值。
       this.setData({isCollected});
     }
-
-    // 判断当前页面音乐是否播放
-    if(appData.data.isMusicPlay && appData.data.playPageIndex === this.data.index){
-      this.setData({
-        isPlay: true
-      })
-    }
-
-    // 监听背景音乐的播放
-    wx.onBackgroundAudioPlay(() => {
-      // console.log('音乐播放');
-      this.setData({
-        isPlay: true
-      })
-      appData.data.isMusicPlay = true;
-      appData.data.playPageIndex = this.data.index;
-    })
-
-    // 监听音乐暂停。
-    wx.onBackgroundAudioPause(() => {
-      // console.log('音乐暂停');
-      this.setData({
-        isPlay: false
-      })
-    })
-
-
   },
   // 点击分享按钮
   handleShare(){
@@ -98,23 +61,6 @@ Page({
       itemList: ['分享到朋友圈', '分享到qq空间', '分享到微信好友'],
       itemColor: '#666'
     })
-  },
-
-  // 控制音乐播放
-  musicControl(){
-    let isPlay = !this.data.isPlay;
-    let {dataUrl, title, coverImgUrl} = this.data.detailObj.music;
-    if(isPlay){ // 音乐播放
-      wx.playBackgroundAudio({
-        dataUrl,title,coverImgUrl
-      });
-
-    }else { // 音乐暂停
-      wx.pauseBackgroundAudio()
-    }
-
-    // 更新isPlay的状态
-    this.setData({isPlay});
   }
 
 })
