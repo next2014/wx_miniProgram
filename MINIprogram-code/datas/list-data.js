@@ -93,7 +93,7 @@ let list_data = [
     price: 120.00,
     author: '欧美人',
     avatar: '/images/user/Sunset.jpg',
-    postId: 6
+    postId: 7
   },
   {
     title: '【成人联票】海洋世界+婚博艺术中心欧美街9号',
@@ -105,7 +105,7 @@ let list_data = [
     price: 120.00,
     author: '欧美人',
     avatar: '/images/user/Sunset.jpg',
-    postId: 6
+    postId:8
   },
   {
     title: '【儿童/长者联票】海洋世界+婚博艺术中心欧美街9',
@@ -117,7 +117,7 @@ let list_data = [
     price: 120.00,
     author: '欧美人',
     avatar: '/images/user/Sunset.jpg',
-    postId: 6
+    postId: 9
   },
 ];
 module.exports = {

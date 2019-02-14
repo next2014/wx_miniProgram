@@ -22,7 +22,7 @@ Page({
     console.log(event);
     let id = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/detail/detail?id=' + id
+      url: '/pages/buyDetail/buyDetail?id=' + id
     })
   },
 

@@ -22,7 +22,7 @@
   margin-left: 10px;
 }
 
-.company {
+.title {
   font-size: 16px;
   font-weight: 400;
   margin:10rpx 0;

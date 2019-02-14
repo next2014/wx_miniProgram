@@ -48,6 +48,7 @@
 .col_share_img {
   float: right;
   margin-right: 60rpx;
+  margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
 
