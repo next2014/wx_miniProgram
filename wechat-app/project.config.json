@@ -2,15 +2,16 @@
 	"description": "项目配置文件。",
 	"setting": {
 		"urlCheck": true,
-		"es6": true,
+		"es6": false,
 		"postcss": false,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
 	"appid": "wxf4346269b2e05957",
-	"projectname": "%E8%B4%AD%E7%A5%A8%E7%B3%BB%E7%BB%9F",
+	"projectname": "shopping",
 	"scripts": {},
 	"condition": {
 		"search": {
