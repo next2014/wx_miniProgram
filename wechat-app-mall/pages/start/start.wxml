@@ -15,10 +15,10 @@
         <image class="smalltitle" src="/images/more/confirm-word1.png"></image>
         <form bindsubmit="goToIndex" report-submit="true">
           <button class="confirm-btn" form-type="submit">
-            <text >进入店铺</text>
+            <text>进入欧美城</text>
           </button>
         </form>
-        <text class="copyright">@qindiandadudu 贡献本页代码</text>
+        <text class="copyright">@OMC</text>
       </view>
     </view>
   </block>
