@@ -10,7 +10,6 @@
   padding-right: 30rpx;
   line-height: 50rpx;
   margin-top: 20rpx;
-  margin-bottom: 20rpx;
 }
 
 .detail_title {
@@ -21,7 +20,6 @@
 .detail_content {
   line-height: 28px;
   margin-top: 20rpx;
-  margin-bottom: 20rpx;
 }
 
 .detail_price{
@@ -80,10 +78,37 @@
 
 .page__bd_spacing{
   width: 100%;
-  height: auto!important;
+  height: 50px!important;
+  line-height: 50px;
   position: fixed;
   bottom: 0;
   background-color: #ddd;
+}
+
+.placeholder{
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+}
+
+.carbg{
+  width: 20%
+}
+
+.order{
+  width: 20%
+}
+
+.addcar{
+  width: 30%;
+  background-color:red;
+  color:#fff;
+}
+
+.lkbuy{
+  width: 30%;
+  background-color:blue;
+    color:#fff;
 }
 
 .musicImg {
@@ -152,5 +177,6 @@ button{
 }
 .weui-tab__content{
     padding-top: 60px;
+    padding-bottom: 60px;
     text-align: center;
 }
