@@ -82,7 +82,8 @@
   line-height: 50px;
   position: fixed;
   bottom: 0;
-  background-color: #ddd;
+  background-color:#fff;
+  font-size: 18px;
 }
 
 .placeholder{
@@ -92,7 +93,8 @@
 }
 
 .carbg{
-  width: 20%
+  width: 20%;
+  border-right:1px solid #ddd;
 }
 
 .order{
@@ -101,13 +103,13 @@
 
 .addcar{
   width: 30%;
-  background-color:red;
-  color:#fff;
+  background-color:#dcdedd;
+  color:#333;
 }
 
 .lkbuy{
   width: 30%;
-  background-color:blue;
+  background-color:#3fbbef;
     color:#fff;
 }
 

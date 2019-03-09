@@ -1,1 +1,28 @@
 /* pages/order/order.wxss */
+
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    margin:10px;
+    font-size:30rpx;
+    color:#666;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    line-height: 30px;
+}
+.weui-navbar__slider {
+    width:4.7em;
+}
+.orderNum{
+  border-top:1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.price{
+  color:#ffa10d;
+}

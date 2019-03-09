@@ -3,7 +3,7 @@
   <view class="tmpContainer">
     <image class="content_img" src="{{headImgSrc}}"></image>
     <view class="love_attention">
-      <view class="title">{{title}}</view>
+      <view class="title">【{{type}}】{{title}}</view>
       <text class='price'>￥{{price}}</text>
     </view>
   </view>

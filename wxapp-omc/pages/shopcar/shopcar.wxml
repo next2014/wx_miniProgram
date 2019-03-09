@@ -1,2 +1,21 @@
 <!--pages/shopcar/shopcar.wxml-->
-<text>购物车</text>
+<!-- <text>购物车</text> -->
+  <view class="tmpContainer">
+    <image class="content_img" src="/images/detail/list/getImage1.png"></image>
+    <view class="love_attention">
+      <view class="title">【成人票】海洋世界平日票</view>
+      <view class='price'>价格：<text class=''>￥80</text></view>
+      <view class='data'>使用日期：2019-03-09</view>
+      <view class='weui-cell__bd'>
+        <view class="gp-number">
+          <button bindtap="addClick">+</button>
+          <input type='text' value='0'></input>
+          <button bindtap="jsClick">-</button>
+        </view>
+        <image class='deleteIcon' src='/images/icon/delete.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='jiesuan'>
+    <button class="weui-btn" type="primary">结算</button>
+  </view>
