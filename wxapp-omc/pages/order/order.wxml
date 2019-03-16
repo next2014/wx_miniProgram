@@ -9,18 +9,61 @@
                       <view class="weui-navbar__title">{{item}}</view>
                   </view>
               </block>
-              <view class="weui-navbar__slider" style="left: 0px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+              <view class="weui-navbar__slider" style="left: 3px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
           </view>
           <view class="weui-tab__panel">
               <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                    <view>购买时间：2018-08-25 19:05:47</view>
-                    <view>订单信息：<text>入园消费50元抵用券</text> <text>2018-08-25</text> <text>X2</text></view>
+                    <view>购买时间：2018-08-25 19:05:47 <text class='text-danger fr'>已支付</text> </view>
+                    <view>
+                        <view>订单信息：</view>
+                        <view class='bgColor'>
+                           <text>入园消费50元抵用券</text> <text>2018-08-25</text> <text class='text-danger fr'>X2</text>
+                        </view>
+                     </view>
                     <view>订单号：OE180825000345</view>
                     <view class='orderNum'>订单总额：￥<text class='price'>20</text> <text style='float:right;color:#00c3ff'>查看订单</text> </view>
               </view>
-              <view class="weui-tab__content" hidden="{{activeIndex != 1}}">已取票</view>
-              <view class="weui-tab__content" hidden="{{activeIndex != 2}}">未支付</view>
-              <view class="weui-tab__content" hidden="{{activeIndex != 3}}">已退票</view>
+              <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                    <view>购买时间：2018-08-25 19:05:47 <text class='text-danger fr'>已取票</text> </view>
+                    <view>
+                        <view>订单信息：</view>
+                        <view class='bgColor'>
+                           <text>入园消费50元抵用券</text> <text>2018-08-25</text> <text class='text-danger fr'>X2</text>
+                        </view>
+                     </view>
+                    <view>订单号：OE180825000345</view>
+                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> <text style='float:right;color:#00c3ff'>查看订单</text> </view>
+              </view>
+              <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                    <view>购买时间：2018-08-25 19:05:47 <text class='text-danger fr'>未支付</text> </view>
+                    <view>
+                        <view>订单信息：</view>
+                        <view class='bgColor'>
+                           <text>入园消费50元抵用券</text> <text>2018-08-25</text> <text class='text-danger fr'>X2</text>
+                        </view>
+                     </view>
+                    <view>订单号：OE180825000345</view>
+                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> 
+                      <view class="button-sp-area" style='width:25%;float:right'>
+                        <button class="weui-btn mini-btn" type="warn" size="mini">立刻支付</button>
+                      </view>
+                    </view>
+              </view>
+              <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                    <view>购买时间：2018-08-25 19:05:47 <text class='text-danger fr'>已退票</text> </view>
+                    <view>
+                        <view>订单信息：</view>
+                        <view class='bgColor'>
+                           <text>入园消费50元抵用券</text> <text>2018-08-25</text> <text class='text-danger fr'>X2</text>
+                        </view>
+                     </view>
+                    <view>订单号：OE180825000345</view>
+                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> 
+                        <view class="button-sp-area" style='width:25%;float:right'>
+                          <button class="weui-btn mini-btn" type="warn" size="mini">确认退款</button>
+                        </view>
+                    </view>
+              </view>
           </view>
       </view>
     </view>
