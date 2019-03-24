@@ -1,4 +1,4 @@
-// pages/shopcar/shopcar.js
+// pages/nowPlay/nowPlay.js
 Page({
 
   /**
@@ -13,11 +13,6 @@ Page({
    */
   onLoad: function (options) {
 
-  },
-  nowPlay: function (e) {
-    wx.navigateTo({
-      url: '/pages/nowPlay/nowPlay'
-    })
   },
 
   /**

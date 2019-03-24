@@ -74,11 +74,6 @@
   align-items: left;
 }
 
-.gp-number{
-  width: 90%;
-  display:flex;
-}
-
 .weui-cell__bd button{
   width:30px;
   height:30px;
@@ -109,4 +104,52 @@
 
 .deleteIcon{
   padding-top:2px;
+}
+
+.buy-num{
+    width: 164rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    display: flex;
+    font-size: 24rpx;
+    text-align: center
+}
+.buy-num .jian-btn{
+    width: 48rpx;
+    height: 100%;
+    border-left: 1rpx solid #ccc;
+    border-bottom: 1rpx solid #ccc;
+    border-top: 1rpx solid #ccc;
+    border-bottom-left-radius: 6rpx;
+    border-top-left-radius: 6rpx;
+}
+.buy-num .jian-btn.disabled{
+    background-color: #f5f5f9;
+    border-left: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    border-top: 1rpx solid #eee;
+    color: #ccc;
+}
+.buy-num .jia-btn{
+    width: 48rpx;
+    height: 100%;
+    border-right: 1rpx solid #ccc;
+    border-bottom: 1rpx solid #ccc;
+    border-top: 1rpx solid #ccc;
+    border-bottom-right-radius: 6rpx;
+    border-top-right-radius: 6rpx;
+}
+.buy-num input{
+    width: 68rpx;
+    height: 48rpx;
+    min-height: 48rpx;
+    text-align: center;
+    font-size: 24rpx;
+    border: 1rpx solid #ccc;
+}
+
+.gp-number{
+  width: 90%;
+  display:flex;
+  height: 50px;
 }
