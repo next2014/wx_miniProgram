@@ -1,17 +1,17 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
-		"postcss": false,
+		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.3",
+	"libVersion": "1.9.91",
 	"appid": "wxf4346269b2e05957",
-	"projectname": "%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%95%86%E5%9F%8E",
-	"scripts": {},
+	"projectname": "gp",
+	"isGameTourist": false,
 	"condition": {
 		"search": {
 			"current": -1,
@@ -22,11 +22,7 @@
 			"list": []
 		},
 		"game": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {

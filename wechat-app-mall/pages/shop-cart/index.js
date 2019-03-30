@@ -83,7 +83,6 @@ Page({
       }
     }
   },
-
   touchE: function(e) {
     var index = e.currentTarget.dataset.index;
     if (e.changedTouches.length == 1) {
