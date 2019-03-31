@@ -11,7 +11,7 @@ const loginUrl 			= baseUrl + 'login';
 // 获取当前用户已购书籍接口
 const getBoughtBooksUrl = baseUrl + 'api/user/getBoughtBooks';
 // 兑换书籍接口
-const buyBookUrl = baseUrl + 'api/order/buy';
+const buyBookUrl        = baseUrl + 'api/order/buy';
 
 
 module.exports = {

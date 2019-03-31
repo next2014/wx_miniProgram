@@ -135,12 +135,10 @@ App({
         });
     },
 
-
     // 获取用户登录标示 供全局调用
     getLoginFlag: function () {
         return wx.getStorageSync('loginFlag');
     },
-
 
     // 封装 wx.showToast 方法
     showInfo: function (info = 'error', icon = 'none') {
@@ -173,7 +171,6 @@ App({
                 }
             });
         })
-
     },
 
     // 打开书籍
@@ -192,4 +189,5 @@ App({
     globalData: {
         userInfo: null
     }
+
 });

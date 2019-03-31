@@ -1,6 +1,6 @@
 <!--pages/nowbuy/nowbuy.wxml-->
 <!-- <text>欧美城微信自助购买-立刻支付</text> -->
- <view class='nowbuy'>
+ <view class="nowbuy">
   <view class="tmpContainer">
     <image class="content_img" src="/images/detail/carousel/getImage1.png"></image>
     <view class="love_attention">
