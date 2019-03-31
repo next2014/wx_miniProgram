@@ -1,7 +1,7 @@
 module.exports = {
   version: "6.0.3",
   note: '接口封装',
-  subDomain: "next", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
+  subDomain: "omc", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
   appid: "wxf4346269b2e05957", // 您的小程序的appid，购物单功能需要使用
   shareProfile: '商品' // 首页转发的时候话术
 }
