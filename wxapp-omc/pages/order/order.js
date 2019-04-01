@@ -38,7 +38,11 @@ Page({
       date: e.detail.value
     })
   },
-
+  findOrder: function (e) {
+    wx.navigateTo({
+      url: '/pages/orderDetail/orderDetail'
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

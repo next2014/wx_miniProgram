@@ -1,29 +1,38 @@
 <!--pages/nowbuy/nowbuy.wxml-->
 <!-- <text>欧美城微信自助购买-立刻支付</text> -->
  <view class="nowbuy">
-  <view class="tmpContainer">
-    <image class="content_img" src="/images/detail/carousel/getImage1.png"></image>
-    <view class="love_attention">
-      <view class="title">【成人联票】海洋世界平日票</view>
-      <view class='date'>使用日期：2018-11-25</view>
-      <view style='display:flex;justify-content: space-between' >
-        <text class='price'>￥80.00 </text>
-        <text>X1</text>
+
+    <view class="tmpContainer">
+      <image class="content_img" src="/images/detail/carousel/getImage1.png"></image>
+      <view class="love_attention">
+        <view class="title">【成人联票】海洋世界平日票</view>
+        <view class='date'>使用日期：2018-11-25</view>
+        <view style='display:flex;justify-content: space-between' >
+          <text class='price'>￥80.00 </text>
+          <text>X1</text>
+        </view>
+
       </view>
+      
     </view>
-  </view>
-  <view class="page__bd page__bd_spacing">
-    <view class='price'>
-       <text>总价：¥:80.00</text>
-       <text>待支付：¥:80.00</text>
-    </view>
-    <view class="weui-flex" style='justify-content: space-between;'>
-        <view class="carbg">
-           <view class="placeholder" bindtap="bbDetail">上一页</view>
+
+    <view class="page__bd page__bd_spacing">
+        <view class='price'>
+          <view class='price-width'>
+            总价：¥:<text class='text-danger'>80.00</text>
+          </view>
+          <view class='price-width'>
+            待支付：¥:<text class='text-danger'>80.00</text>
+          </view>
         </view>
-        <view class="carbg">
-           <view class="placeholder active" bindtap="ddOrder">下一页</view>
+        <view class="weui-flex" style='justify-content: space-between;'>
+            <view class="carbg">
+              <view class="placeholder" bindtap="bbDetail">上一页</view>
+            </view>
+            <view class="carbg">
+              <view class="placeholder active" bindtap="ddOrder">立刻支付</view>
+            </view>
         </view>
     </view>
-   </view>
+
  </view>

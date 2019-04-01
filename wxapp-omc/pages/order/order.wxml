@@ -21,7 +21,7 @@
                         </view>
                      </view>
                     <view>订单号：OE180825000345</view>
-                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> <text style='float:right;color:#00c3ff'>查看订单</text> </view>
+                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> <text class='findBtn' bindtap='findOrder'>查看订单</text> </view>
               </view>
               <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                     <view>购买时间：2018-08-25 19:05:47 <text class='text-danger fr'>已取票</text> </view>
@@ -32,7 +32,7 @@
                         </view>
                      </view>
                     <view>订单号：OE180825000345</view>
-                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> <text style='float:right;color:#00c3ff'>查看订单</text> </view>
+                    <view class='orderNum'>订单总额：￥<text class='price'>20</text> <text class='findBtn' bindtap='findOrder'>查看订单</text> </view>
               </view>
               <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                     <view>购买时间：2018-08-25 19:05:47 <text class='text-danger fr'>未支付</text> </view>

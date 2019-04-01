@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/nowbuy/nowbuy",
-    "pages/list/list",
-    "pages/shopcar/shopcar",
-    "pages/buyDetail/buyDetail",
     "pages/order/order",
-    "pages/index/index",
+    "pages/nowbuy/nowbuy",
+    "pages/shopcar/shopcar",
+    "pages/nowPlay/nowPlay",
+    "pages/list/list",
     "pages/detail/detail",
-    "pages/nowPlay/nowPlay"
+    "pages/index/index",
+    "pages/buyDetail/buyDetail",
+    "pages/orderDetail/orderDetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#bd8438",
