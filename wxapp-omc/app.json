@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/order/order",
     "pages/nowbuy/nowbuy",
-    "pages/shopcar/shopcar",
     "pages/nowPlay/nowPlay",
+    "pages/order/order",
+    "pages/shopcar/shopcar",
     "pages/list/list",
     "pages/detail/detail",
     "pages/index/index",

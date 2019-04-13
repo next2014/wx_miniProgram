@@ -19,7 +19,8 @@ Page({
     } else {
       that.setData({
         userInfo: userInfo,
-        version: CONFIG.version
+        version: CONFIG.version,
+        vipLevel: app.globalData.vipLevel
       })
     }
     this.getUserApiInfo();
@@ -36,7 +37,7 @@ Page({
     if (!e.detail.errMsg || e.detail.errMsg != "getPhoneNumber:ok") {
       wx.showModal({
         title: '提示',
-        content: '无法获取手机号码',
+        content: '无法获取手机号码:' + e.detail.errMsg,
         showCancel: false
       })
       return;
@@ -47,6 +48,10 @@ Page({
       encryptedData: e.detail.encryptedData,
       iv: e.detail.iv
     }).then(function (res) {
+      if (res.code === 10002) {
+        app.goLoginPageTimeOut()
+        return
+      }
       if (res.code == 0) {
         wx.showToast({
           title: '绑定成功',

@@ -8,10 +8,18 @@
 
 <p>
 <img src="https://cdn.it120.cc/apifactory/2017/09/15/487409738ebb80c44eda01c46d59b20c.jpg" width="200px">
-<img src="https://cdn.it120.cc/apifactory/2018/12/28/86af021ee227269eae3ac7cfe2bd6e9d.jpeg" width="200px">
-<img src="https://cdn.it120.cc/apifactory/2018/04/01/b7b8f5a0fcfc72454ade8510ab929717.jpg" width="200px">
-<img src="https://cdn.it120.cc/apifactory/2018/04/04/570e9a77dbc9cacda176e98a4f2778c5.jpg" width="200px">
+<img src="https://cdn.it120.cc/apifactory/2019/03/29/9e30cfe31eabcd218eb9c434f17e9295.jpg" width="200px">
 </p>
+
+## 其他开源模板
+
+### TianguoguoXiaopu
+
+<p>
+<img src="https://cdn.it120.cc/apifactory/2018/04/01/b7b8f5a0fcfc72454ade8510ab929717.jpg" width="200px">
+</p>
+
+[Github地址](https://github.com/qindiandadudu/TianguoguoXiaopu)
 
 ## 接口 & 后台声明
 
@@ -20,6 +28,27 @@
 - [接口 SDK](https://github.com/gooking/wxapi)
 
 - [免费后台](https://www.it120.cc/user)
+
+- [WeUI](https://github.com/Tencent/weui-wxss/)
+
+## 关于分类页面
+
+感谢 @yrx0910 编写并提交了分类页面；
+
+不过新增的分类页面视觉美观度上稍欠缺，所以，项目模块并未开启分类页面；
+
+期待后面可以有朋友协助美化~
+
+如果您先体验分类页面，可以在 app.json 中放开分类底部菜单的入口:
+
+```java
+{
+  "pagePath": "pages/category/category",
+  "iconPath": "images/nav/ic_catefory_normal.png",
+  "selectedIconPath": "images/nav/ic_catefory_pressed.png",
+  "text": "分类"
+}
+```
 
 ## 使用说明
 
@@ -50,6 +79,15 @@ module.exports = {
 4、[设置小程序合法服务器域名](https://www.it120.cc/info/faq/10469)
 
 5、重启您的小程序开发工具，完成
+
+6、如何在后台管理小程序启动图和首页头部的轮播 banner 图片
+
+```javascript
+这两个功能都是使用后台 “系统设置” --> “banner” 管理功能来实现的；
+后台发布banner的时候，自定义类型请分别填写  app  和  index；
+小程序会自动读取类型为 app 的banner图片作为启动展示图片；
+小程序会自动读取类型为 new 的banner图片作为首页分类下的轮播图；
+```
 
 ## 常见问题
 

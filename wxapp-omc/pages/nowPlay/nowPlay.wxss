@@ -103,3 +103,8 @@
   background-color:#f60;
   border-radius: 30rpx;
 }
+
+.price_box{
+   display:flex;
+   justify-content: space-between;
+}

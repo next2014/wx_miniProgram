@@ -82,8 +82,18 @@ module.exports = {
   scoreLogs: (data) => {
     return request('/score/logs', true, 'post', data)
   },
+  shareGroupGetScore: (referrer, encryptedData, iv) => {
+    return request('/score/share/wxa/group', true, 'post', {
+      referrer,
+      encryptedData,
+      iv
+    })
+  },
   kanjiaList: (data) => {
     return request('/shop/goods/kanjia/list', true, 'post', data)
+  },
+  kanjiaSet: (goodsId) => {
+    return request('/shop/goods/kanjia/set', true, 'get', { goodsId })
   },
   kanjiaJoin: (kjid, token) => {
     return request('/shop/goods/kanjia/join', true, 'post', {
@@ -161,6 +171,11 @@ module.exports = {
   coupons: (data) => {
     return request('/discounts/coupons', true, 'get', data)
   },
+  couponDetail: (id) => {
+    return request('/discounts/detail', true, 'get', {
+      id
+    })
+  },
   myCoupons: (data) => {
     return request('/discounts/my', true, 'get', data)
   },
@@ -201,6 +216,11 @@ module.exports = {
     return request('/user/shipping-address/detail', true, 'get', {
       id,
       token
+    })
+  },
+  pingtuanSet: (goodsId) => {
+    return request('/shop/goods/pingtuan/set', true, 'get', {
+      goodsId
     })
   },
   pingtuanOpen: (goodsId, token) => {
@@ -286,5 +306,32 @@ module.exports = {
   },
   cashLogs: (data) => {
     return request('/user/cashLog', true, 'post', data)
+  },
+  rechargeSendRules: () => {
+    return request('/user/recharge/send/rule', true, 'get')
+  },
+  payBillDiscounts: () => {
+    return request('/payBill/discounts', true, 'get')
+  },
+  payBill: (data) => {
+    return request('/payBill/pay', true, 'post', data)
+  },
+  vipLevel: () => {
+    return request('/config/vipLevel', true, 'get')
+  },
+  fxApply: (token, name, mobile) => {
+    return request('/saleDistribution/apply', true, 'post', { token, name, mobile })
+  },
+  fxApplyProgress: (token) => {
+    return request('/saleDistribution/apply/progress', true, 'get', { token })
+  },
+  fxMembers: (data) => {
+    return request('/saleDistribution/members', true, 'post', data)
+  },
+  fxCommisionLog: (data) => {
+    return request('/saleDistribution/commision/log', true, 'post', data)
+  },
+  wxaQrcode: (data) => {
+    return request('/qrcode/wxa/unlimit', true, 'post', data)
   }
 }

@@ -54,6 +54,10 @@ App({
         wx.hideToast()
       }
     });
+    //  获取接口和后台权限
+    WXAPI.vipLevel().then(res => {
+      that.globalData.vipLevel = res.data
+    })
     //  获取商城名称
     WXAPI.queryConfig({
       key: 'mallName'
@@ -77,29 +81,12 @@ App({
         that.globalData.recharge_amount_min = res.data.value;
       }
     })
-    // 获取砍价设置
-    WXAPI.kanjiaList().then(function(res) {
-      if (res.code == 0) {
-        that.globalData.kanjiaList = res.data.result;
-      }
-    })
-    // 判断是否登录
-    let token = wx.getStorageSync('token');
-    if (!token) {
-      that.goLoginPageTimeOut()
-      return
-    }
-    WXAPI.checkToken(token).then(function(res) {
-      if (res.code != 0) {
-        wx.removeStorageSync('token')
-        that.goLoginPageTimeOut()
-      }
-    })
   },
   goLoginPageTimeOut: function() {
     if (this.navigateToLogin){
       return
     }
+    wx.removeStorageSync('token')
     this.navigateToLogin = true
     setTimeout(function() {
       wx.navigateTo({
@@ -113,8 +100,53 @@ App({
         url: "/pages/start/start"
       })
     }, 1000)
+  },  
+  onShow (e) {
+    const _this = this
+    const token = wx.getStorageSync('token');
+    if (!token) {
+      _this.goLoginPageTimeOut()
+      return
+    }
+    WXAPI.checkToken(token).then(function (res) {
+      if (res.code != 0) {
+        wx.removeStorageSync('token')
+        _this.goLoginPageTimeOut()
+      }
+    })
+    wx.checkSession({
+      fail() {
+        _this.goLoginPageTimeOut()
+      }
+    })
+    this.globalData.launchOption = e
+    // 保存邀请人
+    if (e && e.query && e.query.inviter_id) {
+      wx.setStorageSync('referrer', e.query.inviter_id)
+      if (e.shareTicket) {
+        // 通过分享链接进来
+        wx.getShareInfo({
+          shareTicket: e.shareTicket,
+          success: res => {
+            console.error(res)
+            console.error({
+              referrer: e.query.inviter_id,
+              encryptedData: res.encryptedData,
+              iv: res.iv
+            })
+            WXAPI.shareGroupGetScore(
+              e.query.inviter_id,
+              res.encryptedData,
+              res.iv
+            )
+          }
+        })
+      }
+    }    
   },
   globalData: {                
-    isConnected: true
-  }  
+    isConnected: true,
+    launchOption: undefined,
+    vipLevel: 0
+  }
 })

@@ -1,11 +1,20 @@
 // pages/nowPlay/nowPlay.js
-Page({
+var zhenzisms = require('../../utils/zhenzisms.js');
+//获取应用实例
+const app = getApp();
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-
+    hidden: true,
+    btnValue:'',
+    btnDisabled:false,
+    name: '',
+    phone: '',
+    code: '',
+    second: 60
   },
 
   /**
@@ -14,53 +23,85 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  
+  //姓名输入
+  bindNameInput(e) {
+    this.setData({
+      name: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //手机号输入
+  bindPhoneInput(e) {
+    console.log(e.detail.value);
+    var val = e.detail.value;
+    this.setData({
+      phone: val
+    })
+    if(val != ''){
+      this.setData({
+        hidden: false,
+        btnValue: '获取验证码'
+      })
+    }else{
+      this.setData({
+        hidden: true
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //验证码输入
+  bindCodeInput(e) {
+    this.setData({
+      code: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  //获取短信验证码
+  getCode(e) {
+    console.log('获取验证码');
+    var that = this;
+    zhenzisms.client.init('https://sms_developer.zhenzikj.com', 'appId', 'appSecret');
+    zhenzisms.client.send(function (res) {
+      if(res.data.code == 0){
+        that.timer();
+        return ;
+      }
+      wx.showToast({
+        title: res.data.data,
+        icon: 'none',
+        duration: 2000
+      })
+    }, '15811111111', '验证码为:3322');
+    
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  timer: function () {
+    let promise = new Promise((resolve, reject) => {
+      let setTimer = setInterval(
+        () => {
+          var second = this.data.second - 1;
+          this.setData({
+            second: second,
+            btnValue: second+'秒',
+            btnDisabled: true
+          })
+          if (this.data.second <= 0) {
+            this.setData({
+              second: 60,
+              btnValue: '获取验证码',
+              btnDisabled: false
+            })
+            resolve(setTimer)
+          }
+        }
+        , 1000)
+    })
+    promise.then((setTimer) => {
+      clearInterval(setTimer)
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //保存
+  save(e) {
+    console.log('姓名: ' + this.data.name);
+    console.log('手机号: ' + this.data.phone);
+    console.log('验证码: ' + this.data.code);
+  //省略提交过程
   }
 })
