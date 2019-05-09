@@ -1,0 +1,65 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "PS教程大全 "
+			}
+		},
+		{
+			"path": "pages/index/list",
+			"style": {
+				"navigationBarTitleText": "文章列表 "
+			}
+		},
+		{
+			"path": "pages/index/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/video/video",
+			"style": {
+				"navigationBarTitleText": "视频教程"
+			}
+		},
+		{
+			"path": "pages/video/list",
+			"style": {
+				"navigationBarTitleText": "视频列表"
+			}
+		},
+		{
+			"path": "pages/video/detail",
+			"style": {
+				"navigationBarTitleText": "视频详情"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		// "color": "#7A7E83",
+		"selectedColor": "#13227a",
+		"borderStyle": "black",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbarimage/tuwen.png",
+				"selectedIconPath": "static/tabbarimage/tuwen_selected.png",
+				"text": "图文教程"
+			},
+			{
+				"pagePath": "pages/video/video",
+				"iconPath": "static/tabbarimage/video.png",
+				"selectedIconPath": "static/tabbarimage/video_selected.png",
+				"text": "视频教程"
+			}
+		]
+	}
+}

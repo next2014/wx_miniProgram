@@ -1,0 +1,32 @@
+
+.uni-product-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.uni-product {
+	    padding: 10upx;
+	    display: flex;
+	    flex-direction: column;
+	}
+.uni-product-image {
+	height: 230upx;
+	width: 355upx;
+}
+.image-view {
+	height: 230upx;
+	width: 355upx;
+	margin:12upx 0;
+	/* background-color: #007AFF; */
+}
+.uni-product-title {
+	width: 310upx;
+	word-break: break-all;
+	display: -webkit-box;
+	overflow: hidden;
+	line-height:1.5;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
