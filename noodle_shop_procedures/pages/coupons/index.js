@@ -82,7 +82,8 @@ Page({
       activeIndex: e.currentTarget.id
     });
   },
-  getCounponByPwd(e){ // 通过优惠码领取优惠券
+  getCounponByPwd(e){
+    // 通过优惠码领取优惠券
     WXAPI.addTempleMsgFormid({
       token: wx.getStorageSync('token'),
       type: 'form',

@@ -1,0 +1,60 @@
+/* pages/template/template.wxss */
+.tmpContainer {
+  display: flex;
+  align-item:center;
+  border-top:1px solid #efefef;
+  padding:5px 0;
+}
+
+.avatar_date {
+  margin:10rpx 0 20rpx 10rpx;
+}
+
+.avatar_date image {
+  width: 60rpx;
+  height:60rpx;
+  vertical-align: middle;
+}
+
+.avatar_date text {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 400;
+  margin:10rpx 0;
+}
+
+.content_img {
+  width: 40%;
+  height:200rpx;
+  padding-left:20rpx;
+}
+
+.content {
+  font-size: 16px;
+  color: #666;
+  text-indent: 16px;
+  line-height: 28px;
+}
+
+.love_attention{
+  width:60%;
+  padding-left:20rpx;
+  padding-right: 20rpx;
+}
+
+.love_attention image {
+  width:32rpx;
+  height:32rpx;
+  vertical-align: middle;
+}
+
+.love_attention text {
+  font-size: 20px;
+  color: red;
+  vertical-align: middle;
+}

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/index/index",
+    "pages/category/category",
+    "pages/nowbuy/nowbuy",
+    "pages/nowPlay/nowPlay",
+    "pages/order/order",
+    "pages/shopcar/shopcar",
+    "pages/detail/detail",
+    "pages/buyDetail/buyDetail",
+    "pages/orderDetail/orderDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#bd8438",
+    "navigationBarTitleText": "欧美城欢迎您",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "首页",
+        "iconPath": "/images/tab/home.png",
+        "selectedIconPath": "/images/tab/home_hl.png"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "购物车",
+        "iconPath": "/images/tab/car.png",
+        "selectedIconPath": "/images/tab/car_hl.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "我的订单",
+        "iconPath": "/images/tab/order.png",
+        "selectedIconPath": "/images/tab/order_hl.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
