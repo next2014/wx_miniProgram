@@ -1,0 +1,1 @@
+<view class="page" bind:__l="__l"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="cat_ID"><uni-list vue-slots="{{['default']}}"><uni-list-item title="{{item.post_title}}" data-event-opts="{{[['^click',[['tapCell',['$0'],[[['list','cat_ID',item.cat_ID,'videoURL']]]]]]]}}" bind:click="__e"></uni-list-item></uni-list></block></view>

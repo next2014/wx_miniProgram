@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/list",
+    "pages/index/detail",
+    "pages/video/video",
+    "pages/video/list",
+    "pages/video/detail"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#13227a",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbarimage/tuwen.png",
+        "selectedIconPath": "static/tabbarimage/tuwen_selected.png",
+        "text": "图文教程"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "iconPath": "static/tabbarimage/video.png",
+        "selectedIconPath": "static/tabbarimage/video_selected.png",
+        "text": "视频教程"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
