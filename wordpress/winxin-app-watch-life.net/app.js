@@ -16,6 +16,13 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    
+    if(!wx.cloud){
+      console.error('请使用2.2.3 或以上的基础库已使用云能力')
+    }else{
+      wx.cloud.init()
+    }
+    this.globalData = {}
   },
   getUserInfo:function(cb){
     var that = this

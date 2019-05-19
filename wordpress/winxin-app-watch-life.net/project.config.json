@@ -10,7 +10,9 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wxf4346269b2e05957",
-	"projectname": "omc",
+	"projectname": "winxin-app-watch-life.net",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
