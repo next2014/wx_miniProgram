@@ -11,12 +11,16 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "我的藏书"
-      },{
+      },
+      {
         "pagePath": "pages/scanCode/scanCode",
         "text": "扫描加书"
-      }]
-  }
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
