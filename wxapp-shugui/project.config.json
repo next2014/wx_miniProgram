@@ -30,13 +30,20 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
 					"pathName": "pages/databaseGuide/databaseGuide",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scanCode",
+					"pathName": "pages/scanCode/scanCode",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": -1,
