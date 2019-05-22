@@ -1,0 +1,72 @@
+<!--pages/buyDetail/buyDetail.wxml-->
+<view class="detailContainer">
+  <image class="detail_header" src="/images/detail/carousel/getImage1.png"></image>
+  <view class='detail_page'>
+    <view class="detail_title">【平日】园区大门票园区大门票园区大门票园区大门票园区大门票园区大门票</view>
+    <view class="detail_content">
+        <view class="detail_price">￥120.00</view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">游玩日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{date}}" start="2015-09-01" end="" bindchange="bindDateChange">
+                    <view class="weui-input">
+                    <image class="data_icon" src="/images/icon/data.png" style=""></image>
+                    {{date}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class='weui-cell weui-cell_input gp-number'>
+            <view class="weui-cell__hd">
+                <view class="weui-label">购买数量</view>
+            </view>
+            <view class="weui-cell__bd buy-num">
+                <view class="jian-btn {{item.number==1? 'disabled' : ''}}" catchtap="jianBtnTap" data-index="{{index}}">-</view>
+                <input  type="number" value="{{item.number}}" disabled/>
+                <view class="jia-btn {{item.number==curTouchGoodStore? 'disabled' : ''}}" catchtap="jiaBtnTap" data-index="{{index}}">+</view>
+            </view>
+        </view>
+    </view>
+  </view>
+  <view class="page">
+        <view class="page__bd">
+          <view class="weui-tab">
+              <view class="weui-navbar">
+                  <block wx:for="{{tabs}}" wx:key="*this">
+                      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                          <view class="weui-navbar__title">{{item}}</view>
+                      </view>
+                  </block>
+                  <view class="weui-navbar__slider" style="left:10px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+              </view>
+              <view class="weui-tab__panel">
+                  <view class="weui-tab__content" hidden="{{activeIndex != 0}}">购票须知</view>
+                  <view class="weui-tab__content" hidden="{{activeIndex != 1}}">入园须知</view>
+                  <view class="weui-tab__content" hidden="{{activeIndex != 2}}">内容详情</view>
+              </view>
+          </view>
+        </view>
+  </view>
+  <van-goods-action>
+    <van-goods-action-icon
+        icon="chat-o"
+        text="客服"
+        bind:click="onClickIcon"
+    />
+    <van-goods-action-icon
+        icon="cart-o"
+        text="购物车"
+        bind:click="bbDetail"
+    />
+    <van-goods-action-button
+        text="加入购物车"
+        type="warning"
+        bind:click="ddOrder"
+    />
+    <van-goods-action-button
+        text="立即购买"
+        bind:click="nowBuy"
+    />
+  </van-goods-action>
+</view>
