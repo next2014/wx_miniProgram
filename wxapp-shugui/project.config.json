@@ -30,13 +30,18 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
 			"current": 2,
+=======
+			"current": -1,
+>>>>>>> 475a8b458df9c0e7a89e61b99ba12f9f28909ce9
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
 					"pathName": "pages/databaseGuide/databaseGuide",
 					"query": ""
+<<<<<<< HEAD
 				},
 				{
 					"id": -1,
@@ -50,6 +55,8 @@
 					"name": "scanCode",
 					"pathName": "pages/scanCode/scanCode",
 					"scene": null
+=======
+>>>>>>> 475a8b458df9c0e7a89e61b99ba12f9f28909ce9
 				}
 			]
 		}
