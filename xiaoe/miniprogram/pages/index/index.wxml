@@ -1,13 +1,10 @@
+<view wx:for="{{array}}" wx:key="idx">
 <van-card
-  num="2"
-  tag="标签"
-  price="10.00"
-  desc="描述信息"
-  title="商品标题"
-  thumb="{{ imageURL }}"
->
-  <view slot="footer">
-    <van-button size="mini">按钮</van-button>
-    <van-button size="mini">按钮</van-button>
-  </view>
-</van-card>
+  num="{{item.num}}"
+  price="{{item.price}}"
+  desc="{{item.desc}}"
+  title="{{item.title}}"
+  thumb="../../images/s32314546.jpg"/>
+  <!-- 上边框 -->
+  <view class="van-hairline--top" style="color:#fff"></view>
+</view>
