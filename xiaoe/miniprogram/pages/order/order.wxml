@@ -1,4 +1,4 @@
-<import src="../../vant/field/index.wxml" />
+<import src="../../zanui/field/index.wxml" />
 
 <view class=''>
  <view wx:for="{{array}}" wx:key="idx">
@@ -21,16 +21,8 @@
 </view>
 
 <form bindsubmit='onChange'>
-<van-cell-group>
-  <van-field
-      value="{{ value }}"
-      type="number"
-      label="优惠码"
-      placeholder="请输入您的优惠码"
-      name="code"
-      bind:confirm="onChange"
-    />
-</van-cell-group>
+
+<template is="zan-field" data="{{ ...value }}" ></template>
 
 <van-button form-type='submit' type="primary" size="large">确认付款</van-button>
 </form>
