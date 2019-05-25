@@ -25,18 +25,5 @@
 <template is="zan-field" data="{{ ...value }}" ></template>
 
 <van-button form-type='submit' type="primary" size="large">确认付款</van-button>
+
 </form>
-
-
-<!-- <view class='zan-panel'>
-  <view style='padding: 15px;'>
-    <van-cell class='zan-font-18'>总价</van-cell>
-    <text class='zan-font-18 zan-pull-right zan-font-bold zan-c-red'>¥22.00</text>
-  </view>
-</view> -->
-
-<!-- <van-submit-bar
-  price="{{ 3050 }}"
-  button-text="提交订单"
-  bind:submit="onSubmit"
-/> -->
