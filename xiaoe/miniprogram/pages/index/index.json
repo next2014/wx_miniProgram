@@ -1,5 +1,10 @@
 {
   "usingComponents": {
+<<<<<<< HEAD
     "van-card": "../../vant/card/index"
    }
+=======
+     "van-card": "../../vant/card/index"
+  }
+>>>>>>> c9cc5fee1bd12913624f62e283aac5d1b274803c
 }
