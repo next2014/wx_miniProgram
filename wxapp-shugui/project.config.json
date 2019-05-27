@@ -1,16 +1,25 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true
 	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.0",
 	"appid": "wxf4346269b2e05957",
-	"projectname": "wxapp-shugui",
-	"libVersion": "2.2.5",
+	"projectname": "miniprogram-test-1",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -22,43 +31,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-<<<<<<< HEAD
-			"current": 2,
-=======
 			"current": -1,
->>>>>>> 475a8b458df9c0e7a89e61b99ba12f9f28909ce9
-			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-<<<<<<< HEAD
-				},
-				{
-					"id": -1,
-					"name": "scanCode",
-					"pathName": "pages/scanCode/scanCode",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "scanCode",
-					"pathName": "pages/scanCode/scanCode",
-					"scene": null
-=======
->>>>>>> 475a8b458df9c0e7a89e61b99ba12f9f28909ce9
-				}
-			]
+			"list": []
 		}
 	}
 }
