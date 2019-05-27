@@ -1,7 +1,16 @@
-<van-card
-  num="2"
-  price="2.00"
-  desc="描述信息"
-  title="商品标题"
-  thumb="{{ imageURL }}"
-/>
+<view wx:for="{{book_list}}">
+  <van-card
+    num="2"
+    price="{{item.price}}"
+    desc="{{item.author[0]}}"
+    title="{{item.title}}"
+    thumb="{{item.image}}">
+  <view slot="tags">
+    <view wx:for="{{item.tags}}" wx:for-index="idx" wx:for-item="tag">
+      <view wx:if="{{idx <= 2}}">
+        <van-tag type="primary">{{tag.name}}</van-tag>
+      </view>
+    </view>
+  </view>
+  </van-card>
+</view>
