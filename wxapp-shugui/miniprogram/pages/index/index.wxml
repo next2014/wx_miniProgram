@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view wx:for="{{book_list}}">
   <van-card
     num="2"
@@ -14,3 +15,12 @@
   </view>
   </van-card>
 </view>
+=======
+<van-card
+  num="2"
+  price="{{ res.data.price }}"
+  desc="{{ res.data.content }}"
+  title="{{ res.data.title }}"
+  thumb="{{ res.data.imageURL }}"
+/>
+>>>>>>> e463f3df2f0b66e902151d4dfd17c3dfc7843b4c

@@ -22,5 +22,9 @@
       }
     ]
   },
+<<<<<<< HEAD
+  "sitemapLocation": "sitemap78.json"
+=======
   "sitemapLocation": "sitemap.json"
+>>>>>>> 475a8b458df9c0e7a89e61b99ba12f9f28909ce9
 }

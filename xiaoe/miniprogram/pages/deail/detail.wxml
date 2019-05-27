@@ -1,0 +1,14 @@
+<!--pages/deail/detail.wxml-->
+<swiper indicator-dots='{{true}}'>
+  
+  <swiper-item>
+    <image class="swiper-image" src="../../images/s32314546.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+    <image class="swiper-image" src="../../images/s32314546.jpg"></image>
+  </swiper-item>
+    <swiper-item>
+    <image class="swiper-image" src="../../images/s32314546.jpg"></image>
+  </swiper-item>
+  
+</swiper>
