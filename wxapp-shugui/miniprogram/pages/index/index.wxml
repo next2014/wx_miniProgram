@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+<view wx:for="{{book_list}}">
+  <van-card
+    num="2"
+    price="{{item.price}}"
+    desc="{{item.author[0]}}"
+    title="{{item.title}}"
+    thumb="{{item.image}}">
+  <view slot="tags">
+    <view wx:for="{{item.tags}}" wx:for-index="idx" wx:for-item="tag">
+      <view wx:if="{{idx <= 2}}">
+        <van-tag type="primary">{{tag.name}}</van-tag>
+      </view>
+    </view>
+  </view>
+  </van-card>
+</view>
+=======
 <van-card
   num="2"
   price="{{ res.data.price }}"
@@ -5,3 +23,4 @@
   title="{{ res.data.title }}"
   thumb="{{ res.data.imageURL }}"
 />
+>>>>>>> e463f3df2f0b66e902151d4dfd17c3dfc7843b4c

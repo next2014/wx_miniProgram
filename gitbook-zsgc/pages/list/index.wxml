@@ -1,0 +1,29 @@
+
+
+<view class="weui-panel__bd">
+  <navigator url="/pages/add/index">
+    <button> 新增</button>
+  </navigator>
+
+  <block wx:if="{{list.length>0}}">
+    <navigator class="weui-media-box weui-media-box_text" wx:for="{{list}}" wx:key="diaryItem" url="/pages/index/detail/index?objectId={{item.objectId}}">
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta weui-media-time">{{item.title}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__operate">
+          <icon type="cancel dels" size="16"></icon>
+          <text class="del" catch:tap="deleteDiary" data-id="{{item.id}}">删除</text>
+          <icon type="success edits" size="16"></icon>
+          <text catch:tap="editDiary" data-id="{{item.id}}" data-content="{{item.age}}" data-title="{{item.title}}">编辑</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <block wx:else>
+      <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">
+        暂无内容</view>
+      <view class="weui-media-box__desc"></view>
+
+    </view>
+  </block>
+</view>
