@@ -113,7 +113,7 @@
       </view>
     </view>
   </view>
-  <block wx:if="{{pingtuanList.length > 0}}">
+  <!-- <block wx:if="{{pingtuanList.length > 0}}">
     <view class='space'></view>
     <view class="weui-loadmore weui-loadmore_line">
       <view class="weui-loadmore__tips weui-loadmore__tips_in-line">全民拼团</view>
@@ -135,7 +135,7 @@
         </view>
       </view>
     </view>
-  </block>
+  </block> -->
 
   <view class='space'></view>
   <view class="weui-loadmore weui-loadmore_line">
