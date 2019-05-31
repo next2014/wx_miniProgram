@@ -1,0 +1,32 @@
+<!--优惠券领取中心页面-->
+
+<!--优惠劵-->
+<view class="juan mt15" wx:if="{{data.length}}">
+    <view class="ml15 mr15 coupon-list {{item.type==1?'zhekou':'manjian'}}" wx:for="{{data}}" wx:key="{{item.id}}">
+        <view class="stamp-top flex">
+            <view class="top-lf sub">
+                <view class="f18 lineText" wx:if="{{item.type==0}}">
+                    <text>{{item.discount}}元 代金券</text>
+                </view>
+                <view class="f18 lineText" wx:else>
+                    <text>{{item.discount}}折 打折券</text>
+                </view>
+
+                <view class="f14 lineText">
+                    <text>{{item.title}}</text>
+                </view>
+            </view>
+            <button class="top-rg tc status01-color" catchtap="goCoupon" data-index="{{item.id}}">领取</button>
+        </view>
+        <view class="stamp-footer flex f12 grey">
+            <text>有效期：{{item.use_start_date}}至{{item.use_end_date}}</text>
+            <text>共有 {{item.num}} 份</text>
+        </view>
+    </view>
+</view>
+
+<!--没有数据  -->
+<view class="no-content tc" wx:else>
+    <view class="zanwu"></view>
+    <view class="no-content-font">暂无券可领</view>
+</view>

@@ -1,0 +1,393 @@
+/* pages/shop/placeOrder/placeOrder.wxss */
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+@import "/pages/shop/mallsure/shopForm/shopForm.wxss";
+
+page {
+  font-size: 28rpx;
+}
+
+.topBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 200rpx;
+}
+
+.mainPage {
+  position: relative;
+  z-index: 3;
+  padding: 20rpx 24rpx;
+}
+
+.topMenu .sub {
+  font-size: 30rpx;
+  line-height: 72rpx;
+  background-color: #fff;
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.topMenu .sub:nth-child(n+2) {
+  margin-left: 20rpx;
+}
+
+.topMenu .sub.active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*商家配送  */
+
+.sellerDeliver {
+  align-items: center;
+  background-color: #fff;
+  padding: 40rpx 20rpx;
+}
+
+.sellerIcon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.userName {
+  max-width: 50%;
+}
+
+.deliverAddr {
+  margin-top: 6rpx;
+  line-height: 1.25;
+}
+
+.sellerDeliver .deliverAddr {
+  max-width: 90%;
+}
+
+/*到店自提  */
+
+.selfTake {
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.stAddress {
+  justify-content: center;
+  align-items: center;
+}
+.stAddress .icon-locationfill{
+  margin-right: 12rpx;
+}
+.psInfo {
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.changeAdd {
+  display: inline-block;
+  padding: 0 30rpx;
+}
+
+.selfTake .deliverAddr {
+  font-weight: 700;
+}
+
+.takeInfo {
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+
+.selfTakeDot{
+  max-width: 80%;
+  line-height: 36rpx;
+  font-weight: 700;
+}
+
+.changeSelfTake{
+  width: 150rpx;
+  text-align: center;
+  line-height: 38rpx;
+  margin: 0 6rpx;
+  font-size: 26rpx;
+  
+}
+.telIconBox{
+  width: 80rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+/*预约 自定义字段 留言  */
+
+.bespeakBox {
+  background-color: #fff;
+}
+
+.besCell {
+  padding: 24rpx;
+  line-height: 1.55;align-items: center;
+}
+
+.besCell .sub {
+  margin-left: 16rpx;
+}
+
+.picker::before {
+  right: 0;
+}
+
+.pickerTip {
+  float: right;
+  margin-right: 44rpx;
+}
+
+.besCell .textarea {
+  height: 40rpx;
+}
+
+ .textarea-placeholder{
+   display: block;
+   border: 1rpx solid red;
+   color: #aaa;
+ }
+
+/*底部  */
+.footerBox{height: 92rpx;}
+.footerBox.showTips{height: 164rpx;}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  /* height: 92rpx; */
+}
+.footerTips{padding: 0 30rpx;line-height: 72rpx;}
+.footer button {
+  border-radius: 0;
+  font-size: 32rpx;
+  line-height: 92rpx;
+}
+
+.footer button.sub {
+  background-color: #fff;
+  text-align: left;
+  padding-left: 48rpx;
+}
+
+.footer button.mainColor_bg {
+  width: 240rpx;
+  color: #fff;
+}
+
+.footer button.mainColor_bg:active {
+  opacity: 0.8;
+}
+
+/*预约时间 */
+
+.dateBox {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  animation: bounce 0.25s ease-in-out forwards;
+}
+
+.pchoose {
+  position: relative;
+  padding: 20rpx 0;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 40rpx;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.closeBtn::before, .closeBtn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 4rpx;
+  background-color: #ccc;
+}
+
+.closeBtn::before {
+  -webkit-transform: translate(-50%,-50%) rotate(45deg);
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.closeBtn::after {
+  -webkit-transform: translate(-50%,-50%) rotate(-45deg);
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.closeBtn:active {
+  background-color: #aaa;
+}
+
+.scroBox {
+  white-space: nowrap;
+}
+.scroItem {
+  display: inline-block;
+  width: 200rpx;
+  padding: 30rpx 0;
+  line-height: 42rpx;
+}
+.tab_on {
+  position: relative;
+  color: #f35150;
+}
+
+.tab_on::after {
+  content: "";
+  display: block;
+  transform: translateY(30rpx) scale(0.9, 0.6);
+  width: 100%;
+  height: 10rpx;
+  color: #fff;
+}
+
+.tPartBox {
+  background: #f1f1f1;
+  max-height: 400rpx;
+  min-height: 400rpx;
+  overflow: scroll;
+  padding-bottom: 20rpx;
+}
+.tPart {
+  float: left;
+  position: relative;
+  width: 31.1333333%;
+  margin: 1.1%;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+}
+.white-bg{
+  background-color: #fff;
+}
+.confirmBtn {
+  width: 100%;
+  color: #fff;
+  border-radius: 0;
+}
+.confirmBtn::after {
+  border: 0;
+}
+.confirmBtn:active {
+  opacity: 0.85;
+}
+.box-cell {
+  padding: 24rpx 50rpx;
+}
+.pvBox .flex {
+  justify-content: space-between;
+}
+.tdateBox{
+  justify-content: space-between;
+}
+.tdateBox .sub{
+  text-align: right;
+  padding-right: 32rpx;
+}
+.tdateBox .sub::before{
+  right: 0;
+}
+.picker.sub {
+  padding-right: 15px;
+  text-align: right;
+}
+
+
+.selCell{
+  padding: 20rpx 24rpx;
+  background-color: #fff;align-items: center;
+}
+
+.cellTit{
+   max-width: 200rpx;
+   color: #888;
+}
+
+.selTime {
+  color: #fff;
+  background: #f35150;
+}
+.gridFour{
+  background: #fff;
+}
+
+.display-hide {
+  display: none;
+}
+.shade_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sure-item{ padding:24rpx; background: #fff; margin-top: 10rpx;align-items: center;}
+.juan{padding-top:0;padding-bottom:0;}
+.sure-item.juan .list{line-height: 80rpx;}
+/* 包邮提示 */
+.shipping-tips{background: rgba(254,165,18, 0.2);color: #fea512;padding: 10rpx 30rpx;}
+.can-use-list {
+  background: #fff;
+}
+.cou-item{
+  padding: 30rpx;
+  justify-content: space-between;
+}
+.can-use-list label {
+  padding: 24rpx 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.can-use-list label:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+.can-use-list .iconfont{font-size: 48rpx;margin-right: 20rpx;}
+.icon-Paywechat{color:#09bb07;}
+.icon-yuezhifu{color: #fea512;}
+.icon-huodaofukuan{color: #009aff;}
+.pTit {
+  padding:30rpx 30rpx 10rpx;
+}
+
+.ptBox{
+  position: relative;
+}
+.closeBtn{
+  position: absolute;
+  top: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+.weui-btn{font-size: 32rpx;}
+/* 自提信息确认 */
+.zitiTips{padding: 20rpx 30rpx;color: #999;font-size: 24rpx;}
+.zitiInfoBox{padding: 10rpx 30rpx;}
+.zitiInfoItem{padding: 10rpx 0;}
+.zitiInfoItemTit{width: 120rpx;color: #666;}

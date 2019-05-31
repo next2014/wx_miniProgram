@@ -1,0 +1,55 @@
+<!--pages/user/fen/index/index.wxml -->
+<view class="fhome">
+
+  <view class='topBox'>
+    <view>总收入（元）</view>
+    <view class='topValue'>{{fxinfo.total_money}}</view>
+    <view>未结算收入{{fxinfo.wtotal_money}}元</view>
+  </view>
+  <view class="ftab">
+    <navigator url="../../red-packet/packet/index">
+      <view class="ftab-item gridXt">
+        <view class="fr grey lineText f14">去提现</view>
+        <text class="arrowL">福包</text>
+      </view>
+    </navigator>
+
+    <navigator url="../record/record">
+      <view class="ftab-item gridXt">
+        <text class="arrowL">分销记录</text>
+      </view>
+    </navigator>
+
+    <view class="ftab-item false gridXt">
+      <view class="fr grey lineText">{{fxinfo.refername}}</view>
+      <text class="arrowL">我的推荐人</text>
+    </view>
+
+    <navigator url="../team/team">
+      <view class="ftab-item gridXt">
+        <text class="arrowL">我的团队</text>
+      </view>
+    </navigator>
+    <navigator url="../qcode/qcode" wx:if="{{fxinfo.shop_fx == 1}}">
+      <view class="ftab-item gridXt">
+        <text class="arrowL">分销二维码</text>
+      </view>
+    </navigator>
+    <!-- <navigator url="../withdraw/withdraw">
+      <view class="ftab-item gridXt">
+        <text class="arrowL">我要提现</text>
+      </view>
+    </navigator> -->
+    <navigator url="../wrecord/wrecord">
+      <view class="ftab-item gridXt">
+        <text class="arrowL">提现记录</text>
+      </view>
+    </navigator>
+     <navigator url="../card/card" wx:if="{{fxinfo.giftcard_fx == 1}}">
+      <view class="ftab-item gridXt">
+        <text class="arrowL">分销卡片</text>
+      </view>
+    </navigator>
+  </view>
+
+</view>

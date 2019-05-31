@@ -1,0 +1,7 @@
+/* pages/shop/surprise/suprise.wxss */
+
+view button{
+  float:left;
+  width:50%;
+  height:150rpx;
+}

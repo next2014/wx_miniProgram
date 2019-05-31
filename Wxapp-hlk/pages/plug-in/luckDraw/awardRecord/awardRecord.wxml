@@ -1,0 +1,30 @@
+<!--pages/errand/awardRecord/awardRecord.wxml-->
+<view wx:if='{{data.length}}'>
+    <view class='recordItem f14' wx:for='{{data}}' wx:key='{{item.id}}'>
+        <view class='ntmBox'>
+            <view class='grey'>
+                <text class=''>{{item.add_time}}</text>
+            </view>
+            <view class='name mt10 f16'>{{item.jp_name}}</view>
+            <view class='duijiangma mt5'>兑奖码：{{'ZP'+item.duihuanma}}<text class='copy-duijiangma' catchtap='onCopyTap' data-data="{{'ZP'+item.duihuanma}}">复制</text></view>
+            
+        </view>
+        <view class='cashing-code' bindtap="makeCancleCode" id="{{item.id}}" data-code="{{item.duihuanma}}"><text class="iconfont icon-erweima1"></text>
+            <!-- <button class='telBtn' plain catchtap='onCopyTap' data-data='{{item.duihuanma}}'>复制</button> -->
+        </view>
+        <view class='tagBox'>
+            <text wx:if="{{item.is_do==0}}" class='red'>未处理</text>
+            <text wx:if="{{item.is_do==1}}" class='linght'>已处理</text> 
+        </view>
+    </view>
+</view>
+<!-- 二维码弹窗 -->
+<view class="code-popup" wx:if="{{codeIsShow}}">
+  <view class="code-pop-cont mid">
+    <view class="code-cont-title">核销码</view>
+    <image class="code-img" mode="aspectFill" src='{{thisCancelData.img_url}}'></image>
+    <view class="f18">{{thisCancelData.CancelCode}}</view>
+    <view>请出示给商家核销二维码</view>
+  </view>
+  <view class="popupbg" bindtap="hideCancleCode"></view>
+</view>

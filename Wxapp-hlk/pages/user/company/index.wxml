@@ -1,0 +1,94 @@
+<!--pages/user/company/index.wxml-->
+<block wx:if='{{isLoaded}}'>
+  <!-- 联系我们 按钮 -->
+  <!-- <movable-area class="movableArea">
+    <movable-view direction="vertical" class='contactBtn'>联系我们</movable-view>
+  </movable-area> -->
+  <view class="movableArea">
+    <view class='contactBtn' catchtap='toLeavmsg'>联系我们</view>
+  </view>
+
+  <view class="mb10 company">
+    <import src="../../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <view class="ui-cells ">
+    <view class='tc title f16'>联系我们</view>
+    <view class="ui-cell gridXb" catchtap='onCallPhoneTap'>
+      <view class='cellHead'>
+        <text class='mr10'>电话</text>
+        <text class='divider'>|</text>
+        <text class='ml10'>telephone</text>
+      </view>
+      <view class='flex cellBot' catchtap='onCallPhoneTap'>
+        <view class="sub">{{tel}}</view>
+        <view class='telBtn'>
+          <text class='iconfont icon-lianxiwomen'></text>
+        </view>
+      </view>
+    </view>
+    <view class="ui-cell gridXb" catchtap='onCopyTap' data-value='{{url}}'>
+      <view class='cellHead'>
+        <text class='mr10'>官网</text>
+        <text class='divider'>|</text>
+        <text class='ml10'>official website</text>
+      </view>
+      <view class='flex cellBot'>
+        <view class="sub lineText">{{url}}</view>
+        <view class='copy'>复制</view>
+      </view>
+    </view>
+
+
+    <view class="ui-cell gridXb" catchtap='onCopyTap' data-value='{{wx_service}}'>
+      <view class='cellHead'>
+        <text class='mr10'>微信客服</text>
+        <text class='divider'>|</text>
+        <text class='ml10'>customer service</text>
+      </view>
+      <view class='flex cellBot'>
+        <view class="sub lineText">{{wx_service}}</view>
+        <view class='copy'>复制</view>
+      </view>
+    </view>
+
+    <view class="ui-cell gridXb" catchtap='onCopyTap' data-value='{{wx_account}}'>
+      <view class='cellHead'>
+        <text class='mr10'>公众号</text>
+        <text class='divider'>|</text>
+        <text class='ml10'>official accounts</text>
+      </view>
+      <view class='flex cellBot'>
+        <view class="sub lineText">{{wx_account}}</view>
+        <view class='copy'>复制</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='recommendBox' id="leavmsg">
+    <view class='title tc f16'>给我们留言</view>
+    <form bindsubmit="toLeaving" report-submit='true'>
+      <view class='inpCell'>
+        <view class='inputTip required'>您的姓名</view>
+        <input class='inp' name='u_name' placeholder='请输入真实姓名' value="{{u_name}}"></input>
+      </view>
+      <view class='inpCell'>
+        <view class='inputTip required'>您的联系方式</view>
+        <input class='inp' type='number' name='u_phone' placeholder='请输入正确的手机号' value="{{u_phone}}"></input>
+      </view>
+      <view class='mb10'>
+        <view class='inputTip required'>小程序意向（可多选）</view>
+        <checkbox-group  bindchange="changeType">
+          <label wx:for="{{agent_xcx_type}}" wx:key="{{index}}">
+            <checkbox class='checkBox' value="{{item}}" checked='{{item.checked}}'></checkbox>{{item}}
+          </label>
+        </checkbox-group>
+      </view>
+      <view class='mt10'>
+        <view class='grey required'>留言</view>
+        <textarea class='textarea' name='leave_msg' placeholder='请在这里简短描述您的需求' value="{{leave_msg}}"></textarea>
+      </view>
+      <button class='submitBtn' formType="submit">提交</button>
+    </form>
+  </view>
+</block>

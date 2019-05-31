@@ -1,0 +1,67 @@
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+<view class="pay-countDown gridXb" wx:if="{{order_time}}">
+  <view>支付剩余时间</view>
+  <view class="pay-countDown-time">
+    <text class="pay-countDown-num">{{last_pay_time[0]}}</text>
+    <text class="mr5">:</text>
+    <text class="pay-countDown-num">{{last_pay_time[1]}}</text>
+  </view>
+</view>
+<view class="pay-countDown gridXb" wx:else>
+  <view>订单已失效</view>
+</view>
+  <view class="ui-cells tc" style='padding:30rpx 0'>
+    <view class='red f36' style='line-height:1;'>¥ {{oinfo.order_amount}}</view>
+    <text class="f14 mt10">订单总价<text class="grey">(包含运费¥{{oinfo.shipping_fee}})</text></text>
+  </view>
+
+  <view class='pTit grey'>订单信息</view>
+  <view class="ui-cells f14">
+    <view class="ui-cell gridXb">订单号：{{oinfo.order_sn}}</view>
+    <view class="ui-cell gridXb" wx:if="{{oinfo.shipping_name=='快递'}}">收货地址：{{oinfo.province+' '+oinfo.city+' '+oinfo.area+' '+oinfo.address}}</view>
+    <view class="ui-cell gridXb">联系电话：{{oinfo.mobile}}</view>
+    <view class="ui-cell gridXb">下单时间：{{oinfo.ctime}}</view>
+  </view>
+
+  <form bindsubmit="pay_confirmOrder" report-submit="true">
+    <!--支付方式  -->
+    <view class='ptBox'>
+      <view class="pTit grey">支付方式</view>
+      <view class="can-use-list">
+        <radio-group name="pay_name">
+          <label class='gridXb'>
+            <view>
+              <text class="iconfont icon-Paywechat"></text>
+              <text class='mr10'>微信支付</text>
+            </view>
+            <radio value="0" checked/>
+          </label>
+          <label class='gridXb' wx:if="{{cardinfo.status}}">
+            <view>
+              <text class="iconfont icon-yuezhifu"></text>
+              <text class='mr10'>余额支付</text>
+            </view>
+            <radio value="1" />
+          </label>
+          <label wx:if="{{oinfo.public_info.is_huodaofukuan == 1}}">
+            <view>
+              <text class="iconfont icon-huodaofukuan"></text>
+              <text class='mr10'>货到付款</text>
+            </view>
+            <radio value="2" />
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access m20">
+      <button class="weui-btn" type="primary" formType="submit" loading="{{submitIsLoading}}" disabled="{{buttonIsDisabled}}" disabled="{{order_disable}}">{{order_disable == false?'确认下单':'订单已失效'}}</button>
+    </view>
+  </form>
+</block>

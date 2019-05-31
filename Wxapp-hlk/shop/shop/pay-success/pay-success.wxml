@@ -1,0 +1,21 @@
+<!--支付成功页面-->
+
+<view class="page msg_success ">
+  <view class="weui-msg">
+    <view class="weui-msg__icon-area">
+      <icon type="success" size="64" color="#08c161" />
+    </view>
+    <view class="weui-msg__text-area">
+      <text class="weui-msg__title">下单成功</text>
+    </view>
+    <view>
+      <view class="orderBtnBox">
+        <!-- <button bindtap='gohome' class="weui-btn weui-btn_primary">返回首页</button> -->
+        <!-- <button type="primary" bindtap='goOrder' class="weui-btn weui-btn_primary">查看订单</button> -->
+        <button bindtap='goOrder' class="orderBtnItem active">查看订单</button>
+        <button bindtap='gohome' class="orderBtnItem">返回首页</button>
+        <button open-type='share' class="orderBtnItem active" wx:if="{{config.shop_config.is_order_remind == 1}}">提醒商家接单</button>
+      </view>
+    </view>
+  </view>
+</view>

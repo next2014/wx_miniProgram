@@ -1,0 +1,44 @@
+<!--pages/shop/whiteLogistic/whiteLogistic.wxml-->
+
+<form class='formBox' bindsubmit="formSubmit">
+  <view class='backType'>商品退回方式</view>
+  <radio-group class="mb10 radioGroup" bindchange="selectWithdrawType">
+    <view class='radioCell flex gridXt'>
+      <label>自主退回</label>
+      <radio class='radio' value="0" checked="{{withdraw_type == 0}}"></radio>
+    </view>
+    <view class='radioCell flex gridXt'>
+      <label>快递退回</label>
+      <radio class='radio' value="1" checked="{{withdraw_type == 1}}"></radio>
+    </view>
+  </radio-group>
+
+  <view class='hostBack f14' wx:if="{{withdraw_type == 0}}">
+    <view class='grey mb5 arrowR'>
+    自主送货到商家站点
+    <text class="fr red" catchtap='selectSelfAddress' wx:if="{{all_address.no_ziti != 1}}">选择地址</text>
+    </view>
+    <view class='flex addBox'>
+      <view class='addDetail'>
+        <text>站点名称: {{all_address.address_name}}</text>
+        <text>站点地址：{{all_address.address}}</text>
+        <text>联系电话：{{all_address.mobile}}</text>
+      </view>
+      <view class='locIconBox' catchtap='to_self_adress'>
+        <text class='iconfont icon-location'></text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{withdraw_type == 1}}">
+    <view class='flex gridXb inpCell'>
+      <label class='mr15'>物流公司</label>
+      <input class='inp sub' name="logistics_name" placeholder='请填写'></input>
+    </view>
+    <view class='flex inpCell'>
+      <label class='mr15'>运单号码</label>
+      <input class='inp sub' name="logistics_num" placeholder='请填写'></input>
+    </view>
+  </view>
+  <button class='comfirmBtn mainColor_bg' formType="submit" type="primary">确定</button>
+</form>

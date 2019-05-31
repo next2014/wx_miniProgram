@@ -1,0 +1,81 @@
+/* pages/shop/memberGoods/memberGoods.wxss */
+
+/* 引入公共样式 */
+@import "/pages/shop/common/common.wxss";
+
+.memberTopImg{width: 100%;height: 500rpx;}
+.memberUserInfo{padding:20rpx 30rpx;position: absolute;top: 0;left: 0;right: 0;background-image: linear-gradient(rgba(0, 0, 0, .8),rgba(0, 0, 0, 0));color: #fff;align-items: center;font-size: 28rpx;}
+.memberUserImg{width: 50rpx;height: 50rpx;border-radius: 50%;margin-right: 20rpx;}
+.memberUserImg[src=""]{background: rgba(255, 255, 255, .1);}
+.memberUserInfo .iconfont{font-size: 24rpx;}
+
+/* VIP+福利专题 */
+.vipWelfareBox{width: 690rpx;margin: -120rpx auto 20rpx;background: #fff;border-radius: 6rpx;overflow: hidden;position: relative;}
+.vipTitleBox{position: relative;}
+.vipTitleText{display: flex;display: -webkit-flex;text-align: center;font-size: 36rpx;line-height: 92rpx;align-items: center;justify-content: center;}
+.vipTitleText::before,.vipTitleText::after{content: '';display: inline-flex;width: 68rpx;height: 3px;background-image: linear-gradient(to right,rgba(255, 220, 82, 0),#d9c184);margin: 0 20rpx;}
+.vipTitleText::after{transform: rotateY(180deg);}
+.vipShareBtn{position: absolute;right: 0;top: 0;line-height: 92rpx;padding: 0 30rpx;font-size: 36rpx;color: #09bb07;color: var(--DShop-mcolor);}
+.goodsViewBox{padding: 0 30rpx;line-height: 92rpx;align-items: center;font-size: 28rpx;margin-top: 30rpx;}
+.goodsViewBox::before{left: 30rpx;right: 30rpx;}
+.goodsViewIco{font-size: 40rpx;color: #09bb07;color: var(--DShop-mcolor);margin-right: 10rpx;}
+.goodsViewMore{font-size: 24rpx;color: #999;}
+
+/* vip弹窗 */
+.vipPopBox{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 580rpx;background: #fff;border-radius: 8rpx;overflow: hidden;}
+.vipPopBtnItem{font-size: 30rpx;line-height: 88rpx;}
+.vipPopSureBtn{color: #09bb07;color: var(--DShop-mcolor);font-weight: bold;}
+.vipPopCont{padding: 60rpx 30rpx;text-align: center;}
+.vipPopImg{width: 80rpx;margin-bottom: 20rpx;}
+
+/* 优惠券 */
+.vipCouponBox{padding: 20rpx 30rpx 0;}
+.couponBoxTit{font-weight: bold;}
+.couponItemBox{margin-top: 20rpx;white-space: nowrap;height: 122rpx;}
+.couponItem{display: inline-flex;width: 280rpx;font-size: 24rpx;background-image: linear-gradient( to right,#fe8673, #ff664d);border-radius: 8rpx;color: #fff;text-align: center;}
+.couponItem.receive{background: #eee;color: #999;}
+.couponItem:not(:last-child){margin-right: 20rpx;}
+.couponItemPriceInfo{line-height: 1;padding: 20rpx 10rpx;position: relative;}
+.couponItemPrice{font-weight: bold;font-size: 48rpx;margin-bottom: 10rpx;}
+.couponItemPicIco{position: absolute;top: 24rpx;left: 10rpx;}
+.couponItemBtn{width: 60rpx;padding:10rpx 20rpx;white-space: pre-wrap;display: inline-flex;align-items: center;justify-content: center;line-height: 1.4;border-left: 1px dashed;position: relative;}
+.couponItemBtn::before,.couponItemBtn::after{content: '';display: block;width: 20rpx;height: 20rpx;border-radius: 50%;background: #fff;position: absolute;left: -10rpx;}
+.couponItemBtn::before{top: -10rpx;}
+.couponItemBtn::after{bottom: -10rpx;}
+
+.ContItem{background: #fff;width: 690rpx;margin: 20rpx auto;padding: 0 30rpx;border-radius: 6rpx;}
+.ContItemTitle{font-weight: bold;line-height: 92rpx;}
+
+/* vip专享 */
+.countdownBox{font-size: 24rpx;color: #999;align-self: center;}
+.countdownNum{display: inline-block;width: 34rpx;height: 34rpx;border-radius: 4rpx;background: #333;color: #fff;line-height: 34rpx;text-align: center;font-size: 24rpx;font-weight: bold;margin: 0 8rpx;}
+.spikeGoodsItem{margin-bottom: 20rpx;}
+.spikeGoodsImgBox{width: 200rpx;height: 200rpx;border-radius: 6rpx;overflow: hidden;margin-right: 20rpx;position: relative;}
+.spikeGoodsImg{width: 100%;height: 100%;}
+.spikeGoodsTag{background: #333;color: #ffc14a;position: absolute;top: 0;left: 0;z-index: 1;font-size: 22rpx;line-height: 36rpx;padding: 0 10rpx;border-radius: 0 0 10rpx 0;}
+.spikeGoodsBox{padding-bottom: 30rpx;}
+.spikeGoodsName{line-height: 1.4;font-size: 28rpx;height: 76rpx;}
+.spikeGoodsNum{font-size: 24rpx;color: #999;margin-top: 16rpx;}
+.spikeGoodsBottom{margin-top: 10rpx;align-items: center;}
+.spikeGoodsBtn{background: #f14344;color: #fff;font-size: 24rpx;line-height: 48rpx;border-radius: 48rpx;}
+.spikeGoodsPrice{color: #f14344;font-size: 32rpx;font-weight: bold;}
+.spikeGoodsPriceOld{font-size: 24rpx;color: #999;font-weight: normal;text-decoration: line-through;}
+.spikeGoodsMore{text-align: center;font-size: 24rpx;color: #999;margin-top: 20rpx;}
+.spikeGoodsMore:active{color: #333;}
+
+
+/* vip特惠 */
+.vipGoodsItem{display: inline-block;width: calc(50% - 5px);margin-bottom: 20rpx;}
+.vipGoodsItem:not(:nth-child(2n)){margin-right: 10px;}
+.vipGoodsImgBox{width: 100%;padding-bottom: 100%;position: relative;border-radius: 6rpx;overflow: hidden;}
+.vipGoodsImg{width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
+.vipGoodsInfo{padding: 10rpx 0;}
+.vipGoodsName{font-weight: bold;}
+.vipGoodsPriceDel{font-size: 24rpx;color: #999;line-height: 1;margin-top: 6rpx;}
+.vipGoodsPrice{color: #f14344;font-weight: bold;}
+.goodsVipTag{display: inline-block;font-weight: normal;color: #ffc14a;background: #333;border-radius: 0 30rpx 30rpx 30rpx;font-size: 20rpx;padding: 0 8rpx;line-height: 30rpx;vertical-align: middle;}
+
+/* 返回首页 */
+.returnHome{position: fixed;z-index:9;left: 0;bottom: 400rpx;color: #fff;border-radius: 0 50rpx 50rpx 0;padding: 0 20rpx;font-size: 28rpx;}
+.floatBox {z-index: 999}
+.floatBox .vipPopBox{z-index: 1000}

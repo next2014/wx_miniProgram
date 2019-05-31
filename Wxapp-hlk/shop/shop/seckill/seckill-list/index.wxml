@@ -1,0 +1,89 @@
+<!--pages/shop/seckill-list/index.wxml-->
+<!-- <view class="seckill-imgshow"><image class="scale-rule" src="/images/default.png" mode="aspectFill"></image></view>
+<view class="flex seckill-tab">
+  <view class="sub gridYr seckill-tab-btn active">正在秒杀</view>
+  <view class="sub seckill-tab-btn">即将开始</view>
+</view> -->
+<view class='seckillModeBox'>
+
+  
+
+  <!-- <view class='seckillModeTitleBox flex'>
+    <view class='seckillModeTitleText sub'>每天早起秒杀活动</view>
+    <view class='seckillModeTitleDown'>倒计时 12:05:36</view>
+  </view>
+  <view class='seckillBox seckillBlockBox'>
+    <block wx:for="{{seckill_list}}" wx:key="">
+      <view class="seckillGoodsItem {{(item.g_number == 0?100:100*item.sale_number/item.g_number+item.sale_number) == 100?'goodsSoldOut':''}} {{(time.status == 2 || seckill_config.is_today == 0)?'time-end':''}}" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}"
+        bindtap='navigateTo'>
+        <view class="seckillGoodsImg">
+          <image class="scale-rule" src="{{item.g_img}}" mode="aspectFill"></image>
+          <view class='soldOutBg' wx:if="{{item.g_number==0}}">已抢光</view>
+          <view class="seckillTime">
+            <view class="seckillGoodsPrice">
+              <view class="delLine">￥{{item.market_price}}</view>
+              <view class="new-price">秒杀价 ￥{{item.shop_price}}</view>
+            </view>
+
+            <view class="countDown tc" wx:if="{{seckill_config.is_today == 1}}">
+              <view class="f12">{{time.status == 0?'距离开始':''}}{{time.status == 1?'距离结束':''}}{{time.status == 2?'已结束':''}}</view>
+              <view wx:if="{{time.status != 2}}">
+                <text class="time-show">{{time.hour}}</text>：
+                <text class="time-show">{{time.minute}}</text>：
+                <text class="time-show">{{sec}}</text>
+              </view>
+            </view>
+            <view class="countDown tc" wx:else>
+              活动未开始
+            </view>
+          </view>
+          <view class="seckillGoodsState" wx:if="{{time.status == 2}}">已结束</view>
+          <view class="seckillGoodsState" wx:if="{{seckill_config.is_today == 0}}">活动未开始</view>
+        </view>
+        <view class='seckillGoodsInfo'>
+          <view class="seckillGoodsName lineText2">{{item.g_name}}</view>
+
+          <view class="seckillState">
+            <view class="seckillProgressBox">
+              <text class="seckillStateTxt">已抢{{item.g_number == 0?100:(100*item.sale_number-(100*item.sale_number%(item.g_number*1+item.sale_number*1)))/(item.g_number*1+item.sale_number*1)}}%</text>
+              <view class="seckillProgressBar" style="width:{{item.g_number == 0?100:(100*item.sale_number-(100*item.sale_number%(item.g_number*1+item.sale_number*1)))/(item.g_number*1+item.sale_number*1)}}%"></view>
+            </view>
+            <button class="seckillBtn" wx:if="{{seckill_config.is_today == 1 && time.status == 1}}">{{(item.g_number == 0?100:100*item.sale_number/item.g_number+item.sale_number) == 100 ? '已抢完':'马上抢'}}</button>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view> -->
+
+
+  <!-- <view class='seckillBox seckillListBox '>
+    <block wx:for="{{seckill_list}}" wx:key="">
+      <view class="seckillGoodsItem  {{(item.g_number == 0?100:100*item.sale_number/item.g_number+item.sale_number) == 100?'goodsSoldOut':''}} {{time.status == 0?'not-beginning':''}} {{(time.status == 2 || seckill_config.is_today == 0)?'time-end':''}}" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}"
+        bindtap='navigateTo'>
+        <view class="seckillGoodsImg">
+          <image class="scale-rule" src="{{item.g_img}}" mode="aspectFill"></image>
+          <view class='soldOutBg' wx:if="{{item.g_number==0}}">
+            已抢光
+          </view>
+        </view>
+        <view class='seckillGoodsInfo'>
+          <view class="seckillGoodsName lineText2">{{item.g_name}}</view>
+          <view class="seckillGoodsPrice">
+            <text class="new-price">秒杀价 ￥{{item.shop_price}}</text>
+            <text class="delLine">￥{{item.market_price}}</text>
+          </view>
+          <view class="seckillState">
+            <view class="seckillProgressBox">
+              <text class="seckillStateTxt">已抢{{item.g_number == 0?100:(100*item.sale_number-(100*item.sale_number%(item.g_number*1+item.sale_number*1)))/(item.g_number*1+item.sale_number*1)}}%</text>
+              <view class="seckillProgressBar" style="width:{{item.g_number == 0?100:(100*item.sale_number-(100*item.sale_number%(item.g_number*1+item.sale_number*1)))/(item.g_number*1+item.sale_number*1)}}%"></view>
+            </view>
+            <button class="seckillBtn" wx:if="{{seckill_config.is_today == 1 && time.status == 1}}">{{(item.g_number == 0?100:100*item.sale_number/item.g_number+item.sale_number) == 100 ? '已抢完':'马上抢'}}</button>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view> -->
+  <seckillGoods data="{{seckill_info}}" status="{{time.status}}" mode="seckillListBox" title="{{seckill_concer ? seckill_concer : '限时价'}}"></seckillGoods>
+</view>

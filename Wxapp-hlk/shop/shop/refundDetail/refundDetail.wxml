@@ -1,0 +1,169 @@
+<!--pages/shop/refundDetail/refundDetail.wxml-->
+<view class='mainColor_bg flex topStatusBox'>
+  <view class='sub'>
+    <view class='status'>
+      <text wx:if="{{order_info.refund_state == 0}}">已提交</text>
+      <text wx:if="{{order_info.refund_state == 1}}">已同意</text>
+      <text wx:if="{{order_info.refund_state == 2}}">已退款</text>
+      <text wx:if="{{order_info.refund_state == 3}}">已拒绝</text>
+    </view>
+    <view class='statusTip'>
+      <text wx:if="{{order_info.refund_state == 0}}">等待商家审核中</text>
+      <text wx:if="{{order_info.refund_state == 1 && order_info.refund_type == 0 && order_info.is_post_info == 0}}">请填写物流退货信息</text>
+      <text wx:if="{{order_info.refund_state == 1 && order_info.refund_type == 1}}">等待商家退款中</text>
+      <text wx:if="{{order_info.refund_state == 2}}">已退款，请注意到账信息</text>
+      <text wx:if="{{order_info.refund_state == 3}}">商家已拒绝退款</text>
+    </view>
+  </view>
+  <image class='statusImg' mode='aspectFill' src='http://www.ixiaochengxu.cc/resource/images/shop/refund/refund.png'></image>
+</view>
+<view class='totalMoney flex' wx:if="{{order_info.refund_state != 2}}">
+  <view>退款上限金额：</view>
+  <view class='red f16'>
+    <text class='f12'>￥</text>
+    <text>{{order_info.max_refund}}</text>
+  </view>
+</view>
+<view class='totalMoney flex' wx:if="{{order_info.refund_state == 2}}">
+  <view>退款总金额：</view>
+  <view class='red f16'>
+    <text class='f12'>￥</text>
+    <text>{{order_info.all_refund}}</text>
+  </view>
+</view>
+
+<view class='refundProgress mt10'>
+  <view class='flex concatBox'>
+    <view class='sub mr10 rphead'>退款协商记录</view>
+    <button class='grey gridFour concat' catchtap="bindContantPhone">
+      <text class='iconfont icon-Telephone'></text>
+      <text>联系商家</text>
+    </button>
+  </view>
+  <view class='prolist'>
+    <view class='flex proItem {{order_info.refund_state == 2 ? "newestProgress" : ""}}' wx:if="{{order_info.refund_state == 2}}">
+      <view class='proTime'>
+        <view class='date'>{{order_info.success_daytime}}</view>
+        <view class='time'>{{order_info.success_hourtime}}</view>
+      </view>
+      <view class='dot'></view>
+      <view class='sub proItemRg'>
+        <view class='proTitle'>退款成功</view>
+        <view class=''>
+          <view class='proDesc'>退款成功，退款金额将返还到您的账户</view>
+          <view class='proDesc refundSn flex'>
+            <view>退款单号：</view>
+            <view class='sub'>
+              <text>{{order_info.refund_sn}}</text>
+            </view>
+            <view  class="copy" catchtap='copyRefundSn'>
+              <text class='mainColor'>复制</text>
+            </view>
+
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='flex proItem {{order_info.is_post_info == 1 ? "newestProgress" : ""}}' wx:if="{{order_info.is_post_info == 1}}">
+      <view class='proTime'>
+        <view class='date'>{{order_info.post_info.daytime}}</view>
+        <view class='time'>{{order_info.post_info.hourtime}}</view>
+      </view>
+      <view class='dot'></view>
+      <view class='sub proItemRg'>
+        <view class='proTitle'>提交退货</view>
+        <view class=''>
+          <view class='proDesc'>退货方式：{{order_info.post_info.withdraw_type == 1 ? '快递退回' : '自主退回'}}</view>
+          <view class='proDesc' wx:if="{{order_info.post_info.withdraw_type == 0}}">站点名称：{{order_info.post_info.address_name}} 站点地址：{{order_info.post_info.address}} 联系方式：{{order_info.post_info.mobile}}</view>
+          <view class='proDesc' wx:if="{{order_info.post_info.withdraw_type == 1}}">物流信息：{{order_info.post_info.logistics_name}} {{order_info.post_info.logistics_num}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='flex proItem {{order_info.refund_state >= 1 ? "newestProgress" : ""}}' wx:if="{{order_info.refund_state >= 1}}">
+      <view class='proTime'>
+        <view class='date'>{{order_info.agree_daytime}}</view>
+        <view class='time'>{{order_info.agree_hourtime}}</view>
+      </view>
+      <view class='dot'></view>
+      <view class='sub proItemRg'>
+        <view class='proTitle'>{{order_info.refund_state == 3 ? '商家拒绝退款' : '商家同意退款'}}</view>
+        <view class=''>
+          <view class='proDesc'>{{order_info.refund_state == 3 ? '商家已拒绝您的退款申请' : '商家已同意您的退款申请'}}</view>
+          <view class='proDesc' wx:if="{{order_info.refund_state != 3 && order_info.refund_type == 0}}">商家确认退货信息：{{order_info.public_info.ship_address}}，联系方式：{{order_info.public_info.kefu_contant}}(快递退回)</view>
+          <view class='proDesc' wx:if="{{order_info.refund_state == 3}}">拒绝理由：{{order_info.refuse_reason}}</view>
+        </view>
+
+      </view>
+    </view>
+    <view class='flex proItem {{order_info.refund_state >= 0 ? "newestProgress" : ""}}' wx:if="{{order_info.refund_state >= 0}}">
+      <view class='proTime'>
+        <view class='date'>{{order_info.create_daytime}}</view>
+        <view class='time'>{{order_info.create_hourtime}}</view>
+      </view>
+      <view class='dot'></view>
+      <view class='sub proItemRg'>
+        <view class='proTitle'>提交申请</view>
+        <view class='' wx:if="{{order_info.refund_state >= 0}}">
+          <view class='proDesc'>处理方式：{{order_info.refund_type == 0 ? '退款退货' : '仅退款'}}</view>
+          <view class='proDesc'>联系手机：{{order_info.mobile}}</view>
+          <view class='proDesc'>退款上限：￥{{order_info.max_refund}}</view>
+          <view class='proDesc'>
+            <text> 退款原因：{{order_info.refund_reason}}</text>
+            <view class='refundPicBox'>
+              <image class='refundPic' mode='aspectFill' wx:for="{{order_info.img}}" src='{{item}}'></image>
+            </view>
+          </view>
+
+        </view>
+        <view class='refundCommodity '>退款商品</view>
+        <view class='refundPicBox' catchtap='goodsShow'>
+          <image class='refundPic' mode='aspectFill' wx:for="{{order_info.refund_goods}}" src='{{item.g_img}}'></image>
+          <!-- <view class='refundPic morePic'><text class='iconfont icon-shenglvehao'></text></view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!--弹窗  -->
+<view class='popupBox ' wx:if="{{show_goods}}">
+  <view class='pupopBody'>
+    <view class='closeBtn' catchtap='goodsShow'></view>
+    <view class='tc'>退款商品</view>
+    <view class='comLIist'>
+      <view class='comItem flex' wx:for="{{order_info.refund_goods}}">
+        <image class='comImg' mode='aspectFill' src='{{item.g_img}}'></image>
+        <view class='sub comItemRg flex'>
+          <view class='flex'>
+            <view class='comName sub lineText2'>{{item.goods_name}}</view>
+            <view class='ml10'>
+              <text class='f12'>￥</text>
+              <text>{{item.goods_price}}</text>
+            </view>
+          </view>
+          <view class='flex grey'>
+            <view class='sub flex mr10'>
+              <view>{{item.goods_attr}}</view>
+            </view>
+            <view>x {{item.goods_number}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class=' bottomFixBtn'>
+  <button class=' mainColor_bg' catchtap='withdrawRequest' wx:if="{{order_info.refund_state < 1}}">
+    <text>申请撤回</text>
+  </button>
+  <button class='bottomFixBtn mainColor_bg' catchtap='postRefundInfo' wx:if="{{order_info.refund_state == 1 && order_info.refund_type == 0 && order_info.is_post_info == 0}}">
+    <text>填写物流退货信息</text>
+  </button>
+  <button class='gridFour ' catchtap='goHomePage'>
+    <text>回到首页</text>
+  </button>
+</view>

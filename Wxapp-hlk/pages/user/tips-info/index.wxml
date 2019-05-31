@@ -1,0 +1,7 @@
+<!--pages/pay-success/pay-success.wxml-->
+<view class="loginPopupCont">
+	<image class="loginPopImg" src="http://www.ixiaochengxu.cc/resource/images/common/loginPopup.png" mode="widthFix"></image>
+	<view class="loginContBox">
+		<button class="loginBtn" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onUserInfo">微信安全登录</button>
+	</view>
+</view> 

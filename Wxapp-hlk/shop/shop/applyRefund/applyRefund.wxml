@@ -1,0 +1,50 @@
+<!--pages/shop/applyRefund/applyRefund.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class='arrowR flex topRow'>
+    <view class='grey'>服务类型：</view>
+    <picker class='sub ml10' value='{{index}}' range="{{pick_arr}}" bindchange='bindPickerChange'>
+      <text>{{pick_arr[index]}}</text>
+    </picker>
+  </view>
+
+
+
+
+  <view class='mt10'>
+    <view class='topRow flex'>
+      <view class='grey'>退款上限：</view>
+      <view class='sub ml10 red'>{{order_info.refund_amount}}元</view>
+      <view class='grey' wx:if="{{order_info.is_refund}}">（订单中已有商品退款过）</view>
+    </view>
+    <view class='topRow flex'>
+      <view class='grey'>联系手机：</view>
+      <input class='sub ml10' name="mobile" value='{{order_info.mobile}}'></input>
+    </view>
+
+  </view>
+
+  <view class='mt10 reasonBox mt10'>
+
+    <view class='flex mb10'>
+      <text>退款原因</text>
+    </view>
+    <textarea class=' txtarea' name="content" placeholder='最多可填写200字，上传5张照片'></textarea>
+    <view class=''>
+      <view class='uploadBox'>
+        <block wx:for="{{postimg}}" wx:key="{{index}}">
+          <view class="picBox">
+            <image src="{{item}}" mode="aspectFill"></image>
+            <view class='cancel' bindtap="del_pic_bind" id="{{index}}">x</view>
+          </view>
+        </block>
+        <view class='picBox uploadBtn' bindtap="chooseimg_bind">
+          <view class='iconfont icon-Photo'></view>
+          <view>上传图片</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <button formType="submit" type="primary" class='submit mainColor_bg'>提交</button>
+</form>

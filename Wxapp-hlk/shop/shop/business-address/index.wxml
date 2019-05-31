@@ -1,0 +1,151 @@
+<!--pages/shop/business-address/index.wxml-->
+<block wx:if="{{address_type == 2}}">
+  <view class="flex addressTopBox">
+    <!-- <view class="sub addressTopItem {{select_type == 1 ? '' : 'active'}}" catchtap='selectType' data-type="0">建议自提点</view>
+    <view class="sub addressTopItem {{select_type == 0 ? '' : 'active'}}" catchtap='selectType' data-type="1">附近自提点</view> -->
+  </view>
+  <!-- 建议自提点 -->
+  <view class="addressContBox" >
+    <view class="addressReturn flex" catchtap='selectAddress' wx:for="{{all_address}}" wx:if="{{item.id == now_community.id}}" data-address_name="{{item.address_name}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-distance="{{item.distance}}" data-longitude="{{item.longitude}}"
+      data-latitude="{{item.latitude}}" data-id="{{item.id}}" data-default_colonel_nickname="{{item.default_colonel_nickname}}" data-default_colonel_uid="{{item.default_colonel_uid}}" data-default_colonel_headimgurl='{{item.default_colonel_headimgurl}}'>
+      <text class="sub">返回当前自提点</text>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+    <view class="addressItemBox" wx:for="{{all_address}}"  wx:if="{{newAddress && item.id == newAddress.id}}" catchtap='selectSuggestAddress' data-address_name="{{item.address_name}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-distance="{{item.distance}}" data-longitude="{{item.longitude}}"
+      data-latitude="{{item.latitude}}" data-id="{{item.id}}" data-default_colonel_nickname="{{item.default_colonel_nickname}}" data-default_colonel_uid="{{item.default_colonel_uid}}" data-default_colonel_headimgurl='{{item.default_colonel_headimgurl}}'>
+      <view class="flex currentAddress">
+        <view class="sub">发现新自提点主页</view>
+        <view>立即进入 <text class="iconfont icon-youjiantou"></text></view>
+      </view>
+      <view class="addressShopInfo">
+        <view class="addressShopName"><text class="iconfont icon-locationfill"></text>{{item.address_name}}</view>
+        <view class="flex addressText">
+          <view class="sub">{{item.address}}</view>
+          <view wx:if="{{item.distance}}">距您{{item.distance}}km</view>
+        </view>
+      </view>
+    </view>
+    <view class="addressItemBox" wx:for="{{all_address}}" wx:if="{{lastOrderAddress && item.id == lastOrderAddress.id}}" catchtap='selectAddress' data-address_name="{{item.address_name}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-distance="{{item.distance}}" data-longitude="{{item.longitude}}"
+      data-latitude="{{item.latitude}}" data-id="{{item.id}}" data-default_colonel_nickname="{{item.default_colonel_nickname}}" data-default_colonel_uid="{{item.default_colonel_uid}}" data-default_colonel_headimgurl='{{item.default_colonel_headimgurl}}'>
+      <view class="addressItemTag">上次下单</view>
+      <view class="addressShopInfo">
+        <view class="addressShopName"><text class="iconfont icon-locationfill"></text>{{lastOrderAddress.address_name}}</view>
+        <view class="addressText">{{lastOrderAddress.address}}</view>
+        <view class="flex itemShopBox">
+          <image class="itemShopLogo" src="{{item.default_colonel_headimgurl}}" mode="aspectFill"></image>
+          <view class="sub">{{item.default_colonel_nickname}}</view>
+          <view class="itemShopDistance" wx:if="{{item.distance}}">距您{{item.distance}}km</view>
+        </view>
+        <button class="addressShopBtn" type="primary" wx:if="{{address_type == 2}}">立即进入</button>
+      </view>
+    </view>
+  </view>
+  <!-- 附近自提点 -->
+  <view class="addressContBox f14">附近其他自提点</view>
+  <view class="addressContBox" >
+    <view class="addressSwitch flex">
+      <view class="sub"><text class="addressSwitchCurrent">当前位置：</text> {{now_address}}</view>
+      <view class="addressSwitchBtn"  bindtap="location">
+        <text class="iconfont icon-qiehuan"></text>
+        <view>切换其他门店</view>
+      </view>
+    </view>
+    <view class="addressItemBox" wx:for="{{all_address}}" catchtap='selectAddress' data-address_name="{{item.address_name}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-distance="{{item.distance}}" data-longitude="{{item.longitude}}"
+    data-latitude="{{item.latitude}}" data-id="{{item.id}}" data-default_colonel_nickname="{{item.default_colonel_nickname}}" data-default_colonel_uid="{{item.default_colonel_uid}}" data-default_colonel_headimgurl='{{item.default_colonel_headimgurl}}'>
+      <view class="addressShopInfo">
+        <view class="addressShopName"><text class="iconfont icon-locationfill"></text>{{item.address_name}}</view>
+        <view class="addressText">{{item.address}}</view>
+        <view class="flex itemShopBox">
+          <image class="itemShopLogo" src="{{item.default_colonel_headimgurl}}" mode="aspectFill"></image>
+          <view class="sub">{{item.default_colonel_nickname}}</view>
+          <view class="itemShopDistance" wx:if="{{item.distance}}">距您{{item.distance}}km</view>
+        </view>
+        <button class="addressShopBtn" type="primary">立即进入</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="floatBox addressPopBox" wx:if="{{in_address == 1}}">
+    <view class="popupCenter addressPopCont">
+      <view>您进入的不是上次下单自提点，确定进入么？</view>
+      <view class="flex addressPopBtnBox">
+        <button class="sub addressPopBtn" catchtap='closeAddress'>查看其他自提点</button>
+        <button class="sub addressPopBtn addressActiveBtn" catchtap='inAddress'>我要进入</button>
+      </view>
+    </view>
+    <view class="floatBox floatBoxBg" style="display:block"></view>
+  </view>
+
+  <view class="floatBox addressPopBox" wx:if="{{no_suggest == 1}}">
+    <view class="popupCenter addressPopCont">
+      <view>暂无建议自提点,请选择一个最方便的自提点</view>
+      <view class="flex addressPopBtnBox">
+        <button class="sub addressPopBtn" bindtap='clossSuggest'>关闭</button>
+      </view>
+    </view>
+    <view class="floatBox floatBoxBg" style="display:block"></view>
+  </view>
+</block> 
+
+
+<!-- <view class="address-item gridXb" wx:for="{{all_address}}" catchtap='selectAddress' data-address_name="{{item.address_name}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-distance="{{item.distance}}" data-longitude="{{item.longitude}}"
+  data-latitude="{{item.latitude}}" data-id="{{item.id}}" data-default_colonel_nickname="{{item.default_colonel_nickname}}" data-default_colonel_uid="{{item.default_colonel_uid}}" data-default_colonel_headimgurl='{{item.default_colonel_headimgurl}}' hidden>
+  <view class="shore-name">{{item.address_name}}</view>
+  <view class="shore-address flex">
+    <view class="sub mr10">{{item.address}}</view>
+    <view class="f12">{{item.distance}}km</view>
+  </view>
+</view> -->
+
+
+<view class='now'  wx:if="{{address_type == 1}}">
+  <view class='desc'>您当前位置：</view>
+  <view class='nowBox flex'>
+    <view class='nowAdress sub'>
+      {{now_address}}
+    </view>
+    <view class='edit' bindtap="location">
+      <text class='iconfont icon-locationfill'></text>重新定位</view>
+  </view>
+</view>
+
+<!-- <view class='commList nowComm' wx:if="{{address_type == 2}}">
+  <view class='h2Title'>当前社区</view>
+  <view class='items'>
+    <view class='juli' wx:for="{{all_address}}" wx:if="{{item.id == now_community.id && item.distance}}">
+      <text class='iconfont icon-locationfill'></text> {{item.distance}}km</view>
+    <view class='infos2 flex'>
+      <image src='{{now_community.headimgurl}}' mode='aspectFill'></image>
+      <view class='infos'>
+        <view class='teamName'>{{now_community.colonel_name}}</view>
+        <view class='title f12 grey'>{{now_community.address_name}}</view>
+      </view>
+    </view>
+    <view class='address tc'>
+      <text>自提地址：{{now_community.address}}</text>
+    </view>
+    <view class='btnbtn' catchtap='returnIndex'>进入团长小区</view>
+  </view>
+</view> -->
+
+<view class='commList' wx:if="{{address_type == 1}}">
+  <view class='h2Title'>附近自提点</view>
+  <view class='items' wx:for="{{all_address}}" catchtap='selectAddress' data-address_name="{{item.address_name}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-distance="{{item.distance}}" data-longitude="{{item.longitude}}"
+    data-latitude="{{item.latitude}}" data-id="{{item.id}}" data-default_colonel_nickname="{{item.default_colonel_nickname}}" data-default_colonel_uid="{{item.default_colonel_uid}}" data-default_colonel_headimgurl='{{item.default_colonel_headimgurl}}'>
+    <view class='juli' wx:if="{{item.distance}}">
+      <text class='iconfont icon-locationfill'></text> {{item.distance}}km</view>
+    <view class='flex infos2'>
+      <image src='{{item.default_colonel_headimgurl}}' mode='aspectFill' wx:if="{{address_type == 2}}"></image>
+      <view class='infos sub'>
+        <view class='title' wx:if="{{address_type == 2}}">
+          <text class='teamName'>{{item.default_colonel_nickname}}</text>
+        </view>
+        <view class='title f12 grey'>{{item.address_name}}</view>
+      </view>
+    </view>
+    <view class='address tc'>
+    <text>自提地址：{{item.address}}</text>
+    </view>
+    <view class='btnbtn' wx:if="{{address_type == 2}}">进入团长小区</view>
+  </view>
+</view>

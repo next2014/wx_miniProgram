@@ -1,0 +1,37 @@
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+  <!--filter start-->
+  <view class="filter-box tc {{son_cate.length > 0?'':'menu-none'}}">
+    <view class="menu-fixed">
+      <scroll-view class="son-cate tl f14 gridXb" scroll-x="true" scroll-with-animation="true" wx:if="{{son_cate.length > 0}}">
+        <view class="submenu-item {{this_cate_id == select_cate? 'active':''}}" bindtap='change_cate' data-val="{{this_cate_id}}">全部</view>
+        <view class="submenu-item {{item.id == select_cate? 'active':''}}" wx:for="{{son_cate}}" wx:key="" bindtap='change_cate' data-val="{{item.id}}">{{item.name}}</view>
+      </scroll-view>
+      <view class="filter flex">
+        <view class="sub filter-item {{select_type == ''?'active':''}}" bindtap="select_goods_list" data-stype="">综合</view>
+        <view class="sub filter-item {{select_type == 'xiaoliang'?'active':''}}" bindtap="select_goods_list" data-stype="xiaoliang">销量</view>
+        <view class="sub price-rank {{is_select_jiage?'pr-arrow':''}} {{select_type == 'jiage'?'active':''}}" bindtap="select_goods_list" data-stype="jiage">价格</view>
+        <view class="type f20 filter-item" bindtap="toggle_list_type_bind">
+          <text class="iconfont {{list_type==true?'icon-list':'icon-apps'}}"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--list start-->
+  <goodslist data="{{goods_data}}" mode="{{list_type?'item-listbox':'item-colbox'}}" close_page="{{false}}" />
+  <!--back top-->
+  <view class="backtop" bindtap="goTop" wx:if="{{floorstatus}}">
+    <text class="iconfont icon-fold"></text>
+  </view>
+  <!--tips-->
+  <block wx:if="{{is_loadmore==false}}">
+    <view class="tips-foot grey tc f12">
+      不要扯了，已经扯到底了
+    </view>
+  </block>
+</block>

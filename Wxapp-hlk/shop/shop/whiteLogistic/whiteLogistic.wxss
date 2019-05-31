@@ -1,0 +1,72 @@
+/* pages/shop/whiteLogistic/whiteLogistic.wxss */
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+.formBox{
+  display: block;
+}
+.backType{
+  padding: 10rpx 24rpx;
+  background-color: #fff;
+  color: #999;
+  font-size: 28rpx;
+}
+.radioGroup{
+  background-color: #fff;
+}
+.radioCell{
+  padding: 20rpx 24rpx;
+  justify-content: space-between;
+}
+.radio{
+  transform: scale(0.9);
+}
+ .wx-radio-input-checked{
+  background-color:var(--DShop-mcolor) !important;
+}
+.wx-radio-input-checked{
+  border: 1px solid var(--DShop-mcolor) !important;
+}
+
+.hostBack{
+  background-color: #fff;
+  padding: 20rpx 24rpx;
+}
+.hostBack .grey::before{
+  border-color: red red transparent transparent;
+}
+.hostBack .fr{
+  margin-right: 48rpx;
+}
+.addBox{
+  align-items: center;
+  font-size: 32rpx;
+}
+.addDetail{
+ line-height: 44rpx;
+ margin-right: 50rpx;
+}
+.locIconBox{
+  padding: 14rpx;
+  font-size: 40rpx;
+}
+.locIconBox:active{
+  background: #f5f5f5;
+}
+.inpCell {
+  padding: 20rpx 24rpx;
+  background-color: #fff;
+}
+.inpCell .sub{
+  text-align: right;
+}
+.input-placeholder{
+  font-size: 28rpx;
+}
+.comfirmBtn{
+  color: #fff;
+  margin: 50rpx 24rpx;
+}
+.comfirmBtn:active{
+  opacity: 0.85;
+}

@@ -1,0 +1,3 @@
+<block wx:if="{{this_is_show}}">
+<ad unit-id="{{this_ad_id||''}}"></ad>
+</block>

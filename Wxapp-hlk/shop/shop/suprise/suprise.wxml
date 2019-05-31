@@ -1,0 +1,14 @@
+<!--pages/shop/surprise/suprise.wxml-->
+
+<button bindtap="start" wx:if="{{game == false}}">开始</button>
+<text>{{showText}}</text>
+<text wx:if="{{game == false}}">\n控制码农，躲过所有'问题'</text>
+<text wx:if="{{daojishi>0}}">\n倒计时：{{daojishi}}</text>
+<text wx:if="{{score > 0}}">\n{{game?'':'GameOver'}}</text>
+<text>\n得分：{{score}}</text>
+<view wx:if="{{game}}">
+  <button bindtap="left">左</button>
+  <button bindtap="right">右</button>
+</view>
+<!-- <button bindtap="startCompass">开启罗盘感应</button>
+<button bindtap="stopCompass">关闭罗盘感应</button> -->

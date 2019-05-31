@@ -1,0 +1,61 @@
+<!--pages/shop/league/league.wxml-->
+<!-- 富文本 -->
+<import src="/wxParse/wxParse.wxml" />
+<view class='richBox'>
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+
+<!-- 信息 -->
+<form bindsubmit="applyFormSubmit" report-submit="true">
+  <view class='cellBox'>
+    <view class='gridXb boxTit'>提交信息</view>
+    <view class='cells'>
+      <view class='cell flex'>
+        <view class='cellTit'>{{apply_type == 1 ? '小区名称' : '商家名称'}}</view>
+        <input class='sub' name="type_name" placeholder='请填写'></input>
+      </view>
+      <view class='cell flex' bindtap='getUserLocation'>
+        <view class='cellTit'>{{apply_type == 1 ? '小区地址' : '商家地址'}}</view>
+        <input class='sub' name="address" placeholder='请选择' disabled value='{{address}}'></input>
+      </view>
+      <view class='cell flex'>
+        <view class='cellTit'>详细地址</view>
+        <input class='sub' name="detail" placeholder='请填写' value='{{detail}}'></input>
+      </view>
+      <view class='cell flex'>
+        <view class='cellTit'>姓名</view>
+        <input class='sub' name="name" placeholder='请填写'></input>
+      </view>
+      <view class='cell flex'>
+        <view class='cellTit'>手机号</view>
+        <input class='sub' name="telephone" type='number' placeholder='请填写'></input>
+      </view>
+    </view>
+  </view>
+
+  <view class='proBox flex'>
+    <checkbox-group bindchange="checkboxChange">
+      <checkbox id='pro' value='1'></checkbox>
+    </checkbox-group>
+    <label for='pro'>
+      <text class='linght'>我已阅读并同意</text>
+    </label>
+    <view>
+      <text class='proty mainColor' catchtap='jumpRule' wx:if="{{apply_describe.rule_title}}">{{apply_describe.rule_title}}</text>
+      <text class='proty mainColor' catchtap='jumpRule' wx:else>{{apply_type == 1 ? '加盟协议' : '入驻协议'}}</text>
+    </view>
+  </view>
+
+  <button class='mainColor_bg submit' formType="submit" disabled="{{!submission}}">提交申请</button>
+</form>
+
+<!-- <view class='floatBox' wx:if="{{rule_show}}">
+  <view class='floatBox mask'></view>
+  <view class='popup'>
+    <view>{{apply_describe.rule}}</view>
+    <view class='understand' catchtap='ruleShow'>我知道了</view>
+  </view>
+
+</view> -->

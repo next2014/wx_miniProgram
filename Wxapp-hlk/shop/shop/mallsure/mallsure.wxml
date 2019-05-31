@@ -1,0 +1,335 @@
+<!--pages/shop/placeOrder/placeOrder.wxml-->
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+  <form bindsubmit="order_formSubmit" report-submit="true">
+    <view class='topBg mainColor_bg'></view>
+    <view class='mainPage'>
+      <view class='topMenu flex tc mainColor' wx:if="{{order_info.way.length>1}}">
+        <view class='sub {{post_data.shipping_type == 2 ? "active" : ""}}' catchtap='choose_shipping_type' data-type="1">商家配送</view>
+        <view class='sub {{post_data.shipping_type == 1 ? "active" : ""}}' catchtap='choose_shipping_type' data-type="2">到店自提</view>
+      </view>
+      <view class='topMenu flex tc mainColor' wx:if="{{order_info.way.length == 1}}">
+        <view class='sub active' wx:if="{{order_info.way[0] == 1}}">商家配送</view>
+        <view class='sub active' wx:if="{{order_info.way[0] == 2}}">到店自提</view>
+      </view>
+      <!--商家配送  -->
+      <view class='flex sellerDeliver arrowR' wx:if="{{post_data.shipping_type == '1' || (order_info.way.length==1 && order_info.way[0] ==1)}}">
+        <block wx:if="{{post_data.wxAddress != undefined}}">
+          <view class='mainColor sellerIcon'>
+            <text class='iconfont icon-location'></text>
+          </view>
+          <view class='sub' bindtap="select_address_bind">
+            <view class='flex'>
+              <view class='lineText userName'>{{post_data.wxAddress.userName}}</view>
+              <view class='ml10'>{{post_data.wxAddress.telNumber}}</view>
+            </view>
+            <view class='lineText2 grey deliverAddr'>{{post_data.wxAddress.address}}{{post_data.wxAddress.detailInfo}}</view>
+            <view class="top-poptips red" wx:if="{{price_info.not_achieve == true}}">
+              <text>{{price_info.shipping_fee}}</text>
+            </view>
+          </view>
+          <!-- 地址提示 -->
+
+        </block>
+        <block wx:else>
+          <view class='mainColor sellerIcon'>
+            <text class='iconfont icon-home1'></text>
+          </view>
+          <view class='sub' bindtap="select_address_bind">
+            <view class='flex'>
+              <view class='lineText userName'>收货地址：</view>
+              <view class='ml10'>{{this_address_info}}</view>
+            </view>
+            <view class='lineText2 grey deliverAddr'>
+              <input type="hidden" name="address_id" value="{{this_address_id}}" style="display:none;" />
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <!--到店自提  -->
+      <view class='selfTake ' wx:if="{{post_data.shipping_type == '2' || (order_info.way.length==1 && order_info.way[0] ==2)}}">
+        <view class='flex psInfo'>
+          <view class='mainColor sellerIcon'>
+            <text class='iconfont icon-location'></text>
+          </view>
+          <view class='sub'>
+            <view class=' flex'>
+              <view class='lineText2 selfTakeDot'> {{all_address.address_name}}</view>
+              <view class='mainColor changeSelfTake' catchtap='selectSelfAddress' wx:if="{{all_address.no_ziti != 1 && order_info.community_config.is_open != 1}}">
+                <text>点击切换</text>
+              </view>
+            </view>
+            <view class='flex mt5 linght' catchtap='to_self_adress'>
+              <view class='lineText userName'>{{all_address.address}}</view>
+              <view class='ml10' wx:if="{{all_address.distance}}">{{all_address.distance}}km</view>
+            </view>
+          </view>
+          <view class='telIconBox mainColor'>
+            <text class="iconfont icon-dianhua " catchtap='bind_contant_phone'></text>
+          </view>
+        </view>
+        <view class='takeInfoBox mt10'>
+          <view class='flex takeInfo'>
+            <label>取货人姓名：</label>
+            <input class="message-input sub" name="name" placeholder="取货人姓名" value="{{name}}" />
+          </view>
+          <view class='flex takeInfo '>
+            <view>取货人电话：</view>
+            <input class="message-input sub" name="phone" placeholder="取货人电话" value="{{phone}}" />
+          </view>
+
+
+
+        </view>
+      </view>
+
+
+      <view class='bespeakBox mt10'>
+        <block wx:if="{{post_data.shipping_type == '2' || post_data.shipping_type == '1' || order_info.way.length==1}}">
+          <view class="besCell  gridXb" wx:if="{{time_type == 1}}">
+            <view class=" flex " catchtap="bindTime">
+              <input type="text" name="date_time_week" value="{{date}} {{time}} {{week}} " placeholder="请选择服务时间段" disabled hidden="true" />
+              <view class="tdateBox flex" wx:if="{{date && time && week}}">
+                <text> {{date}} </text>
+                <input style='display:none' name='res_date' value='{{date}}' />
+                <text> {{time}} </text>
+                <input style='display:none' name='res_time' value='{{time}}' />
+                <text> {{week}} </text>
+                <input style='display:none' name='res_week' value='{{week}}' />
+              </view>
+              <view class="tdateBox flex " wx:else>
+                <view>预约时间</view>
+                <view class=' sub arrowR'></view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <!--自定义字段：  -->
+        <import src="shopForm/shopForm.wxml" />
+        <template is="form" data="{{data:form}}"></template>
+        <view class='flex gridXb   besCell ' hidden='{{post_data.shipping_type == "2" && is_time == 1}}'>
+          <view class='cellTit'>留言：</view>
+          <input class='sub' name="post_info" placeholder='请填写内容'></input>
+          <!-- <textarea class='sub textarea' name="post_info" placeholder='请填写内容'></textarea> -->
+        </view>
+      </view>
+
+      <!--商品信息  -->
+      <view class='commodityInfo mt5'>
+        <view class='comLIist'>
+          <view class='comItem flex' wx:for="{{order_info.glist}}" wx:key>
+            <image class='comImg' mode='aspectFill' src="{{item.goods_info.g_img_url}}"></image>
+            <view class='sub comItemRg flex'>
+              <view class='flex'>
+                <view class='comName sub lineText'>{{item.goods_info.g_name}}</view>
+                <view class='ml10'>
+                  <text class='f12'>￥</text>
+                  <text>{{item.goods_info.price_info.price}}</text>
+                </view>
+              </view>
+              <view class='flex grey'>
+                <view class='sub mr10 lineText2 comGoodsAttr'>{{item.goods_attr}}</view>
+                <view>x {{item.goods_number}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!--配送费  -->
+        <view class='flex  dcBox'>
+          <view wx:for="{{price_info.show_text}}" wx:if="{{item.name == '运费'}}">配送费用</view>
+          <view class='sub ml10 deliverCost'>
+            <view class='arrowR ' wx:for="{{price_info.show_text}}" wx:if="{{item.name == '运费'}}">
+              <text>{{item.name}}：</text>
+              <text class='f12'>{{item.sign}}￥</text>
+              <text>{{item.price}}</text>
+            </view>
+            <view class='mainColor f12 ' wx:if="{{price_info.freeCondition != ''}}">{{price_info.freeCondition}}</view>
+          </view>
+        </view>
+
+        <!--优惠券  -->
+        <view class='gridXt couponBox'>
+          <view class='flex couponCell' wx:if="{{order_info.is_true_mianjian == 1}}">
+            <view class='couIcon decrease'>减</view>
+            <view class='sub'>
+              <text>满减优惠</text>
+            </view>
+            <view wx:if="{{order_info.is_true_mianjian != 1}}">
+              <text class='linght ml10'>暂无可用</text>
+            </view>
+            <block wx:for="{{price_info.show_text}}">
+              <view class='red' wx:if="{{order_info.is_true_mianjian == 1 && item.name == '满减'}}">
+                <text>-</text>
+                <text class='f12'>￥</text>
+                <text>{{item.price}}</text>
+              </view>
+            </block>
+          </view>
+          <view class='flex couponCell' wx:if="{{able_quan_list.length > 0}}">
+            <view class='couIcon vouch'>券</view>
+            <view class='sub'>
+              <text>优惠券</text>
+            </view>
+            <view wx:if="{{order_info.coupon && price_info.quan_info[1] == null && able_quan_list.length > 0}}" bindtap="go_select_dai_bind" class="red">
+              <text class=' ml10'>有{{able_quan_list.length}}张优惠券可用</text>
+            </view>
+            <view wx:if="{{able_quan_list.length < 1}}">
+              <text class='linght ml10'>暂无可用</text>
+            </view>
+            <block wx:for="{{price_info.show_text}}">
+              <view class='red' wx:if="{{item.name == '优惠券'}}" bindtap="go_select_dai_bind">
+                <text>-</text>
+                <text class='f12'>￥</text>
+                <text>{{item.price}}</text>
+              </view>
+            </block>
+          </view>
+          <block wx:for="{{price_info.show_text}}">
+            <view class='flex couponCell' wx:if="{{item.name == '会员优惠'}}">
+              <view class='couIcon member'>
+                <text class='iconfont icon-Member'></text>
+              </view>
+              <view class='sub'>会员优惠</view>
+              <view class='red'>
+                <text>-</text>
+                <text class='f12'>￥</text>
+                <text>{{item.price}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+
+        <!--合计  -->
+        <view class='gridXt totalCoat '>
+          <text>小计：</text>
+          <text class='red'><text>￥</text>{{price_info.order_amount}}</text>
+        </view>
+      </view>
+
+    </view>
+    <!--预约时间选择 -->
+    <block wx:if="{{post_data.shipping_type == '2' || post_data.shipping_type == '1' || order_info.way.length==1}}">
+      <view class="shade_bg  {{is_time==1?'':'display-hide'}} ">
+        <view class="dateBox ">
+          <view class="pchoose grey tc gridXb">
+            <text>请选择服务时间</text>
+            <text></text>
+            <view class='closeBtn' catchtap="bindTimeClose"></view>
+          </view>
+          <scroll-view class="scroBox tc gridXb " scroll-x="true">
+            <block wx:for='{{fDate}}' wx:key="index">
+              <view class="scroItem  {{week_status == item.date?'mainColor':''}}" catchtap="bindChangeDate" data-index="{{item.date}}">
+                <view class="">
+                  <block wx:if='{{item.today == 1}}'>
+                    <view class="">今天</view>
+                  </block>
+                  <block wx:elif='{{item.today == 2}}'>
+                    <view>明天</view>
+                  </block>
+                  <block wx:else>
+                    <view>{{item.week}}</view>
+                  </block>
+                </view>
+                <view class="f14">
+                  {{item.date}}
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+          <view class="tPartBox ">
+            <block wx:for="{{ck_tpart}}" wx:key="index">
+              <!-- 次数不大于3次 -->
+              <view class="tPart tc gridFour {{time_status==item.time?'mainColor':'white-bg'}} " catchtap="bindChangeTime" data-index="{{item.time}}">
+                <text> {{item.time}}</text>
+              </view>
+            </block>
+          </view>
+          <!--确定按钮  -->
+          <button class='confirmBtn mainColor_bg' catchtap='changTimeOver'>确定</button>
+        </view>
+      </view>
+    </block>
+    <!--预约时间结束 -->
+    <!--底部  -->
+    <view class='flex footer'>
+      <button class='sub'>
+        <text>应付：</text>
+        <text class='red '><text class='f14'>￥</text>{{price_info.order_amount}}</text>
+      </button>
+      <block wx:if="{{post_data.shipping_type == '1' || (order_info.way.length==1 && order_info.way[0] ==1) || order_info.way.length==0}}">
+        <button class='mainColor_bg' formType="submit" disabled="{{btn_submit_disabled}}">提交订单</button>
+      </block>
+      <block wx:else>
+        <button class='mainColor_bg' bindtap='addressRemind' disabled="{{btn_submit_disabled}}">提交订单</button>
+      </block>
+      
+    </view>
+    <!-- 自提信息确认 -->
+    <view class='shade_bg' wx:if="{{address_remind}}">
+      <view class='dateBox'>
+        <view class='ptBox'>
+          <view class="closeBtn" bindtap='addressRemind'></view>
+          <view class="zitiTips f16">此商品需要您到店自提，请仔细确认地址</view>
+          <view class="zitiInfoBox">
+            <view class="zitiInfoItem flex"><text class="zitiInfoItemTit">自提点：</text><text class="sub">{{all_address.address_name}}</text></view>
+            <view class="zitiInfoItem flex"><text class="zitiInfoItemTit">地址：</text><text class="sub">{{all_address.address}}</text></view>
+          </view>
+        </view>
+        <view class="weui-panel weui-panel_access m20">
+          <button class="weui-btn" type="primary" formType="submit" disabled="{{btn_submit_disabled}}">确认下单</button>
+        </view>
+      </view>
+    </view>
+
+  </form>
+
+  
+
+  <view class='shade_bg' wx:if="{{pay_show}}">
+    <view class='dateBox'>
+      <form bindsubmit="pay_confirmOrder" report-submit="true">
+        <!--支付方式  -->
+        <view class='ptBox'>
+          <view class="closeBtn" catchtap='payClose'></view>
+          <view class="pTit tc f16">订单金额：{{price_info.order_amount}}</view>
+          <view class="can-use-list">
+            <radio-group name="pay_name">
+              <label class='gridXb'>
+                <view>
+                  <text class="iconfont icon-Paywechat"></text>
+                  <text class='mr10'>微信支付</text>
+                </view>
+                <radio value="0" checked/>
+              </label>
+              <label class='gridXb' wx:if="{{cardinfo.status}}">
+                <view>
+                  <text class="iconfont icon-yuezhifu"></text>
+                  <text class='mr10'>余额支付</text>
+                </view>
+                <radio value="1" />
+              </label>
+              <label wx:if="{{oinfo.public_info.is_huodaofukuan == 1}}">
+                <view>
+                  <text class="iconfont icon-huodaofukuan"></text>
+                  <text class='mr10'>货到付款</text>
+                </view>
+                <radio value="2" />
+              </label>
+            </radio-group>
+          </view>
+        </view>
+
+        <view class="weui-panel weui-panel_access m20">
+          <button class="weui-btn" type="primary" formType="submit">确认下单</button>
+        </view>
+      </form>
+    </view>
+  </view>
+</block>

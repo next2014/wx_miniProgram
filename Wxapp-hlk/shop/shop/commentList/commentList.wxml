@@ -1,0 +1,28 @@
+<!--pages/shop/order/commentList/index.wxml-->
+<view class="recording-part">
+  <view class="r-item gridXb" wx:for="{{list}}">
+    <view class="info flex">
+      <image class="itemUserImg" src="{{item.headimgurl}}" mode="aspectFill"></image>
+      <view class="sub f12">
+        <text class="linght fr">{{item.addtime}}</text>
+        <text class="grey">{{item.nickname}}</text>
+        <view class='clearfix'>
+          <text class="score-star fl {{item.p_fenshu == 1 ? 'starNum': ''}} iconfont icon-favorfill"></text>
+          <text class="score-star fl {{item.p_fenshu == 2 ? 'starNum': ''}} iconfont icon-favorfill"></text>
+          <text class="score-star fl {{item.p_fenshu == 3 ? 'starNum': ''}} iconfont icon-favorfill"></text>
+          <text class="score-star fl {{item.p_fenshu == 4 ? 'starNum': ''}} iconfont icon-favorfill"></text>
+          <text class="score-star fl {{item.p_fenshu == 5 ? 'starNum': ''}} iconfont icon-favorfill"></text>
+        </view>
+        <view class="content">
+          <text>{{item.content}}</text>
+          <view class="commentImgBox" catchtap='previewImage' data-index='{{index}}'>
+            <image class="commentImgItem" wx:for="{{item.photo_urls}}" wx:for-item="idx" src="{{idx}}" mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="content mt8" wx:if="{{item.reply_content == '' ? false : true}}">
+          <text>商家回复：</text><text class="commentReplay">{{item.reply_content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

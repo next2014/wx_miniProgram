@@ -71,7 +71,7 @@ swiper-item image {
 }
 .type-item-on{
   color:#e64340;
-  border-bottom: 1rpx solid #e64340;
+  /* border-bottom: 1rpx solid #e64340; */
 }
 .weui-loadmore {
   margin-bottom: 0px;
@@ -82,7 +82,7 @@ swiper-item image {
   flex-wrap:wrap;
   box-sizing: content-box;
   padding: 24rpx;
-  background-color: #F2f2f2;
+  /* background-color: #F2f2f2; */
 }
 .goods-box{
   width: 339rpx;

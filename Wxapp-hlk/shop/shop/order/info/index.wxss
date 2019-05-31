@@ -1,0 +1,172 @@
+/* pages/shop/orderDetail/orderDetail.wxss */
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+page {
+  font-size: 28rpx;
+  padding-bottom: 120rpx;
+}
+
+.blue {
+  color: #4587b3;
+}
+
+.sellerDeliver {
+  align-items: center;
+  padding: 20rpx 24rpx;
+  background-color: #fff;
+}
+
+.sellerIcon {
+  font-size: 50rpx;
+  margin-right: 16rpx;
+}
+
+.userName {
+  max-width: 50%;
+}
+
+/* 商品信息 */
+
+.deliverCost {
+  padding-right: 0;
+}
+
+.discountMoney {
+  margin-right: 40rpx;
+}
+
+/* 订单信息 */
+
+.infoBox {
+  background-color: #fff;
+  padding: 20rpx 24rpx;
+}
+
+.infoBlock {
+  margin-bottom: 30rpx;
+}
+
+.infoTitle {
+  font-size: 30rpx;
+  margin-bottom: 8rpx;
+}
+
+.infoCell {
+  line-height: 1.25;
+  padding: 8rpx 0;
+  align-items: center;
+}
+
+.infoCell .mainColor.f18 {
+  padding: 0 16rpx;
+}
+
+.btnBox {
+  padding: 30rpx;
+}
+
+.btnBox .btn {
+  width: 240rpx;
+  font-size: 30rpx;
+  border-radius: 0;
+  color: #999;
+  line-height: 70rpx;
+  background-color: #fff;
+}
+
+.btnBox .btn::before {
+  border-color: #bbb;
+}
+
+/*  */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  align-items: center;
+}
+
+.footer button {
+  line-height: 100rpx;
+  border-radius: 0;
+  font-size: 32rpx;
+}
+
+.footer button::after {
+  display: none;
+}
+
+.footerLf .red {
+  font-weight: 700;
+}
+
+.footerLf  f12 {
+  font-weight: 500;
+}
+
+.textRg {
+  text-align: right;
+  color: #999;
+}
+
+.footerRg {
+  color: #fff;
+  width: 220rpx;
+  margin: 0;
+  text-align: center;
+}
+
+.buyAgain {
+  color: #fff;
+  background: #333;
+}
+
+.subColor_bg {
+  color: #666;
+  background-color: #e2e2e2;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.comName {
+  line-height: 1.2;
+}
+
+.comItem:nth-child(n+2) {
+  margin-top: 10rpx;
+}
+
+.goodName {
+  max-width: 82%;
+}
+
+.refunded {
+  font-size: 10px;
+  width: 36px;
+  height: 13px;
+  line-height: 13px;
+  background-color: #f66;
+  color: #fff;
+  padding: 0 6rpx;
+  border-radius: 2px;
+  margin-top: 3rpx;
+  margin-left: 6rpx;
+}
+
+.scand-card {
+  padding: 30rpx;
+  background: #fff;
+}
+
+.scand-img {
+  width: 160px;
+  height: 160px;
+  margin: 20rpx auto 0;
+}

@@ -1,0 +1,9 @@
+<!--海报  -->
+<view class='picBox'>
+<view class='load tc' hidden='{{loadhide}}'>
+  <text class='loading-icon'></text> 正在生成中...
+</view>
+<canvas canvas-id='myCanvas' hidden='{{cavhide}}' style="width: 750rpx; height: 1200rpx; opacity:0"></canvas>
+<image src="{{imgurl}}" class='cavimg' hidden='{{imghide}}' mode='widthFix' ></image>
+<button class='savePicBtn mainColor_bg' bindtap='savePic'>保存图片</button>
+</view>

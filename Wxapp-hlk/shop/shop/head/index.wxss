@@ -1,0 +1,84 @@
+/* pages/shop/head/index.wxss */
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+.settled{
+  background: var(--DShop-mcolor);
+  color: #fff;
+  padding: 20rpx 30rpx 30rpx 40rpx;
+  align-items: center;
+  line-height: 1.2;
+}
+.sCount{
+  font-size: 88rpx;
+}
+.sDesc{
+  font-size: 24rpx;
+}
+.all{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.withdrawBtn{
+  background: rgba(0, 0, 0, .2);
+  line-height: 65rpx;
+  padding: 0 40rpx;
+  border-radius: 100px;
+}
+.head{
+  text-align: center;
+  background: #fff;
+  padding: 30rpx 0;
+}
+.count{
+  font-size: 48rpx;
+}
+.desc{
+  font-size: 24rpx;
+  color: grey;
+}
+.list{
+  margin-top: 15rpx;
+}
+.title{
+  padding: 0 30rpx;
+  line-height: 2.8;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.items{
+  border-bottom: 1px solid #f5f5f5;
+  padding:30rpx 40rpx;
+}
+.lDesc{
+  color: grey;
+}
+.lCount{
+  font-size: 36rpx;
+  margin-left: 20rpx;
+}
+
+.recoudItem {
+  background-color: #fff;
+  margin-bottom: 14rpx;
+}
+
+.itemTop, .itemMid, .itemBot {
+  padding: 22rpx 30rpx;
+}
+.midCount{
+  max-width: 270rpx;
+}
+.scrollBox {
+  white-space: nowrap;
+}
+
+.scrollImg {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 6rpx;
+  margin-left: 30rpx;
+}
+
+.scrollImg:last-child {
+  margin-right: 40rpx;
+}

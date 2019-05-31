@@ -1,0 +1,51 @@
+<!--pages/user/member/member-recharge/index.wxml-->
+<view class="infoBox">
+  <view class="flex infoItem">
+    <text class="infoItemTit">充值账号：</text>
+    <text class="sub">{{card.nickname}}  {{card.mobile}}</text>
+  </view>
+  <view class="flex infoItem">
+    <text class="infoItemTit">余额：</text>
+    <text class="sub">￥{{card.recharge}}</text>
+  </view>
+</view>
+
+<view class='cardRechargeBox'>
+  <view class='title'>请选择充值金额</view>
+  <view class='rechargeItemBox'>
+    <view class='rechargeItem gridFour' wx:for="{{recharge_list}}" wx:key="{{index}}" catchtap='recharge' data-index="{{index}}">
+      <view>
+        <view class="rechargePrice">￥{{item.condition}}</view>
+        <view class='rechargePriceTip'>{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <!--自定义充值-->
+  <view class='title'>更多充值</view>
+  <view class='rechargeItemBox'>
+    <view class='rechargeItem gridFour' catchtap='rechargeBox'>
+      <view>
+        <view class="rechargePrice">自由充</view>
+        <view class='rechargePriceTip'>充值额度自定义</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 充值弹窗 -->
+<view class="floatBox" wx:if="{{is_show}}">
+  <view class="floatBox floatBoxBg" style="display:block;"></view>
+  <form report-submit='true' bindsubmit='onRechargeSubmit' >
+    <view class="tpl-memberPopCont">
+      <view class="tpl-memberPopClose iconfont icon-close" catchtap='rechargeBox'></view>
+      <view class="tpl-memberPopTit">自由充</view>
+      <view class="gridFour tpl-memberPopInp flex">
+        <input class="sub" placeholder="请输入充值金额" type='digit' name='money' bindinput="onMoneyInput" maxlength='5' ></input>
+        <text>元</text>
+      </view>
+      <button class="tpl-memberPopBtn" type="primary" form-type='submit'>立即充值</button>
+    </view>
+  </form>
+</view>
