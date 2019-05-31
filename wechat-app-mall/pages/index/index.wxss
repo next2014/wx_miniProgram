@@ -20,8 +20,8 @@
   overflow: hidden;
 }
 .category-imgbox{
-  width:60rpx;
-  height:60rpx;
+  width:75rpx;
+  height:75rpx;
 }
 .category-title{
   font-size: 24rpx;
@@ -36,12 +36,12 @@
 }
 .swiper_box {
   width: 750rpx;
-  height:250rpx;
+  height:400rpx;
 }
 
 swiper-item image {
   width: 750rpx;
-  height:250rpx;
+  height:400rpx;
 }
 .swiper-container .dots{  
   position: absolute;  
