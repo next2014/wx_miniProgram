@@ -1,0 +1,100 @@
+/* pages/user/examList/index.wxss */
+@import "/css/color/color.wxss";
+
+button[type="primary"] {
+  background: var(--mColor);
+}
+
+button[type="primary"].button-hover {
+  background: var(--mColorLight);
+}
+
+button:not([plain])::after {
+  border: none;
+}
+
+.topMenuBox {
+  background: #fff;
+  padding: 20rpx 30rpx;
+}
+
+.topMenuItemBox {
+  white-space: nowrap;
+}
+
+.topMenuItem {
+  display: inline-block;
+  padding: 0 30rpx;
+  line-height: 60rpx;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  vertical-align: top;
+  margin-right: 20rpx;
+}
+
+.topMenuItem.active {
+  background: #f2f2f2;
+  color: #666;
+}
+
+.examList {
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 30rpx;
+}
+
+.writeOffInfo {
+  border-bottom: 1rpx dashed #e9e9e9;
+  padding-bottom: 20rpx;
+  font-size: 32rpx;
+}
+
+.writeOffState {
+  padding: 0 16rpx;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  color: var(--mColor);
+  border: 1rpx solid;
+  border-radius: 4rpx;
+  margin-left: 10rpx;
+  align-self: center;
+}
+
+.writeOffItem, .writeOffInfoItem {
+  line-height: 40rpx;
+}
+
+.writeOffGoodsInfo {
+  color: #666;
+  padding-top: 20rpx;
+}
+
+.goodsBox {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  overflow:hidden;
+  transition-property: height;
+  transition-duration: 1s;
+}
+
+.goodsItem {
+  background: #f2f2f2;
+  padding: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.goodsArrt {
+  font-size: 24rpx;
+}
+
+.goodsItemMore {
+  width: 240rpx;
+  margin: 0 auto 20rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+}
+
+
+/* 暂无数据 */
+.no-content-img{width: 80%;}

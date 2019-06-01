@@ -1,0 +1,12 @@
+/* pages/shop/audit/audit.wxss */
+
+.auditing{
+  width: 147rpx;
+  height: 110rpx;
+  margin-top: 230rpx;
+  margin-bottom: 40rpx;
+}
+.tc .f16{
+color: #000;
+margin-bottom: 6rpx;
+}

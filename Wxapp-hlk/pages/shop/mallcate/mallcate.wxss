@@ -1,0 +1,359 @@
+/* mallcart.wxss */
+
+
+/* 基本框架样式 */
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.search {
+  height: 100rpx;
+  padding-top: 16rpx;
+  background-color: var(--DShop-mcolor);
+}
+
+.search-box {
+  align-items: center;
+  height: 68rpx;
+  margin-left: 30rpx;
+  background-color: #fff;
+  border-radius: 100rpx;
+  overflow: hidden;
+}
+
+
+.seaIcon {
+  width: 80rpx;
+  text-align: center;
+}
+
+.seaIcon  .icon-search {
+  font-size: 32rpx;
+  color: var(--DShop-mcolor-leight);
+}
+.search-input{
+  
+  text-align: center;
+  padding-left: 30rpx;
+}
+.input-placeholder {
+   color: var(--DShop-mcolor-leight);
+}
+
+.cartBox {
+  position: relative;
+  padding: 0 50rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+
+.cartBox .icon-cartfill {
+  font-size: 44rpx;
+  color: #fff;
+}
+
+.cartBox .wedget {
+  position: absolute;
+  display: block;
+  top: 0px;
+  right: 30rpx;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 4px;
+  min-height: 14px;
+  min-width: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #f66;
+}
+
+/*列表  */
+
+/*左边侧边栏  */
+.noSearchscreen{
+  height: 100vh;
+}
+.hasSearchScreen{
+ height: calc(100vh - 100rpx);
+}
+.cateListBox {
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 180rpx;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.cate-name {
+  position: relative;
+  line-height: 1.25;
+  padding: 32rpx 24rpx;
+  font-size: 28rpx;
+  background-color: transparent;
+}
+.cate-name:last-child{
+  margin-bottom: 200rpx;
+}
+.MainCateActive {
+  font-weight: 700;
+  background-color: #fff;
+}
+
+
+/* 右边  */
+.cate-con {
+  position: relative;
+  overflow: hidden;
+}
+
+.cate-con-top {
+  position: relative;
+  z-index: 92;
+  background-color: #fff;  
+}
+
+.fixedShade {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.sortMenuBox {
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.sortMenuBox::before{
+  background-color: #e2e2e2;
+}
+.sortMenu {
+  height: 100%;
+  justify-content: center;
+}
+
+.menuActive {
+  position: relative;
+  color: var(--DShop-mcolor-leight);
+}
+
+.menuActive .iconfont {
+  color: var(--DShop-mcolor-leight);
+}
+
+.arrowBox {
+  padding: 0 4rpx;
+  color: #333;
+}
+
+.arrowBox .arrowIcon {
+  height: 45rpx;
+}
+
+.arrowBox .upIcon {
+  line-height: 72rpx;
+}
+
+.arrowBox .downIcon {
+  line-height: 24rpx;
+}
+
+.subCateBox {
+  align-items: center;
+}
+
+.subCateBox::before {
+  background-color: #e2e2e2;
+}
+
+.subCateTabBox {
+  white-space: nowrap;
+  text-align: left;
+}
+
+.subCateTab {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 24rpx;
+  font-size: 26rpx;
+  background-color: transparent;
+
+}
+.subCateTab:last-child{
+  margin-right: 40rpx;
+}
+.subTabActive {
+  position: relative;
+  color: var(--DShop-mcolor);
+}
+
+.subTabActive .subCateTabImg {
+  border: 2rpx solid currentColor;
+}
+
+.subTabActive::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rpx;
+  background-color: var(--DShop-mcolor);
+  transform: scale(0, 1);
+  animation: active 500ms ease-in-out forwards;
+}
+
+@keyframes active {
+  0% {
+    height: 2rpx;
+    transform: scale(0, 1);
+  }
+
+  100% {
+    height: 6rpx;
+    transform: scale(0.6, 1);
+  }
+}
+
+.subCateTabImg {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-bottom: 14rpx;
+}
+
+.sunCateTabTxt {
+  text-align: center;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subCateSelctBtn {
+  padding: 30rpx 16rpx;
+  font-size: 40rpx;
+}
+
+.subCatePopup {
+  position: absolute;
+  max-height: 420rpx;
+  padding: 30rpx;
+  color: #666;
+  background-color: #fff; 
+  overflow-y: scroll;
+  -webkit-overflow-scroll: touch;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.popopItem {
+  width: 31%;
+  font-size: 26rpx;
+  line-height: 2.3;
+  border-radius: 6rpx;
+  overflow: hidden;
+  padding: 0 12rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: #eee;
+}
+
+.popopItem:nth-child(n+4) {
+  margin-top: 20rpx;
+}
+.popopItemActive{
+  color: var(--DShop-mcolor-dark)
+}
+.nullpopopItem {
+   width: 31%; 
+}
+
+.commodityList{
+  width: auto;
+  overflow-y: scroll;
+}
+
+.hasSubCate{
+    height: calc(100vh - 340rpx);
+}
+
+.noSubCate{
+   height: calc(100vh - 184rpx);
+}
+.commodityItem{
+   background-color: #fff;
+   padding: 32rpx 0;
+   margin-bottom: 10rpx;
+}
+.commodityItem:last-child{
+  margin-bottom: 120rpx;
+}
+.commodityPic{
+   width: 150rpx;
+   height: 150rpx;
+   margin-right: 20rpx;
+}
+
+.commodityInfo{
+   height: 150rpx;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.commodityTit{
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.currentPri{
+  font-size: 32rpx;
+  color: #f66;
+  max-width: 60%;
+  margin-right: 20rpx;
+}
+.olderPri{
+  align-self: center;
+  text-decoration: line-through;
+}
+.comSale{
+  align-self: center;
+  margin-right: 20rpx;
+  color: #888;
+  font-size: 26rpx;
+}
+.comCart{
+  font-size: 40rpx;
+  color: #f66;
+}
+
+.loadMore{
+  width: 240rpx;
+  margin: 30rpx auto;
+  line-height: 2.55556;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 100rpx;
+
+}
+
+@import "../common/common.wxss";
+page {
+  font-size: 28rpx;
+   background-color: #fff; 
+}
+
+.sc-addcart{
+  z-index: 1000;
+}

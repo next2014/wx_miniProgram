@@ -1,0 +1,113 @@
+<!--pages/shop/carttol/cartpl.wxml-->
+<block wx:if="{{is_show_card}}">
+    <view class="add-cart-box floatBox">
+      <view class="layout">
+        <text class="iconfont icon-close fr" bindtap="is_show_card"></text>
+        <view class="layout-info gridXb flex">
+          <image src="{{goods_property.g_img_url ==''?goods_info.g_img_url:goods_property.g_img_url}}" width="40" height="40" mode="aspectFill"></image>
+          <view class="sub ml10">
+            <view class="lineText">{{goods_info.g_name}}</view>
+            <view class="red f18 mt5">
+              ￥{{cart_show_price}}
+            </view>
+            <view class="f12 grey">
+              <text>库存：<text>{{goods_property.last_num == undefined ? goods_info.g_number:goods_property.last_num}}</text></text>
+              <text class="ml10">销量：<text>{{goods_property.sell_num == undefined ? goods_info.sale_number:goods_property.sell_num}}</text></text>
+            </view>
+          </view>
+        </view>
+        <!-- 商品属性和数量 -->
+        <view class="goods-attrs-box">
+          <block wx:for="{{goods_info.property}}" wx:key="" wx:for-item="itemType" wx:for-index="index">
+            <view class="attr_list">
+              <view class="attr_list_t">{{itemType.name}}</view>
+              <view>
+                <block wx:for="{{itemType.item}}" wx:key="" wx:for-item="itemVal" wx:for-index="key">
+                  <text class="attr-list-li {{property_select[index].item == key? 'on': ''}}" data-index="{{index}}" data-key="{{key}}" bindtap="select_attr_bind">{{itemVal}}</text>
+                </block>
+              </view>
+            </view>
+          </block>
+          <view class="options">
+            <view class="options-tiem">
+              <view class="count-set tc fr flex">
+                <view class="sub" bindtap="bind_cart_number_jian">
+                  <text class="iconfont icon-move"></text>
+                </view>
+                <view class="sub buy-couts">
+                  <input type="number" value="{{cart_default_number}}" bindblur="change_cart_number" />
+                </view>
+                <view class="sub" bindtap="bind_cart_number_jia">
+                  <text class="iconfont icon-add"></text>
+                </view>
+              </view>
+              <view class="name" style="line-height:30px;">
+                <text>购买数量：</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="add-cart-box floatBox">
+      <view class="layout">
+        <text class="iconfont icon-close fr" bindtap="is_show_card"></text>
+        <view class="layout-info gridXb flex">
+          <image src="{{goods_info.g_img}}" width="40" height="40" mode="aspectFill"></image>
+          <view class="sub ml10">
+            <view class="lineText">{{goods_info.g_name}}</view>
+            <view class="red f18">
+              <block wx:if="{{goods_info.promote_status == 1}}">￥{{goods_info.promote_price}}</block>
+              <block wx:elif="{{goods_info.vip_price > 0}}">
+                <view class="f14">
+                  <text class="cuxiao" style="padding:0 5px">V</text>￥{{goods_info.vip_price}}</view>
+                <view class="f14">
+                  <text class="cuxiao">原</text>￥{{goods_info.shop_price}}</view>
+              </block>
+              <block wx:else>￥{{goods_info.shop_price}}</block>
+            </view>
+          </view>
+        </view>
+       
+        <view class="goods-attrs-box">
+          <block wx:for="{{goods_specification}}" wx:for-item="itemType">
+            <view class="attr_list">
+              <view class="attr_list_t">{{itemType.name}}</view>
+              <view>
+                <block wx:for="{{itemType.values}}" wx:for-item="itemVal">
+                  <text class="attr-list-li {{itemVal.ischeck?'on':''}}" bindtap="select_attr_bind" id="{{itemVal.id}}" data-type="{{itemType.name}}">{{itemVal.label}}</text>
+                </block>
+              </view>
+            </view>
+          </block>
+          <view class="options">
+            <view class="options-tiem">
+              <view class="count-set tc fr flex">
+                <view class="sub" bindtap="bind_cart_number_jian">
+                  <text class="iconfont icon-move"></text>
+                </view>
+                <view class="sub buy-couts">
+                  <input type="number" value="{{cart_default_number}}" bindblur="change_cart_number" />
+                </view>
+                <view class="sub" bindtap="bind_cart_number_jia">
+                  <text class="iconfont icon-add"></text>
+                </view>
+              </view>
+              <view class="name" style="line-height:30px;">
+                <text>购买数量：</text>
+              </view>
+            </view>
+          </view>
+        </view> -->
+        
+        <view class="flex">
+          <form class='sub' report-submit='true' bindsubmit='goods_add_cart'>
+            <button class="add-cart-btn sub" disabled="{{btn_add_cart_disabled}}" form-type='submit'>加入购物车</button>
+          </form>
+          <form class='sub' report-submit='true' bindsubmit='goods_buy_now'>
+            <button class="buy-now-btn sub" disabled="{{btn_add_cart_disabled}}" form-type='submit'>立即购买</button>
+          </form>
+        </view>
+      </view>
+      <view class="floatBox floatBoxBg" style="display:block;" bindtap="set_close"></view>
+    </view>
+  </block>
+  <!--加入购物车 end-->

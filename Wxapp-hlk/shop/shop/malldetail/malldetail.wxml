@@ -1,0 +1,613 @@
+<!--malldetail.wxml-->
+<import src="/wxParse/wxParse.wxml" />
+<view class="glo_load_view" wx:if="{{glo_is_load}}">
+  <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+  <text>正在努力加载</text>
+</view>
+<view wx:if="{{!glo_is_load}}">
+  <block wx:if="{{goods_info == ''}}">
+    <view class="no-content tc">
+      <view class="f16">商品不存在</view>
+      <view class="mt20">
+        <button type="primary" plain size="mini" bindtap="goHome">返回首页</button>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{goods_info.info_data}}" wx:for-index="key" wx:key="">
+      <!--轮播开始  -->
+      <view wx:if="{{item.name=='swiper'}}">
+        <view class="swiper black">
+          <!--谁购买了  -->
+          <view class="buyBg {{echodm ? 'fadeIn' : 'fadeOut'}}" wx:if="{{echodm}}">
+            <view class='buyBox flex'>
+              <image class='buyerPic mr10' src='{{echodm.headimgurl}}' mode='aspectFill'></image>
+              <view class='sub'>
+                <text class='mr5 lineText red'>{{echodm.nickname}}</text>
+                <text>刚刚下单购买了</text>
+              </view>
+            </view>
+          </view>
+          <!-- <view wx:if="{{goods_info.seckill_id==0}}" class="collectionIco {{is_collect==1?'active':''}}" bindtap='toggleCollect'>
+            <text class="iconfont icon-heartfill"></text>
+          </view> -->
+          <!-- 小视频 -->
+          <view wx:if="{{!(is_add_cart_view || is_buy_now_view)}}" bind:touchstart="moveVideoStart" bind:touchend="moveVideoEnd">
+            <view animation="{{animationData}}" class="videoItem" wx:if="{{goods_info.g_video.v_path}}">
+              <video class="swiper-video appleSwiperVideo" id="vedio" src="{{goods_info.g_video.v_path}}" poster="{{goods_info.g_video.v_img}}" bindplay="videoPlay" bindpause="videoPause" bindended="videoEnded">
+                <cover-view class="swiper-video-bottom" wx:if="{{goods_info.g_video.v_path && select_show}}">
+                  <cover-view class="swiper-video-text {{is_autoplay==false?'active':''}}" bindtap="showVideo">视频</cover-view>
+                  <cover-view class="swiper-video-text {{is_autoplay==true?'active':''}}" bindtap="showSwiper">图片</cover-view>
+                </cover-view>
+              </video>
+            </view>
+          </view>
+          <view class="swiper-img {{goods_info.g_video.v_path?'left100':''}}" animation="{{animationData}}">
+            <view class="swiper-dots">
+              <text class="swiper-dot-active">{{swiperCurrent*1+1}}</text> / {{goods_info.g_photo_url.length>0?goods_info.g_photo_url.length:1}}</view>
+            <swiper class="swiper-img " autoplay="{{is_autoplay}}" current="{{swiperCurrent}}" interval="5000" duration="500" bindchange="swiperChange">
+              <block wx:if="{{goods_info.g_photo_url.length>0}}">
+                <block wx:for="{{goods_info.g_photo_url}}" wx:key="">
+                  <swiper-item wx:if="{{index == 0}}" bindtouchstart="moveStart" bindtouchend="moveEnd">
+                    <image src="{{item}}" mode="aspectFill" catchtap='showGoodsImg' data-img='{{item}}' />
+                  </swiper-item>
+                  <swiper-item wx:else>
+                    <image src="{{item}}" mode="aspectFill" catchtap='showGoodsImg' data-img='{{item}}' />
+                  </swiper-item>
+                </block>
+              </block>
+              <block wx:else>
+                <swiper-item bindtouchstart="moveStart" bindtouchend="moveEnd">
+                  <image src="{{goods_info.g_img_url}}" mode="aspectFill" />
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+        </view>
+      </view>
+      <!--轮播结束  -->
+
+      <!--视频开始  -->
+      <view class="shopVideoBox" wx:if="{{item.name=='video'}}">
+        <video src='{{item.config.src}}' poster="{{item.config.pic}}" loop='{{item.config.loop}}' autoplay="{{item.config.auto}}"></video>
+      </view>
+      <!--视频结束  -->
+      <!--商品价格开始  -->
+      <view wx:if="{{item.name=='price'}}">
+        <block wx:if="{{goods_info.seckill_id>0}}">
+          <view class="seckill-time">
+            <view class="seckill-goods-price">
+
+              <view class="new-price">￥
+                <text class='new-priceNum'>{{goods_property[goods_info.price_info.type]>0?goods_property[goods_info.price_info.type]:goods_info.price_info.price}}</text>
+                <text class="delLine ml10">￥{{goods_info.market_price}}</text>
+              </view>
+              <view class="seckill-progress-box">
+                <view class="seckill-progress">
+                  <view class="seckill-progress-bar" style="width:{{goods_info.g_number == 0?100:((100*goods_info.sale_number)-(100*goods_info.sale_number)%(goods_info.sale_number*1+goods_info.g_number*1))/(goods_info.sale_number*1+goods_info.g_number*1)}}%"></view>
+                </view>
+                <text class="seckill-state-txt">已抢{{goods_info.g_number == 0?100:((100*goods_info.sale_number)-(100*goods_info.sale_number)%(goods_info.sale_number*1+goods_info.g_number*1))/(goods_info.sale_number*1+goods_info.g_number*1)}}%</text>
+              </view>
+            </view>
+            <view class="countDown tc" wx:if="{{seckill_config.is_today==1}}">
+              <view>{{time.status == 0?'距离开始':''}}{{time.status == 1?'距离结束':''}}{{time.status == 2?'已结束':''}}</view>
+              <view class='countDownCont' wx:if="{{time.status != 2}}">
+                <text class="time-show">{{time.hour}}</text>:
+                <text class="time-show">{{time.minute}}</text>:
+                <text class="time-show">{{sec}}</text>
+              </view>
+            </view>
+            <view class="countDown tc" wx:else>
+              活动未开始
+            </view>
+          </view>
+          <view class="goods-info">
+            <view class="flex goods-info-cont">
+              <view class="goodsInfoName sub">{{goods_info.g_name}}</view>
+              <view class="tc ml15 goods-share" bindtap='showShare' wx:if="{{item.config.shar}}" data-type="miaosha">
+                <text class="goods-share-ico iconfont {{goods_info.bonus_info[0] && goods_info.bonus_info[1]>0 ?'icon-qiandai':'icon-sharefill'}}"></text>
+                <text>分享</text>
+              </view>
+            </view>
+            <view class="goodsInfoDesc">{{goods_info.g_description}}</view>
+          </view>
+        </block>
+        <!-- 秒杀end -->
+        <!--goods start-->
+        <block wx:else>
+          <view class="goods-info">
+            <view class="flex goods-info-cont">
+              <view class="sub">
+                <view class="goodsPriceBox" wx:if="{{item.config.shop_price}}">
+                  <!-- 促销 -->
+                  <block wx:if="{{goods_info.promote_status == 1}}">
+                    <view class="goodsPriceCuIco">促</view>
+                    <view class="goodsPriceCurrent" wx:if="{{goods_info.price_info.type=='vip_price'}}">
+                      <text>￥</text>
+                      <text class="goodsPriceNum">{{goods_info.promote_price}}</text>
+                    </view>
+                    <view wx:if="{{goods_info.price_info.type=='promote_price'}}">
+                      <text>￥</text>
+                      <text class="goodsPriceNum">{{goods_show_price}}</text>
+                    </view>
+                  </block>
+                  <!-- 原价 -->
+                  <block wx:if="{{goods_info.promote_status != 1}}">
+                    <view class="goodsPriceCurrent" wx:if="{{item.config.shop_price && goods_info.price_info.type!='vip_price'}}">
+                      <text>￥</text>
+                      <text class="goodsPriceNum">{{goods_show_price}}</text>
+                    </view>
+                    <view class="goodsPriceCurrent" wx:if="{{item.config.shop_price && goods_info.price_info.type=='vip_price'}}">
+                      <text>￥</text>
+                      <text class="goodsPriceNum">{{goods_show_shop_price}}</text>
+                    </view>
+                  </block>
+                  <!-- vip价格 -->
+                  <block wx:if="{{goods_info.price_info.type=='vip_price'}}">
+                    <view class="vipPrice">
+                      <text>￥</text>
+                      <text class="vipPricenum">{{goods_show_price}}</text>
+                      <text class="vipPriceIco">VIP+</text>
+                    </view>
+                  </block>
+                  <block wx:else>
+                    <view class="vipPrice" wx:if="{{goods_info.vip_price > 0 && goods_info.is_showvip == 1}}">
+                      <text>￥</text>
+                      <text class="vipPricenum">{{goods_show_vip_price}}</text>
+                      <text class="vipPriceIco">VIP+</text>
+                    </view>
+                    <view class="vipPrice" wx:if="{{goods_info.vip_price > 0 && goods_info.is_showvip == 0}}">
+                      <text class="delLine grey f12 ml10">￥{{goods_info.market_price}}</text>
+                    </view>
+                  </block>
+                  <!-- 促销的市场价 -->
+                  <view class="delLine grey f12 ml10" wx:if="{{goods_info.market_price != 0 && item.config.market_price && !(goods_info.promote_status == 1 && goods_info.price_info.type=='vip_price') && !(goods_info.promote_status != 1 && goods_info.vip_price > 0)}}">￥{{goods_info.market_price}}</view>
+                </view>
+                <view class="goodsSalesInfo">
+                  <view wx:if="{{item.config.g_number}}">库存：{{goods_property.last_num == undefined ? (goods_info.g_number == 0 ? '已售罄' : goods_info.g_number) : goods_property.last_num}}</view>
+                  <view wx:if="{{item.config.sale_number}}" class="ml10">销量：{{goods_property.sell_num == undefined ? goods_info.sale_number:goods_property.sell_num}}</view>
+                  <view class="ml10" wx:if="{{goods_info.limit_num != 0}}">限购：{{goods_info.limit_num}}</view>
+                </view>
+              </view>
+              <view wx:if="{{goods_info.seckill_id==0}}" class="goodsLikeBtn {{is_collect==1?'active':''}}" bindtap='toggleCollect'>
+                <text class="iconfont icon-heartfill"></text>
+                <view>收藏</view>
+              </view>
+              <view class="tc ml15 goods-share" bindtap='showShare' wx:if="{{item.config.shar}}">
+                <text class="goods-share-ico iconfont {{goods_info.bonus_info[0] && goods_info.bonus_info[1]>0 ?'icon-qiandai':'icon-sharefill'}}"></text>
+                <text>分享</text>
+              </view>
+            </view>
+            <view class="goodsInfoName mb5">{{goods_info.g_name}}</view>
+            <view class="goodsInfoDesc">{{goods_info.g_description}}</view>
+          </view>
+        </block>
+      </view>
+      <!--商品价格结束  -->
+
+      <!-- 服务说明 -->
+        <view class='infoListbox' wx:if="{{item.name=='service' && shop_config.service_info}}">
+          <view class='flex goodsInfoItem gridXt' bindtap='toggleMore'>
+            <view class='goodsInfoItemTit'>服务</view>
+            <view class='sub'>
+              <view class='listMsgItem' wx:for="{{shop_config.service_info}}"><text class='serviceItemIco iconfont icon-duihao1'></text><text>{{item.title}}</text></view>
+            </view>
+            <view class='goodsInfoItemMore iconfont icon-more'></view>
+          </view>
+          <view class='infoListPop' wx:if="{{msgMoreShow}}">
+            <view class="infoListPopBg" bindtap='toggleMore'></view>
+            <view class="infoPopContBox {{aniStyle?'slideup':'slidedown'}}">
+              <view class='infoListPopTit'>服务说明</view>
+              <view class='infoListPopCont'>
+                <view class='severContItem' wx:for="{{shop_config.service_info}}">
+                    <text class='serviceItemIco iconfont icon-duihao1'></text>
+                    <view class='severItemTit'>{{item.title}}</view>
+                    <view class='severItemDesc'>{{item.content}}</view>
+                </view>
+              </view>
+              <view class='infoListPopBtnBox'><button class='infoListPopBtn' bindtap='toggleMore'>完成</button></view>
+            </view>
+          </view>
+        </view>
+
+      <view wx:if="{{item.name=='comment' && list != false}}">
+      <!-- 记录与评价 -->
+        <view class='infoListbox mt10' bindtap='goCommenList'>
+          <view class='flex goodsInfoItem'>
+            <view class='goodsInfoItemTit'><text class="evaluationIco mainColor iconfont icon-pingjia"></text> 记录与评价</view>
+              <swiper class="evaluateBox sub" vertical="true" circular="true" autoplay interval="2000">
+                <block wx:for="{{list}}">
+                  <swiper-item>
+                      <view class='lineText'><text class='evaluationUserName'>{{item.nickname}}:</text><text>{{item.content}}</text></view>
+                    </swiper-item>
+                </block>
+              </swiper>
+          </view>
+        </view>
+      </view>
+      
+
+      <!--商品满减信息开始  -->
+      <view wx:if="{{item.name=='sale' && goods_info.seckill_id == 0}}">
+          <!-- 领劵 -->
+        <view class='infoListbox' wx:if="{{shop_yhquan_info}}">
+          <view class='flex goodsInfoItem gridXb mt10' bindtap='showCoupon'>
+            <view class='goodsInfoItemTit'>领劵</view>
+            <view class='sub'>
+              <view class='couponMiniList' wx:for="{{shop_yhquan_info}}">{{item.q_name}}</view>
+            </view>
+            <view class='goodsInfoItemMore iconfont icon-more'></view>
+          </view>
+          <view class='infoListPop' wx:if="{{shop_yhquan_info && show_coupon}}">
+            <view class="infoListPopBg" bindtap='showCoupon'></view>
+            <view class="infoPopContBox slideup">
+              <view class='infoListPopTit'>领劵</view>
+              <view class='infoListPopCont'>
+                <view class='couponPopList flex {{item.q_rest == 1 ? "" : "receive"}}' wx:for="{{shop_yhquan_info}}" catchtap='{{item.q_rest == 1 ? "quan_lingqu_bind" : ""}}' id='{{item.id}}'>
+                  <view class='sub couponPopInfo'>
+                    <view class='couponListPrice'>￥<text class='couponListPriceNum'>{{item.q_dai_jiner}}</text></view>
+                    <view class='couponListTips'>满{{item.q_dai_limit_jiner}}可用</view>
+                  </view>
+                  <view class='couponListBtn'>{{item.q_rest == 1 ? "领取" : "已领取"}}</view>
+                  <view class='couponListIco icon-quan iconfont icon-quan'></view>
+                </view>
+              </view>
+              <view class='infoListPopBtnBox'><button class='infoListPopBtn' bindtap='showCoupon'>完成</button></view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 福利 -->
+      <view class='infoListbox ' wx:if="{{shop_quan_info || buy_vip}}">
+        <view class='flex goodsInfoItem welfareInfoBox gridXb'>
+          <view class='goodsInfoItemTit'>福利</view>
+          <view class='sub'>
+              <view class='welfareList flex' wx:if="{{shop_quan_info}}"><text class='welfareListTag'>满减</text><text class="mr5" wx:for="{{shop_quan_info}}">{{item.q_name}}</text></view>
+              <!-- <view class='welfareList flex'><text class='welfareListTag'>积分</text><text class='sub'>购物得25积分</text></view> -->
+              <view class='welfareList flex' wx:if="{{buy_vip}}"><text class='welfareListTag'>VIP+</text><text class='sub'>vip+客户可享受指定内部价</text><text class='becomeVipBtn' bindtap='jumpBuyVip'>如何成为VIP+？</text></view>
+          </view>
+        </view>
+      </view>
+      </view>
+      <!--商品满减信息结束  -->
+
+      
+
+
+      <!--商品属性开始  -->
+      <view wx:if="{{item.name=='attribute'}}">
+        <view class='infoListbox '>
+          <view class='flex goodsInfoItem gridXb' wx:if="{{goods_info.property.length > 0}}" bindtap='showProperty'>
+            <view class='goodsInfoItemTit'>规格</view>
+            <view class='sub'>
+              <block wx:for="{{property_select}}" wx:for-item="val" wx:for-index="index">
+                <text>{{goods_info.property[index].item[val.item]}}</text>
+              </block>
+            </view>
+            <view class='goodsInfoItemMore iconfont icon-more'></view>
+          </view>
+        </view>
+<!-- 规格弹窗 -->
+<view class="add-cart-box floatBox" wx:if="{{show_property==item.config.is_op}}">
+  <view class="layout">
+    <text class="iconfont icon-close fr" bindtap="closeProperty"></text>
+    <view class="layout-info gridXb flex">
+      <image src="{{goods_property.g_img_url ==''?goods_info.g_img_url:goods_property.g_img_url}}" width="40" height="40" mode="aspectFill" bindtap='showImg' data-img="{{goods_property.g_img_url ==''?goods_info.g_img_url:goods_property.g_img_url}}"></image>
+      <view class="sub ml10">
+        <view class="lineText">{{goods_info.g_name}}</view>
+        <view class="red f18 mt5">
+          <text>￥{{goods_show_price}}</text>
+        </view>
+        <view class="f12 grey">
+          <text>库存：<text>{{goods_property.last_num == undefined ? goods_info.g_number:goods_property.last_num}}</text></text>
+          <text class="ml10">销量：<text>{{goods_property.sell_num == undefined ? goods_info.sale_number:goods_property.sell_num}}</text></text>
+        </view>
+      </view>
+    </view>
+    <!-- 商品属性和数量 -->
+    <view class="goods-attrs-box">
+      <block wx:for="{{goods_info.property}}" wx:key="" wx:for-item="itemType" wx:for-index="index">
+        <view class="attr_list">
+          <view class="attr_list_t">{{itemType.name}}</view>
+          <view>
+            <block wx:for="{{itemType.item}}" wx:key="" wx:for-item="itemVal" wx:for-index="key">
+              <text class="attr-list-li {{property_select[index].item == key? 'on': ''}}" data-index="{{index}}" data-key="{{key}}" bindtap="select_attr_bind">{{itemVal}}</text>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='infoListPopBtnBox'><button class='infoListPopBtn' bindtap='closeProperty'>完成</button></view>
+  </view>
+  <view class="floatBox floatBoxBg" style="display:block;" bindtap='closeProperty'></view>
+</view>
+
+        <!-- <view class="goodsInfoItemBox flex mt10" wx:if="{{goods_info.property.length > 0}}" bindtap='showProperty'>
+          <view class="goodsInfoItemTit">规格</view>
+          <view class='sub lineText'>
+            <block wx:for="{{property_select}}" wx:for-item="val" wx:for-index="index">
+              <view class="guigeItem lineText">{{goods_info.property[index].item[val.item]}}</view>
+            </block>
+          </view>
+          <view class='goodsInfoItemMore iconfont icon-more'></view>
+        </view> -->
+        <!-- 以前的规格 -->
+        <!-- <view class="guige-cont" wx:if="{{show_property==item.config.is_op}}">
+          <view class="goods-attrs-box">
+            <block wx:for="{{goods_info.property}}" wx:for-item="itemType" wx:for-index="index" wx:key="">
+              <view class="attr_list">
+                <view class="attr_list_t">{{itemType.name}}</view>
+                <view>
+                  <block wx:for="{{itemType.item}}" wx:for-item="itemVal" wx:for-index="key" wx:key="">
+                    <text class="attr-list-li {{property_select[index].item == key? 'on': ''}}" data-index="{{index}}" data-key="{{key}}" bindtap="select_attr_bind">{{itemVal}}</text>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view> -->
+        <!-- <view class="guige-box gridXt">
+        <view wx:if="{{goods_info.property.length > 0}}" class="guige-tit" bindtap='showProperty'>规格</view>
+      </view> -->
+      </view>
+      <!-- 商品属性end -->
+      <!--商品详情开始  -->
+      <view wx:if="{{item.name=='detail'}}">
+        <view class="goods-detail">
+          <view class="nav-tab tc flex gridXb" wx:if="{{item.config.d_detail == 1 || item.config.d_comment == 1}}">
+            <view class="sub nav-tit {{this_g_nav == 1?'active':''}}" bindtap="goods_nav_bind" id="1" wx:if="{{item.config.d_detail == 1}}">{{item.config.d_tit}}</view>
+            <!-- <view class="sub nav-tit {{(this_g_nav == 2 || (item.config.d_detail != 1 && item.config.d_comment == 1))?'active':''}}" bindtap="goods_nav_bind" id="2" wx:if="{{item.config.d_comment == 1}}">{{item.config.c_tit}}</view> -->
+          </view>
+          <!--商品详情-->
+          <view class="container" wx:if="{{this_g_nav==1 && item.config.d_detail == 1}}">
+            <!-- 无商品详情 -->
+            <block wx:if="{{!rich_text['article'].nodes.length}}">
+              <view class="no-content tc">
+                <image class="no-content-img" src="http://www.ixiaochengxu.cc/resource/images/common/no-message.png" mode="widthFix"></image>
+                <view class="mt10">请等待商家更新哦</view>
+              </view>
+            </block>
+
+            <view class="wxParse">
+              <template is="wxParse" data="{{wxParseData:rich_text['article'].nodes}}" />
+            </view>
+          </view>
+
+          <!--销售记录-->
+          <!-- <view class="recording-part" wx:if="{{this_g_nav==2 || (item.config.d_detail != 1 && item.config.d_comment == 1)}}"> -->
+            <!-- 暂无评论 -->
+            <!-- <block wx:if="{{!list.length}}">
+              <view class="no-content tc">
+                <image class="no-content-img" src="http://www.ixiaochengxu.cc/resource/images/common/no-order.png" mode="widthFix"></image>
+                <view class="mt10">还没有评价哦~~</view>
+                <view class="mt20">
+                </view>
+              </view>
+            </block>
+            <block wx:for="{{list}}" wx:for-item="citem" wx:key="">
+              <view class="r-item gridXb">
+                <view class="info flex">
+                  <image src="{{citem.headimgurl}}" width="40" height="40" mode="aspectFill"></image>
+                  <view class="sub f12">
+                    <text class="linght fr">{{citem.addtime}}</text>
+                    <text class="grey">{{citem.nickname}}</text>
+                    <view class='clearfix'>
+                      <text class="iconfont score-star icon-favorfill fl" wx:for="{{citem.p_fenshu}}" wx:for-index="fenshuIndex" wx:key="{{fenshuIndex}}"></text>
+                    </view>
+                    <view class="content">
+                      <text>{{citem.content}}</text>
+                      <view class="clearfix" catchtap='previewImage' data-index='{{index}}'>
+                        <image style='border-radius:0%;' wx:for="{{citem.photo_urls}}" wx:for-item="itemImage" wx:for-index="imageIndex" wx:key="{{imageIndex}}" data-image="{{itemImage}}" src="{{itemImage}}" mode="aspectFill"></image>
+                      </view>
+                    </view>
+                    <view class="content mt8" wx:if="{{citem.reply_content == '' ? false : true}}">
+                      <text>商家回复：{{citem.reply_content}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block> -->
+            <!-- <view class="f12 grey tc commonMore" bindtap='nextCommon' wx:if="{{list.length && comon_more}}">更多</view> -->
+          <!-- </view> -->
+        </view>
+      </view>
+      <!--商品详情结束  -->
+      <!--商品图片组件开始  -->
+      <view wx:if="{{item.name=='images'}}">
+        <image class="shopDetailImg" src='{{item.config.pic}}' mode="widthFix"></image>
+      </view>
+      <!--商品图片组件结束  -->
+      <!--商品推荐商品列表开始  -->
+      <block wx:if="{{item.name=='recommend'}}">
+        <goodslist data="{{item.config.data}}" title="{{item.config.tit}}" mode="{{item.config.list_style}}" close_page="{{true}}" />
+      </block>
+      <!--商品推荐商品列表结束  -->
+      <!--商品富文本开始  -->
+      <view wx:if="{{item.name=='extend'}}">
+        <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:rich_text[key].nodes}}" />
+        </view>
+      </view>
+      <!--商品富文本结束  -->
+
+      <view class='itemConfigMargin' wx:if="{{item.config.margin}}"></view>
+    </block>
+    <!-- -----------------------底部菜单开始----------------------- -->
+    <view class="foot-nav mt15" wx:if="{{goods_info.info_data[0].config.is_show}}">
+      <view class="flex con gridXt tc">
+        <form report-submit='true' bindsubmit='pushFormId'>
+          <view class="fast-links flex f12">
+            <view class="foot-ico sub gridYr" bindtap="goHome" form-type='submit'>
+              <text class="iconfont icon-home"></text>
+              <view>首页</view>
+            </view>
+            <view class="foot-ico sub gridYr {{selectService ? 'mainColor' : ''}}" catchtap='selectService'>
+              <text class="iconfont icon-kefu"></text>
+              <view>客服</view>
+              <view class="flex concactBox" wx:if="{{selectService}}">
+                <button class="concactCell sub" catchtap="bind_contant_kefu" form-type='submit'>
+                  <text class="iconfont icon-phone"></text>
+                  <view>电话</view>
+                </button>
+                <button class="concactCell sub" open-type="contact" show-message-card="true" send-message-title="{{goods_info.g_name}}" send-message-path="/pages/shop/malldetail/malldetail?sid={{goods_info.id}}" form-type='submit'>
+                  <text class="iconfont icon-comment"></text>
+                  <view>聊天</view>
+                </button>
+              </view>
+            </view>
+            <view wx:if="{{goods_info.seckill_id==0}}" class="foot-ico sub notempty" bindtap="bind_go_cart" form-type='submit'>
+              <text class='foot-ico-num'>{{cart_num}}</text>
+              <text class="iconfont icon-cart"></text>
+              <view>购物车</view>
+            </view>
+          </view>
+        </form>
+        <block wx:if="{{goods_info.seckill_id>0}}">
+          <block wx:if="{{seckill_config.is_today==1}}">
+            <block wx:if="{{goods_info.g_number == 0}}">
+              <view class="add-cart sub">
+                <button class="buy-now-btn" disabled="{{time.status == 1?false:true}}" style='background: #ccc;'>已抢光</button>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="add-cart sub">
+                <form report-submit='true' bindsubmit='bind_goods_add_cart'>
+                  <button class="add-cart-btn" form-type='submit' disabled="{{goods_info.active_type == 1 ? false : true}}">加入购物车</button>
+                </form>
+              </view>
+              <view class="add-cart sub" bindtap="bind_goods_buy_now">
+                <button class="buy-now-btn {{time.status == 0?'notStarted':''}}" disabled="{{time.status == 1?false:true}}">{{time.status == 1?'马上抢':''}}{{time.status == 0?'未开始':''}}{{time.status == 2?'已结束':''}}</button>
+              </view>
+            </block>
+
+          </block>
+          <block wx:else>
+            <view class="add-cart sub">
+              <button class="buy-now-btn" disabled="true">活动未开始</button>
+            </view>
+          </block>
+        </block>
+        <block wx:else>
+          <view class="add-cart sub">
+            <form report-submit='true' bindsubmit='bind_goods_add_cart'>
+              <button class="add-cart-btn" form-type='submit' disabled="{{goods_info.active_type == 1 ? false : true}}">加入购物车</button>
+            </form>
+          </view>
+          <view class="buy-now sub">
+            <form report-submit='true' bindsubmit='bind_goods_buy_now'>
+              <button class="buy-now-btn" form-type='submit' disabled="{{goods_info.active_type == 1 ? false : true}}">立即购买</button>
+            </form>
+          </view>
+        </block>
+        <!-- <view class="add-cart sub" bindtap="bind_goods_buy_now">
+          <button class="set-reminder">设置提醒</button>
+        </view> -->
+      </view>
+    </view>
+    <!-- -----------底部菜单结束------------ -->
+    <!-- --------分享弹窗开始--------- -->
+    <view class="shade_bg floatBox" wx:if="{{show_share}}">
+      <view class='commdityDetail_share white_bg tc bounce'>
+        <view class="share-title" wx:if="{{goods_info.bonus_info[0] && goods_info.bonus_info[1]>0}}">分享后预计可获得收益：
+          <text class="share-title-price">{{goods_info.bonus_info[2]}}</text>
+        </view>
+        <view class='shareBox flex'>
+          <form class=' sub' bindsubmit='onShareAppMessage' report-submit='true'>
+            <button class='shareButton ' open-type='share' hover-stop-propagation='true' form-type='submit'>
+              <view class='subIconBox mb10 '>
+                <text class='green iconfont icon-wx-pay'></text>
+              </view>
+              发送给朋友
+            </button>
+          </form>
+          <button class='shareButton sub' bindtap='fxgoods'>
+            <view class='subIconBox mb10'>
+              <text class='blue iconfont icon-erweima1'></text>
+            </view>
+            生成海报
+          </button>
+        </view>
+        <view class='cancleBtn gridXt' bindtap='showShare'>取消</view>
+      </view>
+      <!-- <view class="floatBox floatBoxBg" style="display:block"></view> -->
+    </view>
+    <!-- 分享弹窗结束-->
+
+  </block>
+</view>
+
+
+<view class="add-cart-box floatBox" wx:if="{{is_add_cart_view || is_buy_now_view}}">
+  <view class="layout">
+    <text class="iconfont icon-close fr" bindtap="add_cart_close_bind"></text>
+    <view class="layout-info gridXb flex">
+      <image src="{{goods_property.g_img_url ==''?goods_info.g_img_url:goods_property.g_img_url}}" width="40" height="40" mode="aspectFill" bindtap='showImg' data-img="{{goods_property.g_img_url ==''?goods_info.g_img_url:goods_property.g_img_url}}"></image>
+      <view class="sub ml10">
+        <view class="lineText">{{goods_info.g_name}}</view>
+        <view class="red f18 mt5">
+          <text>￥{{goods_show_price}}</text>
+        </view>
+        <view class="f12 grey">
+          <text>库存：<text>{{goods_property.last_num == undefined ? goods_info.g_number:goods_property.last_num}}</text></text>
+          <text class="ml10">销量：<text>{{goods_property.sell_num == undefined ? goods_info.sale_number:goods_property.sell_num}}</text></text>
+        </view>
+      </view>
+    </view>
+    <!-- 商品属性和数量 -->
+    <view class="goods-attrs-box">
+      <block wx:for="{{goods_info.property}}" wx:key="" wx:for-item="itemType" wx:for-index="index">
+        <view class="attr_list">
+          <view class="attr_list_t">{{itemType.name}}</view>
+          <view>
+            <block wx:for="{{itemType.item}}" wx:key="" wx:for-item="itemVal" wx:for-index="key">
+              <text class="attr-list-li {{property_select[index].item == key? 'on': ''}}" data-index="{{index}}" data-key="{{key}}" bindtap="select_attr_bind">{{itemVal}}</text>
+            </block>
+          </view>
+        </view>
+      </block>
+      <view class="options">
+        <view class="options-tiem">
+          <view class="count-set tc fr flex">
+            <view class="sub" bindtap="bind_cart_number_jian">
+              <text class="iconfont icon-move"></text>
+            </view>
+            <view class="sub buy-couts">
+              <input type="number" value="{{cart_default_number}}" bindblur="change_cart_number" />
+            </view>
+            <view class="sub" bindtap="bind_cart_number_jia">
+              <text class="iconfont icon-add"></text>
+            </view>
+          </view>
+          <view class="name" style="line-height:30px;">
+            <text>购买数量：</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{is_add_cart_view}}">
+      <form report-submit='true' bindsubmit='goods_add_cart'>
+        <button class="buy-now-btn" disabled="{{btn_add_cart_disabled || goods_info.active_type == 1 ? false : true}}" form-type='submit'>加入购物车</button>
+      </form>
+    </block>
+    <block wx:if="{{is_buy_now_view}}">
+      <form report-submit='true' bindsubmit='goods_buy_now'>
+        <button class="buy-now-btn" disabled="{{btn_add_cart_disabled || goods_info.active_type == 1 ? false : true}}" form-type='submit'>立即购买</button>
+      </form>
+    </block>
+  </view>
+  <view class="floatBox floatBoxBg" style="display:block;" bindtap="set_close"></view>
+</view>
+<!--加入购物车 end-->
+
+
+<!--右侧浮动-->
+<!-- <block wx:for="{{goods_info.info_data}}" wx:for-index="key" wx:key="">
+  <view class="aside-flote" wx:if="{{item.name=='icon'}}"> -->
+    <!-- <button type="primary" hover-class="none" bindtap="bind_go_cart">
+      <text class="iconfont icon-cart"></text>
+    </button> -->
+    <!-- <button type="primary" hover-class="none" bindtap="goHome">
+    <text class="iconfont icon-home"></text>
+  </button> -->
+  <!-- </view>
+</block> -->

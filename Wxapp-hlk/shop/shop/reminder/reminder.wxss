@@ -1,0 +1,24 @@
+/* pages/shop/reminder/index.wxss */
+/* 引入公共样式 */
+@import "/pages/shop/common/common.wxss";
+
+.ordersTopBg{width: 100%;height: 332rpx;vertical-align: top;}
+.myOrderBox{margin: -50rpx auto 30rpx;width: 690rpx;background: #fff;position: relative;border-radius: 6rpx;box-shadow: 1rpx 1rpx 42rpx 1rpx rgba(203, 200, 200, 0.3);}
+.orderUserInfo{padding: 30rpx 40rpx;align-items: center;}
+.orderUserImg{width: 100rpx;height: 100rpx;border-radius: 50%;margin-right: 20rpx;}
+.orderUserMsgItem{font-weight: bold;margin-left: 16rpx;}
+
+.orderGoodsBox{padding: 30rpx 0;font-size: 28rpx;}
+.orderGoodsBox::before{left: 20rpx;right: 20rpx;}
+.orderGoodsItem{padding: 16rpx 30rpx;}
+.orderGoodsImg{width: 120rpx;height: 120rpx;margin-right: 16rpx;border-radius: 4rpx;}
+.orderGoodsName,.orderGoodsPrice{line-height: 1.4;}
+.orderGoodsName{height: 76rpx;}
+.orderGoodsPrice{margin-left: 20rpx;}
+.orderGoodsMsg{font-size: 24rpx;color: #999;margin-top: 6rpx;}
+.gooodsMsgItem{margin-right: 10rpx;}
+.orderGoodsNum{font-size: 26rpx;margin-left: 16rpx;}
+
+.orderBtn{display: block;margin: 80rpx auto 30rpx;width: 380rpx;line-height: 80rpx;background: transparent;font-size: 32rpx;color: #f14344;position: relative;border-radius: 80rpx;}
+.orderBtn::before{content: '';display: block;width: 200%;height: 200%;border: 1px solid;box-sizing: border-box;-webkit-transform: scale(.5);transform: scale(.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;pointer-events: none;position: absolute;top: 0;left: 0;border-radius: 160rpx;}
+.orderBtn:active{background: rgba(241, 67, 68,.05);}

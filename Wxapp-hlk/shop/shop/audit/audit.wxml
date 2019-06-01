@@ -1,0 +1,12 @@
+<!--pages/shop/audit/audit.wxml-->
+<view class='tc' wx:if="{{status == 0}}">
+  <image class='auditing' src='http://www.ixiaochengxu.cc/resource/images/shop/league/auditing.png'></image>
+  <view class='f16'>提交成功等待审核</view>
+  <view class='linght'>请耐心等待，我们会安排客服与您联系！</view>
+</view>
+
+<!-- 拒绝 -->
+<view class='tc' wx:if="{{status == 2}}">
+  <image class='auditing' src='http://www.ixiaochengxu.cc/resource/images/shop/league/rejected.png'></image>
+  <view class='f16'>审核未通过</view>
+</view>

@@ -1,0 +1,165 @@
+<import src="/pages/superHome/custom/tpl.wxml" />
+<import src="/wxParse/wxParse.wxml" /><view class="page-cont"><view class="modular {{config_options['dg284276495'].classList}}" style="{{config_options['dg284276495'].style}}"><template is="dg-carousel" data="{{options:config_options['dg284276495']}}" wx:if="{{config_options['dg284276495']}}"></template></view><view class="modular {{config_options['dg964032472'].classList}}" style="{{config_options['dg964032472'].style}}"><template is="dg-link-group" data="{{options:config_options['dg964032472']}}" wx:if="{{config_options['dg964032472']}}"></template></view><view class="modular {{config_options['dg411325569'].classList}}" style="{{config_options['dg411325569'].style}}"><template is="dg-link-group" data="{{options:config_options['dg411325569']}}" wx:if="{{config_options['dg411325569']}}"></template></view><view class="modular {{config_options['dg800874605'].classList}}" style="{{config_options['dg800874605'].style}}"><template is="dg-image-group" data="{{options:config_options['dg800874605']}}" wx:if="{{config_options['dg800874605']}}"></template></view><view class="modular {{config_options['dg640700673'].classList}}" style="{{config_options['dg640700673'].style}}"><template is="dg-image-group" data="{{options:config_options['dg640700673']}}" wx:if="{{config_options['dg640700673']}}"></template></view><view class="modular {{config_options['dg108719671'].classList}}" style="{{config_options['dg108719671'].style}}"><template is="dg-image-group" data="{{options:config_options['dg108719671']}}" wx:if="{{config_options['dg108719671']}}"></template></view><view class="modular {{config_options['dg596834894'].classList}}" style="{{config_options['dg596834894'].style}}"><template is="dg-image" data="{{options:config_options['dg596834894']}}" wx:if="{{config_options['dg596834894']}}"></template></view><view class="modular {{config_options['duoguan-shop-recommend'].classList}}" style="{{config_options['duoguan-shop-recommend'].style}}">
+<!-- 店家推荐 -->
+<!-- <view class="modular {{config_options['duoguan-shop-recommend'].space_style}}"> -->
+<view class="modular-container sc-recommend duoguan-shop-recommend sc-vipPrice">
+  <view class="sc-home-tit gridXb" wx:if="{{config_options['duoguan-shop-recommend'].isShowTitle}}">{{config_options['duoguan-shop-recommend'].title}}</view>
+  <view class="sc-goods {{config_options['duoguan-shop-recommend'].mode}}">
+    <view class="sc-goods-item item-termbox" wx:for="{{dgShop_index_data.index_tuijian_list}}" bindtap="dgShop_detail" id="{{item.id}}">
+      <view class="sc-goods-imgbox">
+        <image class="scale-rule" src="{{item.g_img}}" mode="aspectFill"></image>
+        <view class='sc-goods-tag' wx:if="{{item.corner_mark}}">{{item.corner_mark}}</view>
+      </view>
+      <view class="sc-goods-info">
+        <view class="sc-goods-name">
+          <text>{{item.g_name}}</text>
+        </view>
+        <view class="sc-goods-pricebox">
+          <view class="sc-goods-price">
+            <block wx:if="{{item.promote_status == 1}}">
+              <view class="sc-prc new-price">
+                <text class="iconfont icon-cu"></text>
+                <text class='smalllIcon'>￥</text>{{item.promote_price}}
+              </view>
+              <view class="sc-prc del-price">{{item.shop_price}}</view>
+            </block>
+            <block wx:elif="{{item.showvip_status == 1}}">
+              <view class="sc-prc new-price">
+                <text class='smalllIcon'>￥</text>{{item.shop_price}}
+              </view>
+              <view class="sc-prc vipBox">
+                 <text class="vipPrice">￥{{item.vip_price}}</text>
+                 <text class='vipIcon'>VIP+</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="sc-prc new-price">
+                <text class='smalllIcon'>￥</text>{{item.shop_price}}
+              </view>
+              <view class="sc-prc del-price" wx:if="{{item.market_price>0}}">{{item.market_price}}</view>
+              <view class="sc-prc del-price" style='height:44rpx;' wx:else></view>
+            </block>
+          </view>
+
+        </view>
+        <view class="sc-goods-bottom">
+          <view class="sc-goods-sales">销量:{{item.sale_number}}</view>
+          <!-- 加入购物车 -->
+          <view class="sc-cart-btn" catchtap="dgShop_is_show_card" data-id="{{item.id}}">
+            <text class="iconfont icon-cart"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+<!-- </view> -->
+
+<!-- 商城加入购物车 -->
+<view class="sc-addcart-box duoguan-shop-addCart floatBox" wx:if="{{dgShop_is_show_card}}">
+  <view class="sc-addcart">
+    <view class="sc-addcart-close" bindtap="dgShop_is_show_card">
+      <text class="iconfont icon-close"></text>
+    </view>
+    <view class="sc-addcart-goods gridXb">
+      <image class="sc-addcart-img" src="{{dgShop_goods_property.g_img_url ==''?dgShop_goods_info.g_img_url:dgShop_goods_property.g_img_url}}" mode="aspectFill"></image>
+      <view class="sc-addcart-info ml10">
+        <view class="lineText">{{dgShop_goods_info.g_name}}</view>
+        <view class="new-price f18 mt5">￥{{dgShop_goods_property.shop_price>0?dgShop_goods_property.shop_price:dgShop_goods_info.price_info.price}}</view>
+        <view class="f12 grey mt5">
+          <text>库存：<text>{{dgShop_goods_property.last_num == undefined ? dgShop_goods_info.g_number:dgShop_goods_property.last_num}}</text></text>
+          <text class="ml10">销量：<text>{{dgShop_goods_property.sell_num == undefined ? dgShop_goods_info.sale_number:dgShop_goods_property.sell_num}}</text></text>
+        </view>
+      </view>
+    </view>
+    <!-- 商品属性和数量 -->
+    <view class="sc-goods-attrs">
+
+      <view class="sc-attr-list" wx:for="{{dgShop_goods_info.property}}" wx:for-item="itemType" wx:for-index="index">
+        <view class="sc-attr-t">{{itemType.name}}</view>
+        <view>
+          <text class="sc-attr-li {{dgShop_property_select[index].item == key? 'on': ''}}" data-index="{{index}}" data-key="{{key}}" bindtap="dgShop_select_attr_bind" wx:for="{{itemType.item}}" wx:for-item="itemVal" wx:for-index="key">{{itemVal}}</text>
+        </view>
+      </view>
+
+      <view class="sc-addgoods-num">
+        <view class="name">
+          <text>购买数量：</text>
+        </view>
+        <view class="sc-add-numset tc">
+          <view class="sc-numset-btn {{dgShop_cart_default_number==1?'disabled':''}}" bindtap="dgShop_bind_cart_number_jian">
+            <text class="iconfont icon-move"></text>
+          </view>
+          <view class="sc-numset-btn sc-buy-couts">
+            <input class="sc-numset-inp" type="number" value="{{dgShop_cart_default_number}}" bindblur="dgShop_change_cart_number" />
+          </view>
+          <view class="sc-numset-btn" bindtap="dgShop_bind_cart_number_jia">
+            <text class="iconfont icon-add"></text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="flex">
+      <button class="sc-addcart-btn sub" bindtap="dgShop_goods_add_cart" disabled="{{dgShop_btn_add_cart_disabled}}">加入购物车</button>
+      <button class="sc-buynow-btn sub" bindtap="dgShop_goods_buy_now" disabled="{{dgShop_btn_add_cart_disabled}}">立即购买</button>
+    </view>
+  </view>
+  <view class="floatBox floatBoxBg" style="display:block;" bindtap="dgShop_set_close"></view>
+</view>
+</view><view class="modular {{config_options['dg113653586'].classList}}" style="{{config_options['dg113653586'].style}}"><template is="dg-image" data="{{options:config_options['dg113653586']}}" wx:if="{{config_options['dg113653586']}}"></template></view><view class="modular {{config_options['duoguan-shop-newGoods'].classList}}" style="{{config_options['duoguan-shop-newGoods'].style}}">
+<!-- 新品上架 -->
+<!-- <view class="modular {{config_options['duoguan-shop-newGoods'].space_style}}"> -->
+<view class="modular-container sc-newGoods duoguan-shop-newGoods sc-vipPrice">
+  <view class="sc-home-tit gridXb" wx:if="{{config_options['duoguan-shop-newGoods'].isShowTitle}}">{{config_options['duoguan-shop-newGoods'].title}}</view>
+  <view class="sc-goods {{config_options['duoguan-shop-newGoods'].mode}}">
+    <view class="sc-goods-item item-termbox" wx:for="{{dgShop_index_data.index_new_list}}" bindtap="dgShop_detail" id="{{item.id}}">
+      <view class="sc-goods-imgbox">
+        <image class="scale-rule" src="{{item.g_img}}" mode="aspectFill"></image>
+        <view class='sc-goods-tag' wx:if="{{item.corner_mark}}">{{item.corner_mark}}</view>
+      </view>
+      <view class="sc-goods-info">
+        <view class="sc-goods-name">
+          <text>{{item.g_name}}</text>
+        </view>
+        <view class="sc-goods-pricebox">
+          <view class="sc-goods-price">
+            <block wx:if="{{item.promote_status == 1}}">
+              <view class="sc-prc new-price">
+                <text class="iconfont icon-cu"></text>
+                <text class='smalllIcon'>￥</text>{{item.promote_price}}
+              </view>
+              <view class="sc-prc del-price">{{item.shop_price}}</view>
+            </block>
+            <block wx:elif="{{item.showvip_status == 1}}">
+              <view class="sc-prc new-price">
+                <text class='smalllIcon'>￥</text>{{item.shop_price}}
+              </view>
+              <view class="sc-prc vipBox">
+                <text class="vipPrice">￥{{item.vip_price}}</text>
+                <text class='vipIcon'>VIP+</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="sc-prc new-price">
+                <text class='smalllIcon'>￥</text>{{item.shop_price}}
+              </view>
+              <view class="sc-prc del-price" wx:if="{{item.market_price>0}}">{{item.market_price}}</view>
+            </block>
+          </view>
+
+        </view>
+        <view class="sc-goods-bottom">
+          <view class="sc-goods-sales">销量:{{item.sale_number}}</view>
+          <!-- 加入购物车 -->
+          <view class="sc-cart-btn" catchtap="dgShop_is_show_card" data-id="{{item.id}}">
+            <text class="iconfont icon-cart"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- </view> -->
+</view><view class="modular {{config_options['dg769201100'].classList}}" style="{{config_options['dg769201100'].style}}"><template is="dg-image-group" data="{{options:config_options['dg769201100']}}" wx:if="{{config_options['dg769201100']}}"></template></view></view><view class="asideFloatBox"><template is="dg-float-phone-btn" data="{{options:config_options['dg389401534']}}"></template></view>

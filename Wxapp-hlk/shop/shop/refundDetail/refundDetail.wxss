@@ -1,0 +1,260 @@
+/* pages/shop/refundDetail/refundDetail.wxss */
+
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+page{
+  font-size: 28rpx;
+}
+.totalMoney{
+  padding: 24rpx;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.refundProgress{
+  padding: 24rpx;
+  background-color: #fff;
+  color: #888;
+}
+.concatBox{
+ align-items: center;
+}
+.concat{
+  line-height: 70rpx;
+  font-size: 28rpx;
+}
+.concat .iconfont{
+  font-size: 36rpx;
+  margin-right: 6rpx;
+}
+.prolist{
+  margin-top: 50rpx;
+}
+.proItem{
+  line-height: 1.2;
+}
+.rphead{
+  color: #333;
+}
+.proTime{
+  text-align: center;
+}
+.date{
+  font-size: 30rpx;
+  margin-bottom: 12rpx;
+  font-weight: 700；
+}
+.time{
+  font-size: 26rpx;
+}
+.dot{
+  position: relative;
+  z-index: 5;
+  margin: 0 20rpx;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #dadada;
+}
+.dot::before{
+  content: "";
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%); 
+  transform: translate(-50%,-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  
+}
+.proItemRg.sub{
+  position: relative;
+  overflow: visible;
+  padding-bottom: 80rpx;
+}
+.proItemRg::before{
+  content: " ";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: -40rpx;
+  width: 2rpx;
+  height: 100%;
+  background-color: #dadada;
+  -webkit-transform: scaleX(0.5); 
+  transform: scaleX(0.5);
+
+}
+.proItem:last-child .proItemRg.sub{
+   overflow: hidden;
+}
+.proTitle{
+  color: #333;
+  font-weight: 700;
+  font-size: 30rpx;
+  margin-bottom: 16rpx;
+}
+.proDesc{
+  margin-bottom: 14rpx;
+}
+.proDesc:last-child{
+  margin-bottom: 0;
+}
+.refundDetail{
+  margin-top: 20rpx;
+}
+
+.refundSn{
+  white-space: pre-line;
+  word-break: break-all;
+}
+.copy{
+  padding: 0 20rpx;
+  margin-left: 30rpx;
+}
+.detBtn{
+  width: 108rpx;
+  text-align: center;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+}
+.detBtn::before{
+  border-color: currentColor;
+}
+.detBtn:active{
+  background: rgba(0, 0, 0, .1)
+}
+.refundPicBox{
+  margin-top: 12rpx;
+}
+
+.refundPic{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 4rpx;
+  margin-right: 8rpx;
+
+}
+.refundCommodity{
+  margin-top: 30rpx;
+}
+.refundPic.morePic{
+  display: inline-block;
+  background-color: #eee;
+  font-size: 50rpx;
+  color: #aaa;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+/*退款进度页面  */
+.newestProgress{
+   /* color: var(--DShop-mcolor);  */
+}
+.newestProgress .proItemRg::before{
+   background-color: var(--DShop-mcolor); 
+}
+
+
+.newestProgress .proTitle{
+    color: var(--DShop-mcolor);  
+}
+.newestProgress .dot{
+  background-color: var(--DShop-mcolor);
+}
+
+.newestProgress .dot:before{
+   background-color: transparent;
+   width: 18rpx;
+   height: 8rpx;
+   border: solid #fff;
+   border-width:0 0 2px 2px;
+   -webkit-transform:  translate(-50%,-70%) rotate(-45deg); 
+   transform:  translate(-50%,-70%) rotate(-45deg);
+   border-radius: 0;
+}
+
+
+
+/*弹窗  */
+.popupBox{
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+.pupopBody{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 24rpx 0;
+}
+.closeBtn{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width: 64rpx;
+  height: 64rpx;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.closeBtn:active{
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.closeBtn::before,.closeBtn::after{
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #999;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.closeBtn::before{
+  width: 50%;
+  height: 2rpx;
+}
+.closeBtn::after{
+  width: 2rpx;
+  height: 50%;
+}
+
+/*  */
+.bottomFixBtn{
+  padding: 0 24rpx;
+  margin-top: 50rpx;
+}
+.bottomFixBtn button{
+   font-size: 32rpx;
+   margin-bottom: 30rpx;
+   height: 92rpx;
+   line-height: 92rpx;
+
+}
+.bottomFixBtn button::after{
+  display: none;
+}
+button.mainColor_bg{
+  color: #fff;
+}
+button.mainColor_bg:active{
+  opacity: 0.85;
+}
+button.gridFour::before{
+  border-color: #aaa;
+  border-radius: 5px;
+}
+button.gridFour{
+  background-color: #fff;
+}

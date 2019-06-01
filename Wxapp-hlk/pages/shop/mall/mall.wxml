@@ -1,0 +1,496 @@
+ <official-account></official-account>
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+  <!-- 收藏提示 -->
+  <view class="pageCollectTips flex" wx:if="{{index_data.shop_config.is_collect_program == 1 && !is_collect}}">
+    <view class="collectTipText sub">点击“ <image class="collectTipImg" src="http://www.ixiaochengxu.cc/resource/images/common/ico_more.png" mode="widthFix"></image> ”添加到我的小程序，微信首页下拉即可快速访问店铺</view>
+    <view class="collectTipClose" bindtap='closeCollect'><text class="iconfont icon-close"></text></view>
+  </view>
+  <block wx:if="{{index_data.community_config.is_open != 1}}" wx:for="{{index_set}}" wx:key="">
+    <!--mall.wxml-->
+    <block wx:if="{{item.name == 'search'}}">
+      <!-- search start  -->
+      <view class="search flex f14">
+        <block wx:if="{{index_data.public['is_position'] == 1}}">
+          <!-- 定位 -->
+          <view class="address lineText mr10" bindtap="location">
+            <text class="green iconfont icon-locationfill"></text> {{address}}</view>
+          <view class="search-box sub">
+            <form bindsubmit="goods_search_bind">
+              <view class="flex">
+                <input name="k-word" class="sub search-input" type="text" placeholder="请搜索商品" confirm-type="search" bindconfirm="goods_search_bind" />
+                <button form-type='submit' size="mini" class="search-btn">
+                  <icon type="search" size="18" />
+                </button>
+              </view>
+            </form>
+          </view>
+        </block>
+        <block wx:else>
+          <!-- 扫一扫 -->
+          <view class="saoyisao tc" bindtap="shop_saoma_bind">
+            <text class="iconfont icon-saoyisao"></text>
+          </view>
+          <view class="search-box sub">
+            <form bindsubmit="goods_search_bind">
+              <view class="flex">
+                <input name="k-word" class="sub search-input" type="text" placeholder="请搜索商品" confirm-type="search" bindconfirm="goods_search_bind" />
+                <button form-type='submit' size="mini" class="search-btn">
+                  <icon type="search" size="18" />
+                </button>
+              </view>
+            </form>
+          </view>
+          <!-- <button class="contact-button" open-type="contact">
+            <text class="iconfont icon-mark"></text>
+          </button> -->
+        </block>
+      </view>
+      <!-- search end  -->
+    </block>
+    <block wx:if="{{item.name == 'swiper'}}">
+      <!--home swiper start-->
+      <view class="{{item.config.is_shape_type ? item.config.is_shape_type : 'swiperCardBox'}} {{item.config.is_gap != 0 ? 'mb10':''}}">
+        <view class="swiper">
+          <swiper circular="true" indicator-dots="true" autoplay="true" indicator-color="rgba(0,0,0,0.5)" indicator-active-color="#ffffff" current="0" interval="3000" duration="600" class="swiper-box" bindanimationfinish="swiperIndex">
+            <block wx:for="{{index_data.index_swiper_list}}" wx:key="">
+              <swiper-item>
+                <image src="{{item.img_url}}" bindtap="swiper_top_bind" data-url="{{item.url}}" class="swiper-img" mode="aspectFill" />
+
+              </swiper-item>
+            </block>
+          </swiper>
+          <view class='swiperNumBox'>{{swiper_index + 1}}/{{index_data.index_swiper_list.length}}</view>
+        </view>
+      </view>
+      <!--home swiper end-->
+    </block>
+    <block wx:if="{{item.name == 'cap'}}">
+      <!--home cap start-->
+      <swiper class="bgwhite tc clearfix {{item.config.is_gap != 0 ? 'mb10':''}}" style="height:{{index_data.index_cate_list.length <= 4 ? 176:332}}rpx;" wx:if="{{index_data.index_cate_list}}" indicator-dots="{{index_data.index_cate_list.length > 8?true:false}}">
+        <swiper-item>
+          <view class="menu clearfix">
+            <form report-submit='true' bindsubmit='pushFormId'>
+              <block wx:for="{{index_data.index_cate_list}}" wx:key="">
+                <block wx:if="{{index < 8}}">
+                  <button class="menu-item" bindtap="mall_list_bind" id="{{item.id}}" form-type='submit'>
+                    <image src="{{item.icon}}" class="menu-item-img" mode="aspectFill"></image>
+                    <view class="menu-txt lineText">{{item.name}}</view>
+                  </button>
+                </block>
+              </block>
+            </form>
+          </view>
+        </swiper-item>
+        <block wx:if="{{index_data.index_cate_list.length > 8}}">
+          <swiper-item>
+            <view class="menu">
+              <block wx:for="{{index_data.index_cate_list}}" wx:key="">
+                <block wx:if="{{index >= 8}}">
+                  <view class="menu-item" bindtap="mall_list_bind" id="{{item.id}}">
+                    <image src="{{item.icon}}" class="menu-item-img" mode="aspectFill"></image>
+                    <view class="menu-txt lineText">{{item.name}}</view>
+                  </view>
+                </block>
+              </block>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!--home cap end-->
+    </block>
+    <block wx:if="{{item.name == 'notice'}}">
+      <!-- 公告 -->
+      <block wx:if="{{index_data.public.shop_notice}}">
+        <view class="notice flex arrowR {{item.config.is_gap != 0 ? 'mb10':''}}">
+          <view class="mr10 red">
+            <text class="iconfont icon-tongzhi"></text>
+          </view>
+          <swiper class="notice-list" vertical autoplay circular interval="2000" bindtap="is_show_notice">
+            <block wx:for="{{index_data.public.shop_notice_arr}}" wx:key="">
+              <swiper-item wx:if="{{index < 16}}">
+                <view class="news lineText">{{item}}</view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </block>
+      <!-- 公告 -->
+      <!-- 公告弹出框 -->
+      <block wx:if="{{is_show_notice}}">
+        <view class="add-cart-box floatBox" bindtap="is_show_notice">
+          <view class="mid tips-detail">
+
+            <view class="tips-top tc">公告</view>
+            <text class="close tc"></text>
+            <view class="tips-detail-content mt10">
+              <block wx:for="{{index_data.public.shop_notice_arr}}" wx:key="">
+                <view class="tips-detail-item">{{index + 1}}. {{item}}</view>
+              </block>
+            </view>
+          </view>
+          <view class="floatBox floatBoxBg" style="display:block;"></view>
+        </view>
+      </block>
+      <!-- 公告弹出框 -->
+    </block>
+    <block wx:if="{{item.name == 'brand'}}">
+      <!--home brand start-->
+      <!-- 长方形 建议尺寸 200 * 120 比例 5:3 -->
+      <!-- 圆形 建议尺寸 200 * 200 比例 1:1 -->
+      <!-- 圆形 添加类名 brandRoundBox  长方形 不添加 -->
+      <view class="{{item.config.is_gap != 0 ? 'mb10':''}}" wx:if="{{index_data.index_pinpai_list.length > 0}}">
+        <view class="home-tit gridXb tc f18">
+          <text class="iconfont icon-crownfill"></text> 品牌专区
+        </view>
+        <view class="brand-box f14 {{item.config.brand_shape ? item.config.brand_shape : ''}}">
+          <scroll-view class="brand-home" scroll-x="true" scroll-with-animation="true">
+            <block wx:for="{{index_data.index_pinpai_list}}" wx:key="">
+              <view class="brand-list" bindtap="mall_list_bind2" id="{{item.id}}">
+                <image src="{{item.icon}}" class="brand-img" mode="aspectFill"></image>
+                <view class="brandName lineText">{{item.name}}</view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <!--home brand end-->
+    </block>
+
+    <!-- vip 入口 -->
+    <block wx:if="{{item.name == 'vip'}}">
+      <view class='vipEntrance flex mb10' bindtap='jumpToVip'>
+        <text class='vipEntranceIco iconfont icon-vip_member'></text>
+        <view class='sub'>VIP+超级会员</view>
+        <view class='vipEntranceMore'>了解详情
+          <text class='iconfont icon-youjiantou'></text>
+        </view>
+      </view>
+    </block>
+
+    <!-- vip专题页 入口 -->
+    <block wx:if="{{item.name == 'vipshop'}}">
+      <view class='vipEntrance flex mb10' bindtap='jumpToVipShop'>
+        <text class='vipEntranceIco iconfont icon-vip_member'></text>
+        <view class='sub'>VIP+专题页</view>
+        <view class='vipEntranceMore'>了解详情
+          <text class='iconfont icon-youjiantou'></text>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{item.name == 'quan'}}">
+      <!--领取优惠券 start-->
+      <block wx:if="{{index_data.index_quan_list!=null}}">
+        <view class="juan-box">
+          <view class="coupon-list flex" wx:for="{{index_data.index_quan_list}}" wx:key="" bindtap="go_quan_info_bind" id="{{item.id}}">
+            <view class="coupon-price sub">
+              <view class='price lineText'>
+                <text class='f14'>￥</text>
+                <text class="f24 mr5 ">{{item.q_dai_jiner}}</text>{{index_data.index_quan_list.length==1?'优惠券':''}}
+              </view>
+              <view class="f14 lineText coupon-name mt5">{{item.q_name}}</view>
+            </view>
+            <view class="receive-btn flex">领取</view>
+          </view>
+        </view>
+      </block>
+      <!--领取优惠券 end-->
+    </block>
+
+    <block wx:if="{{item.name == 'ad'}}">
+      <!-- 二张广告图 start-->
+      <view class="advers-box {{item.config.is_gap != 0 ? 'mb10':''}}" wx:if="{{index_data.index_ad_list.length> 0}}">
+        <view class="ads clearfix ads-{{index_data.index_ad_list.length}}th">
+          <block wx:for="{{index_data.index_ad_list}}" wx:key="">
+            <view class="ads-item">
+              <image src="{{item.img_url}}" bindtap="shop_ad_bind" data-url="{{item.url}}" mode="aspectFill" class="ads-img"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+      <!-- 二张广告图 end-->
+    </block>
+    <block wx:if="{{item.name == 'tuijian'}}">
+      <!--home top start-->
+      <view class="{{item.config.is_gap != 0 ? 'mb10':''}}" wx:if="{{index_data.index_tuijian_list.length > 0}}">
+        <goodslist data="{{index_data.index_tuijian_list}}" title="店家推荐" mode="{{item.config.is_tuijian_show ? item.config.is_tuijian_show : 'item-recombox'}}" close_page="{{false}}" />
+      </view>
+      <!--home top start-->
+    </block>
+    <block wx:if="{{item.name == 'hot'}}">
+      <!--home hot start-->
+      <view class="{{item.config.is_gap != 0 ? 'mb10':''}}" wx:if="{{index_data.index_hot_list.length > 0}}">
+        <goodslist data="{{index_data.index_hot_list}}" title="热品推荐" mode="{{item.config.is_hot_show ? item.config.is_hot_show : 'item-recombox'}}" close_page="{{false}}" />
+      </view>
+    </block>
+    <!--new  -->
+    <block wx:if="{{item.name == 'new'}}">
+      <view class="{{item.config.is_gap != 0 ? 'mb10':''}}" wx:if="{{index_data.index_new_list.length > 0}}">
+        <goodslist data="{{index_data.index_new_list}}" title="新品推荐" mode="{{item.config.is_new_show ? item.config.is_new_show : 'item-colbox'}}" close_page="{{false}}" />
+      </view>
+      <!-- <view class="tips-foot tc f12 grey" wx:if="{{load_more}}">
+          <text class='loading-icon'></text>
+        </view> -->
+      <!-- <view class='lookTot gridFour' catchtap="allCase" wx:if="{{load_more}}">查看更多</view> -->
+      <view class='nothing-line' wx:else>没有更多了</view>
+
+
+      <!-- <view class="tips-foot tc f12 grey" wx:else>
+          不要扯了，已经扯到底了
+        </view> -->
+    </block>
+    <!-- 秒杀入口 -->
+    <block wx:if="{{item.name == 'seckill' && item.config.seckill_config.is_open == 1}}">
+      <view wx:if="{{item.config.is_seckill_show ? (item.config.is_seckill_show == 'seckillBlockBox' ? true : false) : true}}" class="seckill {{item.config.is_gap != 0 ? 'mb10':''}} img-seckill" bindtap='navigateto' data-link="{{item.config.link}}">
+        <view class="seckill-tit">
+          <image class="seckill-tit-img" src="{{item.config.seckill_img}}" mode="aspectFill"></image>
+          <view class="countDown">
+            <block wx:if="{{ item.config.seckill_config.is_today == 1 }}">
+              <block wx:if="{{time[index].status != 2}}">
+                距{{time[index].status == 0?'开始':'结束'}}
+                <text class="time-show">{{time[index].hour}}</text>：
+                <text class="time-show">{{time[index].minute}}</text>：
+                <text class="time-show">{{sec}}</text>
+              </block>
+              <block wx:else>
+                活动结束
+              </block>
+            </block>
+            <block wx:else>
+              距开始
+              <text class="time-show">{{item.config.seckill_config.start_day}}</text>天
+              <!-- <view>每{{item.config.seckill_config.cycle_type == 1?'周':'月'}}</view>
+              <view>{{item.config.seckill_config.cycle_data == null? '':item.config.seckill_config.cycle_data}}</view> -->
+            </block>
+            <!-- 每周 1 2 3 4 <view>10：21至11：00</view>  -->
+          </view>
+        </view>
+        <view class="seckill-goods-box mt10">
+          <view class="seckill-goods-item">
+            <view class="seckill-goods-img">
+              <image class="scale-rule" src="/images/default.png" mode="aspectFill"></image>
+            </view>
+            <view class="seckill-goods-name lineText">良品铺子零食大礼包1416g</view>
+            <view class="goods-price">
+              <view class="new-price">￥165.00</view>
+              <view class="delLine grey f12">￥165.00</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 秒杀列表入口 -->
+      <view wx:if="{{item.config.is_seckill_show && item.config.is_seckill_show != 'seckillBlockBox'}}" class='seckillModeBox'>
+        <view class='seckillModeTitleBox flex'>
+          <view class='seckillModeTitleText sub'>{{item.config.seckill_info.seckill_config.name}}</view>
+          <!-- <view class='seckillModeTitleDown'>倒计时 {{time[index].hour}}:{{time[index].minute}}:{{sec}}</view> -->
+          <block wx:if="{{ item.config.seckill_config.is_today == 1 }}">
+            <block wx:if="{{time[index].status != 2}}">
+              <view class='seckillModeTitleDown'>
+                <view class='seckillModeTitleDownText'>距{{time[index].status == 0?'开始':'结束'}}</view>{{time[index].hour}}:{{time[index].minute}}:{{sec}}</view>
+            </block>
+            <block wx:else>
+              <view class='seckillModeTitleDown'>活动结束</view>
+            </block>
+          </block>
+        </view>
+        <seckillGoods data="{{item.config.seckill_info}}" status="{{time[index].status}}" mode="{{item.config.is_seckill_show}}" title="{{item.config.seckill_corner ? item.config.seckill_corner : '限时价'}}"></seckillGoods>
+        <view class="moreItemBtn" bindtap='navigateto' data-link="{{item.config.link}}">查看更多</view>
+      </view>
+    </block>
+
+    <block wx:if="{{item.name == 'extra'}}">
+      <view class="adver-box {{item.config.is_gap != 0 ? 'mb10':''}}">
+        <block wx:if="{{item.config.imginfo['img-url'].length == 1}}">
+          <view class="adver space-tb ad1th" bindtap="shop_ad_bind" data-url="{{item.config.imginfo['path'][0]}}">
+            <image src="{{item.config.imginfo['img-url'][0]}}" mode="widthFix"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="clearfix adver space-tb {{item.config.type}} {{item.config.gap == 1 ? 'space-mini' : ''}}">
+            <view class="ad-item" wx:for="{{item.config.imginfo['img-url']}}" wx:key="" wx:for-item="extraitem" wx:for-index="idx" bindtap="shop_ad_bind" data-url="{{item.config.imginfo['path'][idx]}}">
+              <image src="{{extraitem}}" mode="aspectFill"></image>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+  <block wx:if="{{index_data.community_config.is_open == 1}}">
+    <!-- 社区团购 -->
+    <view class='flex leaderInfo mainColor_bg'>
+      <!-- <image class='leaderAvatar' mode='aspectFill' src='{{all_address.default_colonel_headimgurl}}'></image> -->
+      <view class='name sub' catchtap='selectSelfAddress'>
+        <view class='nameTxt flex'>
+          <text class='arrowR lineText'>{{all_address.address_name}}</text><text>切换社区</text>
+        </view>
+        <view class='adress'>自提点：{{all_address.address}}</view>
+      </view>
+      <view class='r'>
+        <button bindtap='showShare'>
+          <text class='iconfont icon-share'></text> 分享</button>
+      </view>
+    </view>
+    <view class="search">
+      <view class="search-box sub">
+        <form bindsubmit="goods_search_bind">
+          <view class="flex">
+            <input name="k-word" class="sub search-input" type="text" placeholder="请搜索商品" confirm-type="search" bindconfirm="goods_search_bind" />
+            <button form-type='submit' size="mini" class="search-btn">
+              <icon type="search" size="18" />
+            </button>
+          </view>
+        </form>
+      </view>
+    </view>
+
+    <view class='leaderSwiper' wx:if="{{swiper_data}}">
+      <swiper indicator-dots='true' autoplay='3000'>
+        <swiper-item wx:for="{{swiper_data}}">
+          <image src='{{item.img_url}}' bindtap='swiper_top_bind' data-url="{{item.url}}" mode='aspectFill'></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class='footLinks' wx:if="{{index_data.community_config.open_colonel_join == 1 || index_data.community_config.open_supplier_join == 1}}">
+      <view catchtap="shop_supplier_apply" wx:if="{{index_data.community_config.open_supplier_join == 1}}">
+        <image src='http://www.ixiaochengxu.cc/resource/images/shop/new_supplier.png' mode='widthFix'></image>
+      </view>
+      <view catchtap="shop_colonel_apply" wx:if="{{index_data.community_config.open_colonel_join == 1}}">
+        <image src='http://www.ixiaochengxu.cc/resource/images/shop/new_team.png' mode='widthFix'></image>
+      </view>
+    </view>
+
+    <!-- <block wx:if="{{index_data.index_quan_list!=null}}">
+      <view class="juan-box" style='background:#fff;padding:10rpx 0;margin:0'>
+        <view class="coupon-list flex" wx:for="{{index_data.index_quan_list}}" wx:key="" bindtap="go_quan_info_bind" id="{{item.id}}">
+          <view class="coupon-price sub">
+            <view class='price lineText'>
+              <text class='f14'>￥</text>
+              <text class="f24 mr5 ">{{item.q_dai_jiner}}</text>{{index_data.index_quan_list.length==1?'优惠券':''}}
+            </view>
+            <view class="f14 lineText coupon-name mt5">{{item.q_name}}</view>
+          </view>
+          <view class="receive-btn flex">领取</view>
+        </view>
+      </view>
+    </block> -->
+    <block wx:if = "{{index_data.index_quan_list!=null}}">
+      <scroll-view class='leaCouponBox' scroll-x>
+        <view class='boxInnner' wx:for="{{index_data.index_quan_list}}" wx:key="" bindtap="go_quan_info_bind" id="{{item.id}}">
+          <view class='leagueCoupon flex'>
+            <view class='LeaCouLf'>
+              <view>
+                <text class='rmb'>￥</text>
+                <text class='couVal'>{{item.q_dai_jiner}}</text>
+                <text class='ml5'>{{index_data.index_quan_list.length==1?'优惠券':''}}</text>
+              </view>
+              <view class='couType lineText'>{{item.q_name}}</view>
+            </view>
+            <view class='leaGetBtn'>领取</view>
+          </view>
+        </view>
+
+    
+
+      </scroll-view>
+    </block>
+
+    <view class='countdown'>
+      <view class='countdownClock'>
+        <view></view>
+      </view> 距离本场活动{{active_type == 1 ? '结束' : '开始'}}剩
+      <block wx:if="{{timeall[0].dd != '00'}}">
+        <text>{{timeall[0].dd}}</text>天</block>
+      <text>{{timeall[0].hh}}</text>时
+      <text>{{timeall[0].mm}}</text>分
+      <text>{{seconds}}</text>秒
+    </view>
+
+    <swiper vertical='true' autoplay='2000' circular='true' class='timeOrder' wx:if="{{barrage_data && swiper_data}}">
+      <swiper-item wx:for="{{barrage_data}}">
+        <image src='{{item.headimgurl}}' mode='aspectFill'></image>
+        {{item.u_name}}刚刚购买了{{item.g_name}}
+      </swiper-item>
+    </swiper>
+
+    <scroll-view class='menuBox ' scroll-left="{{scroll_left}}" scroll-x="true">
+      <view class='communityMenu {{community_cate_id == -1 ? "active" : ""}}' id="-1" bindtap='community_cate_item_bind'>
+        <text>推荐</text>
+      </view>
+      <view wx:for="{{community_cate}}" class='communityMenu {{community_cate_id == item.id ? "active" : ""}}' id="{{item.id}}" bindtap='community_cate_item_bind'>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+    <goodslist data="{{address_goods}}" timeall="{{timeall}}" title="社区商品" mode="community" seconds="{{seconds}}" close_page="{{false}}" phone="{{index_data.public.kefu_contant}}" active_type="{{active_type}}" address_id="{{all_address.id}}" community_config="{{index_data.community_config}}" bind:dgShop_goods_add_cart="addCart" />
+
+
+      <!-- --------分享弹窗开始--------- -->
+      <view class="shade_bg floatBox" wx:if="{{show_share}}">
+        <view class='commdityDetail_share white_bg tc bounce'>
+          <view class='shareBox flex'>
+            <form class=' sub' bindsubmit='onShareAppMessage' report-submit='true'>
+              <button class='shareButton ' open-type='share' hover-stop-propagation='true' form-type='submit'>
+                <view class='subIconBox mb10 '>
+                  <text class='green iconfont icon-wx-pay'></text>
+                </view>
+                发送给朋友
+              </button>
+            </form>
+            <button class='shareButton sub' bindtap='communityPoster'>
+              <view class='subIconBox mb10'>
+                <text class='blue iconfont icon-erweima1'></text>
+              </view>
+              生成海报
+            </button>
+          </view>
+          <view class='cancleBtn gridXt' bindtap='showShare'>取消</view>
+        </view>
+        <!-- <view class="floatBox floatBoxBg" style="display:block"></view> -->
+      </view>
+
+  </block>
+
+  <!--home list start-->
+
+</block>
+<!--右侧浮动-->
+<view class="aside-flote">
+  <button open-type="contact" hover-class="none" type="primary" class='gridFourCirle'>
+    <text class="iconfont icon-markfill"></text>
+  </button>
+  <button type="primary" hover-class="none" bindtap="bind_go_cart" class='gridFourCirle'>
+    <text class="iconfont icon-cartfill" bindtap="bind_go_cart"></text>
+    <text class='aside-flote-num'>{{cart_num}}</text>
+  </button>
+</view>
+<!-- 领取红包弹出窗 -->
+<view class="floatBox floatBoxBg get-pop {{index_data.index_show_quan_list.length > 0 && popup?'quan_show':'quan_close'}}">
+  <view class='get-box mid'>
+    <view class='close' bindtap='close_popup'>
+      <text class='iconfont icon-close'></text>
+    </view>
+    <view class='get-list'>
+      <view class='get-items flex' wx:for="{{index_data.index_show_quan_list}}" bindtap="go_quan_info_bind" id="{{item.id}}">
+        <view class='get-count'>
+          <view>
+            <text class='ren'>￥</text>
+            <text class='num'>{{item.q_dai_jiner}}</text>
+          </view>
+        </view>
+        <view class='get-info sub'>
+          <view class='lineText'>{{item.q_name}}</view>
+          <view class='f12 grey lineText'>{{item.q_shuoming}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 广告弹框 -->
+<import src='../../plug-in/template/tpl.wxml' />
+<template is='popup-big' data='{{data:ad_popup}}' />

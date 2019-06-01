@@ -1,0 +1,55 @@
+
+/* 字体文件 */
+/* 多色版文件 */
+/* 字体文件 */
+@import "/pages/shop/common/shopFont.wxss";
+
+.iconfont {
+  font-size: inherit;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* 多色版文件 */
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+.topPic {
+  width: 100%;
+}
+
+.savePicBtn {
+  width: 94%;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
+}
+
+.savePicBtn::after {
+  width: 0;
+  height: 0;
+}
+
+.cavimg {
+  width: 94%;
+  height: 100%;
+  margin: 20rpx 3%;
+  border-radius: 8rpx;
+}
+
+.load {
+  padding-top: 40%;
+  line-height: 24px;
+}
+
+.footerBtn{
+  padding: 0 3%;
+}
+.save {
+  color: #fff;
+  margin-left: 30rpx;
+  background-color: var(--DShop-mcolor);
+}
+
+.goHome {
+  color: var(--DShop-mcolor);
+  background-color: #fff;
+}

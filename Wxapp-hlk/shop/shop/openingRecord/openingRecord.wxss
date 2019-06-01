@@ -1,0 +1,6 @@
+/* pages/shop/openingRecord/openingRecord.wxss */
+page{background: #fff;font-size: 32rpx;}
+.recordItem{padding: 36rpx 30rpx;}
+.recordItemTitBox{margin-bottom: 20rpx;}
+.recordItemTit{color: #90561d;font-weight: bold;}
+.recordMsgItem{margin-top: 6rpx;font-size: 24rpx;color: #666;line-height: 1.5;}

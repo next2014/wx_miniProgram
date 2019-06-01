@@ -1,0 +1,48 @@
+<!--pages/user/fenxiao/card/card.wxml-->
+<view class='headerBox'>
+  <view class='headTit'>礼品卡首页二维码</view>
+  <view class='linght '>
+    <view class='flex mb5'>
+      <view class='mr10'>1</view>
+      <view>直接保存二维码分享群聊天，可在线上绑定下级</view>
+    </view>
+    <view class='flex'>
+      <view class='mr10'>2</view>
+      <view>商家申请批量制卡，配合二维码印制实体卡，可在线下绑定关系</view>
+    </view>
+  </view>
+  <button class='bulidBtn' bindtap='getCardCode'>立即生成</button>
+</view>
+<view class='cardList'>
+  <view class=' cardItem' wx:for='{{clist}}' wx:key='cid'>
+    <view class='flex cardItemTop'>
+      <view class='carImgBox mr10'>
+        <image mode='aspectFill' src='{{item.goods_icon_url}}'></image>
+        <view class='cardVal' wx:if='{{item.type==1}}'>面值{{item.const_price}}元</view>
+        <view class='cardVal' wx:else>可用{{item.jici_num}}次</view>
+      </view>
+      <view class='sub'>
+        <view class='lineText tit'>{{item.goods_name}}</view>
+        <view class='grey lineText'>售卖价格：￥{{item.now_price}}</view>
+      </view>
+    </view>
+    <view class='flex cardItemBot gridXt'>
+      <view class='sub lineText grey'>最多可赚
+        <text class='red'>￥{{item.max_money}}元/张</text>
+      </view>
+      <view class='gridFour red' bindtap='getCardInfoCode' data-cid='{{item.id}}'>生成二维码</view>
+      <button class='share' open-type='share' data-cid='{{item.id}}' data-name='{{item.goods_name}}'>分享</button>
+    </view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class='floatBox' hidden='{{hidecode}}'>
+  <view class='floatBox floatBoxBg'></view>
+  <view class='cardPopup'>
+      <view>
+         <image class='qrcode' src='{{code_img}}'></image>
+      </view>
+      <view class='saveBtn'  bindtap='downLoad'>保存图片</view>
+      <icon class='cancelICon' type='cancel' color='rgba(255,255,255,.6)' size='28' bindtap='closeShow'></icon>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+/* pages/user/red-packet/cash-record/index.wxss */
+@import "/pages/user/common.wxss";
+
+page {
+    font-size: 32rpx;
+}
+
+.record-item {
+    background: #fff;
+    padding: 20rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.flexLf{
+    max-width: 65%;
+}
+.flexRg{
+    text-align: right;
+}
+.record-money {
+    font-weight: bold;
+}
+.tag{
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f66;
+    color: #fff;
+    padding: 0 8rpx;
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 2px;
+}

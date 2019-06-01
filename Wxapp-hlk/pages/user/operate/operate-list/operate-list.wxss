@@ -1,0 +1,48 @@
+/* pages/user/operate/operate-list/operate-list.wxss */
+
+@import '../../common.wxss';
+@import '/css/color/color.wxss';
+
+
+.opaList{
+  padding: 0 24rpx;
+}
+.opaItem{
+  margin-top: 20rpx;
+  padding: 24rpx;
+  background-color: #fff;
+  border-radius: 6rpx;
+}
+.opaimgBox{
+  position: relative;
+  padding-top: 50%;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.opaimgBox image{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   
+}
+.itemTit{
+  margin-top: 24rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+
+.itemTag{
+  margin-top: 24rpx;
+  display: inline-block;
+  color: var(--mColor);
+  padding: 2rpx 20rpx;
+}
+.itemTag::before{
+  border-color: currentColor;
+}

@@ -1,0 +1,533 @@
+/*user-common*/
+@import 'user-fonts.wxss';
+
+page .iconfont{ font-size: inherit;}
+
+page .iconfont::before {
+  font-weight: normal !important;
+}
+
+.navigator-hover {
+  opacity: 1;
+  background: none;
+}
+
+.zanwu {
+  color: lightgrey;
+  padding: 80rpx;
+  text-align: center;
+}
+
+.zanwu text.iconfont {
+  font-size: 260rpx;
+  line-height: 110%;
+}
+
+
+/* 卡 */
+
+.cardBox {
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+
+.cardTitle {
+  padding: 30rpx 0;
+}
+
+.cardTitle::before {
+  right: 5rpx;
+}
+
+.cardTitle .iconfont {
+  font-size: 52rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15rpx;
+}
+
+.cardTitle .iconCard {
+  color: #f66;
+}
+
+.cardTitle .iconCoupon {
+  color: #fea512;
+}
+
+.titleRg {
+  padding-right: 30rpx;
+}
+
+
+
+.cardList {
+  padding-bottom: 30rpx;
+}
+
+.timeCardItem {
+  position: relative;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.timeCardItem:nth-child(n+2) {
+  margin-top: 10rpx;
+}
+
+.imgBox {
+  position: relative;
+  padding-bottom: 25%;
+}
+
+.img {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.itemInner {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.itemInnerTop {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 20rpx;
+  padding: 0 20rpx;
+}
+
+.itemInnerTop .sub {
+  font-weight: 700;
+  margin-right: 100rpx;
+}
+
+.itemInnerTop .qrCodeIcon {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 6rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 40rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/*弹窗 卡点击弹出层 */
+
+.floatBox {
+  z-index: 990;
+}
+
+.shadeBg {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.popup {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 0 45rpx;
+  -webkit-transform: translateY(200%);
+  transform: translateY(200%);
+}
+
+.cardInfo {
+  position: relative;
+  margin-top: -150rpx;
+}
+
+.cardInfo .giftImg {
+  position: relative;
+  padding-bottom: 50%;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.giftPrice {
+  position: absolute;
+  z-index: 5;
+  left: 10rpx;
+  bottom: 10rpx;
+  font-weight: 700;
+  color: #fff;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0 24rpx;
+  border-radius: 0 14px 0 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.closeBox {
+  position: absolute;
+  z-index: 5;
+  right: 16rpx;
+  top: 16rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 3rpx solid #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.closeBox:active {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.closeBox::before, .closeBox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+.closeBox::before {
+  width: 54%;
+  height: 4rpx;
+}
+
+.closeBox::after {
+  width: 4rpx;
+  height: 54%;
+}
+
+.popupGiftTit {
+  font-weight: 700;
+}
+
+.cardContent {
+  height: calc(100vh - 400rpx);
+}
+
+.preIcon {
+  margin: 0 4rpx;
+}
+
+.creaseBox {
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx 0;
+}
+
+.crease {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  position: relative;
+}
+
+.decrease {
+  border: 3rpx solid #bbb;
+  margin-right: 40rpx;
+}
+
+.increase {
+  margin-left: 40rpx;
+  background-color: #f66;
+}
+
+.decrease::before, .increase::before, .increase::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.decrease::before, .increase::before {
+  width: 50%;
+  height: 4rpx;
+}
+
+.increase::after {
+  width: 4rpx;
+  height: 50%;
+}
+
+.decrease::before {
+  background-color: #bbb;
+}
+
+.increase::before, .increase::after {
+  background-color: #fff;
+}
+
+.count {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.payBtn {
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  border-radius: 6rpx;
+  margin-bottom: 60rpx;
+  background-color: #f66;
+}
+
+.payBtn::after {
+  display: none;
+}
+
+.payBtn:active {
+  opacity: 0.8;
+}
+
+/* 卡片介绍 */
+
+.dnTitle {
+  font-size: 28rpx;
+  margin-bottom: 24rpx;
+  color: #666;
+}
+
+.descItem {
+  position: relative;
+  margin-bottom: 24rpx;
+  line-height: 34rpx;
+  padding-left: 30rpx;
+  color: #666;
+}
+
+.descItem:last-child {
+  margin-bottom: 60rpx;
+}
+
+.descItem::before {
+  content: "";
+  position: absolute;
+  left: 6rpx;
+  top: 14rpx;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* 次卡 持卡权益 */
+
+.ciCardBox {
+  margin-bottom: 30rpx;
+}
+
+.ciCardList {
+  padding: 20rpx 0 30rpx;
+}
+
+.ciCardItem {
+  align-items: center;
+}
+
+.ciCardItem:not(:first-child) {
+  margin-top: 20rpx;
+}
+
+.ciCardItem .sub .lineText {
+  font-weight: 700;
+}
+
+.shopInfoBox {
+  padding: 30rpx 0;
+}
+
+.shopName {
+  font-weight: 700;
+}
+
+.shopInfoBox .flex {
+  align-items: center;
+}
+
+.shopInfoBox .iconfont {
+  font-size: 46rpx;
+  padding-left: 20rpx;
+  margin-left: 30rpx;
+  color: #ff5050;
+}
+
+.shopInfoBox .red::before {
+  background-color: #ccc;
+}
+
+/* 动画 底部弹出 */
+
+.show {
+  animation: show 400ms 200ms ease forwards;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* 动画 向下隐藏 */
+
+.hide {
+  animation: hide 300ms forwards;
+}
+
+@keyframes hide {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* 弹窗 */
+
+.popupBox {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.popupBg {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.qrcodePopup {
+  width: 500rpx;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  padding: 50rpx 30rpx;
+  border-radius: 10rpx;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: centerShow 0.3s forwards;
+}
+
+@keyframes centerShow {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.qrCodeImg {
+  width: 360rpx;
+  height: 360rpx;
+  margin: 20rpx 0;
+}
+
+/* 券 */
+
+.couponItem {
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.couponItem:nth-child(n+2) {
+  margin-top: 30rpx;
+}
+
+.couponItem::before {
+  border-color: #ccc;
+}
+
+.couItemLf {
+  width: 220rpx;
+
+}
+
+
+
+.couItemLf::before {
+  background-color: #ccc;
+}
+
+.couponVal {
+  font-size: 54rpx;
+  font-weight: 700;
+}
+
+.couponItem .sub {
+  position: relative;
+  height: 188rpx;
+  overflow: visible;
+  padding: 24rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.couItemRg::before, .couItemRg::after {
+  content: "";
+  position: absolute;
+  left: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1rpx solid;
+  border-color: #ccc #ccc transparent transparent;
+}
+
+.couItemRg::before {
+  top: -10rpx;
+  transform: rotate(135deg);
+}
+
+.couItemRg::after {
+  bottom: -10rpx;
+  transform: rotate(-45deg);
+}
+
+.couTitle {
+  font-size: 30rpx;
+}
+
+.couponTag {
+  color: #09bb07;
+}
+

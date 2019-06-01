@@ -1,0 +1,68 @@
+/* pages/shop/seckill-list/index.wxss */
+/* 引入公共样式 */
+@import "/pages/shop/common/common.wxss";
+.seckill-imgshow{width: 100%;padding-bottom: 50%;position: relative;}
+
+.seckill-tab{text-align: center;align-items: center;width: 600rpx;margin: 20rpx auto;background: #fff;}
+.seckill-tab-btn{line-height: 86rpx;color: #666;}
+.seckill-tab-btn:first-child::before{transform: scale(0.5);} 
+.seckill-tab-btn.active{color:var(--DShop-mcolor);font-weight: bold;}
+.seckill-tab-btn:active{background: rgba(0 , 0 , 0, 0.05)}
+
+.seckillModeTitleBox{background: #fff;}
+.seckillModeTitleText{padding: 0 20rpx;line-height: 92rpx;font-weight: bold;}
+.seckillModeTitleDown{font-size: 28rpx;align-self: center;padding: 0 20rpx;background: #ffab51;color: #fff;border-radius: 30rpx 0 0 30rpx;}
+.seckillBox{background: #fff;}
+.seckillGoodsImg{width: 100%;padding-bottom: 100%;position: relative;}
+.seckillTime{position: absolute;bottom: 0;left: 0;right: 0;width: 100%;align-items: center;background-image:linear-gradient(to right,#ff6ebc,#ff6161,#ffab51);color: #fff;display: flex;display: -webkit-flex;}
+.seckillGoodsPrice{flex: 1;overflow: hidden;padding: 10rpx 30rpx;}
+.seckillGoodsPrice .delLine{font-size: 0.8em;opacity: 0.8;}
+.countDown{background: rgba(255, 255, 255, 0.2);padding: 10rpx 30rpx;padding-left: 50rpx;font-size: 28rpx;position: relative;display: none;}
+.countDown::before,.countDown::after{content: '';display: block;position: absolute;top: 0;left: 0;border-left: 50rpx solid #fff;border-bottom: 80rpx solid transparent;opacity: 0.6;}
+.countDown::after{border-top: 120rpx solid transparent;border-bottom: inherit;opacity: 0.4;}
+.time-show{display: inline-block;width: 40rpx;height: 40rpx;line-height: 40rpx;text-align: center;background: #333;color: #fff;}
+.new-price{font-weight: bold;}
+.seckillState{display: flex;display: -webkit-flex;align-items: center;margin-top: 10rpx;}
+.seckillProgressBox{flex: 1;font-size: 28rpx;border: 1px solid;color: #e62724;border-radius: 60rpx;margin-right: 30rpx;line-height: 36rpx;text-align: center;overflow: hidden;position: relative;}
+.seckillProgressBar{background: rgba(230, 39, 36, 0.2);position: absolute;top: 0;left: 0;height: 100%;}
+
+/* .seckillProgress{width: 300rpx;height: 12rpx;border-radius: 12rpx;background: #ddd;margin-left: 20rpx;position: relative;} */
+/* .seckillProgressBar{width: 50%;height: 100%;position: absolute;top: 0;left: 0;background-image: linear-gradient(to right,#f0615f ,#e62724);border-radius: 12rpx;} */
+.seckillGoodsName{line-height: 1.4;height: 82rpx;}
+.seckillBtn{font-size: 14px;line-height: 30px;border-radius: 6rpx;color: #fff;background: #e62724;margin: 0;}
+.seckillBtn:active{opacity: 0.8;}
+/* 已结束 */
+.time-end .seckill-goods-state{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 260rpx;height: 260rpx;background: rgba(0 , 0 , 0, 0.5);color: #fff;border-radius: 50%;display: flex;align-items: center;justify-content: center;}
+.time-end .seckillProgressBar,
+.time-end .seckillBtn{background: #d3d3d3;}
+.time-end .seckillBtn:active{opacity: 1;}
+/* 未开始 */
+.not-beginning .seckillBtn{background: #00C98E;}
+.not-beginning .seckillBtnPlain{color: #00C98E;background: transparent;}
+.not-beginning .seckillBtnPlain:active{background: rgba(0, 201, 142,0.1);}
+.not-beginning .seckillBtnPlain::after{border: 1px solid currentColor;border-radius: 6rpx;}
+
+/* 售完 */
+.soldOutBg {width: 140rpx;height: 140rpx;border-radius: 50%;background: rgba(0, 0, 0, 0.6);color: #fff;font-size: 32rpx;align-items:center;justify-content: center;position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);display: none;}
+.goodsSoldOut .soldOutBg{display: flex;display: -webkit-flex;}
+.goodsSoldOut .seckillGoodsImg image{opacity: 0.9;}
+.goodsSoldOut .seckillBtn{background: #ccc;}
+
+.seckillBlockBox .seckillGoodsItem{padding: 20rpx;}
+.seckillBlockBox .countDown,.seckillBlockBox .delLine{display: block;}
+.seckillBlockBox .seckillGoodsImg{margin-bottom: 10rpx;}
+.seckillBlockBox .soldOutBg{width: 240rpx;height: 240rpx;font-size: 38rpx;}
+
+
+.seckillColBox .seckillGoodsItem{display: inline-block;width: 365rpx;}
+.seckillColBox .seckillGoodsItem:not(:nth-child(2n)){margin-right: 20rpx;}
+.seckillColBox .seckillGoodsItem:nth-child(n+3){margin-top: 20rpx;}
+.seckillColBox .seckillGoodsInfo{padding: 6rpx 10rpx 30rpx;}
+.seckillColBox .seckillBtn{font-size: 24rpx;line-height: 40rpx;}
+.seckillColBox .seckillGoodsPrice,.seckillListBox .seckillGoodsPrice{padding: 0;font-size: 28rpx;margin-top: 16rpx;}
+.seckillColBox .new-price,.seckillListBox .new-price{display: inline-block;font-weight: normal;background-image:linear-gradient(to right,#ff6ebc,#ff6161,#ffab51);color: #fff;padding: 0 10rpx;border-radius: 20rpx;line-height: 36rpx;margin-right: 10rpx;vertical-align: top;}
+
+.seckillListBox .seckillGoodsItem{display: flex;padding:20rpx;}
+.seckillListBox .seckillGoodsImg{width: 200rpx;height: 200rpx;padding: 0;margin-right: 20rpx;}
+.seckillListBox .seckillGoodsInfo{flex: 1;}
+.seckillListBox .seckillBtn{font-size: 24rpx;line-height: 40rpx;}

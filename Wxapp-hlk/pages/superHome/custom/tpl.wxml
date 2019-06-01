@@ -1,0 +1,268 @@
+<!-- 功能链接 -->
+<template name='dg-link-group'>
+  <!-- <view class="modular {{options.space}}"> -->
+    <scroll-view class="modular-container tpl-scroll-menu" scroll-x="true" wx:if='{{options.type==0}}'>
+        <view class="scroll-menu-item" wx:for='{{options.data}}' wx:key='{{index}}' catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}' data-app-id='{{item.link.appId}}'>{{item.text}}</view>
+    </scroll-view>
+    <!-- <swiper class="modular-container tpl-sliding-menu" style="height:{{menuBoxH}}rpx;" indicator-dots="true" wx:elif='{{options.type==1}}'>
+        <swiper-item class="tpl-menu-item-box {{options.column}}" wx:for='{{utils.splitArray(options.data,options.column)}}' wx:key='{{index}}'>
+            <view class="tpl-menu-item" catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}'>
+                <image class="tpl-menu-img" src="{{item.img}}" mode="aspectFill"></image>
+                <view class="tpl-menu-text">{{item.text}}</view>
+            </view>
+        </swiper-item>
+    </swiper> -->
+    <view class="modular-container tpl-menu-list {{options.radius}}" wx:elif='{{options.type==1}}'>
+        <view class="tpl-menu-item-box {{options.column}}">
+            <view class="tpl-menu-item" wx:for='{{options.data}}' wx:key='{{index}}' catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}' data-app-id='{{item.link.appId}}'>
+                <image class="tpl-menu-img" src="{{item.img}}" mode="aspectFill"></image>
+                <view class="lineText">{{item.text}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="modular-container tpl-imgbg-menu" wx:elif='{{options.type==2}}'>
+        <view class="imgbg-menu-item" wx:for='{{options.data}}' wx:key='{{index}}' catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}' data-app-id='{{item.link.appId}}'>
+            <image class="imgbg-menuBg" src="{{item.img}}" mode="aspectFill"></image>
+            <view class="imgbg-menu-txt">#{{item.text}}#</view>
+        </view>
+    </view>
+    <view class="modular-container tpl-grid-menu {{options.isShowTitle?'':'hid-menu-text'}}" wx:elif='{{options.type==3}}'>
+        <view class="grid-menu-item" wx:for='{{options.data}}' wx:key='{{index}}' catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}' data-app-id='{{item.link.appId}}'>
+            <view class="grid-menu-item-cont">
+                <view>
+                    <image class="grid-menu-img" src="{{item.img}}" mode="aspectFill"></image>
+                    <view class="grid-menu-txt">{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+  <!-- </view> -->
+</template>
+
+<!-- 图片 -->
+<template name='dg-image'>
+  <view class="modular-container">
+    <image class="modular-container tpl-img-single" src="{{options.img}}" mode="{{options.mode}}" catchtap='onNavigateTap' data-url='{{options.link.page}}' data-type='{{options.link.type}}' data-app-id='{{options.link.appId}}' style='height:{{options.mode === "widthFix"?"auto":options.height+"rpx"}}'></image>
+  </view>
+</template>
+
+<!-- 图片组 -->
+<template name='dg-image-group'>
+  <!-- <view class="modular {{options.space}}"> -->
+    <view class="modular-container img-module img-module-ad1th {{options.innerSpace}}" wx:if='{{options.type==0}}'>
+        <image class="img" src="{{options.data[0].img}}" mode="widthFix" catchtap='onNavigateTap' data-url='{{options.link1.page}}' data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+    </view>
+    <view class="modular-container img-module img-module-ad2th {{options.innerSpace}}" wx:elif='{{options.type==1}}'>
+        <view class="img-module-img" style="padding-top:{{options.height/375*100}}%">
+            <image class="scale-rule" src="{{options.data[0].img}}" mode="aspectFill" catchtap='onNavigateTap' data-url='{{options.link1.page}}' data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/375*100}}%">
+            <image class="scale-rule" src="{{options.data[1].img}}" mode="aspectFill" catchtap='onNavigateTap' data-url='{{options.link2.page}}' data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+    </view>
+    <view class="modular-container img-module img-module-ad3th {{options.innerSpace}}" wx:elif='{{options.type==2}}'>
+        <view class="img-module-img" style="padding-top:{{options.height/250*100}}%">
+            <image class="scale-rule" src="{{options.data[0].img}}" mode="aspectFill" catchtap='onNavigateTap' data-url='{{options.link1.page}}' data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/250*100}}%">
+            <image class="scale-rule" src="{{options.data[1].img}}" mode="aspectFill" catchtap='onNavigateTap' data-url='{{options.link2.page}}' data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/250*100}}%">
+            <image class="scale-rule" src="{{options.data[2].img}}" mode="aspectFill" catchtap='onNavigateTap' data-url='{{options.link3.page}}' data-type='{{options.link3.type}}' data-app-id='{{options.link3.appId}}'></image>
+        </view>
+    </view>
+    <view class="modular-container img-module img-module-ad3th2 {{options.innerSpace}}" wx:elif='{{options.type==3}}'>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[0].img}}" catchtap='onNavigateTap' data-url='{{options.link1.page}}' mode="aspectFill" data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[1].img}}" catchtap='onNavigateTap' data-url='{{options.link2.page}}' mode="aspectFill" data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[2].img}}" catchtap='onNavigateTap' data-url='{{options.link3.page}}' mode="aspectFill" data-type='{{options.link3.type}}' data-app-id='{{options.link3.appId}}'></image>
+        </view>
+    </view>
+    <view class="modular-container img-module img-module-ad4th {{options.innerSpace}}" wx:elif='{{options.type==4}}'>
+        <view class="img-module-img" style="padding-top:{{options.height/200*100}}%">
+            <image class="scale-rule" src="{{options.data[0].img}}" catchtap='onNavigateTap' data-url='{{options.link1.page}}' mode="aspectFill" data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/200*100}}%">
+            <image class="scale-rule" src="{{options.data[1].img}}" catchtap='onNavigateTap' data-url='{{options.link2.page}}' mode="aspectFill" data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/200*100}}%">
+            <image class="scale-rule" src="{{options.data[2].img}}" catchtap='onNavigateTap' data-url='{{options.link3.page}}' mode="aspectFill" data-type='{{options.link3.type}}' data-app-id='{{options.link3.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/200*100}}%">
+            <image class="scale-rule" src="{{options.data[3].img}}" catchtap='onNavigateTap' data-url='{{options.link4.page}}' mode="aspectFill" data-type='{{options.link4.type}}' data-app-id='{{options.link4.appId}}'></image>
+        </view>
+    </view>
+    <view class="modular-container img-module img-module-ad4th2 {{options.innerSpace}}" wx:elif='{{options.type==5}}'>
+        <view class="img-module-img" style="padding-top:{{options.height/375*100}}%">
+            <image class="scale-rule" src="{{options.data[0].img}}" catchtap='onNavigateTap' data-url='{{options.link1.page}}' mode="aspectFill" data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/375*100}}%">
+            <image class="scale-rule" src="{{options.data[1].img}}" catchtap='onNavigateTap' data-url='{{options.link2.page}}' mode="aspectFill" data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/375*100}}%">
+            <image class="scale-rule" src="{{options.data[2].img}}" catchtap='onNavigateTap' data-url='{{options.link3.page}}' mode="aspectFill" data-type='{{options.link3.type}}' data-app-id='{{options.link3.appId}}'></image>
+        </view>
+        <view class="img-module-img" style="padding-top:{{options.height/375*100}}%">
+            <image class="scale-rule" src="{{options.data[3].img}}" catchtap='onNavigateTap' data-url='{{options.link4.page}}' mode="aspectFill" data-type='{{options.link4.type}}' data-app-id='{{options.link4.appId}}'></image>
+        </view>
+    </view>
+    <view class="modular-container img-module img-module-ad4th3 {{options.innerSpace}}" wx:elif='{{options.type==6}}'>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[0].img}}" catchtap='onNavigateTap' data-url='{{options.link1.page}}' mode="aspectFill" data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[1].img}}" catchtap='onNavigateTap' data-url='{{options.link2.page}}' mode="aspectFill" data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[2].img}}" catchtap='onNavigateTap' data-url='{{options.link3.page}}' mode="aspectFill" data-type='{{options.link3.type}}' data-app-id='{{options.link3.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[3].img}}" catchtap='onNavigateTap' data-url='{{options.link4.page}}' mode="aspectFill" data-type='{{options.link4.type}}' data-app-id='{{options.link4.appId}}'></image>
+        </view>
+    </view>
+    <view class="modular-container img-module img-module-ad5th {{options.innerSpace}}" wx:elif='{{options.type==7}}'>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[0].img}}" catchtap='onNavigateTap' data-url='{{options.link1.page}}' mode="aspectFill" data-type='{{options.link1.type}}' data-app-id='{{options.link1.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[1].img}}" catchtap='onNavigateTap' data-url='{{options.link2.page}}' mode="aspectFill" data-type='{{options.link2.type}}' data-app-id='{{options.link2.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[2].img}}" catchtap='onNavigateTap' data-url='{{options.link3.page}}' mode="aspectFill" data-type='{{options.link3.type}}' data-app-id='{{options.link3.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[3].img}}" catchtap='onNavigateTap' data-url='{{options.link4.page}}' mode="aspectFill" data-type='{{options.link4.type}}' data-app-id='{{options.link4.appId}}'></image>
+        </view>
+        <view class="img-module-img">
+            <image class="scale-rule" src="{{options.data[4].img}}" catchtap='onNavigateTap' data-url='{{options.link5.page}}' mode="aspectFill" data-type='{{options.link5.type}}' data-app-id='{{options.link5.appId}}'></image>
+        </view>
+    </view>
+  <!-- </view> -->
+</template>
+
+<!-- 广告位 -->
+<template name='dg-carousel'>
+  <!-- <view class="modular {{options.space}}"> -->
+    <view class="modular-container tpl-swiper-box" style="padding-bottom: {{options.height/750*100}}%">
+        <swiper class="tpl-swiper" autoplay="{{options.autoplay}}" indicatorDots="{{options.indicatorDots}}" interval="{{options.interval||5000}}" duration="{{options.duration}}" circular="{{options.circular}}">
+            <swiper-item wx:for="{{options.imgs}}" wx:key='{{index}}'>
+                <image class="img" src="{{item.img}}" mode="aspectFill" catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}' data-app-id='{{item.link.appId}}' />
+            </swiper-item>
+        </swiper>
+    </view>
+  <!-- </view> -->
+</template>
+
+<!-- 视频组件 -->
+<template name='dg-video'>
+  <!-- <view class="modular {{options.space}}"> -->
+    <view class="modular-container videoTemBox" style="padding-bottom:{{options.height/750*100}}%">
+        <video src="{{options.src}}" loop='{{options.loop}}' muted='{{options.muted}}' autoplay='{{options.autoplay}}' poster="{{options.poster}}">
+        </video>
+    </view>
+  <!-- </view> -->
+</template>
+
+<!-- 网页 -->
+<template name='dg-webview'>
+  <view class="modular-container">
+    <view class="webViewBox">
+        <web-view src='{{options.url}}'></web-view>
+    </view>
+  </view>
+</template>
+
+<template name='dg-float-phone-btn'>
+    <button class="asideFloatItem" catchtap='onCallTap' data-mobile='{{options.phone}}'>
+        <view class="asideFloatItem asideFloatTxt" wx:if='{{options.showType=="1"}}'>{{options.text}}</view>
+        <image class="img" src="{{options.img?options.img:'/images/phone-ico.png'}}" mode="aspectFill" wx:else></image>
+    </button>
+</template>
+
+<template name='dg-float-customer-btn'>
+    <button class="asideFloatItem" open-type='contact'>
+        <view class="asideFloatItem asideFloatTxt" wx:if='{{options.showType=="1"}}'>{{options.text}}</view>
+        <image class="img" src="{{options.img?options.img:'/images/kefu-ico.png'}}" mode="aspectFill" wx:else></image>
+    </button>
+</template>
+
+<template name='dg-float-custom-btn'>
+    <button class="asideFloatItem" catchtap='onNavigateTap' data-url='{{options.link.page}}' data-type='{{options.link.type}}' data-app-id='{{options.link.appId}}'>
+        <view class="asideFloatItem asideFloatTxt" wx:if='{{options.showType=="1"}}'>{{options.text}}</view>
+        <image class="img" src="{{options.img?options.img:'/images/default.png'}}" mode="aspectFill" wx:else></image>
+    </button>
+</template>
+
+<!-- 间隔组件 -->
+<template name='dg-space'>
+    <view class="modular-container" style='height:{{options.height*2}}rpx;background-color:{{options.backgroundColor}}'></view>
+</template>
+
+<!-- 区域热点 -->
+<template name='dg-hot-region'>
+  <!-- <view class="modular {{options.space}}"> -->
+    <view class="modular-container hot-region">
+        <view class="hot-region-item" wx:for="{{options.data}}" wx:key='{{index}}' style='left:{{item.left*2}}rpx;top:{{item.top*2}}rpx;width:{{item.width*2}}rpx;height:{{item.height*2}}rpx;' catchtap='onNavigateTap' data-url='{{item.link.page}}' data-type='{{item.link.type}}'
+            data-app-id='{{item.link.appId}}'></view>
+        <image class="hot-region-img" src="{{options.backgroundImage}}" mode='widthFix'></image>
+    </view>
+  <!-- </view> -->
+</template>
+
+<!-- 地图 -->
+<template name="dg-map">
+  <view class="modular-container tpl-map">
+    <view class="tpl-map-box" style="height:{{options.height*2}}rpx;">
+      <map class="tpl-map-cont" longitude='{{options.location.latLng.lng}}' latitude='{{options.location.latLng.lat}}' markers='{{[{latitude:options.location.latLng.lat,longitude:options.location.latLng.lng}]}}'></map>
+    </view>
+  </view>
+</template>
+
+<!-- 文本 -->
+<template name="dg-rich-text">
+  <view class="modular-container tpl-text" style='color:{{options.color}};font-size:{{options.fontSize}}px;font-weight:{{options.fontWeight}};{{options.isTextShadow?"text-shadow:0 0 "+options.textShadowSize+"px "+(options.color||"#000"):""}}' catchtap='onNavigateTap' data-url='{{options.link.page}}' data-type='{{options.link.type}}' data-app-id='{{options.link.appId}}'>{{options.text}}</view>
+</template>
+
+<!--广告组件-->
+<template name="dg-ad">
+    <view class="modular-container tpl-map">
+        <ad wx:if='{{options.unitId}}' unit-id="{{options.unitId}}"></ad>
+    </view>
+</template>
+
+<!--关注公众号组件-->
+<template name="dg-official-account">
+    <view class="modular-container tpl-map">
+        <official-account></official-account>
+    </view>
+</template>
+
+<!--会员充值组件-->
+<template name="dg-member">
+    <view class="modular-container tpl-member">
+        <view class="tpl-memberTitBox flex">
+            <view class="sub">
+                <view class="tpl-memberTit">会员充值</view>
+                <view class="tpl-memberTitTips lineText">充值有礼，多充多送</view>
+            </view>
+            <view class="tpl-memberBtn gridFour" catchtap='onNavigateTap' data-url='/pages/user/member/member-center/index'>会员中心</view>
+        </view>
+        <view class="tpl-memberBox">
+            <view wx:for="{{options.memberInfo}}" wx:if="{{index < options.cardNumber}}" wx:for-index="index" wx:for-item="item" class='tpl-memberItem gridFour {{options.select_index == index ? "active" : ""}}' data-key="{{options.key}}" data-index="{{index}}" data-money="{{item.condition}}" data-reward_id="{{item.reward_id}}" data-condition_id="{{item.id}}" bindtap='recharge'>
+              <view>
+                  <view class="tpl-memberPrice">￥{{item.condition}}</view>
+                  <view class='tpl-memberPriceTip'>
+                    <span wx:if="{{item.money > 0}}">赠送{{item.money}}元</span>
+                    <span wx:if="{{item.coupon > 1}}">+{{item.coupon}}积分</span>
+                  </view>
+              </view>
+            </view>
+        </view>
+    </view>
+</template>
+
+

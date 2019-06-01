@@ -1,0 +1,116 @@
+/* pages/shop/league/league.wxss */
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+@import "/css/color/color.wxss";
+
+.richBox{
+  /* padding: 30rpx; */
+  background-color: #fff;
+}
+.cellBox{
+  margin-top: 14rpx;
+  background-color: #fff;
+}
+.boxTit{
+  padding: 0 30rpx;
+  line-height: 86rpx;
+  font-size: 30rpx;
+  color: #666666;
+}
+.boxTit::before{
+  background-color:#e5e5e5; 
+}
+.cells{
+  padding: 20rpx 0;
+}
+.cell{
+  padding: 24rpx 30rpx;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.cell .sub{
+  text-align: right;
+  margin-left: 20rpx;
+}
+
+.input-placeholder{
+  color: #999;
+}
+.proBox{
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.proBox .wx-checkbox-input{
+  -webkit-transform: scale(.85); 
+   transform: scale(.85);
+   margin-right: 10rpx;
+   border-radius: 50%;
+   background-color: #fff;
+}
+.proBox .wx-checkbox-input-checked{
+  background-color: #fff;
+}
+.proBox .wx-checkbox-input-checked::before{
+  color: var(--mColor) !important;
+}
+.submit{
+  margin: 30rpx 60rpx;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  color: #fff;
+  border-radius: 6rpx;
+}
+
+.submit:active{
+  opacity: 0.85;
+}
+
+button.submit[disabled]{
+  background-color: #ccc;
+}
+
+button.submit[disabled]:active{
+  opacity: 1;
+}
+
+/* 弹窗 */
+.floatBox{
+  z-index: 999;
+}
+.mask{
+  background-color: rgba(0, 0, 0, .5)
+}
+.popup{
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 40rpx 32rpx 30rpx 32rpx;
+  width: 628rpx;
+  max-height: 82vh;
+  overflow-y: auto;
+  font-size: 28rpx;
+  text-indent: 2em;
+}
+.popup::-webkit-scrollbar{
+  display: none;
+}
+.understand{
+  width: 240rpx;
+  margin: 40rpx auto 15rpx auto;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+  background-color: var(--mColor);
+  text-indent: initial;
+  border-radius: 6rpx;
+}
+.understand:active{
+  opacity: .85;
+}

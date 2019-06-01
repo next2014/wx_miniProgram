@@ -1,0 +1,29 @@
+<!--pages/user/red-packet/write-mobile/index.wxml-->
+<form bindsubmit='formSubmit' report-submit='{{true}}'>
+    <view class="mt10">
+        <view class="account-item gridXb">
+            <view>您的真实姓名</view>
+            <view class="grey f14 tr">
+                <input type="text" name="true_name" value="{{true_name}}" bindinput="inputTrueName" placeholder-class='greylight' placeholder="请填写您的姓名" />
+            </view>
+        </view>
+        <view class="account-item gridXb">
+            <view>手机号码</view>
+            <view class="grey f14 tr">
+                <input type="number" name="telephone" value="{{telephone}}" bindinput="inputTelephone" placeholder-class='greylight' placeholder="请填写手机号码" />
+            </view>
+        </view>
+    </view>
+    <view class="mt20">
+        <view class="red tc f14">
+            <text class="greylight iconfont icon-fxicon-3"></text> 请确认所填写为真实信息且无错误，
+        </view>
+        <view class="red tc f14">
+            否则会出现提现错误
+        </view>
+        <view class="btnBox tc ">
+            <button form-type='submit' class="save-btn">确认</button>
+            <button class="return-btn save-btn" catchtap='navigateBack'>返回</button>
+        </view>
+    </view>
+</form>

@@ -1,0 +1,120 @@
+<view class="top-select flex tc mb10">
+  <view class="sub {{group_val == 'all' ? 'active':''}}" bindtap="group_show" data-val='all'>全部</view>
+  <!-- <view class="sub {{group_val == '000' ? 'active':''}}" bindtap="group_show" data-val='000'>待支付</view>
+  <view class="sub {{group_val == '002' ? 'active':''}}" bindtap="group_show" data-val='002'>待发货</view>
+  <view class="sub {{group_val == '002_ziti' ? 'active':''}}" bindtap="group_show" data-val='002_ziti'>待自提</view>
+  <view class="sub {{group_val == '102' ? 'active':''}}" bindtap="group_show" data-val='102'>待收货</view> -->
+  <!-- <view class="sub {{group_val == '202' ? 'active':''}}" bindtap="group_show" data-val='202'>已收货</view> -->
+  <view class="sub {{group_val == '110' ? 'active':''}}" bindtap="group_show" data-val='110'>进行中</view>
+  <view class="sub {{group_val == '120' ? 'active':''}}" bindtap="group_show" data-val='120'>已完成</view>
+  <view class="sub {{refund == true ? 'active':''}}" bindtap="refund_show">退款</view>
+</view>
+<block wx:if="{{postlist == null}}">
+  <!--暂无内容提示 start-->
+  <view class="no-content tc">
+    <text class="no-content-icon iconfont icon-yemianwuneirong"></text>
+    <view class="no-content-font">暂无订单信息</view>
+  </view>
+  <!--暂无内容提示 end-->
+</block>
+<block wx:else>
+  <view class="ol-list">
+    <block wx:for="{{postlist}}" wx:key="">
+      <block wx:if="{{group_val == 'all' || group_val == '110' || group_val == '120' || item.order_type == 'refund'}}">
+        <view class="ol-item">
+          <view class="ol-item-info gridXb" id="{{item.id}}" data-num="{{index}}">
+            <view class="ol-item-state fr red">
+              <block wx:if="{{item.txt_status == '000'}}">
+                <text wx:if="{{item.order_status == 0}}">待支付</text>
+                <text wx:if="{{item.order_status == 2}}">已关闭</text>
+                <text wx:if="{{item.order_status == 4}}">退款中</text>
+              </block>
+              <block wx:if="{{item.txt_status == '002'}}">
+                <text wx:if="{{item.order_status == 1}}">待发货</text>
+                <text wx:if="{{item.order_status == 2}}">已关闭</text>
+                <text wx:if="{{item.order_status == 4}}">退款中</text>
+              </block>
+              <block wx:if="{{item.txt_status == '002_ziti'}}">
+                <text wx:if="{{item.order_status == 1 && item.auto_choice == 1}}">待自提</text>
+                <text wx:if="{{item.order_status == 1 && item.auto_choice == 0}}">备货中</text>
+                <text wx:if="{{item.order_status == 2}}">已关闭</text>
+                <text wx:if="{{item.order_status == 4}}">退款中</text>
+              </block>
+              <block wx:if="{{item.txt_status == '102'}}">
+                <text wx:if="{{item.order_status == 1 && item.shipping_name != '到店取货'}}">待收货</text>
+                <text wx:if="{{item.order_status == 1 && item.shipping_name == '到店取货'}}">待自提</text>
+                <text wx:if="{{item.order_status == 2}}">已关闭</text>
+                <text wx:if="{{item.order_status == 4}}">退款中</text>
+              </block>
+              <block wx:if="{{item.txt_status == '202'}}">
+                <text wx:if="{{item.order_status == 1}}">已收货</text>
+                <text wx:if="{{item.order_status == 2}}">已关闭</text>
+                <text wx:if="{{item.order_status == 4}}">退款中</text>
+              </block>
+              <block wx:if="{{item.refund_state == 0}}">
+                <text>退款中</text>
+              </block>
+              <block wx:if="{{item.refund_state == 1}}">
+                <text>退款中</text>
+              </block>
+              <block wx:if="{{item.refund_state == 2}}">
+                <text>已退款</text>
+              </block>
+              <block wx:if="{{item.refund_state == 3}}">
+                <text>已拒绝</text>
+              </block>
+            </view>
+            <view class="ol-item-id">订单号：{{item.order_sn}}</view>
+          </view>
+          <view class="ol-item-con" id="{{item.id}}" data-num="{{index}}">
+            <!--单个商品 start-->
+            <block wx:for="{{item.glist}}" wx:key="" wx:for-item="gitem" wx:if="{{index < 2 || (index > 1 && show_more)}}">
+              <view class="ol-one flex">
+                <view class="ol-img">
+                  <image src="{{gitem.goods_img}}" mode="aspectFill"></image>
+                </view>
+                <view class="ol-one-text sub">
+                  <view>{{gitem.goods_name}}</view>
+                  <view class="grey f12 mt5">{{gitem.goods_attr}}</view>
+                </view>
+              </view>
+            </block>
+            <view wx:if="{{item.glist.length > 2}}" class="itemShowMore {{show_more ? 'active' : ''}}" bindtap='showMore'>{{show_more ? '关闭' : '展开'}} <text class="iconfont icon-unfold"></text></view>
+            <!-- <view wx:if="{{show_more}}" bindtap='showMore'>关闭</view> -->
+            <!--单个商品 end-->
+          </view>
+          <view class="ol-item-foot gridXt f12">
+            <form report-submit='true' bindsubmit='sendForm'>
+              <button form-type='submit' class='fr payBtn mainColor_bg' wx:if="{{(item.txt_status == '002_ziti' && item.order_status == 1 && item.auto_choice == 1) || (item.txt_status == '102' && item.order_status == 1 && item.shipping_name == '到店取货')}}">
+                <!-- <text class="" bindtap="sendForm" id="{{item.id}}">通知提货</text> -->
+                通知提货
+                  <!-- <button form-type='submit'>通知提货</button> -->
+                
+              </button>
+                  <input hidden=' ' name='order_id' value='{{item.id}}'></input>
+
+            </form>
+            <!-- <view class="ol-item-del fr" wx:if="{{item.order_status == 2}}">
+                <text class="iconfont icon-delete" bindtap="delete_user_order" id="{{item.id}}"></text>
+            </view> -->
+
+            <view class="ol-item-pay">收货人：
+              <text >{{item.consignee}},{{item.mobile}}</text>
+            </view>
+            <view class="ol-item-pay">支付时间：
+              <text >{{item.pay_time}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </block>
+  </view>
+
+  <!--loading start-->
+  <view class="m20 tc grey loading" wx:if="{{showLoading}}">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在加载...</text>
+  </view>
+  <!--loading end-->
+</block>
