@@ -130,9 +130,9 @@
     <template is="line_menu" wx:if="{{userInfo.operating}}" data="{{...operating}}" />
   </view>
 
-  <view class="copyright grey">
+  <!-- <view class="copyright grey">
     <view class="copyright-text" wx:if="{{userInfo.app_copy_right}}" catchtap='onCompanyTap'>{{userInfo.app_copy_right}}</view>
-  </view>
+  </view> -->
 
 </block>
 
