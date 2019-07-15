@@ -1,0 +1,47 @@
+<!--pages/user/examList/index.wxml-->
+<view class='examListBox' wx:if="{{list.length>0}}" >
+  <view class='examList' wx:for="{{list}}" wx:key="id">
+    <view class='writeOffInfo'>
+      <view class='flex writeOffItem'>
+        <view class='writeOffTime sub'>核销时间：{{item.createtime}}</view>
+        <view class='writeOffState'>{{item.module_info.module_name}}</view>
+      </view>
+      <view class='writeOffItem'>核销码：{{item.examid}}</view>
+    </view>
+    <view class='writeOffGoodsInfo'>
+      <view class='writeOffInfoItem'>{{item.module_info.module_name=='礼品卡'?'卡':'订单'}}号：{{item.module_info.order_sn}}</view>
+      <view  class="goodsBox" style="height:{{item.height>0?item.height:80}}px">
+        <view id="a{{index}}">
+          <view class='goodsItem' wx:for="{{item.module_info.goods_info}}" wx:for-item="goods_item" wx:key="" wx:if="{{item.module_info.order_sn}}">
+            <block wx:if="{{item.module_info.module_name=='礼品卡'}}">
+              <view class='goodsName lineText'>核销权益:{{goods_item.title}}</view>
+              <view class='goodsName lineText'>核销时间:{{goods_item.exam_time}}</view>
+              <view class='goodsName lineText'>核销数量:{{goods_item.use_num}}</view>
+            </block>
+            <block wx:else>
+              <view class='goodsName lineText' wx:if="{{goods_item.goods_name}}">{{goods_item.goods_name}}</view>
+              <view class='flex'wx:if="{{goods_item.goods_number}}" >
+                <view class='sub goodsArrt' >{{goods_item.goods_attr}} 数量：×{{goods_item.goods_number}}</view>
+                <view class='goodsPrice'>￥{{goods_item.goods_price}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+
+      </view>
+      <view wx:if="{{item.module_info.goods_info.length>1}}" class='goodsItemMore' bindtap='showMore' data-index="{{index}}">
+        {{item.height>80?'收起':'更多'}}
+        <text class="iconfont {{item.height>80?'icon-fold':'icon-unfold'}}"></text>
+      </view>
+      <block wx:if="{{item.module_info.module_name !=='礼品卡'}}">
+        <view class='writeOffInfoItem' wx:if="{{item.module_info.order_fee}}">订单金额：￥{{item.module_info.order_fee}}</view>
+        <view class='writeOffInfoItem' wx:if="{{item.module_info.store_name}}">所属店铺：{{item.module_info.store_name}}</view>
+        <view class='writeOffInfoItem' wx:if="{{item.module_info.self_address.address_name}}">自提点：{{item.module_info.self_address.address_name}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="no-content tc" wx:else>
+    <image class='no-content-img' src='http://www.ixiaochengxu.cc/resource/images/common/no-order.png' mode='widthFix'></image>
+    <view class="no-content-font">暂无数据</view>
+</view>

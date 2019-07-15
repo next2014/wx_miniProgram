@@ -1,7 +1,0 @@
-<van-card
-  num="2"
-  price="{{ res.data.price }}"
-  desc="{{ res.data.content }}"
-  title="{{ res.data.title }}"
-  thumb="{{ res.data.imageURL }}"
-/>

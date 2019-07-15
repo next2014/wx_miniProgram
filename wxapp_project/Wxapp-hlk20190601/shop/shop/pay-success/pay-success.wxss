@@ -1,0 +1,13 @@
+/* @import "../common.wxss"; */
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+page{
+background-color: #fff;
+}
+.orderBtnBox{width: 400rpx;margin: 100rpx auto 40rpx;}
+.orderBtnItem{background: transparent;color: #999;font-size: 28rpx;}
+.orderBtnItem:nth-child(n+2){margin-top: 30rpx;}
+.orderBtnItem.active{color: #f14344;}
+.orderBtnItem:not(.active):active{background: #f8f8f8;}
+.orderBtnItem.active::after{border-color: #f14344;}
+.orderBtnItem.active:active{background: rgba(241, 67, 68,.05);}

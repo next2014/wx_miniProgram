@@ -1,0 +1,19 @@
+<!--pages/user/operate/operate-list-detail/operate-list-detail.wxml-->
+<view class='article'>
+  <view class='h1'>{{info.title}}</view>
+  <view class='h5'>{{info.aname}}</view>
+  <!-- 视频 -->
+  <view class='videoBox'>
+    <txv-video vid="{{info.vid}}" playerid="txv{{info.id}}" controls="{{true}}" wx:if="{{info.vid}}"></txv-video>
+    <view class='videoTit'>{{info.video_title}}</view>
+  </view>
+
+  <!-- 富文本区域 -->
+  <import src="/wxParse/wxParse.wxml" />
+
+  <view class='richBox'>
+    <view class="wxParse">
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+  </view>
+</view>

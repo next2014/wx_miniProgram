@@ -1,0 +1,1 @@
+{"navigationBarTitleText":"商城","backgroundTextStyle":"dark","enablePullDownRefresh":true,"usingComponents":{"goodslist":"../component/duoguan-shop-goodslist/duoguan-shop-goodslist","seckillGoods":"../component/seckill-goods/seckill-goods"}}

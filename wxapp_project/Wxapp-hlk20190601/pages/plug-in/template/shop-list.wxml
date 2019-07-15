@@ -1,0 +1,35 @@
+<template name="shop-list">
+  <view class="goods-item" catchtap="detail" id="{{item.id}}">
+    <view class="goods-imgbox">
+      <image src="{{item.g_img}}" class="goods-img" mode="aspectFill"></image>
+    </view>
+    <view class="goods-info">
+
+      <view class="goods-name">
+        <text>{{item.g_name}}</text>
+      </view>
+
+      <view class="goods-price">
+        <block wx:if="{{item.promote_status == 1}}">
+          <text class="iconfont icon-cu"></text>
+          <text class='f16'>￥{{item.promote_price}}</text>
+          <view class="delLine grey ml8 f12">{{item.shop_price}}</view>
+        </block>
+        <block wx:else>
+          <text class='f16'>￥{{item.shop_price}}</text>
+          <text class="delLine grey ml5 f12" wx:if="{{item.market_price != 0}}">{{item.market_price}}</text>
+        </block>
+      </view>
+
+      <view class="goods-pricebox">
+        <view><view class='grey flex f12'>销量：{{item.sale_number}}</view></view>
+        <!-- 加入购物车 -->
+        <form report-submit='true' bindsubmit='pushFormId'>
+          <button class="shopCart-btn" data-id="{{item.id}}" catchtap='is_show_card' form-type='submit'>
+            <text class="iconfont icon-cart"></text>
+          </button>
+        </form>
+      </view>
+    </view>
+  </view>
+</template>

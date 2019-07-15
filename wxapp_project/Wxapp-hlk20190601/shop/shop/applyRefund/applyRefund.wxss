@@ -1,0 +1,84 @@
+/* pages/shop/applyRefund/applyRefund.wxss */
+
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+
+
+.topRow{
+  padding: 24rpx;
+  background-color: #fff;
+  align-items: center;
+}
+
+.topRow .grey{
+  white-space: nowrap;
+}
+
+.reasonBox{
+  background-color: #fff;
+  padding: 24rpx;
+}
+
+.textarea-placeholder{
+  font-size: 28rpx;
+  color: #999;
+}
+
+.observe{
+  text-align: right;
+  margin-bottom: 30rpx;
+}
+.txtarea{
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.picBox{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 130rpx;
+  height: 130rpx;
+  border: 1rpx solid #cecece;
+  margin-right: 13rpx;
+  margin-bottom: 20rpx;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+.picBox:nth-child(5n){
+  margin-right: 0;
+}
+.picBox image{
+  width: 100%;
+  height: 100%;
+}
+.cancel{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 32rpx;
+  height: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .35)
+}
+.uploadBtn{
+  padding-top: 22rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.uploadBtn .iconfont{
+  font-size: 50rpx;
+}
+
+.submit{
+  margin: 40rpx 24rpx;
+  color: #fff;
+}
+.submit:active{
+  opacity: 0.85;
+}

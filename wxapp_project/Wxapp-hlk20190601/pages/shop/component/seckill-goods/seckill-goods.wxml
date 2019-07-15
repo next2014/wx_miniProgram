@@ -1,0 +1,119 @@
+<view class='seckillBox {{mode}}'>
+  <block wx:if="{{data.seckill_config.is_open == 1}}" wx:for="{{data.seckill_list}}" wx:key="">
+    <view class="seckillGoodsItem" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}" bindtap='navigateTo'>
+      <view class="seckillGoodsImgBox">
+        <image class="scale-rule seckillGoodsImg" src="{{item.g_img}}" mode="aspectFill"></image>
+        <view class='soldOutBg' wx:if="{{item.g_number==0}}">
+          已抢光
+        </view>
+        <view class="crossArea" wx:if="{{item.goods_kind == 2}}">直邮</view>
+        <view class='seckillGoodsTag' wx:if="{{title}}">{{title}}</view>
+      </view>
+      <view class='seckillGoodsInfo'>
+        <view class="seckillGoodsName lineText2">{{item.g_name}}</view>
+        <view class="seckillGoodsPrice">
+          <view class="new-price">
+            <text>￥</text><text class='newPriceCount'>{{item.shop_price}}</text></view>
+          <text class='newPriceText'>限时价</text>
+          <text class="delLine">￥{{item.market_price}}</text>
+        </view>
+        <view class="seckillState">
+          <view class="seckillProgressBox {{item.g_number == 0 ? 'seckillStateTxtNone' : ''}}">
+            <!-- <text class="seckillStateTxt">已抢{{item.g_number == 0?100:(100*item.sale_number-(100*item.sale_number%(item.g_number*1+item.sale_number*1)))/(item.g_number*1+item.sale_number*1)}}%</text> -->
+            <text class="seckillStateTxt">{{item.g_number == 0 ? '已抢光' : '剩余'+item.g_number+'件'}}</text>
+            <view class="seckillProgressBar" style="width:{{item.g_number == 0?0:(100*item.g_number-(100*item.g_number%(item.g_number*1+item.sale_number*1)))/(item.g_number*1+item.sale_number*1)}}%"></view>
+          </view>
+          <block wx:if="{{item.g_number==0}}">
+            <button class="seckillBtn" style='background: #eee; color:#999;'>已抢光</button>
+          </block>
+          <block wx:else>
+            <button class="seckillBtn" style='background: #00C98E;' wx:if="{{status == 0}}">未开始</button>
+            <button class="seckillBtn" wx:if="{{status == 1}}">马上抢</button>
+            <button class="seckillBtn" style='background: #eee; color:#999;' wx:if="{{status == 2}}">已结束</button>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 提醒 -->
+  <!-- <view class="seckillGoodsItem notBeginning" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}"  bindtap='navigateTo'>
+      <view class="seckillGoodsImgBox">
+        <image class="scale-rule seckillGoodsImg" src="https://img.alicdn.com/imgextra/i1/552522139/TB2qGLnJHuWBuNjSszgXXb8jVXa_!!552522139.jpg_430x430q90.jpg" mode="aspectFill"></image> 
+        <view class='soldOutBg' wx:if="{{item.g_number==0}}">
+          已抢光
+        </view>
+      </view>
+      <view class='seckillGoodsInfo'>
+        <view class="seckillGoodsName lineText2">红色条纹衬衫女装春秋季2018新款韩范chic早秋衬衣小清新港风上衣</view>
+        <view class="seckillGoodsPrice">
+          <text class="new-price">秒杀价 ￥68</text><text class="delLine">￥112</text>
+        </view>
+        <view class="seckillState">
+          <view class="seckillProgressBox">
+            <text class="seckillStateTxt">活动未开始</text>
+            <view class="seckillProgressBar" style="width:0%"></view>
+          </view>
+          <button class="seckillBtn">提醒我</button>
+        </view>
+      </view>
+    </view> -->
+  <!-- 进行中 -->
+  <!-- <view class="seckillGoodsItem" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}"  bindtap='navigateTo'>
+      <view class="seckillGoodsImgBox">
+        <image class="scale-rule seckillGoodsImg" src="https://img.alicdn.com/imgextra/i1/552522139/TB2qGLnJHuWBuNjSszgXXb8jVXa_!!552522139.jpg_430x430q90.jpg" mode="aspectFill"></image>
+      </view>
+      <view class='seckillGoodsInfo'>
+        <view class="seckillGoodsName lineText2">红色条纹衬衫女装春秋季2018新款韩范chic早秋衬衣小清新港风上衣</view>
+        <view class="seckillGoodsPrice">
+          <text class="new-price">秒杀价 ￥68</text><text class="delLine">￥112</text>
+        </view>
+        <view class="seckillState">
+          <view class="seckillProgressBox">
+            <text class="seckillStateTxt">已抢50%</text>
+            <view class="seckillProgressBar" style="width:50%"></view>
+          </view>
+          <button class="seckillBtn">马上抢</button>
+        </view>
+      </view>
+    </view> -->
+  <!-- 已抢完 -->
+  <!-- <view class="seckillGoodsItem goodsSoldOut" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}"  bindtap='navigateTo'>
+      <view class="seckillGoodsImgBox">
+        <image class="scale-rule seckillGoodsImg" src="https://img.alicdn.com/imgextra/i1/552522139/TB2qGLnJHuWBuNjSszgXXb8jVXa_!!552522139.jpg_430x430q90.jpg" mode="aspectFill"></image> 
+        <view class='soldOutBg'>已抢光</view>
+      </view>
+      <view class='seckillGoodsInfo'>
+        <view class="seckillGoodsName lineText2">红色条纹衬衫女装春秋季2018新款韩范chic早秋衬衣小清新港风上衣</view>
+        <view class="seckillGoodsPrice">
+          <text class="new-price">秒杀价 ￥68</text><text class="delLine">￥112</text>
+        </view>
+        <view class="seckillState">
+          <view class="seckillProgressBox">
+            <text class="seckillStateTxt">已抢100%</text>
+            <view class="seckillProgressBar" style="width:100%"></view>
+          </view>
+          <button class="seckillBtn">已抢完</button>
+        </view>
+      </view>
+    </view> -->
+  <!-- 结束 -->
+  <!-- <view class="seckillGoodsItem goodsSoldOut" data-link="/pages/shop/malldetail/malldetail?sid={{item.id}}"  bindtap='navigateTo'>
+      <view class="seckillGoodsImgBox">
+        <image class="scale-rule seckillGoodsImg" src="https://img.alicdn.com/imgextra/i1/552522139/TB2qGLnJHuWBuNjSszgXXb8jVXa_!!552522139.jpg_430x430q90.jpg" mode="aspectFill"></image> 
+        <view class='soldOutBg'>已结束</view>
+      </view>
+      <view class='seckillGoodsInfo'>
+        <view class="seckillGoodsName lineText2">红色条纹衬衫女装春秋季2018新款韩范chic早秋衬衣小清新港风上衣</view>
+        <view class="seckillGoodsPrice">
+          <text class="new-price">秒杀价 ￥68</text><text class="delLine">￥112</text>
+        </view>
+        <view class="seckillState">
+          <view class="seckillProgressBox">
+            <text class="seckillStateTxt">已抢50%</text>
+            <view class="seckillProgressBar" style="width:50%"></view>
+          </view>
+          <button class="seckillBtn">已结束</button>
+        </view>
+      </view>
+    </view> -->
+</view>

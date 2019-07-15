@@ -1,0 +1,8 @@
+<!--pages/shop/openingRecord/openingRecord.wxml-->
+<view class='recordItem gridXb' wx:for="{{order_list}}">
+  <view class='recordItemTitBox flex'><view class='recordItemTit sub'>{{item.pay_info.title}}</view></view>
+  <view class='recordMsgItem'>生效时间：{{item.pay_time}}</view>
+  <view class='recordMsgItem'>开通天数：{{item.duration}}天</view>
+  <view class='recordMsgItem'>开通方式：{{item.open_type}}</view>
+</view>
+

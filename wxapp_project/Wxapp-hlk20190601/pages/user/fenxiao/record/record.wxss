@@ -1,0 +1,135 @@
+/* pages/user/fen/record/record.wxss */
+
+/* .from, .time, .states {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.from {
+  width: 180rpx;
+  margin: 0 20rpx;
+  text-align: left;
+}
+
+.time {
+  width: 180rpx;
+}
+
+.states {
+  width: 120rpx;
+}
+
+.rtit {
+  line-height: 92rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.rtit .from {
+  text-align: center;
+}
+
+.ritem {
+  line-height: 92rpx;
+}
+
+.ritem:nth-child(odd) {
+  background: #fff;
+}
+
+.ritem:active {
+  background: rgba(0, 0, 0, 0.05);
+} */
+
+.recoudItem {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.itemTop, .itemMid, .itemBot {
+  padding: 20rpx;
+}
+
+.scrollBox {
+  white-space: nowrap;
+}
+
+.scrollImg {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 6rpx;
+  margin-left: 20rpx;
+}
+
+.scrollImg:last-child {
+  margin-right: 40rpx;
+}
+
+/*  */
+.tagScrollView{
+  white-space: nowrap;
+  color: #666;
+  padding: 24rpx 20rpx;
+}
+.tagItem{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 28rpx;
+  line-height: 58rpx;
+  border-radius: 100rpx;
+  min-width: 140rpx;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin-right: 30rpx;
+  background-color: #fff;
+}
+
+.tagItem:last-child{
+  margin-right: 150rpx;
+}
+
+.tagItem.mainColor_bg{
+   color: #fff;
+   border: 0;
+   background-color: var(--mColor);
+}
+
+
+/*  */
+.giftImgBox{
+  position: relative;
+  width: 240rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+
+.giftCardImg{
+  width: 100%;
+  height: 100%;
+}
+
+.giftVal{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 32rpx;
+  color: #ffff;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+
+
+
+
+
+
+
+
+@import '../../common.wxss';
+@import '/css/color/color.wxss';

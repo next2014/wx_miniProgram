@@ -1,0 +1,11 @@
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+page{
+  background-color: #fff;
+}
+.ruleBox{
+  text-indent: 2em;
+  padding: 30rpx;
+  text-align: justify;
+}

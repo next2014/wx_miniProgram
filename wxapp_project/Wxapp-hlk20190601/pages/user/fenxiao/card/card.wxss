@@ -1,0 +1,159 @@
+/* pages/user/fenxiao/card/card.wxss */
+
+.headerBox {
+  padding: 30rpx 30rpx 40rpx;
+  background-color: #fff;
+}
+
+.headTit {
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.headerBox .linght {
+  line-height: 1.4;
+  margin-bottom: 30rpx;
+}
+
+.bulidBtn {
+  border-radius: 100rpx;
+  font-size: 36rpx;
+  line-height: 84rpx;
+  color: #fff;
+  background-color: var(--mColor);
+}
+
+.bulidBtn::after {
+  display: none;
+}
+
+.bulidBtn:active {
+  opacity: 0.85;
+}
+
+.carImgBox {
+  position: relative;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.carImgBox image {
+  width: 200rpx;
+  height: 100rpx;
+}
+
+.cardVal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cardList {
+  margin-top: 20rpx;
+}
+
+.cardItem {
+  padding: 24rpx 30rpx;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+
+.cardItemTop {
+  -webkit-align-items: center;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.cardItemTop  .tit {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.cardItemBot {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.cardItemBot {
+  padding-top: 24rpx;
+}
+
+.cardItemBot .gridFour {
+  height: 56rpx;
+  line-height: 56rpx;
+  padding: 0 30rpx;
+}
+
+.cardItemBot .gridFour::before {
+  border-color: currentColor;
+}
+.cardItemBot .gridFour:active{
+  opacity: 0.85;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+.share {
+  font-size: 30rpx;
+  line-height: 56rpx;
+  padding: 0 30rpx;
+  color: #fff;
+  margin-left: 20rpx;
+  background-color: #f66;
+  border-radius: 6rpx;
+}
+
+.share::after {
+  display: none;
+}
+
+.share:active{
+  opacity: 0.855;
+}
+
+/* 弹窗 */
+.floatBox{
+  z-index: 999;
+}
+
+.floatBoxBg{
+  display: block;
+}
+
+.cardPopup{
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+.qrcode{
+  width: 60vmin;
+  height: 60vmin;
+}
+.saveBtn{
+  text-align: center;
+  margin-top: 50rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: var(--mColor);
+}
+.saveBtn:active{
+  opacity: .85;
+}
+
+.cancelICon{
+  position: absolute;
+  top: -100rpx;
+  right: 0;
+}
+@import '../../common.wxss';
+@import '/css/color/color.wxss';

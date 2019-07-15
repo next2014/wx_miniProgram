@@ -1,0 +1,24 @@
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="iconfont icon-loading animated infinite rotate mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+<block wx:if="{{collectlist.length<=0}}">
+    <view class="no-content tc">
+      <view class="f16">您还没有收藏商品!</view>
+      <view class="mt20">
+        <button type="primary" plain size="mini" bindtap="goHome">返回首页</button>
+      </view>
+    </view>
+  </block>
+  <!--list start-->
+  <goodslist data="{{collectlist}}" mode="{{list_type?'item-listbox':'item-listbox'}}" close_page="{{true}}" />
+  <!--tips-->
+  <block wx:if="{{is_loadmore==false}}">
+    <view class="tips-foot grey tc f12">
+      不要扯了，已经扯到底了
+    </view>
+  </block>
+</block>

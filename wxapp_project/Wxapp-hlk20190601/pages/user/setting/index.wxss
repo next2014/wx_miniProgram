@@ -1,0 +1,16 @@
+/* pages/user/setting/index.wxss */
+@import '../user_index/index';
+.my-menu-item{
+    align-items: center;
+    line-height: inherit;
+    background: transparent;
+}
+.setBtn{
+    background-color: transparent;
+    margin-left: 0;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 0;
+    text-align: left
+}
+.setBtn::after{display: none;}

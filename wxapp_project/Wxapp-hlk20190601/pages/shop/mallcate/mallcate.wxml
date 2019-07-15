@@ -1,0 +1,71 @@
+<view class='search flex gridXb' wx:if="{{community_config.is_open != 1}}">
+  <view class='flex search-box'>
+    <input class='sub search-input' placeholder='搜索商品' onfocus="this.placeholder=''" confirm-type="search" bindconfirm="goods_search_bind"></input>
+    <view class='seaIcon'>
+      <text class='iconfont icon-search'></text>
+    </view>
+  </view>
+  <view class='cartBox' catchtap='bind_go_cart'>
+    <text class='iconfont icon-cartfill'></text>
+    <text class='wedget'>{{cart_num}}</text>
+  </view>
+</view>
+
+<view class='cateListBox flex {{community_config.is_open == 1 ? "noSearchscreen" : "hasSearchScreen"}}'>
+  <scroll-view class='sidebar' scroll-y>
+    <form report-submit='true' bindsubmit='pushFormId'>
+      <button wx:for="{{cate_one_data}}" class="cate-name {{classifyViewed==index?'MainCateActive':''}}" bindtap="cate_item_bind" data-index="{{index}}" id="{{item.id}}" form-type='submit'>{{item.name}}</button>
+    </form>
+  </scroll-view>
+  <view class='sub cate-con'>
+    <view class='fixedShade' hidden="" wx:if="{{show_cate == true}}"></view>
+    <view class='cate-con-top tc'>
+      <view class='sortMenuBox flex  gridXb'>
+        <view class='sortMenu sub {{select_type == "" ? "menuActive" : ""}}' data-stype="" bindtap='select_goods_list'>综合排序</view>
+        <view class='sortMenu sub flex'>
+          <view class='sortByPrice {{select_type == "jiage" ? "menuActive" : ""}}' data-stype="jiage" bindtap='select_goods_list'>按价格</view>
+          <view class='arrowBox'>
+            <view class='arrowIcon upIcon {{is_select_jiage == "sheng" ? "menuActive" : ""}}'>
+              <text class='iconfont icon-up'></text>
+            </view>
+            <view class='arrowIcon downIcon {{is_select_jiage == "jiang" ? "menuActive" : ""}}'>
+              <text class='iconfont icon-down'></text>
+            </view>
+          </view>
+        </view>
+        <view class='sortMenu sub {{select_type == "xiaoliang" ? "menuActive" : ""}}' data-stype="xiaoliang" bindtap='select_goods_list'>按销量</view>
+      </view>
+      <view class='subCateBox flex gridXb' wx:if="{{cate_one_data[classifyViewed].two_cat_list != null}}">
+
+        <scroll-view class='subCateTabBox sub' scroll-x scroll-into-view="list-{{id}}" scroll-with-animation="true">
+          <form report-submit='true' bindsubmit='pushFormId'>
+            <button class='subCateTab {{second_id == cate_one_data[classifyViewed].id ? "subTabActive" : ""}}' catchtap='select_classify' data-sid="{{cate_one_data[classifyViewed].id}}" form-type='submit'>
+              <image class='subCateTabImg' mode='aspectFill' src='{{cate_one_data[classifyViewed].icon}}'></image>
+              <view class='sunCateTabTxt'>全部</view>
+            </button>
+            <button wx:for="{{cate_one_data[classifyViewed].two_cat_list}}" class='subCateTab {{second_id == item.id ? "subTabActive" : ""}}' catchtap='select_classify' data-sid="{{item.id}}" id="list-{{index}}" form-type='submit'>
+              <image class='subCateTabImg' mode='aspectFill' src='{{item.icon}}'></image>
+              <view class='sunCateTabTxt'>{{item.name}}</view>
+            </button>
+          </form>
+        </scroll-view>
+
+        <view class='subCateSelctBtn' catchtap='show_cate'>
+          <text class='iconfont icon-up' wx:if="{{show_cate == true}}"></text>
+          <text class='iconfont icon-down' wx:if="{{show_cate == false}}"></text>
+        </view>
+
+      </view>
+      <view class='subCatePopup flex ' wx:if="{{show_cate}}">
+        <view wx:for="{{cate_one_data[classifyViewed].two_cat_list}}" class='popopItem {{second_id == item.id ? "popopItemActive" : ""}}' catchtap='select_classify' data-sid="{{item.id}}" id="list-{{index}}">{{item.name}}</view>
+
+        <!--下面这两个空view是为了布局使用 不要删除  -->
+        <view class='nullpopopItem'></view>
+        <view class='nullpopopItem'></view>
+      </view>
+    </view>
+    <view class='commodityList {{cate_one_data[classifyViewed].two_cat_list != null ? "hasSubCate" : "noSubCate"}}'>
+      <goodslist data="{{goods_data}}" mode="item-listbox" bind:dgShop_goods_add_cart="addCart" bind:dgShop_show_more="onReachBottom" close_page="{{false}}" />
+    </view>
+  </view>
+</view>

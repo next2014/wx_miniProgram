@@ -1,0 +1,75 @@
+<!--pages/shop/superMember/superMember.wxml-->
+<view class='vipTopBg'>
+  <image class='vipTopBgImg' src='http://www.ixiaochengxu.cc/resource/images/shop/vip/vipBg.png' mode='widthFix'></image>
+</view>
+<!-- vip信息 -->
+<view class='vipInfoBox'>
+  <view class='userInfoBox flex' bindtap='jumpVipBuyRecord'>
+    <image class='userInfoImg' src='{{vip_info.config_info.user_info.headimgurl}}' mode='aspectFill'></image>
+    <view class='sub'>
+      <view class='userInfoName'>{{vip_info.config_info.user_info.nickname}}</view>
+      <view class='userVipState' wx:if="{{vip_info.vip_type == 0}}">您还不是VIP+</view>
+      <view class='userVipState' wx:if="{{vip_info.vip_type == 1}}">VIP+到期时间：永久有效</view>
+      <view class='userVipState' wx:if="{{vip_info.vip_type == 2}}">VIP+到期时间：{{vip_info.end_time}}</view>
+      <view class='userVipState' wx:if="{{vip_info.vip_type == 3}}">VIP+已过期</view>
+    </view>
+    <view class='userInfoMore iconfont icon-youjiantou'></view>
+  </view>
+</view>
+
+
+
+<!-- 激活弹窗 -->
+<view class='floatBox activationPop' wx:if="{{activation}}">
+  <view class='activationPopCont mid'>
+    <image class='activationPopImg' src='http://www.ixiaochengxu.cc/resource/images/shop/vip/vipIco.png' mode='aspectFill'></image>
+    <view class='activationPopTit'>授权激活</view>
+    <view class='activationPopMsg'>激活后达到购买条件即可成为VIP+</view>
+    <view class='activationPopInpBox'>
+      <input class='activationPopInp' placeholder='请填写您的姓名' bindblur="getName" bindinput="nameStatus" value=''></input>
+    </view>
+    <button disabled="{{disabled}}" class='activationPopBtn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权微信手机快速激活</button>
+  </view>
+  <view class='activationPopCont mid' wx:if="">
+    <image class='activationPopImg' src='http://www.ixiaochengxu.cc/resource/images/shop/vip/restrictedIco.png' mode='aspectFill'></image>
+    <view class='activationPopTips'>抱歉由于微信政策限制，苹果手机用户暂时不能购买，详情请咨询客服</view>
+    <button class='activationPopBtn'>电话联系客服</button>
+  </view>
+  <view class='floatBox floatBoxBg' bindtap='hiddenActivation'></view>
+</view>
+
+
+<!-- vip详细信息 -->
+<view class='vipDetailBox'>
+  <!-- 里面是富文本内容 -->
+  <import src="/wxParse/wxParse.wxml" />
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+
+<!-- 开通vip -->
+<view wx:if="{{vip_info.config_info.become_type == 2}}">
+  <view class="vipTitleText" wx:if="{{vip_info.vip_type != 1 && vip_info.config_info.buy_rule}}">开通VIP+尊享权益</view>
+  <view class='vipChooseBox gridXb' wx:if="{{vip_info.vip_type != 1}}">
+    <view wx:for="{{vip_info.config_info.buy_rule}}" class='vipChooseItem flex {{select_index == index ? "active" : ""}}' bindtap='select_card' data-card="{{item}}" data-index="{{index}}">
+      <view class='vipItemChecked'>
+        <text class='vipItemCheckedIco iconfont icon-duihao'></text>
+      </view>
+      <view class="sub">
+        <view class='vipItemTit'>{{item.title}}</view>
+        <view class='vipItemTime'>{{item.days}}天</view>
+      </view>
+      <view class='vipItemPrice'>
+        <!-- <text class='vipItemPriceIco' wx:if="{{item.price > 0}}">￥</text> -->
+        <text>{{item.price == 0 ? '免费' : item.price+'元'}}{{is_first ? '领权益' : '续费'}}</text>
+      </view>
+      
+    </view>
+  </view>
+  <button class='vipBuyBtn' id="vipBuyBtn" bindtap='vipBuyNow' wx:if="{{vip_info.vip_type != 1 && vip_info.config_info.buy_rule}}">{{is_first ? '立即领取权益' : '立即续费'}}</button>
+  <!-- <view class='vipBuyTips' wx:if="{{vip_info.vip_type != 1}}">从购买日起生效</view> -->
+</view>
+
+<button class='vipBuyBtn vipBuyBtnFiexd' wx:if="{{jump_show}}" bindtap='goBuyButton'>前去领取权益</button>
+

@@ -1,0 +1,124 @@
+<!--pages/shop/memberGoods/memberGoods.wxml-->
+<view class="memberTopBox">
+  <view class="memberUserInfo flex">
+    <image class="memberUserImg" src="{{config.user_info.headimgurl}}" mode="aspectFill"></image>
+    <view class="sub" bindtap='jumpToVip'>下午好，{{config.user_info.nickname}}
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+  </view>
+  <image class="memberTopImg" src="{{config.poster}}" mode="aspectFill"></image>
+</view>
+<!-- VIP+福利专题 -->
+<view class="vipWelfareBox">
+  <view class="vipTitleBox">
+    <view class="vipTitleText">VIP+福利专题</view>
+    <button class="vipShareBtn" open-type="share">
+      <text class="iconfont icon-share"></text>
+    </button>
+  </view>
+  <!-- 优惠券 -->
+  <view class="vipCouponBox" wx:if="{{config.discount_list}}">
+    <view class="couponBoxTit">专属券</view>
+    <scroll-view scroll-x="true" class="couponItemBox">
+      <view class="couponItem flex {{item.q_rest == 1 ? '' : 'receive'}}" wx:for="{{config.discount_list}}" wx:key="index" catchtap='{{item.q_rest == 1 ? "quan_lingqu_bind" : ""}}' id='{{item.id}}'>
+        <view class="sub couponItemPriceInfo">
+          <text class="couponItemPicIco">￥</text>
+          <view class="couponItemPrice">{{item.q_dai_jiner}}</view>
+          <view class="lineText">满{{item.q_dai_limit_jiner}}元可用</view>
+        </view>
+        <view class="couponItemBtn">{{item.q_rest == 1 ? "领取" : "已领取"}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="goodsViewBox gridXt flex">
+    <view class="goodsViewIco iconfont icon-shangpin"></view>
+    <view class="sub">店铺商品一览</view>
+    <view class="goodsViewMore" bindtap='toCate'>商品分类
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+  </view>
+</view>
+<!-- vip 弹窗 -->
+<view class="floatBox" wx:if="{{tips_show}}">
+  <view class="floatBox floatBoxBg" style="display:block"></view>
+  <view class="vipPopBox">
+    <view class="vipPopCont">
+      <image class="vipPopImg" src="https://www.ixiaochengxu.cc/resource/images/shop/vipPop.png" mode="widthFix"></image>
+      <view>只有VIP+用户才可以领取</view>
+    </view>
+    <view class="flex">
+      <button class="sub vipPopBtnItem" bindtap='tipsClose'>取消</button>
+      <button class="sub vipPopBtnItem vipPopSureBtn" bindtap='jumpToVip'>了解VIP+</button>
+    </view>
+  </view>
+</view>
+
+<!-- vip秒杀 -->
+<view class="ContItem" wx:if="{{seckill_info && seckill_goods}}">
+  <view class="flex">
+    <view class="ContItemTitle sub">本期VIP+专享</view>
+    <view class="countdownBox">
+      <block wx:if="{{ seckill_info.is_today == 1 }}">
+        <block wx:if="{{time.status != 2}}">
+          <text> 距{{time.status == 0?'开始':'结束'}}</text>
+          <text class="countdownNum">{{time.hour}}</text>
+          <text>:</text>
+          <text class="countdownNum">{{time.minute}}</text>
+          <text>:</text>
+          <text class="countdownNum">{{sec}}</text>
+        </block>
+        <block wx:else>
+          活动结束
+        </block>
+      </block>
+      <block wx:else>
+        距开始
+        <text class="countdownNum">{{seckill_info.start_day}}</text>天
+      </block>
+
+    </view>
+  </view>
+  <view class="spikeGoodsBox" wx:if="{{seckill_goods}}">
+    <view class="spikeGoodsItem flex" wx:for="{{seckill_goods}}" wx:key="index">
+      <view class="spikeGoodsImgBox">
+        <image class="spikeGoodsImg" src="{{item.g_img}}" mode="aspectFill"></image>
+        <view class="spikeGoodsTag"> VIP+专享</view>
+      </view>
+      <view class="sub" bindtap='goods_detail' id="{{item.id}}">
+        <view class="spikeGoodsName lineText2">{{item.g_name}}</view>
+        <view class="spikeGoodsNum">剩{{item.g_number}}件</view>
+        <view class="flex spikeGoodsBottom">
+          <view class="sub spikeGoodsPrice">￥{{item.shop_price}}
+            <text class="spikeGoodsPriceOld">￥{{item.market_price}}</text>
+          </view>
+          <button class="spikeGoodsBtn" style='background: #00C98E;' wx:if="{{time.status == 0}}">未开始</button>
+          <button class="spikeGoodsBtn" wx:if="{{time.status == 1}}">去抢购</button>
+          <button class="spikeGoodsBtn" style='background: #eee; color:#999;' wx:if="{{time.status == 2}}">已结束</button>
+        </view>
+      </view>
+    </view>
+    <view class="spikeGoodsMore" wx:if="{{seckill_load_more}}" bindtap='getVipSckillGoods'>更多专享</view>
+  </view>
+</view>
+
+<!-- vip特惠 -->
+<view class="ContItem" wx:if="{{vip_goods.length > 0}}">
+  <view class="ContItemTitle">VIP+特惠</view>
+  <view class="">
+    <view class="vipGoodsItem" wx:for="{{vip_goods}}" wx:key="index" bindtap='goods_detail' id="{{item.id}}">
+      <view class="vipGoodsImgBox">
+        <image class="vipGoodsImg" src="{{item.g_img}}" mode="aspectFill"></image>
+      </view>
+      <view class="vipGoodsInfo">
+        <view class="vipGoodsName lineText">{{item.g_name}}</view>
+        <view class="vipGoodsPriceDel">零售价：￥{{item.market_price}}</view>
+        <view class="vipGoodsPrice">￥{{item.vip_price}}
+          <text class="goodsVipTag">VIP+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 返回首页 -->
+<view class="mainColor_bg returnHome" bindtap='goHome'>首页</view>

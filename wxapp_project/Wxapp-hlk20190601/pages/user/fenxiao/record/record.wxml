@@ -1,0 +1,45 @@
+<view>
+  <scroll-view class='tagScrollView' scroll-x>
+    <view class="tagItem {{order_source==0?'mainColor_bg':''}}" bindtap='change_source' data-stype='0'>商城</view>
+    <view class="tagItem {{order_source==1?'mainColor_bg':''}}" bindtap='change_source' data-stype='1'>礼品卡</view>
+  </scroll-view>
+  <block wx:if="{{data_list==null}}">
+    <view class="zanwu tc">
+      <text class="iconfont icon-kongbaiyemian"></text>
+      <view class="f18">您暂时还没有分销记录</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='recoudItem' wx:for="{{data_list}}" wx:key='rid'>
+      <view class='flex itemTop'>
+        <view class='sub lineText mr10'>{{item.order_sn}}</view>
+        <view>
+          <text>{{item.tcstatus}}</text>
+        </view>
+      </view>
+      <!-- 商城的图片 -->
+      <scroll-view scroll-x class='scrollBox' wx:if='{{order_source==0}}'>
+        <image class='scrollImg' mode='aspectFill' wx:for="{{item.g_img}}" wx:for-item="itemName" src='{{itemName}}'></image>
+      </scroll-view>
+      <!-- 礼品卡图片 -->
+      <view class='giftImgBox' wx:else>
+        <image class='giftCardImg' mode='aspectFill' src='{{item.g_img}}'></image>
+        <!-- <view class='giftVal'>面值449元</view> -->
+      </view>
+      <view class='flex itemMid'>
+        <view class='sub'>
+          <text>来自：</text>
+          <text>{{item.providemoneyname}}</text>
+        </view>
+        <view>{{item.strctime}}</view>
+      </view>
+      <view class='flex itemBot gridXt'>
+        <view class='sub lineText'>
+          <text>佣金</text>
+          <text class='linght'>（订单总金额：￥{{item.order_amount}}）</text>
+        </view>
+        <view class='red'>{{item.tcamount}}</view>
+      </view>
+    </view>
+  </block>
+</view>

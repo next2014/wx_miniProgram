@@ -1,0 +1,32 @@
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+.topPic {
+  width: 100%;
+}
+
+.savePicBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 0;
+  background-color: var(--DShop-mcolor);
+}
+
+.savePicBtn::after {
+  width: 0;
+  height: 0;
+}
+
+.cavimg {
+  width: 100%;
+  height: 100%;
+}
+
+.load {
+  padding-top: 40%;
+  line-height: 24px;
+}

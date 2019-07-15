@@ -1,0 +1,56 @@
+<!--pages/shop/leaguer-ranking/leaguer-ranking.wxml-->
+
+<view class='topBg mainColor_bg'></view>
+<view class='mainBox'>
+  <view class='flex firInfo' wx:if="{{the_king}}">
+    <image class='firAvatar' mode='aspectFill' src='{{the_king.headimgurl}}'></image>
+    <view class='sub'>
+      <view class='firnickname lineText'>{{headimgurl.nickname}}</view>
+      <view class='money'>
+        <text class='rmbIcon'>￥</text>{{the_king.royalties_rank}}</view>
+    </view>
+    <image class='firImg' mode='aspectFill' src='http://www.ixiaochengxu.cc/resource/images/shop/league/first.png'></image>
+  </view>
+  <view class='rankBox' wx:if="{{the_king}}">
+    <view class='flex cell'>
+      <view class='cellLf'>
+        <image mode='aspectFill' src='http://www.ixiaochengxu.cc/resource/images/shop/league/second.png'></image>
+      </view>
+      <view class='rankAvaBox'>
+        <image class='rankAvatar' src='{{runner_up.headimgurl}}'></image>
+      </view>
+      <view class='sub ranknickname lineText'>{{runner_up.nickname}}</view>
+      <view class='rankMoney'>
+        <text class='smallIcon'>￥</text>
+        <text>{{runner_up.royalties_rank}}</text>
+      </view>
+    </view>
+    <view class='flex cell'>
+      <view class='cellLf'>
+        <image mode='aspectFill' src='http://www.ixiaochengxu.cc/resource/images/shop/league/three.png'></image>
+      </view>
+      <view class='rankAvaBox'>
+        <image class='rankAvatar' src='{{second_runner_up.headimgurl}}'></image>
+      </view>
+      <view class='sub ranknickname lineText'>{{second_runner_up.nickname}}</view>
+      <view class='rankMoney'>
+        <text class='smallIcon'>￥</text>
+        <text>{{second_runner_up.royalties_rank}}</text>
+      </view>
+    </view>
+    <view class='flex cell' wx:for="{{rank_info}}" wx:if="{{index > 2}}">
+      <view class='cellLf'>
+        <view class='four mainColor'>{{index + 1}}</view>
+      </view>
+      <view class='rankAvaBox'>
+        <image class='rankAvatar' src='{{item.headimgurl}}'></image>
+      </view>
+      <view class='sub ranknickname lineText'>{{item.nickname}}</view>
+      <view class='rankMoney'>
+        <text class='smallIcon'>￥</text>
+        <text>{{item.royalties_rank}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='linght mt5 f12 tc'>每周结算后会更新一次数据，根据上周业绩统计显示排行榜</view>
+</view>

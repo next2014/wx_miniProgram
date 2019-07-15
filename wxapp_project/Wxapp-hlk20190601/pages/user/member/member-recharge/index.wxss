@@ -1,0 +1,38 @@
+/* pages/user/member/member-recharge/index.wxss */
+@import "/css/color/color.wxss";
+page{background: #fff;font-size: 32rpx;}
+
+.infoBox{padding: 20rpx 30rpx;}
+.infoItem{padding: 10rpx 0;}
+.infoItemTit{width: 160rpx;}
+
+
+.cardRechargeBox{padding: 30rpx;}
+.title{ font-size: 32rpx; font-weight: 800;}
+
+.rechargeInpBox{padding: 0 20rpx;line-height: 100rpx;}
+.rechargeInpBox::before{border-color: #e0b675;}
+.rechargeInp{padding-left: 30rpx;padding-right: 30rpx;height: 100rpx; font-size: 48rpx; text-align: right;}
+
+.rechargeItemBox{padding: 40rpx 0;}
+.rechargeItem{display: inline-flex;width: calc(50% - 8px);height: 150rpx;text-align: center;font-size: 36rpx;align-items: center;justify-content: center;vertical-align: top;color: #e0b675;border-radius: 6rpx;line-height: 1;}
+.rechargeItem::before{border-color: currentColor;}
+.rechargeItem:active{background: rgba(255, 173, 21, 0.05);}
+.rechargeItem:not(:nth-child(2n)){margin-right: 16px;}
+.rechargeItem:nth-child(n+3){margin-top: 16px;}
+.rechargeItem.active{background: #e0b675;color: #fff;}
+
+.rechargePrice{font-weight: bold;}
+.rechargePriceTip{font-size: 28rpx;margin-top: 12rpx;opacity: .7;}
+button.rechargeBtn{margin-top: 60rpx;width: 460rpx;background: var(--mColor);}
+button.rechargeBtn.button-hover{background: var(--mColorLight);}
+.rechargeBtn::after{display: none;}
+
+
+/* 充值弹窗 */
+.tpl-memberPopCont{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: #fff;border-radius: 8rpx;width: 660rpx;padding-bottom: 50rpx;}
+.tpl-memberPopClose{position: absolute;top: 0;right: 0;padding: 24rpx;color: #999;line-height: 1;}
+.tpl-memberPopTit{text-align: center;line-height: 92rpx;font-size: 36rpx;}
+.tpl-memberPopInp{width: 520rpx;margin: 40rpx auto 60rpx;padding: 0 30rpx;line-height: 88rpx;}
+.tpl-memberPopInp input{width: 100%;height: 88rpx;font-size: 28rpx;}
+.tpl-memberPopBtn{width: 520rpx;line-height: 88rpx;border-radius: 6rpx;font-size: 30rpx;}

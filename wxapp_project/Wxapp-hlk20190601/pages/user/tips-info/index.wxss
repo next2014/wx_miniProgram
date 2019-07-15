@@ -1,0 +1,12 @@
+/* pages/pay-success/pay-success.wxss */
+page{background: #fff;}
+
+.loginPopupCont{text-align: center;padding-top: 220rpx;}
+.loginPopImg{width: 580rpx;margin-bottom: 20rpx;}
+.loginContBox{text-align: center;}
+.loginTips{color: #999;font-size: 24rpx;margin-bottom: 6rpx;}
+
+.loginBtn{width: 320rpx;border-radius: 12rpx;line-height:80rpx;margin: 150rpx auto 10px;font-size: 32rpx;}
+.loginBtn::after{display: none;}
+.loginBtn[type="primary"]{background: #08c161;}
+.loginBtn.button-hover {background-color: #21d87a;} 

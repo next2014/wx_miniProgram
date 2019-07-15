@@ -1,0 +1,28 @@
+<!--pages/shop/leaguer-center/leaguer-center.wxml-->
+<view class='leagueInfo'>
+  <view class='flex leaInfoTop'>
+    <image class='avatar' mode='aspectFill' src='{{apply_info.headimgurl}}'></image>
+    <view class='sub'>
+      <view class='flex'>
+          <view class='lineText nickname'>{{apply_info.nickname}}</view>
+          <view class="level" wx:if="{{type == 1}}">{{apply_info.grade_name}}</view>
+        
+      </view>
+      <view class='lineText linght'>{{apply_info.type_name}}</view>
+    </view>
+    <button class='contact' open-type="contact">
+      <text class="iconfont icon-kefu mainColor"></text>
+      <view>客服</view>
+    </button>
+  </view>
+  <view class='mt10'>电话：{{apply_info.telephone}}</view>
+  <view class=' address'>地址：{{apply_info.address}}</view>
+</view>
+
+
+<view class='mt10' wx:if="{{type == 1}}">
+<view class='arrowR cell ' bindtap='jumpOrder'>订单管理</view>
+  <view class='arrowR cell ' bindtap='jumpHead'>我的业绩</view>
+  <view class='arrowR cell' bindtap='communityPoster'>社区海报</view>
+  <view class='arrowR cell' bindtap='jumpRank' wx:if="{{apply_info.rank == 1}}">每周排行榜</view>
+</view>

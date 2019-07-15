@@ -1,0 +1,44 @@
+/* pages/user/operate/operate-list-detail/operate-list-detail.wxss */
+@import '../../common.wxss';
+@import '/css/color/color.wxss';
+
+page{
+  font-size: 32rpx;
+  background-color: #fff;
+}
+.article{
+  padding:30rpx 24rpx;
+}
+.h1{
+  font-size: 36rpx;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.h5{
+  margin-top: 10rpx;
+  color: var(--mColor);
+}
+
+.videoBox{
+  margin-top: 44rpx;
+}
+
+.videoBox video{
+  width: 100%;
+}
+
+.videoTit{
+   text-align: center;
+   font-size: 30rpx;
+   font-weight: 700;
+}
+
+.richBox{
+  margin-top: 36rpx;
+  font-size: 30rpx;
+  line-height: 1.4;
+  overflow: hidden;
+}
+.richBox image{
+  width: 100%;
+}

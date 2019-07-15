@@ -1,0 +1,104 @@
+
+/******************************** 商品列表 star *********************************/
+
+/* 商品列表公用样式 */
+.goods-item{background: #fff; display: inline-block;vertical-align: top;}
+.goods-imgbox{ position: relative; width: 100%; padding-bottom: 100%;}
+.goods-name{line-height:40rpx; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.goods-img{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.goods-pricebox{display: flex;width: 100%;justify-content: space-between; line-height: 60rpx;}
+.goods-price{flex:1;}
+.shopCart-btn{width: 60rpx;height: 60rpx;background: transparent;border-radius: 50%;text-align: center;padding: 0;line-height: 60rpx;font-size: 40rpx;color:#f66;transition: all .3s linear;}
+.shopCart-btn:active{background: #f66;color: #fff;font-size: 32rpx;}
+
+/* 是否显示原价 */
+.hid-oldprice .delLine{display: none;}
+/* 商品名称行数 */
+.name-lineTwo .goods-name{-webkit-line-clamp: 2;height: 80rpx;white-space: normal;display: -webkit-box; -webkit-box-orient: vertical;}
+
+/* 推荐滑动列表 */
+.recommend{padding: 20rpx 0;box-sizing: border-box;}
+.goods-recombox{background: #fff;white-space: nowrap;}
+.goods-recombox .goods-item{width: 280rpx;}
+.goods-recombox .goods-item:nth-child(n+2){margin-left: 10rpx;}
+.goods-recombox .goods-info{ margin:10rpx;}
+
+/* 两列商品形式 */
+.goods-colbox{display: flex; flex-wrap: wrap;}
+.goods-colbox .goods-item{ width:49%;}
+.goods-colbox .goods-item:nth-child(2n){margin-left: 2%;}
+.goods-colbox .goods-item:nth-child(n+3){ margin-top: 2%;}
+.goods-colbox .goods-info{ margin: 10rpx;}
+.goods-colbox .goods-name{ margin:15rpx 0 10rpx;}
+.goods-colbox .goods-pricebox{ align-items: flex-start;}
+.goods-colbox .goods-price > view{ display: block;}
+
+/* 商品列表形式 */
+.goods.goods-listbox{padding:0;}
+.goods-listbox .goods-item{width:100%;margin: 0;display: flex;clear: both;padding: 30rpx;}
+.goods-listbox .goods-item:nth-child(n+2){margin-top: 2rpx;}
+.goods-listbox .goods-imgbox{width:200rpx;height: 200rpx;margin-right: 20rpx;padding: 0;}
+.goods-listbox .goods-info{flex: 1;margin: 0;display: flex;flex-direction: column;justify-content: space-between;}
+.goods-listbox .goods-name{margin: 0;}
+.goods-listbox .goods-pricebox{ align-items: flex-end;line-height: 1.1;}
+.goods-listbox .goods-price>view {display: inline-block;}
+.goods-listbox .goods-price>view:nth-child(n+2) {margin-left: 20rpx;}
+
+/* 商品大图形式 */
+.goods-blockbox{padding: 20rpx;}
+.goods-blockbox .goods-item{width: 100%;border-radius: 12rpx;overflow: hidden;}
+.goods-blockbox .goods-item:nth-child(n+2){margin-top: 20rpx;}
+.goods-blockbox .goods-info{margin: 0;padding: 20rpx 30rpx;display: flex;flex-direction: column;justify-content: space-between;}
+.goods-blockbox .goods-pricebox{ align-items: flex-end;line-height: 1.1;}
+.goods-blockbox .goods-price>view {display: inline-block;}
+.goods-blockbox .goods-price>view:nth-child(n+2) {margin-left: 20rpx;}
+.goods-blockbox .goods-name{margin: 0;}
+.goods-blockbox .goods-name.lineText2{height: auto;}
+
+/******************************** 商品列表 end *********************************/
+
+
+/******************************** 加入购物车 star *********************************/
+/* 加入购物车 立即购买 弹出框 */
+.add-cart-box{z-index: 999;}
+.layout{ position: fixed; left: 0; bottom: 0; width: 100%; background: #fff; z-index: 1;animation: fadeInUp .4s ease forwards; transform: translateY(100%);overflow: initial;}
+.layout-info{padding: 10px; line-height: 30px;padding-right: 38px;overflow: initial;}
+.layout-info image{ width:200rpx; height: 200rpx;margin-top: -60rpx;border-radius:3px;background: #fff; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.05);}
+.layout-info .sub{ line-height: 23px; overflow: hidden;}
+/* 数量 */
+.options{padding:0 30rpx;display: block;width:100%;clear:both;}
+.options-tiem{ padding:15px 0; overflow: hidden;}
+.count-set{ width:auto; border: 1px solid #eee;}
+.count-set text{ display: block; line-height: 30px; padding:0 10px;}
+.count-set text:active{ background: rgba(0, 0, 0, 0.05);}
+.buy-couts{ border-left: 1px solid #eee; border-right: 1px solid #eee; width: 60px; height: 30px;}
+.buy-couts input{ height: 30px;}
+.count-set .flase{ background: rgba(0, 0, 0, 0.05); color: #999;}
+.add-cart button,.add-cart-btn,.buy-now-btn{padding: 0; color: #fff; border-radius: 0;font-size: 30rpx;line-height: 46px;height: 46px;}
+button:not([plain])::after{border:none;}
+.add-cart-btn{background:#f0aa30;}
+.add-cart-btn-box>.sub:only-child,.buy-now-btn{background: #f14344;}
+
+/* 购物车商品属性 */
+.goods-attrs-box{max-height: 500rpx;overflow-y: auto;-webkit-overflow-scrolling: touch;}
+.attr_list{padding: 20rpx 30rpx;}
+.attr-list-li{display: inline-block;padding:0 20rpx;margin-right:12rpx;margin-top:12rpx;line-height: 24px;font-size: 12px;background: #f0f0f0;border-radius: 6rpx;transition: all .2s linear;}
+.attr-list-li.on{background: #f14344;color: #fff;}
+.attr-list-li.disabled{background: #f7f7f7;color: #ccc;}
+
+/* 弹层关闭 */
+.icon-close{ width: 25px; height: 25px; border-radius: 50%; color: #999; line-height: 25px; font-size: 18px; text-align: center;margin:10px 10px 0 0;position: absolute;right: 0;z-index: 1;}
+.icon-close:active{ background: rgba(0, 0, 0, 0.05);}
+
+.floatBoxBg{animation-direction: 0.2s;}
+/* css 动画 */
+@keyframes fadeIn{
+  0%{opacity:0}
+  100%{opacity:1}
+}
+
+@keyframes fadeInUp{
+  0%{transform:translateY(100%)}
+  100%{transform:translateY(0)}
+}
+/******************************** 加入购物车 end *********************************/

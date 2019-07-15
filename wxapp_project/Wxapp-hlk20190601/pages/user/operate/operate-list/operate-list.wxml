@@ -1,0 +1,10 @@
+<!--pages/user/operate/operate-list/operate-list.wxml-->
+<view class='opaList' wx:for="{{list}}" wx:key="{{index}}">
+  <view class='opaItem' catchtap='toDetail' data-id="{{item.id}}">
+    <view class='opaimgBox'>
+      <image mode='aspectFill' src='{{item.imgurl}}'></image>
+    </view>
+    <view class='itemTit'>{{item.title}}</view>
+    <view class='itemTag gridFour'>{{item.aname}}</view>
+  </view>
+</view>

@@ -1,0 +1,194 @@
+<scroll-view scroll-y bindscrolltolower="dgShop_show_more" style="height: 100%;" class="modular sc-newArrivals duoguan-shop-newArrivals {{space_style}}">
+
+  <view class='sc-home-tit-box homeTitLine' wx:if="{{title && mode != 'community'}}">
+    <view class="sc-home-tit">{{title}}</view>
+    <view class="sc-home-tit-more">更多</view>
+  </view>
+  <view class="sc-goods {{mode}}" wx:if="{{mode != 'community'}}">
+    <view class="sc-goods-item {{item.g_number == 0 ? 'GoodssoldOut' : ''}}" wx:for="{{data}}" bindtap="{{item.g_number == 0 ? '' : 'dgShop_detail'}}" id="{{item.id}}" wx:key="">
+      <view class="sc-goods-imgbox">
+        <image class="scale-rule" src="{{item.g_img}}?imageView2/2/w/300/h/300" mode="aspectFill"></image>
+        <!-- <view class='sc-goods-mask' wx:if="{{item.g_number==0}}"></view> -->
+        <!--售罄 -->
+        <view class='soldOutBg' wx:if="{{item.g_number==0}}">
+          <text class='iconfont icon-shouwan'></text>
+        </view>
+        <view class='seckillGoodsTag' wx:if="{{item.corner_mark}}">{{item.corner_mark}}</view>
+        <view class="crossArea" wx:if="{{item.goods_kind == 2}}">直邮</view>
+      </view>
+      <view class="sc-goods-info">
+        <view class="sc-goods-name">
+          <text>{{item.g_name}}</text>
+        </view>
+        <view class="sc-goods-pricebox">
+          <view class="sc-goods-price">
+            <block wx:if="{{item.promote_status == 1}}">
+              <view class="sc-prc new-price">
+                <text class="iconfont icon-cu"></text>
+                <text class='smalllIcon'>￥</text>{{item.promote_price}}
+              </view>
+              <view class="sc-prc del-price">{{item.shop_price}}</view>
+            </block>
+            <block wx:elif="{{item.showvip_status == 1}}">
+              <view class="sc-prc new-price">
+                <text class='smalllIcon'>￥</text>{{item.shop_price}}
+              </view>
+              <!-- <view class="sc-prc vipBox">
+                <text class="vipPrice">￥{{item.vip_price}}</text>
+                <text class='vipIcon'>VIP+</text>
+              </view> -->
+              <view class="sc-prc vipBox">
+                 <text style='font-size:20rpx;'>￥</text>{{item.vip_price}}<text class="vipPriceIco">vip</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="sc-prc new-price">
+                <text class='smalllIcon'>￥</text>{{item.shop_price}}
+              </view>
+              <view class="sc-prc del-price" wx:if="{{item.market_price>0}}">{{item.market_price}}</view>
+              <view class="sc-prc del-price" wx:else></view>
+            </block>
+          </view>
+          <view class="sc-goods-bottom">
+            <view class="sc-goods-sales">销量：{{item.sale_number}}</view>
+            <!-- 加入购物车 -->
+            <form report-submit='true' bindsubmit='pushFormId'>
+              <button class="shopCart-btn" data-id="{{item.id}}" catchtap='dgShop_is_show_card' form-type='submit'>
+                <text class="iconfont icon-cart"></text>
+              </button>
+            </form>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='listBox' wx:if="{{mode == 'community'}}">
+      <view class='goodsList aboutType'>
+      <view class="goodsItem gridXb {{item.g_number == 0 ? 'GoodssoldOut' : ''}}" wx:for="{{data}}" wx:for-item="item" wx:key="index" bindtap="{{item.g_number == 0 ? '' : 'dgShop_detail'}}" id="{{item.id}}" data-address_id="{{address_id}}">
+        <view class='gallery flex'>
+          <!-- <view class='imgBox' wx:if="{{item.g_photo.length > 0}}" wx:for="{{item.g_photo}}" wx:for-item="imgs" wx:key="key"> -->
+          <view class='imgBox'>
+            <image class='img' src='{{item.g_img}}'></image>
+            <view class='soldOutBg' wx:if="{{item.g_number==0}}">
+              <text class='iconfont icon-shouwan'></text>
+            </view>
+            <view class='seckillGoodsTag' wx:if="{{item.corner_mark}}">{{item.corner_mark}}</view>
+          </view>
+        </view>
+        <view class='listInfo'>
+          <view class='listInfoBox'>
+            <view class='goodName lineText'>{{item.g_name}}</view>
+            <view class='lineText2 goodDesc'>{{item.g_description}}</view>
+            <view class='goodTimes'>
+              <view class='sub'>已售{{item.sale_number}}份，剩余{{item.g_number}}份</view>
+            </view>
+          </view>
+          <view class='flex priBox'>
+            <view class='sub lineText'>
+                <view class="sc-goods-price">
+                  <block wx:if="{{item.promote_status == 1}}">
+                    <view class="sc-prc new-price">
+                      <text class="iconfont icon-cu"></text>
+                      <text class='smalllIcon'>￥</text>{{item.promote_price}}
+                    </view>
+                    <view class="sc-prc del-price">￥{{item.shop_price}}</view>
+                  </block>
+                  <block wx:elif="{{item.showvip_status == 1}}">
+                    <view class="sc-prc new-price">
+                      <text class='smalllIcon'>￥</text>{{item.shop_price}}
+                    </view>
+                    <view class="sc-prc vipBox">￥{{item.vip_price}}<text class="vipPriceIco">vip</text></view>
+                  </block>
+                  <block wx:else>
+                    <view class="sc-prc new-price">
+                      <text class='smalllIcon'>￥</text>{{item.shop_price}}
+                    </view>
+                    <view class="sc-prc del-price" wx:if="{{item.market_price>0}}">￥{{item.market_price}}</view>
+                    <view class="sc-prc del-price" wx:else></view>
+                  </block>
+                </view>
+              </view>
+            <form report-submit='true' bindsubmit='pushFormId'>
+              <button class='toPart' data-id="{{item.id}}" catchtap='dgShop_is_show_card' form-type='submit' disabled="{{active_type == 1 ? false : true}}">团购</button>
+            </form>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='footLinks' wx:if="{{community_config.open_colonel_join == 1 || community_config.open_supplier_join == 1}}">
+      <view catchtap="dgShop_supplier_apply" wx:if="{{community_config.open_supplier_join == 1}}">
+        <image src='http://www.ixiaochengxu.cc/resource/images/shop/new_supplier.png' mode='widthFix'></image>
+      </view>
+      <view catchtap="dgShop_colonel_apply" wx:if="{{community_config.open_colonel_join == 1}}">
+        <image src='http://www.ixiaochengxu.cc/resource/images/shop/new_team.png' mode='widthFix'></image>
+      </view>
+    </view> -->
+
+    </view>
+</scroll-view>
+<!-- <scroll-view>
+
+
+</scroll-view> -->
+<!--duoguan-shop-addCart-->
+<!-- 商城加入购物车 -->
+<view class="sc-addcart-box duoguan-shop-addCart floatBox" wx:if="{{dgShop_is_show_card}}">
+  <view class="sc-addcart">
+    <view class="sc-addcart-close" bindtap="dgShop_is_show_card">
+      <text class="closeIco iconfont icon-close"></text>
+    </view>
+    <view class="sc-addcart-goods gridXb">
+      <image class="sc-addcart-img" src="{{dgShop_goods_property.g_img_url ==''?dgShop_goods_info.g_img_url:dgShop_goods_property.g_img_url}}" mode="aspectFill" bindtap='dgShop_showImg' data-img="{{dgShop_goods_property.g_img_url ==''?dgShop_goods_info.g_img_url:dgShop_goods_property.g_img_url}}"></image>
+      <view class="sc-addcart-info ml10">
+        <view class="lineText">{{dgShop_goods_info.g_name}}</view>
+        <view class="new-price f18 mt5">￥{{dgShop_goods_property[dgShop_goods_info.price_info.type]>0?dgShop_goods_property[dgShop_goods_info.price_info.type]:dgShop_goods_info.price_info.price}}</view>
+        <view class="f12 grey mt5">
+          <text>库存：<text>{{dgShop_goods_property.last_num == undefined ? dgShop_goods_info.g_number:dgShop_goods_property.last_num}}</text></text>
+          <text class="ml10">销量：<text>{{dgShop_goods_property.sell_num == undefined ? dgShop_goods_info.sale_number:dgShop_goods_property.sell_num}}</text></text>
+        </view>
+      </view>
+    </view>
+    <!-- 商品属性和数量 -->
+    <view class="sc-goods-attrs">
+
+      <view class="sc-attr-list" wx:for="{{dgShop_goods_info.property}}" wx:for-item="itemType" wx:for-index="index" wx:key="">
+        <view class="sc-attr-t">{{itemType.name}}</view>
+        <view>
+          <view class=" {{dgShop_property_select[index].item == key? 'sc-attr-li-on': 'sc-attr-li'}}" data-index="{{index}}" data-key="{{key}}" bindtap="dgShop_select_attr_bind" wx:for="{{itemType.item}}" wx:for-item="itemVal" wx:for-index="key" wx:key="*this">{{itemVal}}</view>
+        </view>
+      </view>
+
+      <view class="sc-addgoods-num">
+        <view class="name">
+          <text>购买数量：</text>
+        </view>
+        <view class="sc-add-numset tc">
+          <view class="sc-numset-btn {{dgShop_cart_default_number==1?'disabled':''}}" bindtap="dgShop_bind_cart_number_jian">
+            <text class="iconfont icon-move"></text>
+          </view>
+          <view class="sc-numset-btn sc-buy-couts">
+            <input class="sc-numset-inp" type="number" value="{{dgShop_cart_default_number}}" bindblur="dgShop_change_cart_number" />
+          </view>
+          <view class="sc-numset-btn" bindtap="dgShop_bind_cart_number_jia">
+            <text class="iconfont icon-add"></text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="flex">
+      <form class='sub' report-submit='true' bindsubmit='pushFormId'>
+        <button class="sc-addcart-btn sub" disabled="{{dgShop_btn_add_cart_disabled}}" bindtap="dgShop_goods_add_cart" form-type='submit'>加入购物车</button>
+      </form>
+      <form class='sub' report-submit='true' bindsubmit='pushFormId'>
+        <button class="sc-buynow-btn sub" disabled="{{dgShop_btn_add_cart_disabled}}" bindtap="dgShop_goods_buy_now" form-type='submit'>立即购买</button>
+      </form>
+    </view>
+    <slot name="nullView"></slot>
+  </view>
+  <view class="floatBox floatBoxBg" style="display:block;" bindtap="dgShop_set_close"></view>
+</view>
+<!--duoguan-shop-addCart-->
+

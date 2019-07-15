@@ -1,0 +1,99 @@
+<!--pages/user/member/member-center/index.wxml-->
+
+
+
+
+
+
+
+
+
+
+<view class="member-card-box">
+    <view class="member-card">
+        <view class="user-info flex">
+            <image class="user-img mr10" src="{{card.headimgurl}}" mode="aspectFill"></image>
+            <view class="sub">
+                <view class="lineText">{{card.name||card.nickname}}</view>
+                <view class="member-grade" catchtap='onNavigateTap' data-url='../member-grade/index'>
+                    <text class="iconfont icon-huiyuan"></text> {{card.level.level}}</view>
+            </view>
+            <view class="write-code">
+                <!-- <text class="iconfont icon-erweima1"></text> -->
+            </view>
+        </view>
+        <view class="card-money flex">
+            <view class="sub">
+                <view class="balance-tit">账户余额</view>
+                <view class="card-balance">￥
+                    <text class="card-balance-money">{{card.recharge}}</text>
+                </view>
+            </view>
+            <view wx:if="{{card.status==0}}">
+                <button class="card-recharge" catchtap='onSetValueTap' data-name='card' data-value='{"show":true}' data-is-multi='true'>开通会员</button>
+            </view>
+            <!-- <view wx:if="{{card.recharge_status && card.status==1}}">
+                <button class="card-recharge" catchtap='onNavigateTap' data-url="../member-recharge/index" >充值</button>
+            </view> -->
+        </view>
+        <view class='vip-number'>No.{{card.number}}</view>
+    </view>
+</view>
+  <!--开通会员2.0版本  -->
+  <view class='popupBox {{card.show ? "" : "hidden"}}'>
+    <view class='shade_bg' catchtap='closeOpenCardPopUpBox'></view>
+    <view class='modal'>
+      <view class='modTit'>开通会员</view>
+      <view class='inpBox'>
+        <view class='f14'>您的称呼</view>
+        <input class='inp' bindinput='inputName' value="{{open_card_info.card_name || ''}}" placeholder='请填写你的姓名'></input>
+      </view>
+      <button class='ktBtn' disabled='{{!open_card_info.isDisabled}}' open-type='getPhoneNumber' bindgetphonenumber='onGetPhoneNumber'>授权微信手机极速开通</button>
+    </view>
+  </view>
+
+
+
+<!-- 充值弹框 -->
+<view class="recharge-pop" hidden='{{!recharge.show}}'>
+    <form class="recharge-cont" report-submit='true' bindsubmit='onRechargeSubmit'>
+        <view class="recharge-colse" catchtap='onSetValueTap' data-name='recharge' data-value='{"show":false}' data-is-multi='true'></view>
+        <view class='fb'>选择充值金额</view>
+        <form class='recharge-item' report-submit='true' bindsubmit='onRechargeSelect'>
+            <block wx:for='{{recharge_list}}' wx:key='{{item.id}}'>
+                <button wx:if="{{item.is_mult == 0}}" class="recharge-btn" data-index='{{index}}' form-type='submit'>{{item.title}}</button>
+                <view wx:else>
+                    <picker bindchange="bindPickerChange" value="{{conditions_index}}" range="{{item.conditions}}" range-key="text" data-index="{{index}}">
+                        <view class="picker">
+                            <button class="recharge-btn">{{item.title}}</button>
+                        </view>
+                    </picker>
+                </view>
+            </block>
+        </form>
+        <view class="recharge-inp">
+            <text>其他</text>
+            <input type='digit' class="recharge-inp-txt" placeholder="请输入充值金额" placeholder-style='color:#c9b084;' bindinput="onMoneyInput" name='money' maxlength='5' />
+            <text>元</text>
+        </view>
+        <button class="recharge-sure" form-type='submit'>确认充值</button>
+    </form>
+    <view class="recharge-popbg"></view>
+</view>
+
+<view class="card-integral">
+    <view>
+        <text class="mr5 iconfont icon-xiaofeijifen"></text> 积分：{{card.score}}
+    </view>
+    <view catchtap='onNavigateTap' data-url='../pay-records/index'>
+        <text class="mr5 iconfont icon-jiaoyijilu"></text> 交易记录
+    </view>
+</view>
+
+<view class="card-desc-tit gridXb">会员权益</view>
+<view class="memberContBox">
+    <import src="../../../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:description.nodes}}" />
+</view>
+
+<view class="bottomBtnBox" wx:if="{{card.recharge_status && card.status==1}}" ><button class="bottomBtn" catchtap='onNavigateTap' data-url="../member-recharge/index" >我要充值</button></view>

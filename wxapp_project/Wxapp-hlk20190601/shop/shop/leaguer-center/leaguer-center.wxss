@@ -1,0 +1,83 @@
+/* pages/shop/leaguer-center/leaguer-center.wxss */
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+.leagueInfo{
+   font-size: 28rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  color: #666;
+}
+.leaInfoTop{
+  -webkit-align-items: center;
+  align-items: center;
+}
+.avatar{
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.nickname{
+  font-size: 32rpx;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+  max-width: 260rpx;
+}
+.level{
+  font-size: 22rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0 14rpx 0 10rpx;
+  color: #fff;
+  background-color: #000;
+  margin-left: 12rpx;
+  align-self: center;
+  border-radius: 30rpx  30rpx 30rpx 0;
+}
+.contact{
+  line-height: 1.6;
+  font-size: 26rpx;
+   color: #333;
+  background-color: transparent;
+}
+.contact .iconfont{
+  font-size: 44rpx;
+  
+}
+.contact:active{
+  background-color: rgba(0, 0, 0, .1)
+}
+
+.address{
+  line-height: 1.4;
+  margin-top: 10rpx;
+}
+
+.cell{
+  position: relative;
+  font-size: 32rpx;
+  padding: 26rpx 30rpx;
+  background-color: #fff;
+}
+.cell::before{
+  right: 30rpx;
+}
+.cell:nth-child(n+2)::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #e5e5e5;
+  height: 1px;
+  -webkit-transform: scaleY(.5); 
+  transform: scaleY(.5)
+}
+.cell:active{
+  opacity: .85;
+  background-color: rgba(0, 0, 0, .03);
+}

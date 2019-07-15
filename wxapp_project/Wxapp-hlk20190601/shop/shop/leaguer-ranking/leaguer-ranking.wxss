@@ -1,0 +1,96 @@
+/* pages/shop/leaguer-ranking/leaguer-ranking.wxss */
+
+@import "/pages/shop/common/common.wxss";
+@import "/css/DuoguanShop/DuoguanShop-template-default.wxss";
+
+.topBg{
+  height: 240rpx;
+}
+.mainBox{
+  margin-top: -240rpx;
+  padding: 0 30rpx 60rpx;
+}
+.firInfo{
+  -webkit-align-items:center;
+  align-items: center;
+  color: #fff;
+  padding: 20rpx 0 30rpx;
+}
+
+.firAvatar{
+  width: 106rpx;
+  height: 106rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fed333;
+  margin-right: 25rpx;
+}
+
+.firnickname{
+  padding-top: 4rpx;
+  opacity: .7;
+  margin-bottom: 10rpx;
+  
+}
+.money{
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.firImg{
+  width: 96rpx;
+  height: 106rpx;
+}
+.rmbIcon{
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+/*  */
+.rankBox{
+  background-color: #fff;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  padding: 16rpx 0;
+}
+.cell{
+  -webkit-align-items:center;
+  align-items: center;
+  padding: 26rpx 0;
+}
+.cellLf{
+  width: 90rpx;
+  text-align: center;
+  margin-right: 6rpx;
+}
+
+.cellLf image{
+  width: 40rpx;
+  height: 44rpx;
+}
+
+.rankAvaBox{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.rankAvaBox image{
+  width: 100%;
+  height: 100%;
+}
+
+.rankMoney{
+  margin-right: 30rpx;
+  color: #f35150;
+  margin-left: 30rpx;
+}
+
+.smallIcon{
+  font-size: 20rpx;
+}
+
+.four{
+  font-size: 36rpx;
+  font-weight: 700;
+}

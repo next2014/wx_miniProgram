@@ -1,0 +1,184 @@
+<view class="loding linght tc mt10" wx:if="{{!isLoaded}}">
+  <text class="iconfont icon-jiazai mr10 f18"></text>
+  <text>正在加载中...</text>
+</view>
+<block wx:else>
+
+  <!-- wenkeqi -->
+  <!-- 卡  -->
+  <view class='cardBox'>
+    <view class='cardTitle flex arrowR'>
+      <view class='sub iconCard'>
+        <text class='iconfont icon-card '></text>
+        <text class='f16'>卡</text>
+      </view>
+      <view class='titleRg grey' catchtap='myCard'>共{{data.gift_card.total_num}}张</view>
+    </view>
+
+    <view class='cardList'>
+
+      <view class='timeCardItem' wx:for="{{data.gift_card.list}}" catchtap='getInfo' data-id="{{item.id}}" data-type="{{item.type}}">
+        <view class='imgBox'>
+          <image class='img' mode='aspectFill' src="{{item.goods_icon_url}}"></image>
+        </view>
+        <view class='itemInner'>
+          <view class='flex itemInnerTop'>
+            <view class='sub lineText'>{{item.goods_name}}</view>
+            <view class='qrCodeIcon' wx:if="{{item.type==2}}">
+              <text class='iconfont icon-erweima1' catchtap='showCode' data-id="{{item.id}}"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 券 -->
+  <view class='cardBox mt10'>
+    <view class='cardTitle flex '>
+      <view class='sub iconCoupon'>
+        <text class='iconfont icon-coupon '></text>
+        <text class='f16'>券</text>
+      </view>
+      <view class='titleRg grey'>共{{data.coupons.length>0?data.coupons.length:0}}张</view>
+    </view>
+    <view class='cardList'>
+      <view class='couponItem flex  gridFour' wx:for="{{data.coupons}}" wx:key="{{item.id}}">
+        <view class='couItemLf gridYr tc'>
+          <view class='red lineText'>
+            <text>￥</text>
+            <text class='couponVal'>{{item.discount}}</text>
+          </view>
+          <view class='grey'>
+
+            <text class='' wx:if="{{item.full_available>0}}">满{{item.full_available}}元可用 </text>
+          </view>
+
+        </view>
+        <view class='sub couItemRg '>
+          <view class='lineText couTitle'>{{item.title == null ? '优惠券':item.title}}</view>
+          <view class='' wx:if="{{item.addon_text}}">
+            <text class='red' wx:if="{{item.full_available>0}}">满减券</text>
+            <block wx:else>
+              <text class='red' wx:if="{{item.type==0}}">代金券</text>
+              <text class='red' wx:else>折扣券</text>
+            </block>
+            <text class="ml10 couponTag"> {{item.addon_text}}可用</text>
+          </view>
+          <view class=' expried grey'>
+            <text>有效期：</text>
+            <text>{{item.use_start_date}} 至 {{item.use_end_date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</block>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 弹窗  点击卡 -->
+<!-- <view class='floatBox' hidden=' '>
+  <view class='shadeBg'></view>
+  <view class='popup show'>
+    <view class='cardInfo'>
+      <view class='closeBox'></view>
+      <view class='giftImg mb10'>
+        <image class='img' mode='aspectFill' src='/images/default.png'></image>
+        <view class='giftPrice'>
+          <text class='f12'>￥</text>
+          <text>2000</text>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y class='cardContent'>
+      <view class='mb10'>
+        <view class='flex f16'>
+          <view class='sub popupGiftTit'>111</view>
+          <view class='red'>
+            <text class='f14'>￥</text>
+            <text>0.01</text>
+            <text class='f18 preIcon'>/</text>
+            <text class='f14'>张</text>
+          </view>
+        </view>
+        <view class='linght '>自购买之日起3年内有效</view>
+      </view>
+      <view class='flex creaseBox mb10'>
+        <view class='crease decrease'></view>
+        <view class='count'>2</view>
+        <view class='crease increase'></view>
+      </view>
+      <form bindsubmit="buy" report-submit="true">
+        <button class='payBtn' form-type='submit'>付款（需支付￥2000.00）</button>
+      </form>
+
+
+      <view class='ciCardBox'>
+        <view class=''>持卡权益</view>
+        <view class='ciCardList'>
+          <view class='flex ciCardItem'>
+            <view class='sub'>
+              <view class='lineText'>眼部淋巴排毒</view>
+              <view class='linght'>价值：￥1230.00</view>
+            </view>
+            <view class='mainColor f16'>10次</view>
+          </view>
+          <view class='flex ciCardItem'>
+            <view class='sub'>
+              <view class='lineText'>眼部淋巴排毒</view>
+              <view class='linght'>价值：￥1230.00</view>
+            </view>
+            <view class='mainColor f16'>10次</view>
+          </view>
+        </view>
+        <view class='shopInfoBox '>
+          <view class='shopName'>夺冠小卖铺</view>
+          <view class='flex'>
+            <view class='sub lineText2'>郑州市郑东新区金水东路绿地之窗云峰座</view>
+            <view class='red gridYl'>
+              <text class='iconfont icon-phone'></text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+
+      <view>
+        <view class='descBox'>
+          <view class='dnTitle'>卡片介绍</view>
+          <view class='descList'>
+            <view class='descItem'>item.value</view>
+          </view>
+        </view>
+        <view class='needBox'>
+          <view class='dnTitle'>使用须知</view>
+          <view class='descList'>
+            <view class='descItem'>item.value</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+
+<!-- 弹窗 二维码 -->
+ <view class='popupBox' hidden='{{hidecode}}'>
+  <view class='popupBg' bindtap='hide_code'></view>
+  <view class='popup qrcodePopup'>
+    <view>请将二维码出示给商家使用</view>
+    <!-- <image class='qrCodeImg' mode='aspectFill' src='/images/default.png'></image> -->
+    <canvas class="scand-img" canvas-id="mycanvas" />
+    <view>核销码：{{examid}}</view>
+  </view>
+</view> 

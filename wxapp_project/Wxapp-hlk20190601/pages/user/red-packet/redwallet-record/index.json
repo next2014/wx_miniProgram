@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": true,
+	"navigationBarTitleText": "同城",
+	"navigationBarBackgroundColor": "#f35150",
+	"navigationBarTextStyle": "white"
+}

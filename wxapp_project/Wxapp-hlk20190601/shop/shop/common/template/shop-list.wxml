@@ -1,0 +1,105 @@
+
+<!-- ************************ 商品列表 star ************************ -->
+<template name="shop-list">
+  <view class="goods-item" catchtap="detail" id="{{item.id}}">
+    <view class="goods-imgbox">
+      <image src="{{item.g_img}}" class="goods-img" mode="aspectFill"></image>
+    </view>
+    <view class="goods-info">
+
+      <view class="goods-name">
+        <text>{{item.g_name}}</text>
+      </view>
+
+      <view class="goods-price">
+        <block wx:if="{{item.promote_status == 1}}">
+          <text class="iconfont icon-cu"></text>
+          <text class='f16'>￥{{item.promote_price}}</text>
+          <view class="delLine grey ml8 f12">{{item.shop_price}}</view>
+        </block>
+        <block wx:else>
+          <text class='f16'>￥{{item.shop_price}}</text>
+          <text class="delLine grey ml5 f12" wx:if="{{item.market_price != 0}}">{{item.market_price}}</text>
+        </block>
+      </view>
+
+      <view class="goods-pricebox">
+        <view><view class='grey flex f12'>销量：{{item.sale_number}}</view></view>
+        <!-- 加入购物车 -->
+        <form report-submit='true' bindsubmit='pushFormId' wx:if="{{!is_car}}" >
+          <button class="shopCart-btn" data-id="{{item.id}}" catchtap='is_show_card' form-type='submit'>
+            <text class="iconfont icon-cart"></text>
+          </button>
+        </form>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- ************************ 商品列表 end ************************ -->
+
+<!-- ************************ 加入购物车 star ************************ -->
+<template name="add-card">
+   <block wx:if="{{is_show_card}}"> 
+      <view class="add-cart-box floatBox">
+        <view class="layout">
+          <text class="iconfont icon-close fr" bindtap="is_show_card"></text>
+          <view class="layout-info gridXb flex">
+            <image src="{{goods_property.g_img_url ==''?goods_info.g_img_url:goods_property.g_img_url}}" width="40" height="40" mode="aspectFill"></image>
+            <view class="sub ml10">
+              <view class="lineText">{{goods_info.g_name}}</view>
+              <view class="red f18 mt5">
+                ￥{{cart_show_price}}
+              </view>
+              <view class="f12 grey">
+                <text>库存：<text>{{goods_property.last_num == undefined ? goods_info.g_number:goods_property.last_num}}</text></text>
+                <text class="ml10">销量：<text>{{goods_property.sell_num == undefined ? goods_info.sale_number:goods_property.sell_num}}</text></text>
+              </view>
+            </view>
+          </view>
+          <!-- 商品属性和数量 -->
+          <view class="goods-attrs-box">
+            <block wx:for="{{goods_info.property}}" wx:key="" wx:for-item="itemType" wx:for-index="index">
+              <view class="attr_list">
+                <view class="attr_list_t">{{itemType.name}}</view>
+                <view>
+                  <block wx:for="{{itemType.item}}" wx:key="" wx:for-item="itemVal" wx:for-index="key">
+                    <text class="attr-list-li {{property_select[index].item == key? 'on': ''}}" data-index="{{index}}" data-key="{{key}}" bindtap="select_attr_bind">{{itemVal}}</text>
+                  </block>
+                </view>
+              </view>
+            </block>
+            <view class="options">
+              <view class="options-tiem">
+                <view class="count-set tc fr flex">
+                  <view class="sub" bindtap="bind_cart_number_jian">
+                    <text class="iconfont icon-move"></text>
+                  </view>
+                  <view class="sub buy-couts">
+                    <input type="number" value="{{cart_default_number}}" bindblur="change_cart_number" />
+                  </view>
+                  <view class="sub" bindtap="bind_cart_number_jia">
+                    <text class="iconfont icon-add"></text>
+                  </view>
+                </view>
+                <view class="name" style="line-height:30px;">
+                  <text>购买数量：</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="flex add-cart-btn-box">
+            <form class='sub' report-submit='true' bindsubmit='goods_add_cart' wx:if="{{is_add_cart_view}}">
+              <button class="add-cart-btn sub" disabled="{{btn_add_cart_disabled}}" form-type='submit'>加入购物车</button>
+            </form>
+            <form class='sub' report-submit='true' bindsubmit='goods_buy_now' wx:if="{{is_buy_now_view}}">
+              <button class="buy-now-btn sub" disabled="{{btn_add_cart_disabled}}" form-type='submit'>立即购买</button>
+            </form>
+          </view>
+        </view>
+        <view class="floatBox floatBoxBg" style="display:block;" bindtap="set_close"></view>
+      </view>
+   </block> 
+</template>
+  <!--加入购物车 end-->
+
+<!-- ************************ 加入购物车 end ************************ -->
