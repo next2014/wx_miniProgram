@@ -1,0 +1,5 @@
+<view class='container'>
+	<view bindtap='handleParent' class='goStudy'>
+		<text>狮子城</text>
+	</view>
+</view>

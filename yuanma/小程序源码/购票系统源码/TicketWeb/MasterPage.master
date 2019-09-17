@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>售票系统</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="margin: 10px 60px 20px 100px;font-size:14px" >
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 780px; border-right: #0099cc thin solid; border-top: #0099cc thin solid; border-left: #0099cc thin solid; border-bottom: #0099cc thin solid; height: 596px;">
+            <tr>
+                <td colspan="3" style="background-position: 100% 100%; background-repeat: repeat-x; height: 42px; background-image: url(image/top_6.gif); font-size: x-large; color: #3366ff;" valign="middle" align="center">
+                    web售票管理系统
+                </td>
+            </tr><tr>
+                <td colspan="3" style="background-position: 100% 100%; background-repeat: repeat-x; height: 19px; background-image: url(image/menu.gif); color: #ffffff;" valign="top" align="right">
+                    <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="DodgerBlue" OnClick="LinkButton2_Click">首页</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="DodgerBlue" OnClientClick="window.close();">退出</asp:LinkButton></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-position: 100% 100%; background-repeat: repeat-x; height: 25px; background-image: url(image/bar.jpg); color: #ffffff;" valign="top" align="right">
+                    <asp:Label ID="Label1" runat="server" Width="500px"></asp:Label></td>
+            </tr>
+            <tr>
+                <td rowspan="2" style="width: 41px; height: 386px" valign="top">
+                    <asp:TreeView ID="TreeView1" runat="server" Width="126px" Font-Size="Larger" ImageSet="BulletedList" ShowExpandCollapse="False">
+                        <ParentNodeStyle Font-Bold="False" />
+                        <HoverNodeStyle Font-Underline="True" ForeColor="Black" BackColor="DodgerBlue" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                            VerticalPadding="0px" />
+                        <Nodes>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" Text="web售票管理系统" Value="web售票管理系统" NavigateUrl="~/Index.aspx"></asp:TreeNode>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" Text="前台营业" Value="前台营业" NavigateUrl="~/SealTicket.aspx">
+                                <asp:TreeNode Text="销售车票" Value="销售车票" NavigateUrl="~/SealTicket.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="预定车票" Value="预定车票" NavigateUrl="~/PredeterminedTicket.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text=" 退回车票" Value=" 退回车票" NavigateUrl="~/ReturningTicket.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" Text="信息查询" Value="信息查询" NavigateUrl="~/PredeterminedTicketInquiry.aspx">
+                                <asp:TreeNode Text="售票信息查询" Value="售票信息查询" NavigateUrl="~/PredeterminedTicketInquiry.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="订票信息查询" Value="订票信息查询" NavigateUrl="~/BookingInquiry.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="运营计划查询" Value="运营计划查询" NavigateUrl="~/OperationPlan.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="当班信息查询" Value="当班信息查询" NavigateUrl="~/OndutyInquiry.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" Text="营业统计" Value="营业统计" NavigateUrl="~/DayStatistics.aspx">
+                                <asp:TreeNode Text="日售票统计" Value="日售票统计" NavigateUrl="~/DayStatistics.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="月售票统计" Value="月售票统计" NavigateUrl="~/MonthStatistics.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="季度售票统计" Value="季度售票统计" NavigateUrl="~/QuarterStatistics.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" Text="常用工具" Value="常用工具" NavigateUrl="~/Computer.aspx">
+                                <asp:TreeNode Text="记事本" Value="记事本" NavigateUrl="~/nootbook.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="计算器    " Value="计算器    " NavigateUrl="~/Computer.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" NavigateUrl="~/ConfigEstablishment.aspx" Text="基础设置"
+                                Value="基础设置"></asp:TreeNode>
+                            <asp:TreeNode ImageUrl="~/image/c.gif" NavigateUrl="~/SystemCfg.aspx" Text="系统设置"
+                                Value="系统设置"></asp:TreeNode>
+                        </Nodes>
+                        <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="0px"
+                            NodeSpacing="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                </td>
+                <td rowspan="2" style="width: 21px; height: 386px; background-position: center center; background-image: url(image/Left_Student.jpg); background-repeat: repeat-y;" valign="top">
+                </td>
+                <td rowspan="2" style="width: 641px; height: 386px" valign="top">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-position: center center; background-image: url(image/bar.jpg); background-repeat: repeat-x; height: 31px;">
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+    </form>
+</body>
+</html>

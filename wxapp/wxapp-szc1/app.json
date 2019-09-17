@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/category/category",
+    "pages/nowbuy/nowbuy",
+    "pages/nowPlay/nowPlay",
+    "pages/order/order",
+    "pages/shopcar/shopcar",
+    "pages/detail/detail",
+    "pages/buyDetail/buyDetail",
+    "pages/orderDetail/orderDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FDE024",
+    "navigationBarTitleText": "狮子城欢迎您",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tab/index.png",
+        "selectedIconPath": "/images/tab/index_hl.png"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "活动",
+        "iconPath": "/images/tab/hd.png",
+        "selectedIconPath": "/images/tab/hd_hl.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "会员",
+        "iconPath": "/images/tab/huiyuan.png",
+        "selectedIconPath": "/images/tab/huiyuan_hl.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "好评",
+        "iconPath": "/images/tab/haoping.png",
+        "selectedIconPath": "/images/tab/haoping_hl.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "我的",
+        "iconPath": "/images/tab/me.png",
+        "selectedIconPath": "/images/tab/me_hl.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,9 +1,9 @@
 module.exports = {
   version: "6.0.3",
-  note: '小程序转发到微信群，可获赠积分',
+  note: '',
   subDomain: "omc", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
   appid: "wxf4346269b2e05957", // 您的小程序的appid，购物单功能需要使用
-  shareProfile: '百款精品商品，总有一款适合您' // 首页转发的时候话术
+  shareProfile: '' // 首页转发的时候话术
 }
 /*
 根据自己需要修改下单时候的模板消息内容设置，可增加关闭订单、收货时候模板消息提醒；

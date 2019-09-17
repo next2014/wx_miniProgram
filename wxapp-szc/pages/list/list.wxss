@@ -1,0 +1,93 @@
+/* pages/list/list.wxss */
+swiper{
+  width:100%;
+  height: 200px;
+}
+
+swiper image {
+  width:100%;
+  height:200px;
+}
+
+.weui-grid image{
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.weui-grid{
+  padding:10px!important;
+}
+
+.weui-grid__label{
+  font-size:24rpx;
+}
+
+.weui-flex .placeholder{
+  text-align: center;
+  font-size:30rpx; 
+}
+
+.weui-flex .active{
+  font-size: 34rpx;
+  font-weight: 400;
+  color:#000000;
+}
+
+.weui-flex .more{
+   border-left: 1px solid #dddddd;
+}
+
+.page__bd_spacing{
+   padding:20rpx 0;
+}
+
+.taoxiang{
+  width: 60px;
+  height: 60px;
+  margin-left:16px;
+  margin-right: 16px;
+  vertical-align:middle;
+  border-radius: 60rpx;
+}
+
+.user{
+  font-size:24rpx;
+}
+
+.user_member{
+  width: 50%;
+  padding:5rpx;
+  margin-top:10rpx;
+  border:1px solid #dddddd;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color:#999;
+}
+
+.dhj .weui-flex__item{
+  text-align: center;
+  font-size: 24rpx;
+  padding:0 20rpx;
+}
+
+.gonggao-icon{
+  font-size: 24rpx;
+  display: flex;
+}
+
+.gonggao-icon image{
+   margin-right: 5px;
+   vertical-align: middle;
+   width:20px; 
+   height: 20px;
+}
+
+.gonggao{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24rpx;
+  height: 20px;
+  line-height: 20px;
+}

@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/start/start",
     "pages/index/index",
     "pages/goods-details/index",
     "pages/shop-cart/index",
@@ -26,6 +25,7 @@
     "pages/fx/apply-status",
     "pages/fx/members",
     "pages/fx/commisionLog",
+    "pages/start/start",
     "pages/coupons/index"
   ],
   "window": {
