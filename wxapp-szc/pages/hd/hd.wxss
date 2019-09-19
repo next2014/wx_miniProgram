@@ -1,155 +1,54 @@
 /* pages/shopcar/shopcar.wxss */
-.tmpContainer {
-  display: flex;
-  align-item:center;
-  border-top:1px solid #efefef;
-  padding:5px 0;
+.page__bd_spacing{
+  padding:40rpx 20rpx;
 }
 
-.avatar_date {
-  margin:10rpx 0 20rpx 10rpx;
+.placeholder{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  padding:0 20rpx;
 }
 
-.avatar_date image {
-  width: 60rpx;
-  height:60rpx;
-  vertical-align: middle;
+.active{
+  background-color: #FF411F;
+  color:#ffffff;
 }
 
-.avatar_date text {
-  font-size: 14px;
-  vertical-align: middle;
-  margin-left: 10px;
-}
-
-.title {
-  font-size: 35rpx;
-  font-weight: 400;
-  margin-left:-6px;
-}
-
-.content_img {
-  width: 40%;
+.gp_tit {
   height:200rpx;
-  padding-left:20rpx;
 }
 
-.content {
-  font-size: 16px;
-  color: #666;
-  text-indent: 16px;
-  line-height: 28px;
+.gp_tit image{
+   width:100%;
+   height:200rpx;
 }
 
-.love_attention{
-  width:60%;
-  padding-left:20rpx;
-  padding-right: 20rpx;
+.title{
+   width: 100%;
+   height: 35px;
+   line-height: 35px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow:ellipsis;
+   text-align: left;
+   font-size: 34rpx;
 }
 
-.love_attention image {
-  width: 45rpx;
-  height: 45rpx;
-  vertical-align: middle;
+.hd_tit_btn {
+  padding:0 5rpx;
+  height: 30px;
+  line-height: 20px;
+  text-align: left;
 }
 
-.love_attention .price{
-  font-size: 14px;
-  color:#999999;
+.price{
+   font-size: 34rpx;
+   color:#FD5107;
+   margin-right:10rpx;
 }
 
-.love_attention .data{
-  font-size: 14px;
-  color:#999999;
-  margin-bottom: 10rpx;
-}
-
-.love_attention text {
-  color: red;
-  vertical-align: middle;
-}
-
-.weui-cell__bd{
-  display:flex;
-  align-items: left;
-}
-
-.weui-cell__bd button{
-  width:30px;
-  height:30px;
-  line-height:30px;
-  text-align: center;
-  margin:0;
-  font-size: 14px;
-  padding: 0;
-}
-
-.weui-cell__bd input{
-  width:30px;
-  height:28px;
-  line-height:28px;
-  border:1px solid #ddd;
-  text-align: center;
-  font-size:12px;
-}
-.jiesuan{
-  width: 100%;
-  position: absolute;
-  bottom:0;
-}
-.jiesuan button{
-  font-size: 35rpx;
-  border-radius: 0;
-}
-
-.deleteIcon{
-  padding-top:2px;
-}
-
-.buy-num{
-    width: 164rpx;
-    height: 48rpx;
-    line-height: 48rpx;
-    display: flex;
-    font-size: 24rpx;
-    text-align: center
-}
-.buy-num .jian-btn{
-    width: 48rpx;
-    height: 100%;
-    border-left: 1rpx solid #ccc;
-    border-bottom: 1rpx solid #ccc;
-    border-top: 1rpx solid #ccc;
-    border-bottom-left-radius: 6rpx;
-    border-top-left-radius: 6rpx;
-}
-.buy-num .jian-btn.disabled{
-    background-color: #f5f5f9;
-    border-left: 1rpx solid #eee;
-    border-bottom: 1rpx solid #eee;
-    border-top: 1rpx solid #eee;
-    color: #ccc;
-}
-.buy-num .jia-btn{
-    width: 48rpx;
-    height: 100%;
-    border-right: 1rpx solid #ccc;
-    border-bottom: 1rpx solid #ccc;
-    border-top: 1rpx solid #ccc;
-    border-bottom-right-radius: 6rpx;
-    border-top-right-radius: 6rpx;
-}
-.buy-num input{
-    width: 68rpx;
-    height: 48rpx;
-    min-height: 48rpx;
-    text-align: center;
-    font-size: 24rpx;
-    border: 1rpx solid #ccc;
-}
-
-.gp-number{
-  width: 90%;
-  display:flex;
-  height: 50px;
+.g_price{
+  font-size: 24rpx;
+  color: #dddddd;
 }

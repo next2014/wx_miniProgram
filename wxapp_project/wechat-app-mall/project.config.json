@@ -11,7 +11,11 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
 	"appid": "wxf4346269b2e05957",
+<<<<<<< HEAD
 	"projectname": "szc",
+=======
+	"projectname": "瑞通源人文家居",
+>>>>>>> e97d88d3adf1e716aca3898d951eb03b231d1025
 	"scripts": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

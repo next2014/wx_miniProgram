@@ -1,6 +1,7 @@
 <!--pages/list/list.wxml-->
 <view class="page">
-    <view class="page__bd page__bd_spacing">
+    <!-- 顶部导航栏 -->
+    <view class="page__bd page__bd_spacing topNav" style="">
         <view class="weui-flex">
             <view class="weui-flex__item"><view class="placeholder active">推荐</view></view>
             <view class="weui-flex__item"><view class="placeholder">好吃的</view></view>
@@ -9,9 +10,11 @@
             <view class="weui-flex__item"><view class="placeholder">更多</view></view>
             <view class="weui-flex__item"><view class="placeholder more">全部</view></view>
         </view>
+        <image src="../../images/home/3.jpg" style='width:100%;height:120rpx'></image>
     </view>
+    <!-- 活动公告 -->
     <view class="weui-cells weui-cells_after-title">
-      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <navigator url="" class="weui-cell weui-cell_access">
           <view class="weui-cell__hd gonggao-icon">
               <image src="../../images/icon/gg.png"></image> 公告 
           </view>
@@ -20,14 +23,16 @@
           </view>
       </navigator>
     </view>
+    <!-- 项目栏目 -->
     <view class="page__bd">
-	    <view class="weui-panel">
+        <!-- 用户资料  -->
+        <view class="weui-panel">
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="" class="weui-cell weui-cell_example weui-cell_access">
+                        <navigator url="" class="weui-cell weui-cell_example weui-cell_access" style="padding:15px;">
                             <view class="weui-cell__hd">
-                               <image src="../../images/user/xuwei.jpg" class="taoxiang" style="" />
+                              <image src="../../images/user/xuwei.jpg" class="taoxiang" style="" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary user">
                                 <view class='user_name'>用户名</view>
@@ -54,39 +59,146 @@
                 </view>
             </view>
         </view>
+        <!-- 所有项目入口 -->
         <view class="weui-grids">
             <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_03.jpg" />
                 <view class="weui-grid__label">海洋世界</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_05.jpg" />
                 <view class="weui-grid__label">婚博中心</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_07.jpg" />
                 <view class="weui-grid__label">卡丁车馆</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_09.jpg" />
                 <view class="weui-grid__label">真人CS体验馆</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_15.jpg" />
                 <view class="weui-grid__label">奇奇之家</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_16.jpg" />
                 <view class="weui-grid__label">美食天地</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_18.jpg" />
                 <view class="weui-grid__label">奇奇主题酒店</view>
             </navigator>
-             <navigator url="" class="weui-grid">
+            <navigator url="" class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_19.jpg" />
                 <view class="weui-grid__label">充值中心</view>
             </navigator>
         </view>
+    </view>
+    <view class="content">
+          <!-- 最新活动 -->
+          <view class="zxhd">
+            <view class="page__hd">
+              <view class="page__title">最新活动</view>
+              <view class="page__desc">更多>></view>
+            </view>
+            <swiper catchtap="carouselToDetail" indicator-dots="true" indicator-color="gray" indicator-active-color="blue">
+                <swiper-item>
+                    <image data-detailId="0" src='../../images/detail/carousel/01.jpg'></image>
+                </swiper-item>
+                <swiper-item>
+                    <image data-detailId="1" src='../../images/detail/carousel/02.jpg'></image>
+                </swiper-item>
+                <swiper-item>
+                    <image data-detailId="2" src='../../images/detail/carousel/03.jpg'></image>
+                </swiper-item>
+                <swiper-item>
+                    <image data-detailId="3" src='../../images/detail/carousel/04.jpg'></image>
+                </swiper-item>
+            </swiper>
+            <view class="hd_tit_pr">
+                <view class="hd_tit">【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......</view>
+                <view class="hd_tit_btn">
+                    <text class="price">￥30</text>
+                    <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                </view>
+              </view>
+            </view>
+          <!-- 在线购票  -->
+          <view class="page__bd page__bd_spacing">
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                    <view class="placeholder">
+                        <view class="gp_tit">
+                           <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+                        </view>
+                        <view class="title">【平日】园区大门票</view>
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥20.00</text>起
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                        </view>
+                    </view>
+                  </view>
+                  <view class="weui-flex__item">
+                    <view class="placeholder">
+                        <view class="gp_tit">
+                          <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+                        </view>
+                        <view class="title">【成人】海洋世界</view>
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥20.00</text>起
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                        </view>
+                    </view>
+                  </view>
+              </view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                    <view class="placeholder goupiao">
+                        <view class="gp_img">
+                            <image src='../../images/index/zxgp/1_08_12.jpg' style=""></image>
+                            <image src='../../images/index/zxgp/1_08_14.jpg' style="padding:0 10px;"></image>
+                            <image src='../../images/index/zxgp/1_08_16.jpg' style=""></image>
+                        </view>
+                        <view class="title">【平日】园区大门票</view>
+                        <view class="hd_tit_btn">
+                          <view>
+                             <text class="price">￥80.00</text>
+                             <text class="g_price">￥20.00</text>
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                        </view>
+                    </view>
+                  </view>
+              </view>
+          </view>
+          <!-- 游玩推荐 -->
+          <view class="page__bd">
+            <image src="../../images/home/10.jpg" style='width:100%;'></image>
+          </view>
+          <!-- 最新资讯  -->
+          <view class="page__bd">
+            <image src="../../images/home/11.jpg" style='width:100%;'></image>
+          </view>
+          <!-- 休闲娱乐 -->
+          <view class="page__bd">
+            <image src="../../images/home/12.jpg" style='width:100%;'></image>
+          </view>
+          <!-- 美食天地  -->
+          <view class="page__bd">
+            <image src="../../images/home/13.jpg" style='width:100%;'></image>
+          </view>
+          <!-- 奇奇主题酒店 -->
+          <view class="page__bd">
+            <image src="../../images/home/14.jpg" style='width:100%;'></image>
+          </view>
+    </view>
+    <!-- 底部  -->
+    <view class="page__bd">
+       <image src="../../images/home/15.jpg" style='width:100%;'></image>
     </view>
 </view>

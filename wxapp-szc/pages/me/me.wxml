@@ -1,0 +1,29 @@
+<!--pages/me/me.wxml-->
+<!-- <text>我的</text> -->
+<view class="page">
+    <view class="page__bd">
+      <view class="weui-cell weui-cell_example weui-cell_access">
+            <view class="weui-cell__hd">
+              <image src="../../images/user/xuwei.jpg" class="taoxiang" style="" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary user">
+                <view class='user_name'>用户名</view>
+            </view>
+        </view>
+    </view>
+   <view class="page__bd">
+      <view class="weui-panel weui-panel_access">
+          <view class="weui-panel__hd">我的订单</view>
+          <view class="weui-panel__bd">
+              <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                  <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                      <image class="weui-media-box__thumb" src="{{icon60}}" />
+                  </view>
+                  <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                      <view class="weui-media-box__title">代付款</view>
+                  </view>
+              </navigator>
+          </view>
+      </view>
+    </view>
+</view>

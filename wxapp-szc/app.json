@@ -1,15 +1,12 @@
 {
   "pages": [
+    "pages/me/me",
+    "pages/hd/hd",
+    "pages/share/share",
     "pages/list/list",
     "pages/index/index",
-    "pages/category/category",
-    "pages/nowbuy/nowbuy",
-    "pages/nowPlay/nowPlay",
-    "pages/order/order",
-    "pages/hd/hd",
-    "pages/detail/detail",
-    "pages/buyDetail/buyDetail",
-    "pages/orderDetail/orderDetail"
+    "pages/haoping/haoping"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#FDE024",
@@ -32,19 +29,19 @@
         "selectedIconPath": "/images/tab/hd.png"
       },
       {
-        "pagePath": "pages/order/order",
-        "text": "会员",
+        "pagePath": "pages/share/share",
+        "text": "分享赚",
         "iconPath": "/images/tab/huiyuan.png",
         "selectedIconPath": "/images/tab/huiyuan.png"
       },
       {
-        "pagePath": "pages/hd/hd",
+        "pagePath": "pages/haoping/haoping",
         "text": "好评",
         "iconPath": "/images/tab/haoping.png",
         "selectedIconPath": "/images/tab/haoping.png"
       },
       {
-        "pagePath": "pages/order/order",
+        "pagePath": "pages/me/me",
         "text": "我的",
         "iconPath": "/images/tab/me.png",
         "selectedIconPath": "/images/tab/me.png"

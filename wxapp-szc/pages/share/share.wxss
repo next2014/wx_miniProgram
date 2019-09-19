@@ -1,0 +1,45 @@
+/* pages/share/share.wxss */
+.placeholder{
+  text-align: center;
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.hd_tit_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 10rpx;
+}
+
+.y_price{
+  font-szie: 240rpx;
+  color:#999999;
+}
+
+.price{
+  color:#FD5107;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.price image{
+  margin-right: 10rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.hd_tit_btn .gmbtn{
+   margin: 0;
+   border-top-left-radius: 30rpx;
+   border-top-right-radius: 30rpx;
+   border-bottom-left-radius: 30rpx;
+   background-color: #FDE024;
+   width: 160rpx;
+   height: 50rpx;
+   font-size: 24rpx;
+   color: #666666;
+   line-height: 2;
+}

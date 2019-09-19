@@ -1,0 +1,117 @@
+<!--pages/share/share.wxml-->
+<!--<view>分享赚</view>-->
+<view class="page">
+  <view class="page__bd">
+      <!-- 顶部栏目 -->
+      <view class="weui-flex" style="">
+          <view class="weui-flex__item"><view class="placeholder">上线时间</view></view>
+          <view class="weui-flex__item"><view class="placeholder">销售</view></view>
+          <view class="weui-flex__item"><view class="placeholder">收益</view></view>
+      </view>
+      <!-- 分享列表 -->
+      <view class="weui-panel weui-panel_access" style="margin-top:0;">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_appmsg">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                    <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                        【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
+                    </view>
+                    <view class="weui-media-box__desc">
+                      <view class="y_price">￥108.00</view>
+                      <view class="hd_tit_btn">
+                          <view class="price">
+                            <image src="../../images/icon/zhuan.png"/> 
+                            <text class="money">￥10.00</text>
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                      </view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-media-box weui-media-box_appmsg">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                    <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                        【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
+                    </view>
+                    <view class="weui-media-box__desc">
+                      <view class="y_price">￥108.00</view>
+                      <view class="hd_tit_btn">
+                          <view class="price">
+                            <image src="../../images/icon/zhuan.png"/> 
+                            <text class="money">￥10.00</text>
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                      </view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-media-box weui-media-box_appmsg">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                    <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                        【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
+                    </view>
+                    <view class="weui-media-box__desc">
+                      <view class="y_price">￥108.00</view>
+                      <view class="hd_tit_btn">
+                          <view class="price">
+                            <image src="../../images/icon/zhuan.png"/> 
+                            <text class="money">￥10.00</text>
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                      </view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-media-box weui-media-box_appmsg">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                    <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                        【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
+                    </view>
+                    <view class="weui-media-box__desc">
+                      <view class="y_price">￥108.00</view>
+                      <view class="hd_tit_btn">
+                          <view class="price">
+                            <image src="../../images/icon/zhuan.png"/> 
+                            <text class="money">￥10.00</text>
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                      </view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-media-box weui-media-box_appmsg">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                    <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                        【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
+                    </view>
+                    <view class="weui-media-box__desc">
+                      <view class="y_price">￥108.00</view>
+                      <view class="hd_tit_btn">
+                          <view class="price">
+                            <image src="../../images/icon/zhuan.png"/> 
+                            <text class="money">￥10.00</text>
+                          </view>
+                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                      </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+  </view>
+</view>

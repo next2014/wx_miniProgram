@@ -1,23 +1,37 @@
 <!--pages/shopcar/shopcar.wxml-->
-<!-- <text>购物车</text> -->
-  <view class="tmpContainer">
-    <image class="content_img" src="/images/detail/list/getImage1.png"></image>
-    <view class="love_attention">
-      <view class="title">【成人票】海洋世界平日票</view>
-      <view class='price'>价格：<text class=''>￥80</text></view>
-      <view class='data'>使用日期：2019-03-09</view>
-      <view class='weui-cell__bd' style='justify-content: space-between'>
-        <view class="buy-num">
-            <view class="jian-btn {{item.number==1? 'disabled' : ''}}" catchtap="jianBtnTap" data-index="{{index}}">-</view>
-            <input  type="number" value="{{item.number}}" disabled/>
-            <view class="jia-btn {{item.number==curTouchGoodStore? 'disabled' : ''}}" catchtap="jiaBtnTap" data-index="{{index}}">+</view>
-        </view>
-        <image class='deleteIcon' src='/images/icon/delete.png'></image>
-      </view>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-flex" style="background-color:#424242;color:#ffffff;">
+        <view class="weui-flex__item"><view class="placeholder active">限时活动</view></view>
+        <view class="weui-flex__item"><view class="placeholder">往期回顾</view></view>
     </view>
   </view>
-  <view class='jiesuan'>
-    <button class="weui-btn" type="primary" bindtap="nowPlay">结算</button>
+  <view class="page__bd page__bd_spacing">
+      <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="placeholder">
+                <view class="gp_tit">
+                    <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+                </view>
+                <view class="title">【平日】园区大门票</view>
+                <view class="hd_tit_btn">
+                    <text class="price">￥20.00</text>
+                    <text class="g_price">￥20.00</text>
+                </view>
+            </view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">
+                <view class="gp_tit">
+                  <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+                </view>
+                <view class="title">【成人】海洋世界</view>
+                <view class="hd_tit_btn">
+                    <text class="price">￥20.00</text>
+                    <text class="g_price">￥20.00</text>
+                </view>
+            </view>
+          </view>
+      </view>
   </view>
-
-  	
+</view>

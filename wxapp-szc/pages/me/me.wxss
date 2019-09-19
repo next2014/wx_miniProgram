@@ -1,0 +1,12 @@
+/* pages/me/me.wxss */
+.taoxiang{
+  width: 60px;
+  height: 60px;
+  margin-left:16px;
+  margin-right: 16px;
+  vertical-align:middle;
+  border-radius: 60rpx;
+}
+.user_name{
+  font-size: 34rpx;
+}
