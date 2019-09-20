@@ -7,7 +7,7 @@ swiper{
 
 swiper image {
   width:100%;
-  height:440rpx;
+  height:400rpx;
 }
 
 .weui-grid image{
@@ -38,6 +38,14 @@ swiper image {
    border-left: 1px solid #dddddd;
 }
 
+.weui-cells:before{
+  border-top:0;
+}
+
+.weui-cells::after{
+  border-bottom:0;
+}
+
 .page__bd_spacing{
    padding:20rpx 0;
 }
@@ -53,6 +61,7 @@ swiper image {
 
 .user{
   font-size:24rpx;
+  width: 100%;
 }
 
 .user_member{
@@ -70,6 +79,10 @@ swiper image {
   text-align: center;
   font-size: 24rpx;
   padding:0 20rpx;
+}
+
+.hdgg{
+  background-color: #FDE024;
 }
 
 .gonggao-icon{
@@ -106,19 +119,31 @@ swiper image {
   font-size:24rpx;
 }
 
+.zxgp,.ywtj,.news{
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
 .topNav{
   background-color: #FDE024;
 }
 
 .hd_tit_pr{
-  padding:10px;
+  padding:10px 0;
 }
 
 .hd_tit{
   font-size:34rpx;
+  line-height: 50rpx;
+  margin-bottom:20rpx;
 }
 
 .hd_tit_btn {
+  width:320rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -139,26 +164,26 @@ swiper image {
    margin: 0;
    border-radius: 60rpx;
    background-color: #FD5107;
-}
-
-.gmbtn{
-   margin: 0;
-   border-radius: 60rpx;
-   background-color: #FD5107;
-   width: 160rpx;
+   width: 180rpx;
    height: 45rpx;
    line-height: 1.8!important;
+   font-size: 24rpx;
 }
 
 .title{
-   width: 100%;
+   width:320rpx;
    height: 30px;
    line-height: 30px;
    overflow: hidden;
    white-space: nowrap;
    text-overflow:ellipsis;
    text-align: left;
-   margin-bottom: 10px;
+   margin-bottom: 10rpx;
+}
+
+.gp_tit {
+   width:320rpx;
+   height:220rpx;
 }
 
 .gp_tit image{
@@ -167,8 +192,8 @@ swiper image {
 }
 
 .gp_img image{
-   width: 180rpx;
-   height: 180rpx;
+   width: 185rpx;
+   height: 185rpx;
 }
 
 .goupiao{
@@ -176,6 +201,12 @@ swiper image {
    border:1px solid #dddddd;
    border-radius: 5px;
    padding:10px;
+}
+
+.goupiao .hd_tit_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content{

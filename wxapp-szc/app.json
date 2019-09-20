@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/me/me",
-    "pages/hd/hd",
-    "pages/share/share",
     "pages/list/list",
     "pages/index/index",
-    "pages/haoping/haoping"
+    "pages/me/me",
+    "pages/haoping/haoping",
+    "pages/hd/hd",
+    "pages/share/share"
 
   ],
   "window": {
