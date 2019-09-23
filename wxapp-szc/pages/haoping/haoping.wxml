@@ -1,2 +1,64 @@
 <!--pages/haoping/haoping.wxml-->
-<view>好评</view>
+<!-- <view>好评</view> -->
+<view class="page">
+  <view class="topBg">
+     <image src="../../images/haoping/02.jpg" style="width:100%;height:240rpx;"></image>
+  </view>
+  <view class="page__bd page__bd_spacing tabNav">
+    <view class="weui-flex">
+      <view class="weui-flex__item"></view>
+      <view class="weui-flex__item tuijian">
+         <image src="../../images/haoping/06.jpg"></image> <text>好评推荐</text>
+      </view>
+      <view class="weui-flex__item tuijian">
+         <image src="../../images/haoping/08.jpg"></image> <text>好店推荐</text>
+      </view>
+      <view class="weui-flex__item"></view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="hp_content">
+        <view class="weui-cell__hd">
+          <image src="../../images/haoping/13.jpg" class="taoxiang" />
+        </view>
+        <view class="weui-cell__bd weui-cell_primary user">
+            <view class='user_name'>
+                <text class="name">用户名</text>
+                <text class="user_member">优质点评</text>
+            </view>
+            <view class="date">2019.09.23</view>
+        </view>
+        <view class="weui-cell__ft" style="font-size:24rpx;margin-right:10rpx;">
+            <text>好评：</text>
+            <text style="color:#FD5107">★★★</text>
+        </view>
+    </view>
+    <view class="hp_con">
+      环境很漂亮，小姐姐们特别好，还有花茶果茶。没有强制推销。推荐！
+    </view>
+    <view class="page__bd">
+      <view class="weui-grids">
+        <view class="weui-grid">
+            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+        </view>
+        <view class="weui-grid">
+            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+        </view>
+        <view class="weui-grid">
+            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+        </view>
+        <view class="weui-grid">
+            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+        </view>
+        <view class="weui-grid">
+            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+        </view>
+        <view class="weui-grid">
+            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+        </view>
+      </view>
+    </view>
+   
+  </view>
+
+</view>

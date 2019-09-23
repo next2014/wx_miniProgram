@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/haoping/haoping",
     "pages/list/list",
     "pages/index/index",
     "pages/me/me",
-    "pages/haoping/haoping",
     "pages/hd/hd",
     "pages/share/share"
 
@@ -20,31 +20,31 @@
         "pagePath": "pages/list/list",
         "text": "首页",
         "iconPath": "/images/tab/index.png",
-        "selectedIconPath": "/images/tab/index.png"
+        "selectedIconPath": "/images/tab/index_h1.png"
       },
       {
         "pagePath": "pages/hd/hd",
         "text": "活动",
         "iconPath": "/images/tab/hd.png",
-        "selectedIconPath": "/images/tab/hd.png"
+        "selectedIconPath": "/images/tab/hd_h1.png"
       },
       {
         "pagePath": "pages/share/share",
         "text": "分享赚",
         "iconPath": "/images/tab/huiyuan.png",
-        "selectedIconPath": "/images/tab/huiyuan.png"
+        "selectedIconPath": "/images/tab/huiyuan_h1.png"
       },
       {
         "pagePath": "pages/haoping/haoping",
         "text": "好评",
         "iconPath": "/images/tab/haoping.png",
-        "selectedIconPath": "/images/tab/haoping.png"
+        "selectedIconPath": "/images/tab/haoping_h1.png"
       },
       {
         "pagePath": "pages/me/me",
         "text": "我的",
         "iconPath": "/images/tab/me.png",
-        "selectedIconPath": "/images/tab/me.png"
+        "selectedIconPath": "/images/tab/me_h1.png"
       }
     ]
   },

@@ -1,1 +1,99 @@
 /* pages/haoping/haoping.wxss */
+.topBg{
+  width:100%;
+  height:240rpx;
+}
+
+.taoxiang{
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 30rpx;
+  vertical-align:middle;
+  border-radius: 60rpx;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.weui-flex__item image {
+  width:30rpx;
+  height:30rpx;
+  padding-right: 10rpx;
+}
+
+.tabNav .weui-flex__item {
+  height: 80rpx;
+  font-size: 24rpx;
+}
+
+.weui-flex__item .active{
+  color: #FD5107;
+}
+
+.tuijian{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user{
+  font-size:24rpx;
+  width: 60%;
+}
+
+.user_name{
+  margin-bottom: 10rpx;
+}
+
+.date{
+  color: #999999;
+}
+
+.user_member{
+  width: 120rpx;
+  line-height: 20rpx;
+  padding:3rpx 10rpx;
+  margin-left:10rpx;
+  border:1px solid #EFDEBA;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color:#FD5107;
+  background:#FDEBD3;
+}
+
+.hp_content{
+  display: flex;
+  align-items: center;
+  padding:20rpx 60rpx;
+}
+
+/* .weui-grids{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.weui-grid {
+  width: 220rpx;
+  height:220rpx;
+  margin: 10rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weui-grid image{
+  width:100%;
+  height: 100%;
+}
+
+.hp_con{
+  font-size:30rpx;
+  padding:20rpx 60rpx;
+}

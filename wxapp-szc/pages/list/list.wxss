@@ -53,7 +53,6 @@ swiper image {
 .taoxiang{
   width: 60px;
   height: 60px;
-  margin-left:16px;
   margin-right: 16px;
   vertical-align:middle;
   border-radius: 60rpx;
@@ -64,8 +63,12 @@ swiper image {
   width: 100%;
 }
 
+.user_name{
+  margin-bottom: 10rpx;
+}
+
 .user_member{
-  width: 50%;
+  width: 120rpx;
   padding:5rpx;
   margin-top:10rpx;
   border:1px solid #dddddd;
@@ -93,8 +96,8 @@ swiper image {
 .gonggao-icon image{
    margin-right: 5px;
    vertical-align: middle;
-   width:20px; 
-   height: 20px;
+   width: 15px; 
+   height: 15px;
 }
 
 .gonggao{
@@ -115,8 +118,8 @@ swiper image {
   line-height: 60rpx;
 }
 
-.zxhd .page__title{
-  font-size:24rpx;
+.page__title{
+  font-size:34rpx;
 }
 
 .zxgp,.ywtj,.news{
@@ -153,7 +156,7 @@ swiper image {
 .price{
   font-szie: 40rpx;
   color:#FD5107;
-  margin-right:2px;
+  margin-right:5rpx;
 }
 
 .g_price{
@@ -164,10 +167,12 @@ swiper image {
    margin: 0;
    border-radius: 60rpx;
    background-color: #FD5107;
-   width: 180rpx;
+   width: 130rpx;
    height: 45rpx;
    line-height: 1.8!important;
    font-size: 24rpx;
+   color: #ffffff;
+   text-align: center;
 }
 
 .title{
@@ -196,6 +201,28 @@ swiper image {
    height: 185rpx;
 }
 
+.placeholder1{
+  text-align: center;
+  font-size:30rpx; 
+  width:200rpx;
+  height:200rpx;
+}
+
+.placeholder1 .hd_tit_btn{
+   width:200rpx;
+   padding:0;
+}
+
+.gp_tit1 {
+   width:200rpx;
+   height:200rpx;
+}
+
+.gp_tit1 image{
+   width:200rpx;
+   height:200rpx;
+}
+
 .goupiao{
    margin-top: 20px;
    border:1px solid #dddddd;
@@ -207,8 +234,17 @@ swiper image {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .content{
    padding:0 20px;
+}
+
+.footer{
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  color:#999999;
+  line-height: 50rpx;
 }

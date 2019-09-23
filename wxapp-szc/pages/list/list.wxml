@@ -32,7 +32,7 @@
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <navigator url="" class="weui-cell weui-cell_example weui-cell_access" style="padding:15px;">
                             <view class="weui-cell__hd">
-                              <image src="../../images/user/xuwei.jpg" class="taoxiang" style="" />
+                              <image src="../../images/user/xuwei.jpg" class="taoxiang" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary user">
                                 <view class='user_name'>用户名</view>
@@ -61,38 +61,38 @@
         </view>
         <!-- 所有项目入口 -->
         <view class="weui-grids">
-            <navigator url="" class="weui-grid">
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_03.jpg" />
                 <view class="weui-grid__label">海洋世界</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_05.jpg" />
                 <view class="weui-grid__label">婚博中心</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_07.jpg" />
                 <view class="weui-grid__label">卡丁车馆</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_09.jpg" />
                 <view class="weui-grid__label">真人CS体验馆</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_15.jpg" />
                 <view class="weui-grid__label">奇奇之家</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_16.jpg" />
                 <view class="weui-grid__label">美食天地</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_18.jpg" />
                 <view class="weui-grid__label">奇奇主题酒店</view>
-            </navigator>
-            <navigator url="" class="weui-grid">
+            </view>
+            <view class="weui-grid">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_19.jpg" />
                 <view class="weui-grid__label">充值中心</view>
-            </navigator>
+            </view>
         </view>
     </view>
     <view class="content">
@@ -100,7 +100,7 @@
           <view class="zxhd">
             <view class="page__hd">
               <view class="page__title">最新活动</view>
-              <view class="page__desc">更多>></view>
+              <view class="page__desc">1/4</view>
             </view>
             <swiper catchtap="carouselToDetail" indicator-dots="true" indicator-color="gray" indicator-active-color="blue">
                 <swiper-item>
@@ -118,9 +118,10 @@
             </swiper>
             <view class="hd_tit_pr">
                 <view class="hd_tit">【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......</view>
-                <view class="hd_tit_btn">
+                <view class="hd_tit_btn" style="width:100%;">
                     <text class="price">￥30</text>
-                    <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                    <view class="gmbtn">立刻购买</view>
+                    <!-- <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button> -->
                 </view>
               </view>
             </view>
@@ -128,10 +129,10 @@
           <view class="page__bd page__bd_spacing">
               <view class="page__hd zxgp">
                 <view class="page__title">在线购票</view>
-                <view class="page__desc">更多>></view>
+                <view class="page__desc">查看更多></view>
               </view>
               <view class="weui-flex">
-                  <view class="weui-flex__item" style="margin-right:10rpx">
+                  <view class="weui-flex__item" style="margin-right:5rpx">
                     <view class="placeholder">
                         <view class="gp_tit">
                            <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
@@ -141,7 +142,8 @@
                           <view>
                             <text class="price">￥20.00</text>起
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                          <view class="gmbtn">立刻购买</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button> -->
                         </view>
                     </view>
                   </view>
@@ -155,7 +157,8 @@
                           <view>
                             <text class="price">￥20.00</text>起
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                          <view class="gmbtn">立刻购买</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button> -->
                         </view>
                     </view>
                   </view>
@@ -169,12 +172,13 @@
                               <image src='../../images/index/zxgp/1_08_16.jpg' style=""></image>
                           </view>
                           <view class="title" style="width:100%;">【平日】园区大门票</view>
-                          <view class="diplay:flex;justify-content:space-between;">
-                            <view class="hd_tit_btn">
-                              <text class="price">￥80.00</text>
-                              <text class="g_price">￥20.00</text>
-                            </view>
-                            <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button>
+                          <view class="hd_tit_btn" style="width:100%;">
+                              <view>
+                                <text class="price">￥80.00</text>
+                                 <text class="g_price">￥20.00</text>
+                              </view>
+                              <view class="gmbtn">立刻购买</view>
+                              <!-- <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button> -->
                           </view>
                     </view>
                   </view>
@@ -184,19 +188,19 @@
           <view class="page__bd page__bd_spacing">
              <view class="page__hd ywtj">
                <view class="page__title">游玩推荐</view>
-               <view class="page__desc">更多>></view>
+               <view class="page__desc">查看更多></view>
              </view>
              <view class="weui-flex" style="margin-bottom:20rpx;">
-                <view class="weui-flex__item" style="margin-right:5rpx">
+                <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                          <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+                          <image src='../../images/index/playtj/1_09_07.jpg' style=""></image>
                       </view>
-                      <view class="title">【海洋世界】惠州海洋生物知识科普基地...</view>
+                      <view class="title">【海洋世界】惠州海洋生物知识科普基地..</view>
                       <view class="hd_tit_btn">
                         <view>
-                          <text class="price">￥20.00</text>
-                          <text class="g_price">￥20.00</text>
+                          <text class="price">￥78.00</text>
+                          <text class="g_price">￥130.00</text>
                         </view>
                       </view>
                   </view>
@@ -204,13 +208,13 @@
                 <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                        <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+                        <image src='../../images/index/playtj/1_09_09.jpg' style=""></image>
                       </view>
-                      <view class="title">【成人】海洋世界</view>
+                      <view class="title">【【卡丁车馆】惠州年轻人的轻奢竞技场...</view>
                       <view class="hd_tit_btn">
                         <view>
-                          <text class="price">￥20.00</text>
-                          <text class="g_price">￥20.00</text>
+                          <text class="price">￥88.00</text>
+                          <text class="g_price">￥130.00</text>
                         </view>
                       </view>
                   </view>
@@ -220,13 +224,13 @@
                 <view class="weui-flex__item" style="margin-right:5rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
-                          <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+                          <image src='../../images/index/playtj/1_09_17.jpg' style=""></image>
                       </view>
-                      <view class="title">【平日】园区大门票</view>
+                      <view class="title">【奇奇之家】惠州最俱全儿童游乐园..</view>
                       <view class="hd_tit_btn">
                         <view>
-                          <text class="price">￥20.00</text>
-                          <text class="g_price">￥20.00</text>
+                          <text class="price">￥78.00</text>
+                          <text class="g_price">￥130.00</text>
                         </view>
                       </view>
                   </view>
@@ -234,13 +238,13 @@
                 <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                        <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+                        <image src='../../images/index/playtj/1_09_19.jpg' style=""></image>
                       </view>
-                      <view class="title">【成人】海洋世界</view>
+                      <view class="title">【婚博中心】惠州最有特色婚庆拍摄取景地方...</view>
                       <view class="hd_tit_btn">
                         <view>
-                          <text class="price">￥20.00</text>
-                          <text class="g_price">￥20.00</text>
+                          <text class="price">￥88.00</text>
+                          <text class="g_price">￥130.00</text>
                         </view>
                       </view>
                   </view>
@@ -251,12 +255,12 @@
           <view class="page__bd">
              <view class="page__hd news">
                <view class="page__title">最新资讯</view>
-               <view class="page__desc">更多>></view>
+               <view class="page__desc">查看更多></view>
              </view>
             <view class="weui-panel weui-panel_access" style="margin-top:0;">
                 <view class="weui-panel__bd">
                     <navigator url="" class="weui-media-box weui-media-box_appmsg" style="padding:20rpx 0">
-                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:220rpx;">
                             <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_05.jpg" />
                         </view>
                         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
@@ -265,7 +269,7 @@
                         </view>
                     </navigator>
                     <navigator url="" class="weui-media-box weui-media-box_appmsg" style="padding:20rpx 0">
-                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:220rpx;">
                             <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_11.jpg" />
                         </view>
                         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
@@ -277,20 +281,207 @@
             </view>
           </view>
           <!-- 休闲娱乐 -->
-          <view class="page__bd">
-            <image src="../../images/home/12.jpg" style='width:100%;'></image>
+          <view class="page__bd page__bd_spacing">
+             <view class="page__hd ywtj">
+               <view class="page__title">休闲娱乐</view>
+               <view class="page__desc">查看更多></view>
+             </view>
+             <view class="weui-flex" style="margin-bottom:20rpx;">
+                <view class="weui-flex__item">
+                  <view class="placeholder">
+                      <view class="gp_tit">
+                          <image src='../../images/index/xxyl/1_12_07.jpg' style=""></image>
+                      </view>
+                      <view class="title">【奇奇之家】宇宙飞星</view>
+                      <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥30.00</text>起
+                          </view>
+                       </view>
+                  </view>
+                </view>
+                <view class="weui-flex__item">
+                  <view class="placeholder">
+                      <view class="gp_tit">
+                        <image src='../../images/index/xxyl/1_12_09.jpg' style=""></image>
+                      </view>
+                      <view class="title">【奇奇之家】海盗船</view>
+                      <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥30.00</text>起
+                          </view>
+                       </view>
+                  </view>
+                </view>
+             </view>
+             <view class="weui-flex">
+                <view class="weui-flex__item" style="margin-right:5rpx">
+                  <view class="placeholder">
+                      <view class="gp_tit">
+                          <image src='../../images/index/xxyl/1_12_17.jpg' style=""></image>
+                      </view>
+                      <view class="title">【奇奇主题酒店】KTV豪华间</view>
+                      <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥100.00</text>起
+                          </view>
+                       </view>
+                  </view>
+                </view>
+                <view class="weui-flex__item">
+                  <view class="placeholder">
+                      <view class="gp_tit">
+                        <image src='../../images/index/xxyl/1_12_19.jpg' style=""></image>
+                      </view>
+                      <view class="title">户外电玩</view>
+                      <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥20.00</text>起
+                          </view>
+                       </view>
+                  </view>
+                </view>
+             </view>
           </view>
           <!-- 美食天地  -->
-          <view class="page__bd">
-            <image src="../../images/home/13.jpg" style='width:100%;'></image>
+          <view class="page__bd page__bd_spacing">
+              <view class="page__hd zxgp">
+                <view class="page__title">美食天地</view>
+                <view class="page__desc">查看更多></view>
+              </view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                    <view class="placeholder1">
+                        <view class="gp_tit1">
+                           <image src='../../images/index/foods/1_11_09.jpg'></image>
+                        </view>
+                        <!-- <view class="title">鱼子酱寿司</view> -->
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥88.00</text>起
+                          </view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class="weui-flex__item">
+                    <view class="placeholder1">
+                        <view class="gp_tit1">
+                          <image src='../../images/index/foods/1_11_11.jpg'></image>
+                        </view>
+                        <!-- <view class="title">梅菜鸡蛋饭</view> -->
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥68.00</text>起
+                          </view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class="weui-flex__item">
+                    <view class="placeholder1">
+                        <view class="gp_tit1">
+                          <image src='../../images/index/foods/1_11_13.jpg'></image>
+                        </view>
+                        <!-- <view class="title"> 蜜汁猪扒</view> -->
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥78.00</text>起
+                          </view>
+                        </view>
+                    </view>
+                  </view>
+              </view>
+              <view class="weui-flex" style="margin-top:30rpx;">
+                  <view class="weui-flex__item">
+                    <view class="placeholder goupiao">
+                       <view style="display:flex;">
+                          <view class="gp_img" style="margin-right:10rpx;">
+                              <image src='../../images/index/foods/1_11_07.jpg' style="width:420rpx;height:285rpx;"></image>
+                          </view>
+                          <view>
+                              <image src='../../images/index/foods/1_11_09_01.jpg' style="width:200rpx;height:138rpx;"></image>
+                              <image src='../../images/index/foods/1_11_09_03.jpg' style="width:200rpx;height:138rpx;"></image>
+                          </view>
+                       </view>
+                          <view class="" style="width:100%;text-align:left; margin-bottom:10rpx;">【美食天地】早茶拿铁咖啡炸油条蒸排骨早茶拿铁咖啡炸油
+                          条蒸排骨早茶拿铁咖啡炸油条蒸排骨</view>
+                          <view class="hd_tit_btn">
+                            <view>
+                              <text class="price">￥78.00</text>起
+                            </view>
+                        </view>
+                    </view>
+                  </view>
+              </view>
           </view>
           <!-- 奇奇主题酒店 -->
-          <view class="page__bd">
-            <image src="../../images/home/14.jpg" style='width:100%;'></image>
+          <view class="page__bd page__bd_spacing">
+              <view class="page__hd zxgp">
+                <view class="page__title">奇奇主题酒店</view>
+                <view class="page__desc">查看更多></view>
+              </view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item" style="margin-right:5rpx">
+                    <view class="placeholder">
+                        <view class="gp_tit">
+                           <image src='../../images/index/hold/1_13_07.jpg' style=""></image>
+                        </view>
+                        <view class="title">【奇奇主题酒店】豪华客房</view>
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥120.00</text>起
+                          </view>
+                          <view class="gmbtn">购买</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">购买</button> -->
+                        </view>
+                    </view>
+                  </view>
+                  <view class="weui-flex__item">
+                    <view class="placeholder">
+                        <view class="gp_tit">
+                          <image src='../../images/index/hold/1_13_09.jpg' style=""></image>
+                        </view>
+                        <view class="title">【奇奇主题酒店】单人客房</view>
+                        <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥100.00</text>起
+                          </view>
+                          <view class="gmbtn">购买</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">购买</button> -->
+                        </view>
+                    </view>
+                  </view>
+              </view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                    <view class="placeholder goupiao">
+                        <view style="display:flex;">
+                            <view class="gp_img" style="margin-right:10rpx;">
+                                <image src='../../images/index/hold/1_13_06.jpg' style="width:420rpx;height:285rpx;"></image>
+                            </view>
+                            <view>
+                                <image src='../../images/index/hold/1_13_07_01.jpg' style="width:200rpx;height:138rpx;"></image>
+                                <image src='../../images/index/hold/1_13_07_03.jpg' style="width:200rpx;height:138rpx;"></image>
+                            </view>
+                        </view>
+                          <view class="" style="width:100%;text-align:left; margin-bottom:10rpx;">
+                            【奇奇主题酒店】豪华双人大客房
+                          </view>
+                          <view class="hd_tit_btn">
+                            <view>
+                              <text class="price">￥200.00</text>起
+                            </view>
+                            <view class="gmbtn">购买</view>
+                            <!-- <button class="weui-btn gmbtn" type="primary" size="mini">购买</button> -->
+                        </view>
+                    </view>
+                  </view>
+              </view>
           </view>
     </view>
     <!-- 底部  -->
-    <view class="page__bd">
-       <image src="../../images/home/15.jpg" style='width:100%;'></image>
+    <view class="page__bd footer">
+        <!-- <view>平台信息 · 用户隐私条款 · 平台服务协议</view> -->
+        <view>Copyright © 2019 惠州狮子城</view>
+       <!-- <image src="../../images/home/15.jpg" style='width:100%;height:100rpx;'></image> -->
     </view>
 </view>
