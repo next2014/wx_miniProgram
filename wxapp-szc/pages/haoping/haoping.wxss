@@ -5,9 +5,9 @@
 }
 
 .taoxiang{
-  width: 70rpx;
-  height: 70rpx;
-  margin-right: 30rpx;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
   vertical-align:middle;
   border-radius: 60rpx;
 }
@@ -40,13 +40,22 @@
   align-items: center;
 }
 
+.tuijian text{
+  font-size: 30rpx;
+}
+
 .user{
-  font-size:24rpx;
+  font-size:30rpx;
   width: 60%;
 }
 
 .user_name{
-  margin-bottom: 10rpx;
+  margin-bottom: 5rpx;
+}
+
+.xingxing{
+  font-size:30rpx;
+  margin-right:10rpx;
 }
 
 .date{
@@ -72,11 +81,12 @@
   padding:20rpx 60rpx;
 }
 
-/* .weui-grids{
-  display: flex;
+.weui-grids{
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-} */
+  align-items: center; */
+  padding-left:20rpx;
+}
 
 .weui-grid {
   width: 220rpx;
@@ -96,4 +106,50 @@
 .hp_con{
   font-size:30rpx;
   padding:20rpx 60rpx;
+}
+
+.hd_tit_btn {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price{
+  font-szie: 40rpx;
+  color:#FD5107;
+  margin-right:5rpx;
+}
+
+.hd_tit_btn .gmbtn{
+   margin: 0;
+   border-radius: 10rpx;
+   color: #FD5107;
+   border:1px solid #FD5107;
+   width: 130rpx;
+   height: 45rpx;
+   line-height: 1.8!important;
+   font-size: 24rpx;
+   text-align: center;
+}
+
+.hp_foods{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 30rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.hp_tit{
+   width: 97%;
+   font-size: 30rpx;
+   margin-bottom: 20rpx;
+}
+
+.hp_food_img image{
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 10rpx;
 }

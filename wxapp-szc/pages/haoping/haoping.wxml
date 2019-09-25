@@ -16,49 +16,66 @@
       <view class="weui-flex__item"></view>
     </view>
   </view>
+  <!-- star 好评 -->
   <view class="page__bd">
-    <view class="hp_content">
-        <view class="weui-cell__hd">
-          <image src="../../images/haoping/13.jpg" class="taoxiang" />
-        </view>
-        <view class="weui-cell__bd weui-cell_primary user">
-            <view class='user_name'>
-                <text class="name">用户名</text>
-                <text class="user_member">优质点评</text>
-            </view>
-            <view class="date">2019.09.23</view>
-        </view>
-        <view class="weui-cell__ft" style="font-size:24rpx;margin-right:10rpx;">
-            <text>好评：</text>
-            <text style="color:#FD5107">★★★</text>
-        </view>
-    </view>
-    <view class="hp_con">
-      环境很漂亮，小姐姐们特别好，还有花茶果茶。没有强制推销。推荐！
-    </view>
-    <view class="page__bd">
-      <view class="weui-grids">
-        <view class="weui-grid">
-            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
-        </view>
-        <view class="weui-grid">
-            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
-        </view>
-        <view class="weui-grid">
-            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
-        </view>
-        <view class="weui-grid">
-            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
-        </view>
-        <view class="weui-grid">
-            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
-        </view>
-        <view class="weui-grid">
-            <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+      <view class="hp_content">
+          <view class="weui-cell__hd">
+            <image src="../../images/haoping/13.jpg" class="taoxiang" />
+          </view>
+          <view class="weui-cell__bd weui-cell_primary user">
+              <view class='user_name'>
+                  <text class="name">用户名</text>
+                  <text class="user_member">优质点评</text>
+              </view>
+              <view class="date">2019.09.23</view>
+          </view>
+          <view class="weui-cell__ft xingxing">
+              <text>好评：</text>
+              <text style="color:#FD5107">★★★</text>
+          </view>
+      </view>
+      <view class="hp_con">
+        环境很漂亮，小姐姐们特别好，还有花茶果茶。没有强制推销。推荐！
+      </view>
+      <view class="page__bd">
+        <view class="weui-grids">
+          <view class="weui-grid">
+              <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+          </view>
+          <view class="weui-grid">
+              <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+          </view>
+          <view class="weui-grid">
+              <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+          </view>
+          <view class="weui-grid">
+              <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+          </view>
+          <view class="weui-grid">
+              <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+          </view>
+          <view class="weui-grid">
+              <image class="weui-grid__icon" src="../../images/haoping/16.jpg" style="" />
+          </view>
         </view>
       </view>
-    </view>
-   
+      <view class="hp_foods">
+          <view class="hp_food_img">
+            <image src="../../images/haoping/19.jpg" />
+          </view>
+          <view class="hp_food_tit">
+            <view class="hp_tit">
+              【美食天地】1元秒杀，欧美城美食天所有店铺无门槛抵用券，节假日通用！
+            </view>
+            <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥59.90</text>
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+      </view>
   </view>
+  <!-- end 好评 -->
 
 </view>
