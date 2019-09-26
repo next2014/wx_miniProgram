@@ -5,6 +5,29 @@
   height: 80rpx;
   line-height: 80rpx;
 }
+
+.bottom_icon{
+  color:#999999;
+  font-size:24rpx;
+  margin-left:10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.weui-panel{
+  margin-top: 0;
+}
+
+.weui-media-box__hd{
+  width:220rpx;
+  height:150rpx;
+}
+
+.weui-media-box__title{
+  margin-bottom:10rpx;
+  font-size:34rpx;
+}
+
 .hd_tit_btn {
   display: flex;
   justify-content: space-between;
@@ -37,9 +60,10 @@
    border-top-right-radius: 30rpx;
    border-bottom-left-radius: 30rpx;
    background-color: #FDE024;
-   width: 160rpx;
+   width: 150rpx;
    height: 50rpx;
-   font-size: 24rpx;
+   font-size: 30rpx;
    color: #666666;
-   line-height: 2;
+   line-height: 1.8;
+   text-align: center;
 }

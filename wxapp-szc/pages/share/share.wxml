@@ -4,19 +4,37 @@
   <view class="page__bd">
       <!-- 顶部栏目 -->
       <view class="weui-flex" style="">
-          <view class="weui-flex__item"><view class="placeholder">上线时间</view></view>
-          <view class="weui-flex__item"><view class="placeholder">销售</view></view>
-          <view class="weui-flex__item"><view class="placeholder">收益</view></view>
+          <view class="weui-flex__item">
+             <view class="placeholder">
+                <text>上线时间</text>
+                <image class="bottom_icon" src="../../images/share/bottom_icon.jpg"></image>
+                <!-- <text class="bottom_icon">▼</text> -->
+             </view>
+          </view>
+          <view class="weui-flex__item">
+             <view class="placeholder">
+                <text>销售</text>
+                <image class="bottom_icon" src="../../images/share/bottom_icon_1.jpg"></image>
+                <!-- <text class="bottom_icon">▼</text> -->
+             </view>
+          </view>
+          <view class="weui-flex__item">
+             <view class="placeholder">
+                <text>收益</text>
+                <image class="bottom_icon" src="../../images/share/bottom_icon_1.jpg"></image>
+                <!-- <text class="bottom_icon">▼</text> -->
+             </view>
+          </view>
       </view>
       <!-- 分享列表 -->
-      <view class="weui-panel weui-panel_access" style="margin-top:0;">
+      <view class="weui-panel weui-panel_access">
         <view class="weui-panel__bd">
             <view class="weui-media-box weui-media-box_appmsg">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                    <view class="weui-media-box__title">
                         【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
                     </view>
                     <view class="weui-media-box__desc">
@@ -26,17 +44,18 @@
                             <image src="../../images/icon/zhuan.png"/> 
                             <text class="money">￥10.00</text>
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                          <view class="gmbtn">分享赚</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
             </view>
             <view class="weui-media-box weui-media-box_appmsg">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                    <view class="weui-media-box__title">
                         【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
                     </view>
                     <view class="weui-media-box__desc">
@@ -46,17 +65,18 @@
                             <image src="../../images/icon/zhuan.png"/> 
                             <text class="money">￥10.00</text>
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                          <view class="gmbtn">分享赚</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
             </view>
             <view class="weui-media-box weui-media-box_appmsg">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                    <view class="weui-media-box__title">
                         【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
                     </view>
                     <view class="weui-media-box__desc">
@@ -66,17 +86,18 @@
                             <image src="../../images/icon/zhuan.png"/> 
                             <text class="money">￥10.00</text>
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                          <view class="gmbtn">分享赚</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
             </view>
             <view class="weui-media-box weui-media-box_appmsg">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                    <view class="weui-media-box__title">
                         【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
                     </view>
                     <view class="weui-media-box__desc">
@@ -86,17 +107,18 @@
                             <image src="../../images/icon/zhuan.png"/> 
                             <text class="money">￥10.00</text>
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                          <view class="gmbtn">分享赚</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
             </view>
             <view class="weui-media-box weui-media-box_appmsg">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:150rpx;">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                     <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:34rpx;">
+                    <view class="weui-media-box__title">
                         【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......
                     </view>
                     <view class="weui-media-box__desc">
@@ -106,7 +128,8 @@
                             <image src="../../images/icon/zhuan.png"/> 
                             <text class="money">￥10.00</text>
                           </view>
-                          <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button>
+                          <view class="gmbtn">分享赚</view>
+                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>

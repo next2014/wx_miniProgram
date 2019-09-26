@@ -28,14 +28,30 @@ swiper image {
   font-size:30rpx; 
 }
 
-.weui-flex .active{
-  font-size: 34rpx;
+.topNav{
+  background-color: #FDE024;
+  display: flex;
+  align-items: center;
+}
+
+.topNav .active{
+  font-size: 36rpx;
   font-weight: 400;
   color:#000000;
 }
 
-.weui-flex .more{
+.topNav .more{
    border-left: 1px solid #dddddd;
+}
+
+.topImg{
+  width:100%;
+  height:120rpx;
+  padding-top:10rpx;
+}
+
+.user_meg{
+  padding:15px;
 }
 
 .weui-cells:before{
@@ -47,15 +63,15 @@ swiper image {
 }
 
 .page__bd_spacing{
-   padding:20rpx 0;
+   padding:40rpx 0 0 0;
 }
 
 .taoxiang{
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   margin-right: 16px;
   vertical-align:middle;
-  border-radius: 60rpx;
+  border-radius: 40rpx;
 }
 
 .user{
@@ -64,7 +80,9 @@ swiper image {
 }
 
 .user_name{
+  padding:0 20rpx 0 10rpx;
   margin-bottom: 10rpx;
+  font-size: 30rpx;
 }
 
 .user_member{
@@ -82,6 +100,14 @@ swiper image {
   text-align: center;
   font-size: 24rpx;
   padding:0 20rpx;
+}
+
+.dhj .dhj_num{
+  font-size: 34rpx;
+}
+
+.dhj .dhj_tit{
+  color: #666666;
 }
 
 .hdgg{
@@ -104,11 +130,22 @@ swiper image {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 24rpx;
-  height: 20px;
-  line-height: 20px;
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-top:0;
 }
 
+.zxgp,.ywtj,.news,.zxhd{
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  /* height: 80rpx;
+  line-height: 80rpx; */
+  margin-bottom: 30rpx;
+}
+/* 
 .zxhd .page__hd{
   font-size: 24rpx;
   display: flex;
@@ -116,23 +153,61 @@ swiper image {
   align-content: center;
   height: 60rpx;
   line-height: 60rpx;
-}
-
+} */
 .page__title{
-  font-size:34rpx;
+  width: 70%;
+  position: relative;
 }
 
-.zxgp,.ywtj,.news{
-  font-size: 24rpx;
+.page__desc{
+  color: #999999;
+  font-size: 30rpx;
+}
+
+.page-tit{
+  position: absolute;
+  left:0;
+  bottom:0;
+  font-size:40rpx;
+  z-index: 100;
+}
+
+.page-tit image{
+  width: 55rpx;
+  height: 55rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-right: 10rpx;
+}
+
+.page-tit text{
+  padding-left: 60rpx;
+  font-weight: bold;
+  color:#101010;
+}
+
+.bottom-line{
+  width:240rpx;
+  height: 20rpx;
+  background-color:#FDE024;
+  border-radius: 20rpx;
+  position: absolute;
+  left:0;
+  bottom:0;
+}
+
+.tab-nav{
+  padding-left:260rpx;
   display: flex;
-  justify-content: space-between;
-  align-content: center;
-  height: 60rpx;
-  line-height: 60rpx;
 }
 
-.topNav{
-  background-color: #FDE024;
+.tab-nav .hd-pro{
+  width: 110rpx;
+  display: block;
+  font-size: 24rpx;
+  text-align: center;
+  color: #666666;
 }
 
 .hd_tit_pr{
@@ -150,7 +225,6 @@ swiper image {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:0 10rpx;
 }
 
 .price{
@@ -164,7 +238,7 @@ swiper image {
 }
 
 .hd_tit_btn .gmbtn{
-   margin: 0;
+   margin: 0 10rpx 0 0;
    border-radius: 60rpx;
    background-color: #FD5107;
    width: 130rpx;
@@ -205,12 +279,14 @@ swiper image {
   text-align: center;
   font-size:30rpx; 
   width:200rpx;
-  height:200rpx;
+  border: 1px solid #dddddd;
 }
 
+
 .placeholder1 .hd_tit_btn{
-   width:200rpx;
-   padding:0;
+   width: 180rpx;
+   height: 80rpx;
+   padding:0 10rpx;
 }
 
 .gp_tit1 {
@@ -235,6 +311,34 @@ swiper image {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.goupiao1{
+   margin-top: 40rpx;
+   border:1px solid #dddddd;
+   border-radius: 10rpx;
+   padding: 20rpx;
+}
+
+.goupiao1 .hd_tit_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gp_titlte{
+  width:100%;
+  text-align:left; 
+  margin-bottom:10rpx;
+}
+
+.gp_content{
+  display: flex;
+}
+
+.gp_content .gp_img{
+  margin-right:10rpx;
 }
 
 .content{

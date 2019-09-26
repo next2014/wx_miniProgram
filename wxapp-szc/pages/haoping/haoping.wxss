@@ -4,6 +4,11 @@
   height:240rpx;
 }
 
+.topBg image{
+  width:100%;
+  height:240rpx;
+}
+
 .taoxiang{
   width: 90rpx;
   height: 90rpx;
@@ -13,9 +18,6 @@
 }
 
 .placeholder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 24rpx;
 }
 
@@ -56,6 +58,10 @@
 .xingxing{
   font-size:30rpx;
   margin-right:10rpx;
+}
+
+.xingxing text:nth-child(2){
+   color:#FD5107
 }
 
 .date{
@@ -138,8 +144,8 @@
     justify-content: center;
     align-items: center;
     padding:0 30rpx;
-    margin-top: 20rpx;
-    margin-bottom: 20rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
 }
 
 .hp_tit{
@@ -152,4 +158,23 @@
     width: 180rpx;
     height: 180rpx;
     margin-right: 10rpx;
+}
+
+.hp_foods_fx{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 40rpx 30rpx 40rpx;
+}
+
+.hp_foods_fx image{
+    width: 45rpx;
+    height: 45rpx;
+    vertical-align: middle;
+    margin-right: 5rpx;
+}
+
+.fx text{
+    font-size: 30rpx;
+    color: #666666;
 }

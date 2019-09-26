@@ -2,7 +2,7 @@
 <!-- <view>好评</view> -->
 <view class="page">
   <view class="topBg">
-     <image src="../../images/haoping/02.jpg" style="width:100%;height:240rpx;"></image>
+     <image src="../../images/haoping/02.jpg"></image>
   </view>
   <view class="page__bd page__bd_spacing tabNav">
     <view class="weui-flex">
@@ -20,7 +20,7 @@
   <view class="page__bd">
       <view class="hp_content">
           <view class="weui-cell__hd">
-            <image src="../../images/haoping/13.jpg" class="taoxiang" />
+             <image src="../../images/haoping/13.jpg" class="taoxiang" />
           </view>
           <view class="weui-cell__bd weui-cell_primary user">
               <view class='user_name'>
@@ -31,7 +31,7 @@
           </view>
           <view class="weui-cell__ft xingxing">
               <text>好评：</text>
-              <text style="color:#FD5107">★★★</text>
+              <text>★★★</text>
           </view>
       </view>
       <view class="hp_con">
@@ -59,23 +59,32 @@
           </view>
         </view>
       </view>
-      <view class="hp_foods">
-          <view class="hp_food_img">
-            <image src="../../images/haoping/19.jpg" />
-          </view>
-          <view class="hp_food_tit">
-            <view class="hp_tit">
-              【美食天地】1元秒杀，欧美城美食天所有店铺无门槛抵用券，节假日通用！
+      <view class="hp_foods_pr">
+         <view class="hp_foods">
+            <view class="hp_food_img">
+              <image src="../../images/haoping/19.jpg" />
             </view>
-            <view class="hd_tit_btn">
-                <view>
-                  <text class="price">￥59.90</text>
-                </view>
-                <view class="gmbtn">立刻购买</view>
+            <view class="hp_food_tit">
+              <view class="hp_tit">
+                【美食天地】1元秒杀，欧美城美食天所有店铺无门槛抵用券，节假日通用！
               </view>
-          </view>
+              <view class="hd_tit_btn">
+                  <view class="price">￥59.90</view>
+                  <view class="gmbtn">立刻购买</view>
+                </view>
+            </view>
+         </view>
+         <view class="hp_foods_fx">
+            <view class="fx">
+              <image src="../../images/haoping/23.jpg" />
+              <text>10</text>
+            </view>
+            <view class="fx">
+              <image src="../../images/haoping/26.jpg" />
+              <text>分享</text>
+            </view>
+        </view>
       </view>
   </view>
   <!-- end 好评 -->
-
 </view>

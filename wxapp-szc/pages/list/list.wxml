@@ -1,8 +1,8 @@
 <!--pages/list/list.wxml-->
 <view class="page">
     <!-- 顶部导航栏 -->
-    <view class="page__bd page__bd_spacing topNav" style="">
-        <view class="weui-flex">
+    <view class="page__bd" style="background-color:#FDE024;">
+        <view class="weui-flex topNav">
             <view class="weui-flex__item"><view class="placeholder active">推荐</view></view>
             <view class="weui-flex__item"><view class="placeholder">好吃的</view></view>
             <view class="weui-flex__item"><view class="placeholder">好玩的</view></view>
@@ -10,55 +10,46 @@
             <view class="weui-flex__item"><view class="placeholder">更多</view></view>
             <view class="weui-flex__item"><view class="placeholder more">全部</view></view>
         </view>
-        <image src="../../images/home/3.jpg" style='width:100%;height:120rpx'></image>
-    </view>
-    <!-- 活动公告 -->
-    <view class="weui-cells weui-cells_after-title hdgg">
-      <navigator url="" class="weui-cell weui-cell_access">
-          <view class="weui-cell__hd gonggao-icon">
-              <image src="../../images/icon/gg.png"></image> 公告 
-          </view>
-          <view class="weui-cell__bd gonggao">
-             【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....
-          </view>
-      </navigator>
+        <image src="../../images/home/3.jpg" class="topImg"></image>
+        <view class="weui-cells weui-cells_after-title hdgg">
+          <navigator url="" class="weui-cell weui-cell_access">
+              <view class="weui-cell__hd gonggao-icon">
+                  <image src="../../images/icon/gg.png"></image><text style="margin-right:20rpx;">公告</text> 
+              </view>
+              <view class="weui-cell__bd gonggao">
+                【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....
+              </view>
+          </navigator>
+        </view>
     </view>
     <!-- 项目栏目 -->
     <view class="page__bd">
         <!-- 用户资料  -->
-        <view class="weui-panel">
-            <view class="weui-panel__bd">
-                <view class="weui-media-box weui-media-box_small-appmsg">
-                    <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="" class="weui-cell weui-cell_example weui-cell_access" style="padding:15px;">
-                            <view class="weui-cell__hd">
-                              <image src="../../images/user/xuwei.jpg" class="taoxiang" />
-                            </view>
-                            <view class="weui-cell__bd weui-cell_primary user">
-                                <view class='user_name'>用户名</view>
-                                <view class="user_member">未加入会员卡</view>
-                            </view>
-                            <view class="weui-cell__ft">
-                                <view class="weui-flex dhj">
-                                    <view class="weui-flex__item ">
-                                      <view class="">1</view>
-                                      <view>订单</view>
-                                    </view>
-                                    <view class="weui-flex__item ">
-                                      <view class="">0</view>
-                                      <view>红包</view>
-                                    </view>
-                                    <view class="weui-flex__item ">
-                                      <view class="">0</view>
-                                      <view>积分</view>
-                                    </view>
-                                </view>
-                            </view>
-                        </navigator>
+        <navigator url="" class="weui-cell user_meg">
+            <view class="weui-cell__hd">
+              <image src="../../images/user/xuwei.jpg" class="taoxiang" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary user">
+                <view class='user_name'>用户名</view>
+                <view class="user_member">未加入会员卡</view>
+            </view>
+            <view class="weui-cell__ft">
+                <view class="weui-flex dhj">
+                    <view class="weui-flex__item ">
+                      <view class="dhj_num">1</view>
+                      <view class="dhj_tit">订单</view>
+                    </view>
+                    <view class="weui-flex__item ">
+                      <view class="dhj_num">0</view>
+                      <view class="dhj_tit">红包</view>
+                    </view>
+                    <view class="weui-flex__item ">
+                      <view class="dhj_num">0</view>
+                      <view class="dhj_tit">积分</view>
                     </view>
                 </view>
             </view>
-        </view>
+        </navigator>
         <!-- 所有项目入口 -->
         <view class="weui-grids">
             <view class="weui-grid">
@@ -97,9 +88,18 @@
     </view>
     <view class="content">
           <!-- 最新活动 -->
-          <view class="zxhd">
-            <view class="page__hd">
-              <view class="page__title">最新活动</view>
+          <view class="page__bd page__bd_spacing">
+            <view class="page__hd zxhd">
+              <view class="page__title">
+                 <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>最新活动</text></view>
+                    <view class="bottom-line"></view>
+                 </view>
+                 <view class="tab-nav">
+                    <view class="hd-pro">亲子游</view>
+                    <view class="hd-pro">夏令营</view>
+                  </view>
+              </view>
               <view class="page__desc">1/4</view>
             </view>
             <swiper catchtap="carouselToDetail" indicator-dots="true" indicator-color="gray" indicator-active-color="blue">
@@ -123,16 +123,21 @@
                     <view class="gmbtn">立刻购买</view>
                     <!-- <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button> -->
                 </view>
-              </view>
             </view>
+          </view>
           <!-- 在线购票  -->
           <view class="page__bd page__bd_spacing">
               <view class="page__hd zxgp">
-                <view class="page__title">在线购票</view>
+                <view class="page__title">
+                  <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>在线购票</text></view>
+                    <view class="bottom-line"></view>
+                  </view>
+                </view>
                 <view class="page__desc">查看更多></view>
               </view>
               <view class="weui-flex">
-                  <view class="weui-flex__item" style="margin-right:5rpx">
+                  <view class="weui-flex__item" style="margin-right:20rpx">
                     <view class="placeholder">
                         <view class="gp_tit">
                            <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
@@ -187,11 +192,16 @@
           <!-- 游玩推荐 -->
           <view class="page__bd page__bd_spacing">
              <view class="page__hd ywtj">
-               <view class="page__title">游玩推荐</view>
+               <view class="page__title">
+                  <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>游玩推荐</text></view>
+                    <view class="bottom-line"></view>
+                  </view>
+               </view>
                <view class="page__desc">查看更多></view>
              </view>
              <view class="weui-flex" style="margin-bottom:20rpx;">
-                <view class="weui-flex__item">
+                <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
                           <image src='../../images/index/playtj/1_09_07.jpg' style=""></image>
@@ -221,7 +231,7 @@
                 </view>
              </view>
              <view class="weui-flex">
-                <view class="weui-flex__item" style="margin-right:5rpx">
+                <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
                           <image src='../../images/index/playtj/1_09_17.jpg' style=""></image>
@@ -252,9 +262,14 @@
              </view>
           </view>
           <!-- 最新资讯  -->
-          <view class="page__bd">
+          <view class="page__bd page__bd_spacing">
              <view class="page__hd news">
-               <view class="page__title">最新资讯</view>
+               <view class="page__title">
+                  <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>最新资讯</text></view>
+                    <view class="bottom-line"></view>
+                  </view>
+               </view>
                <view class="page__desc">查看更多></view>
              </view>
             <view class="weui-panel weui-panel_access" style="margin-top:0;">
@@ -283,11 +298,16 @@
           <!-- 休闲娱乐 -->
           <view class="page__bd page__bd_spacing">
              <view class="page__hd ywtj">
-               <view class="page__title">休闲娱乐</view>
+               <view class="page__title">
+                  <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>休闲娱乐</text></view>
+                    <view class="bottom-line"></view>
+                  </view>
+               </view>
                <view class="page__desc">查看更多></view>
              </view>
              <view class="weui-flex" style="margin-bottom:20rpx;">
-                <view class="weui-flex__item">
+                <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
                           <image src='../../images/index/xxyl/1_12_07.jpg' style=""></image>
@@ -315,7 +335,7 @@
                 </view>
              </view>
              <view class="weui-flex">
-                <view class="weui-flex__item" style="margin-right:5rpx">
+                <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
                           <image src='../../images/index/xxyl/1_12_17.jpg' style=""></image>
@@ -346,11 +366,16 @@
           <!-- 美食天地  -->
           <view class="page__bd page__bd_spacing">
               <view class="page__hd zxgp">
-                <view class="page__title">美食天地</view>
+                <view class="page__title">
+                  <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>美食天地</text></view>
+                    <view class="bottom-line"></view>
+                  </view>
+                </view>
                 <view class="page__desc">查看更多></view>
               </view>
               <view class="weui-flex">
-                  <view class="weui-flex__item">
+                  <view class="weui-flex__item" style="margin-right:20rpx;">
                     <view class="placeholder1">
                         <view class="gp_tit1">
                            <image src='../../images/index/foods/1_11_09.jpg'></image>
@@ -363,7 +388,7 @@
                         </view>
                     </view>
                   </view>
-                  <view class="weui-flex__item">
+                  <view class="weui-flex__item" style="margin-right:20rpx;">
                     <view class="placeholder1">
                         <view class="gp_tit1">
                           <image src='../../images/index/foods/1_11_11.jpg'></image>
@@ -390,25 +415,26 @@
                     </view>
                   </view>
               </view>
-              <view class="weui-flex" style="margin-top:30rpx;">
+              <view class="weui-flex">
                   <view class="weui-flex__item">
-                    <view class="placeholder goupiao">
-                       <view style="display:flex;">
-                          <view class="gp_img" style="margin-right:10rpx;">
-                              <image src='../../images/index/foods/1_11_07.jpg' style="width:420rpx;height:285rpx;"></image>
+                    <view class="placeholder goupiao1">
+                       <view class="gp_content">
+                          <view class="gp_img1">
+                              <image src='../../images/index/foods/1_11_07.jpg' style="width:400rpx;height:285rpx;"></image>
                           </view>
                           <view>
                               <image src='../../images/index/foods/1_11_09_01.jpg' style="width:200rpx;height:138rpx;"></image>
                               <image src='../../images/index/foods/1_11_09_03.jpg' style="width:200rpx;height:138rpx;"></image>
                           </view>
                        </view>
-                          <view class="" style="width:100%;text-align:left; margin-bottom:10rpx;">【美食天地】早茶拿铁咖啡炸油条蒸排骨早茶拿铁咖啡炸油
-                          条蒸排骨早茶拿铁咖啡炸油条蒸排骨</view>
-                          <view class="hd_tit_btn">
-                            <view>
-                              <text class="price">￥78.00</text>起
-                            </view>
-                        </view>
+                      <view class="gp_titlte">
+                        【美食天地】早茶拿铁咖啡炸油条蒸排骨早茶拿铁咖啡炸油条蒸排骨早茶拿铁咖啡炸油条蒸排骨
+                      </view>
+                      <view class="hd_tit_btn">
+                          <view>
+                            <text class="price">￥78.00</text>起
+                          </view>
+                      </view>
                     </view>
                   </view>
               </view>
@@ -416,11 +442,16 @@
           <!-- 奇奇主题酒店 -->
           <view class="page__bd page__bd_spacing">
               <view class="page__hd zxgp">
-                <view class="page__title">奇奇主题酒店</view>
+                <view class="page__title">
+                   <view>
+                    <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>奇奇主题酒店</text></view>
+                    <view class="bottom-line"></view>
+                   </view>
+                </view>
                 <view class="page__desc">查看更多></view>
               </view>
               <view class="weui-flex">
-                  <view class="weui-flex__item" style="margin-right:5rpx">
+                  <view class="weui-flex__item" style="margin-right:20rpx">
                     <view class="placeholder">
                         <view class="gp_tit">
                            <image src='../../images/index/hold/1_13_07.jpg' style=""></image>
@@ -453,10 +484,10 @@
               </view>
               <view class="weui-flex">
                   <view class="weui-flex__item">
-                    <view class="placeholder goupiao">
+                    <view class="placeholder goupiao1">
                         <view style="display:flex;">
-                            <view class="gp_img" style="margin-right:10rpx;">
-                                <image src='../../images/index/hold/1_13_06.jpg' style="width:420rpx;height:285rpx;"></image>
+                            <view class="gp_img1" style="margin-right:10rpx;">
+                                <image src='../../images/index/hold/1_13_06.jpg' style="width:400rpx;height:285rpx;"></image>
                             </view>
                             <view>
                                 <image src='../../images/index/hold/1_13_07_01.jpg' style="width:200rpx;height:138rpx;"></image>
