@@ -1,0 +1,91 @@
+/* pages/gp/gp.wxss */
+.list-title{
+  background: #FDE024;
+  padding: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+
+.list-title image{
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.list-title text{
+  font-size: 40rpx;
+}
+
+.weui-flex{
+  padding: 20rpx 0 20rpx 20rpx;
+}
+
+.placeholder{
+  text-align: center;
+  font-size:30rpx; 
+}
+
+.gp_tit {
+   width:340rpx;
+   height:240rpx;
+}
+
+.gp_tit image{
+   width:340rpx;
+   height:240rpx;
+}
+
+.gp_img image{
+   width: 185rpx;
+   height: 185rpx;
+}
+
+.title{
+   width:340rpx;
+   height: 30px;
+   line-height: 30px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow:ellipsis;
+   text-align: left;
+   margin-bottom: 10rpx;
+   font-size: 34rpx;
+}
+
+.hd_tit_btn {
+  width:340rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hd_tit_btn .gmbtn{
+   border-radius: 60rpx;
+   background-color: #FD5107;
+   width: 130rpx;
+   height: 45rpx;
+   line-height: 1.8!important;
+   font-size: 24rpx;
+   color: #ffffff;
+   text-align: center;
+}
+
+.hd_tit_btn text{
+  font-szie: 40rpx;
+  color:#FD5107;
+  margin-right:5rpx;
+}
+/* 
+.price{
+  font-szie: 40rpx;
+  color:#FD5107;
+  margin-right:5rpx;
+} */
+
+.bottom-more{
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  color:#999999;
+}

@@ -1,0 +1,29 @@
+<!--pages/haowan/haowan.wxml-->
+<!-- <text>好玩的</text> -->
+<view class="page">
+    <!-- 顶部导航栏 -->
+    <view class="page__bd" style="background-color:#FDE024;">
+        <view class="weui-flex topNav">
+            <view class="weui-flex__item"><view class="placeholder">推荐</view></view>
+            <view class="weui-flex__item"><view class="placeholder">好吃的</view></view>
+            <view class="weui-flex__item"><view class="placeholder active">好玩的</view></view>
+            <view class="weui-flex__item"><view class="placeholder">活动</view></view>
+            <view class="weui-flex__item"><view class="placeholder">更多</view></view>
+            <view class="weui-flex__item"><view class="placeholder more">全部</view></view>
+        </view>
+        <image src="../../images/home/3.jpg" class="topImg"></image>
+        <view class="weui-cells weui-cells_after-title hdgg">
+          <view class="weui-cell weui-cell_access">
+              <view class="weui-cell__hd gonggao-icon">
+                  <image src="../../images/icon/gg.png"></image><text style="margin-right:20rpx;">公告</text> 
+              </view>
+              <navigator url="" class="weui-cell__bd gonggao">
+                【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....
+              </navigator>
+          </view>
+        </view>
+    </view>
+    <view class="content">
+    
+    </view>
+</view>

@@ -1,0 +1,54 @@
+/* pages/zx/zx.wxss */
+.news{
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 20rpx;
+}
+
+.list-title{
+  background: #FDE024;
+  padding: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.list-title image{
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.list-title text{
+  font-size: 40rpx;
+}
+
+.new_con{
+  margin:0 40rpx;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+
+.new_con .weui-media-box{
+   padding:20rpx 0;
+   overflow: hidden;
+}
+
+.new_con_img{
+  width:200rpx;
+  height:200rpx;
+  float:left;
+  margin-right:20rpx;
+}
+
+.new_con_tit{
+  margin-bottom:20rpx;
+  font-size:30rpx;
+  padding-right:10rpx;
+}
+
+.new_con_date{
+  font-size: 30rpx;
+  color: #999999;
+}

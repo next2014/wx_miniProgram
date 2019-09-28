@@ -10,13 +10,13 @@ swiper image {
   height:400rpx;
 }
 
+.weui-grid{
+  padding:20rpx!important;
+}
+
 .weui-grid image{
   width: 90rpx;
   height: 90rpx;
-}
-
-.weui-grid{
-  padding:10px!important;
 }
 
 .weui-grid__label{
@@ -69,7 +69,8 @@ swiper image {
 .taoxiang{
   width: 40px;
   height: 40px;
-  margin-right: 16px;
+  margin-left: 20rpx;
+  margin-right: 26rpx;
   vertical-align:middle;
   border-radius: 40rpx;
 }
@@ -141,9 +142,7 @@ swiper image {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  /* height: 80rpx;
-  line-height: 80rpx; */
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
 }
 /* 
 .zxhd .page__hd{
@@ -162,6 +161,7 @@ swiper image {
 .page__desc{
   color: #999999;
   font-size: 30rpx;
+  padding-right: 20rpx;
 }
 
 .page-tit{
@@ -220,13 +220,6 @@ swiper image {
   margin-bottom:20rpx;
 }
 
-.hd_tit_btn {
-  width:320rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .price{
   font-szie: 40rpx;
   color:#FD5107;
@@ -235,6 +228,7 @@ swiper image {
 
 .g_price{
   color: #dddddd;
+  text-decoration: line-through;
 }
 
 .hd_tit_btn .gmbtn{
@@ -282,6 +276,12 @@ swiper image {
   border: 1px solid #dddddd;
 }
 
+.hd_tit_btn {
+  width:320rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .placeholder1 .hd_tit_btn{
    width: 180rpx;
@@ -292,11 +292,22 @@ swiper image {
 .gp_tit1 {
    width:200rpx;
    height:200rpx;
+   position: relative;
 }
 
 .gp_tit1 image{
    width:200rpx;
    height:200rpx;
+}
+
+.gp_title{
+   width: 100%;
+   height: 50rpx;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   color: #ffffff;
+   background-color: rgba(78, 78, 78, 0.5)
 }
 
 .goupiao{
@@ -351,4 +362,32 @@ swiper image {
   margin-bottom: 20rpx;
   color:#999999;
   line-height: 50rpx;
+}
+
+.new_con{
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+
+.new_con .weui-media-box{
+   padding:20rpx 0;
+   overflow: hidden;
+}
+
+.new_con_img{
+  width:200rpx;
+  height:200rpx;
+  float:left;
+  margin-right:20rpx;
+}
+
+.new_con_tit{
+  margin-bottom:20rpx;
+  font-size:30rpx;
+  padding-right:10rpx;
+}
+
+.new_con_date{
+  font-size: 30rpx;
+  color: #999999;
 }

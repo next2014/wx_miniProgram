@@ -12,20 +12,20 @@
         </view>
         <image src="../../images/home/3.jpg" class="topImg"></image>
         <view class="weui-cells weui-cells_after-title hdgg">
-          <navigator url="" class="weui-cell weui-cell_access">
+          <view class="weui-cell weui-cell_access">
               <view class="weui-cell__hd gonggao-icon">
                   <image src="../../images/icon/gg.png"></image><text style="margin-right:20rpx;">公告</text> 
               </view>
-              <view class="weui-cell__bd gonggao">
+              <navigator url="" class="weui-cell__bd gonggao">
                 【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....
-              </view>
-          </navigator>
+              </navigator>
+          </view>
         </view>
     </view>
     <!-- 项目栏目 -->
     <view class="page__bd">
         <!-- 用户资料  -->
-        <navigator url="" class="weui-cell user_meg">
+        <view class="weui-cell user_meg">
             <view class="weui-cell__hd">
               <image src="../../images/user/xuwei.jpg" class="taoxiang" />
             </view>
@@ -49,7 +49,7 @@
                     </view>
                 </view>
             </view>
-        </navigator>
+        </view>
         <!-- 所有项目入口 -->
         <view class="weui-grids">
             <view class="weui-grid">
@@ -271,27 +271,25 @@
                   </view>
                </view>
                <view class="page__desc">查看更多></view>
-             </view>
-            <view class="weui-panel weui-panel_access" style="margin-top:0;">
-                <view class="weui-panel__bd">
-                    <navigator url="" class="weui-media-box weui-media-box_appmsg" style="padding:20rpx 0">
-                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:220rpx;">
-                            <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_05.jpg" />
-                        </view>
-                        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                            <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:24rpx;">五星级园林式泳池低至8元/次，欧美城天鹅湖畔泳池预售开抢啦！</view>
-                            <view class="weui-media-box__desc">2019-07-01</view>
-                        </view>
-                    </navigator>
-                    <navigator url="" class="weui-media-box weui-media-box_appmsg" style="padding:20rpx 0">
-                        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:220rpx;height:220rpx;">
-                            <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_11.jpg" />
-                        </view>
-                        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                            <view class="weui-media-box__title" style="margin-bottom:20rpx;font-size:24rpx;">送摇滚文化节门票啦！最后一天躁起来</view>
-                            <view class="weui-media-box__desc">2019-07-01</view>
-                        </view>
-                    </navigator>
+            </view>
+            <view class="new_con">
+                <view class="weui-media-box">
+                    <view class="new_con_img">
+                        <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_05.jpg" />
+                    </view>
+                    <view>
+                        <view class="new_con_tit">五星级园林式泳池低至8元/次，欧美城天鹅湖畔泳池预售开抢啦！</view>
+                        <view class="new_con_date">2019-07-01</view>
+                    </view>
+                </view>
+                <view class="weui-media-box">
+                    <view class="new_con_img">
+                        <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_11.jpg" />
+                    </view>
+                    <view>
+                        <view class="new_con_tit">送摇滚文化节门票啦！最后一天躁起来</view>
+                        <view class="new_con_date">2019-07-01</view>
+                    </view>
                 </view>
             </view>
           </view>
@@ -379,6 +377,7 @@
                     <view class="placeholder1">
                         <view class="gp_tit1">
                            <image src='../../images/index/foods/1_11_09.jpg'></image>
+                           <view class="gp_title">鱼子酱寿司</view> 
                         </view>
                         <!-- <view class="title">鱼子酱寿司</view> -->
                         <view class="hd_tit_btn">
@@ -392,6 +391,7 @@
                     <view class="placeholder1">
                         <view class="gp_tit1">
                           <image src='../../images/index/foods/1_11_11.jpg'></image>
+                          <view class="gp_title">鱼子酱寿司</view> 
                         </view>
                         <!-- <view class="title">梅菜鸡蛋饭</view> -->
                         <view class="hd_tit_btn">
@@ -405,6 +405,7 @@
                     <view class="placeholder1">
                         <view class="gp_tit1">
                           <image src='../../images/index/foods/1_11_13.jpg'></image>
+                          <view class="gp_title">鱼子酱寿司</view> 
                         </view>
                         <!-- <view class="title"> 蜜汁猪扒</view> -->
                         <view class="hd_tit_btn">
@@ -511,8 +512,6 @@
     </view>
     <!-- 底部  -->
     <view class="page__bd footer">
-        <!-- <view>平台信息 · 用户隐私条款 · 平台服务协议</view> -->
-        <view>Copyright © 2019 惠州狮子城</view>
-       <!-- <image src="../../images/home/15.jpg" style='width:100%;height:100rpx;'></image> -->
+        <view style="margin-top:20rpx;">Copyright © 2019 惠州狮子城</view>
     </view>
 </view>

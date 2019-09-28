@@ -1,11 +1,14 @@
 {
   "pages": [
+    "pages/gp/gp",
+    "pages/zx/zx",
     "pages/list/list",
     "pages/share/share",
     "pages/haoping/haoping",
     "pages/index/index",
     "pages/me/me",
-    "pages/hd/hd"
+    "pages/hd/hd",
+    "pages/haowan/haowan"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FDE024",

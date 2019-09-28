@@ -1,0 +1,104 @@
+<!--pages/gp/gp.wxml-->
+<!-- <text>在线购票</text> -->
+<view class="page">
+  <view class="page__bd">
+    <view class="list-title">
+      <view>
+        <image srt="../../images/icon/title_icon.png"></image> <text>在线购票</text>
+      </view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+              </view>
+              <view class="title">【平日】园区大门票</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text>￥20.00</text>起
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+              </view>
+              <view class="title">【成人】海洋世界</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥20.00</text>起
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+        </view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+              </view>
+              <view class="title">【平日】园区大门票</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥20.00</text>起
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+              </view>
+              <view class="title">【成人】海洋世界</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥20.00</text>起
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+        </view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+              </view>
+              <view class="title">【平日】园区大门票</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥20.00</text>起
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+              </view>
+              <view class="title">【成人】海洋世界</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥20.00</text>起
+                </view>
+                <view class="gmbtn">立刻购买</view>
+              </view>
+          </view>
+        </view>
+    </view>
+    <view class="bottom-more">
+        更多购票
+    </view>
+  </view>
+</view>
