@@ -1,12 +1,13 @@
 /* pages/me/me.wxss */
 .page{
   background-color: #FDE024;
+  padding-bottom: 20px;
 }
 
 .taoxiang{
   width: 60px;
   height: 60px;
-  margin-left:16px;
+  margin-left:30px;
   margin-right: 16px;
   vertical-align:middle;
   border-radius: 60rpx;
@@ -29,6 +30,11 @@
   height: 20px;
   margin:0 auto;
   vertical-align:middle;
+}
+
+.weui-cell__hd .icon{
+  margin-left: 30rpx;
+  margin-right: 20rpx;
 }
 
 .weui-media-box__hd_in-appmsg:last-child {
@@ -108,16 +114,22 @@
 }
 .order{
    background-color:#ffffff;
-   padding:20rpx;
+   padding:10rpx 20rpx;
    margin-left:40rpx;
    margin-right:40rpx;
    margin-bottom: 40rpx;
    border-radius:10px;
 }
+.order:last-child{
+   margin-bottom: 0;
+}
+.order-title{
+  padding:20rpx 10rpx 30rpx 10rpx;
+  font-size: 30rpx;
+  color:#666666;
+}
 .order-shortcut {
   display: flex;
-  padding-top: 20rpx;
-  padding-bottom: 20rpx;
 }
 .order-shortcut .item {
   display: flex;
@@ -126,11 +138,11 @@
   text-align: center;
 }
 .order-shortcut .item .icon {
-  width: 80rpx;
-  height: 80rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .order-shortcut .text {
-  font-size: 30rpx;
+  font-size: 24rpx;
   color:#666666;
 }
 
@@ -145,7 +157,7 @@
 
 .bind-phone-number{
   margin:20rpx 0;
-  width: 100%;
+  padding: 0 10rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,7 +167,7 @@
   font-size: 24rpx;
   margin-right: 10rpx;
   margin-left:20rpx;
-  width:380rpx;
+  width:400rpx;
 }
 
 .gmbtn{
@@ -167,6 +179,10 @@
   height: 45rpx;
   line-height: 1.8!important;
   font-size: 24rpx;
+}
+
+.weui-cell{
+  padding-left: 0;
 }
 
 .weui-cells:after{

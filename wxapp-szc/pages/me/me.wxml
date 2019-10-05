@@ -11,23 +11,24 @@
             </view>
         </view>
     </view>
+    <!-- start 订单流程 -->
     <view class="page__bd order">
-        <view class="weui-panel__hd" style="padding:0 10rpx">我的订单</view>
+        <view class="weui-panel__hd order-title">我的订单</view>
         <view class="weui-panel__bd order-shortcut">
             <view class="weui-media-box__hd item">
                 <image class="weui-media-box__thumb icon" src="../../images/me/m_01.png"/>
                 <view class="weui-media-box__title text">待付款</view>
             </view>
             <view class="weui-media-box__hd item">
-                <image class="weui-media-box__thumb icon" src="../../images/me/m_01.png"/>
+                <image class="weui-media-box__thumb icon" src="../../images/me/m_02.png"/>
                 <view class="weui-media-box__title text">待使用</view>
             </view>
             <view class="weui-media-box__hd item">
-                <image class="weui-media-box__thumb icon" src="../../images/me/m_01.png"/>
-                <view class="weui-media-box__title text">未收货</view>
+                <image class="weui-media-box__thumb icon" src="../../images/me/m_03.png"/>
+                <view class="weui-media-box__title text">待收货</view>
             </view>
             <view class="weui-media-box__hd item">
-                <image class="weui-media-box__thumb icon" src="../../images/me/m_01.png"/>
+                <image class="weui-media-box__thumb icon" src="../../images/me/m_04.png"/>
                 <view class="weui-media-box__title text">待评价</view>
             </view>
         </view>
@@ -36,52 +37,53 @@
           <button class="weui-btn gmbtn" type="submit">立刻绑定</button>
         </view>
     </view>
+    <!-- start 功能栏目 -->
     <view class="page__bd order">
       <view class="weui-cells weui-cells_in-small-appmsg">
           <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_01.png" /></view>
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_05.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
                   <view style="font-size:30rpx">砍价订单</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_02.png" /></view>
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_06.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
                   <view style="font-size:30rpx">优惠券</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_03.png" /></view>
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_07.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">转增订单</view>
+                  <view style="font-size:30rpx">转赠订单</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_04.png" /></view>
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_08.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
                   <view style="font-size:30rpx">我的红包</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_05.png" /></view>
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_09.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
                   <view style="font-size:30rpx">商品兑换</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
-          <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_06.png" /></view>
+          <navigator url="/pages/share/index" class="weui-cell" hover-class="navigator-hover">
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_10.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">分销赚</view>
+                  <view style="font-size:30rpx">分享赚</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
-              <view class="weui-cell__hd"><image class="icon" src="../../images/me/icon_07.png" /></view>
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_11.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
                   <view style="font-size:30rpx">联系客服</view>
               </view>

@@ -84,7 +84,7 @@
 .hp_content{
   display: flex;
   align-items: center;
-  padding:20rpx 60rpx;
+  padding:20rpx 40rpx;
 }
 
 .weui-grids{

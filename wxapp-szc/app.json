@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/list/list",
     "pages/me/me",
     "pages/gp/gp",
     "pages/zx/zx",
-    "pages/list/list",
-    "pages/share/share",
+    "pages/share/index",
     "pages/haoping/haoping",
     "pages/index/index",
     "pages/hd/hd",
@@ -31,7 +31,7 @@
         "selectedIconPath": "/images/tab/hd_h1.png"
       },
       {
-        "pagePath": "pages/share/share",
+        "pagePath": "pages/share/index",
         "text": "分享赚",
         "iconPath": "/images/tab/huiyuan.png",
         "selectedIconPath": "/images/tab/huiyuan_h1.png"

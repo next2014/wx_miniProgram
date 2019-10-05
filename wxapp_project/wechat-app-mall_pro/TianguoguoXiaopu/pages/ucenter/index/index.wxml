@@ -113,6 +113,7 @@
       </navigator>
     </view>
   </view>
+  
   <view style="height:20rpx;width:100%;"></view>
   <view class="my-item" style='border:none;padding:0rpx;margin:0rpx;background:none;border:none;height:auto;line-height:auto;'>
     <wxc-button type="danger" value="重新授权登录" bindclick="relogin"></wxc-button>
