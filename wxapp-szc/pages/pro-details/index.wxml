@@ -1,0 +1,28 @@
+<!--pages/pro-details/index.wxml-->
+<!-- <text>pages/pro-details/index.wxml</text> -->
+<view class="page">
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_07.jpg" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_09.jpg" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_17.jpg" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_19.jpg" class="slide-image"/>
+        </swiper-item>
+    </swiper>
+  </view>
+  <!-- start 详情内容 -->
+  <view>
+     详情内容
+  </view>
+  <!-- end 详情内容 -->
+
+  
+
+</view>

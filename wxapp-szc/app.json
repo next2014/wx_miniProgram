@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/list/list",
+    "pages/pro-details/index",
     "pages/me/me",
+    "pages/list/list",
     "pages/gp/gp",
     "pages/zx/zx",
     "pages/share/index",

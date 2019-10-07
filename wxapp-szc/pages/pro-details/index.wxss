@@ -1,0 +1,11 @@
+/* pages/pro-details/index.wxss */
+swiper{
+  height: 500rpx;
+}
+swiper-item{
+  height: 500rpx;
+}
+swiper-item image {
+  width: 100%;
+  height: 500rpx;
+}
