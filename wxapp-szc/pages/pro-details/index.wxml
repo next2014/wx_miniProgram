@@ -18,8 +18,41 @@
     </swiper>
   </view>
   <!-- start 详情内容 -->
-  <view>
-     详情内容
+  <view class="content">
+     <view class="page__bd page__bd_spacing">
+      <view class="new_con">
+          <view class="weui-media-box">
+              <view class="new_con_img">
+                  <image class="weui-media-box__thumb" src="../../images/index/playtj/1_09_07.jpg" />
+              </view>
+              <view>
+                  <view class="new_con_tit">【成人票】海洋世界</view>
+                  <view class="new_con_date">已售: 2120</view>
+                  <view class="hd_tit_btn">
+                    <view class="price" style="font-size:34rpx;">
+                      <text>￥120.00</text>起
+                    </view>
+                    <view class="gmbtn">购买</view>
+                  </view>
+              </view>
+          </view>
+          <view class="weui-media-box">
+              <view class="new_con_img">
+                  <image class="weui-media-box__thumb" src="../../images/index/playtj/1_09_19.jpg" />
+              </view>
+              <view>
+                  <view class="new_con_tit">【儿童/长者票】海洋世界</view>
+                  <view class="new_con_date">已售: 2120</view>
+                  <view class="hd_tit_btn">
+                    <view class="price" style="font-size:34rpx;">
+                      <text>￥68.00</text>起
+                    </view>
+                    <view class="gmbtn">购买</view>
+                  </view>
+              </view>
+          </view>
+      </view>
+    </view>
   </view>
   <!-- end 详情内容 -->
 
