@@ -1,4 +1,8 @@
+/* pages/details/index.wxss */
 /* pages/pro-details/index.wxss */
+.page{
+  margin-bottom: 150rpx;
+}
 swiper{
   height: 500rpx;
 }
@@ -15,7 +19,7 @@ swiper-item image {
 .new_con h2{
   height: 80rpx;
   line-height: 80rpx;
-  padding:0 20rpx 0 30rpx;
+  padding:0 20rpx;
   font-size: 34rpx;
   font-weight: bold;
 }
@@ -23,18 +27,18 @@ swiper-item image {
    padding:20rpx;
    overflow: hidden;
 }
-.ticket{
-  display: flex;
-}
 .new_con_img{
-  width:35%;
+  width:200rpx;
   height:150rpx;
   float:left;
   margin-right:20rpx;
 }
 .new_con_tit{
   font-size:34rpx;
-  padding-right:10rpx;
+  height: 80rpx;
+  line-height: 30rpx;
+  margin-top: 20rpx;
+  display: flex
 }
 .new_con_date{
   font-size: 30rpx;
@@ -49,21 +53,33 @@ swiper-item image {
   font-size:34rpx;
 }
 .hd_tit_btn {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 .hd_tit_btn .gmbtn{
    margin: 0 10rpx 0 0;
    border-radius: 60rpx;
+   background-color: #FDE024;
+   width:230rpx;
+   height: 45rpx;
+   font-size: 30rpx;
+   color: #333333;
+   text-align: center;
+   padding:10rpx 20rpx;
+}
+.hd_tit_btn .gmbtn1{
+   margin: 0 10rpx 0 0;
+   border-radius: 60rpx;
    background-color: #FD5107;
-   width: 130rpx;
+   width: 190rpx;
    height: 45rpx;
    line-height: 1.8!important;
-   font-size: 24rpx;
+   font-size: 30rpx;
    color: #ffffff;
    text-align: center;
+   padding:0 20rpx;
 }
 .more{
   width: 100%;
@@ -149,4 +165,28 @@ swiper-item image {
 
 .weui-flex{
   margin-left:30rpx;
+}
+
+.ticket{
+  display: flex;
+}
+
+.weui-grid {
+  padding:0;
+}
+.weui-grid__label{
+  margin-top:0;
+  font-size: 24rpx;
+}
+
+.bottom_buybtn{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.weui-grid__icon{
+  width: 50rpx;
+  height: 50rpx;
 }

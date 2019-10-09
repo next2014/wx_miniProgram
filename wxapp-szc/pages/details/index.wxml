@@ -1,0 +1,149 @@
+<!--pages/details/index.wxml-->
+<!-- <text>pages/details/index.wxml</text> -->
+<view class="page">
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_07.jpg" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_09.jpg" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_17.jpg" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_19.jpg" class="slide-image"/>
+        </swiper-item>
+    </swiper>
+  </view>
+  <!-- start 详情内容 -->
+  <view class="content">
+     <view class="page__bd page__bd_spacing">
+        <!-- 场馆购票 -->
+        <view class="new_con" style="padding:20rpx">
+            <view class="">
+               <view class="hd_tit_btn">
+                <view class="price">
+                  <text>￥120.00</text>起
+                </view>
+                <view class="gmbtn1">♥300000人喜欢</view>
+               </view>
+            </view>
+            <view class="new_con_tit">【成人票】海洋世界</view>
+            <view class="">
+              <view class="new_con_date">限购100份</view>
+              <view class="hd_tit_btn">
+                <view class="price">
+                  <text>￥120.00</text>起
+                </view>
+                <view class="gmbtn">邀请好友一起抢</view>
+              </view>
+            </view>
+        </view>
+
+        <!-- 商品信息  -->
+        <view class="new_con" style="padding:0 40rpx 20rpx 40rpx;">
+           <view class="con_title">
+              <h2>商品信息</h2>
+           </view>
+           <view class="weui-media-box" style="line-height:60rpx;">
+              <view class="con_text">营业时间：10：00-22：00</view>
+              <view class="con_text">客服在线时间：10:00-12：00，13：30-22：00</view>
+              <view class="con_box">
+                  <view class="con_text">咨询电话：0752-2888688</view>
+                  <view class="con_btn">拨打</view>
+              </view>
+              <view class="con_box">
+                  <view class="con_text">园区地址：惠州市惠城区金龙大道99号</view>
+                  <view class="con_btn">导航</view>
+              </view>
+           </view>
+        </view>
+
+        <!-- 购买须知 -->
+        <view class="new_con" style="padding:0 40rpx 20rpx 40rpx;">
+           <view class="con_title">
+              <h2>购买须知</h2>
+           </view>
+           <view class="weui-media-box" style="line-height:60rpx;">
+              <view class="con_text">
+                  1、门票含欧美城园区大门票、海洋馆门票（含馆内所有展区及表演，部分体验项目及餐饮购物需另外付费），凭票可进入欧美城园区畅览欧式城堡的独特魅力，畅享胜利广场汇演；
+              </view>
+              <view class="con_text">
+                  2、限制一人一票游玩当日一次性使用，凭票入馆；
+              </view>
+              <view class="con_text">
+                 3、免票适用对象：1.1m（不含）以下小童和70周岁（含）以上长者免票（需持有效身份证件），但须成人陪同，每位购票成人限带一名免票人员入馆；持导游证免门票；持记者证（提前跟园区报备可免票）、军人证、义工证、伤残证可享受平日价的五折购票优惠；
+              </view>
+              <view class="con_text">
+                 4、为确保安全，免票及购买儿童票的儿童、免票长者不能单独进馆，需成人陪伴入园，每位购票成人限带一名免票人员入场。长者票及免票长者进馆须持有有效身份证件；
+              </view>
+              <view class="con_text">
+                 5、1.1（含）-1.5m（不含）计儿童票价，超高按成人标准收费；60周岁（含）-70周岁（不含）计长者票价；
+              </view>
+              <view class="con_text">
+                 6、退票说明：在网上预订付款后未出票的，可在预订票的网络平台申请退票（退票手续按网络平台约定操作）。如在园区窗口购买的，直接在窗口办理退票手续，游玩当日申请退票的，需收取票面价20%的手续费（提前至少一天申请退票的，免手续费），逾期视作已消费；
+              </view>
+              <view class="con_text">
+                7、营业时间：10:00-22:00，当天购票截止时间为21:30，如有变动请以欧美城官方通知为准；
+              </view>
+              <view class="con_text">
+                8、禁止携带宠物进馆，谢绝外带食物；请参观完再出馆，再次进馆须重新购票；
+              </view>
+              <view class="con_text">
+                9、游玩前请详阅相应主题业态的开放时间、表演时间及注意事项；
+              </view>
+              <view class="con_text">
+                10、旅行团体凭销售部团体预订单及导游证、行程表在售票处团体专柜前办理入园手续，带团导游或领队凭相应证件免票入园；
+              </view>
+           </view>
+        </view>
+
+        <!-- 商品详情 -->
+        <view class="new_con" style="padding:0 40rpx 20rpx 40rpx;">
+           <view class="con_title">
+              <h2>商品详情</h2>
+           </view>
+           <view class="weui-media-box" style="line-height:60rpx;">
+              <view class="con_text">
+                  想知道卡丁车馆有多好玩？
+                  格林披治卡丁车馆
+                  想知道卡丁车馆有多好玩？
+                  格林披治卡丁车馆
+                  想知道卡丁车馆有多好玩？
+                  格林披治卡丁车馆
+                  想知道卡丁车馆有多好玩？
+                  格林披治卡丁车馆想知道卡丁车馆有多好玩？
+                  格林披治卡丁车馆想知道卡丁车馆有多好玩？
+                  格林披治卡丁车馆
+              </view>
+           </view>
+        </view>
+
+    </view>
+  </view>
+  <!-- end 详情内容 -->
+
+  <!-- 底部购买按钮 -->
+  <view class="page__bd bottom_buybtn">
+    <view class="weui-grids">
+      <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="../../images/icon/1_15_13.jpg" />
+        <view class="weui-grid__label">首页</view>
+      </navigator>
+      <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="../../images/icon/1_15_17.jpg" />
+        <view class="weui-grid__label">分享赚</view>
+      </navigator>
+      <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="../../images/icon/1_15_21.jpg" />
+        <view class="weui-grid__label">我的</view>
+      </navigator>
+      <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+        <view class="weui-grid__label" style="padding-top:30rpx;">立刻购买</view>
+      </navigator>
+    </view>
+  </view>
+
+</view>
