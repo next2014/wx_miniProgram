@@ -1,0 +1,1 @@
+<view class='modal' hidden="{{hidden}}"></view>

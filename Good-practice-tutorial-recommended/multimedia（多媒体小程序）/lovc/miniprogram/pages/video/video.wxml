@@ -1,0 +1,15 @@
+<view>
+  <view class='video-area'>
+    <video id='video' src='{{fileID}}' poster='{{thumb}}' object-fit='cover' direction='0' bindended="onVideoEnd"></video>
+  </view>
+  <view>
+    <i-panel title="@ lois">
+      <view class='desc'>{{desc}}</view>
+    </i-panel>
+  </view>
+  <view>
+    <i-button bind:click="saveVideo" type="info">
+      <text class='save-text'>保存视频</text>
+    </i-button>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-icon": "../../dist/icon/index",
+    "i-toast": "../../dist/toast/index",
+    "mask-modal": "../../components/modal/modal"
+  }
+}

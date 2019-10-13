@@ -1,0 +1,18 @@
+video {
+  width: 99vw;
+  height: calc(99vw / 16 * 9);
+  margin-top: 10rpx;
+}
+
+.video-area {
+  text-align: center;
+}
+
+.save-text {
+  font-size: 0.95rem;
+}
+
+.desc {
+  padding: 25rpx 35rpx;
+  font-size: 0.95rem;
+}

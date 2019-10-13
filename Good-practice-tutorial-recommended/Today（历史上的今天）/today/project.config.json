@@ -1,0 +1,79 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "wx9b0217e6d8f69b3f",
+	"projectname": "today",
+	"libVersion": "2.5.2",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "历史上的今天",
+					"pathName": "pages/today-in-history/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "历史事件详情",
+					"pathName": "pages/history-detail/index",
+					"query": "id=1287",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "周公解梦",
+					"pathName": "pages/dream/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "dreamDetail",
+					"pathName": "pages/dreamDetail/index",
+					"query": "id=7a0e83d8880873d77894b2c00a7fef32",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "share",
+					"pathName": "pages/today-in-history/index",
+					"query": "",
+					"scene": 1007
+				}
+			]
+		}
+	}
+}

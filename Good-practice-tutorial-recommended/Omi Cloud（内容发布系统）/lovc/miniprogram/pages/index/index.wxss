@@ -1,0 +1,39 @@
+/**index.wxss**/
+
+page {
+  background: #fff;
+}
+
+.container image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes ani-demo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-load {
+  animation: ani-demo-spin 1s linear infinite;
+}
+
+.in-load {
+  position: absolute;
+  bottom: 100px;
+}
+
+.in-text {
+  font-size: 60rpx;
+  color: #ffff00;
+}

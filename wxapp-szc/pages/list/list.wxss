@@ -87,7 +87,7 @@ swiper image {
 }
 
 .user_member{
-  width: 120rpx;
+  width: 130rpx;
   padding:5rpx;
   margin-top:10rpx;
   border:1px solid #dddddd;

@@ -1,2 +1,2 @@
 @import 'style/weui.wxss';
-@import "vant/common/index.wxss";
+/* @import "vant/common/index.wxss"; */

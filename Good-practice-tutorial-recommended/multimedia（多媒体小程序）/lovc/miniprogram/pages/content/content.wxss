@@ -1,0 +1,71 @@
+/* pages/content/content.wxss */
+
+Page {
+  background-color: #fff;
+}
+
+.content-area {
+  padding-bottom: 50px;
+}
+
+.user-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+  display: block;
+  margin: 20rpx auto;
+}
+
+.video-image-warpper {
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  height: calc(99vw / 16 * 9);
+}
+
+.video-image {
+  width: 99vw;
+  height: calc(99vw / 16 * 9);
+  border: 2rpx solid #fff;
+}
+
+.video-like-icon {
+  position: absolute;
+  left: 12rpx;
+  bottom: 15rpx;
+}
+
+.video-like-icon text {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.play-icon {
+  position: absolute;
+  right: 12rpx;
+  bottom: 15rpx;
+}
+
+.album-image {
+  width: calc((100vw - 17rpx) / 4);
+  height: calc((100vw - 17rpx) / 4);
+  border: 2rpx solid #fff;
+}
+
+.msg-icon {
+  float: right;
+}
+
+.notice-item {
+  padding: 25rpx 35rpx;
+}
+
+audio {
+  margin: 30rpx auto;
+}
+
+.audio-area {
+  text-align: center;
+}

@@ -140,7 +140,7 @@
                   <view class="weui-flex__item" style="margin-right:20rpx">
                     <view class="placeholder">
                         <view class="gp_tit">
-                           <image src='../../images/index/zxgp/1_08_07.jpg' style=""></image>
+                           <image src='../../images/index/1_08_07.jpg' style=""></image>
                         </view>
                         <view class="title">【平日】园区大门票</view>
                         <view class="hd_tit_btn">
@@ -155,7 +155,7 @@
                   <view class="weui-flex__item">
                     <view class="placeholder">
                         <view class="gp_tit">
-                          <image src='../../images/index/zxgp/1_08_09.jpg' style=""></image>
+                          <image src='../../images/index/1_08_09.jpg' style=""></image>
                         </view>
                         <view class="title">【成人】海洋世界</view>
                         <view class="hd_tit_btn">
@@ -172,9 +172,9 @@
                   <view class="weui-flex__item">
                     <view class="placeholder goupiao">
                           <view class="gp_img">
-                              <image src='../../images/index/zxgp/1_08_12.jpg' style=""></image>
-                              <image src='../../images/index/zxgp/1_08_14.jpg' style="padding:0 10px;"></image>
-                              <image src='../../images/index/zxgp/1_08_16.jpg' style=""></image>
+                              <image src='../../images/index/1_08_12.jpg' style=""></image>
+                              <image src='../../images/index/1_08_14.jpg' style="padding:0 10px;"></image>
+                              <image src='../../images/index/1_08_16.jpg' style=""></image>
                           </view>
                           <view class="title" style="width:100%;">【平日】园区大门票</view>
                           <view class="hd_tit_btn" style="width:100%;">
@@ -204,7 +204,7 @@
                 <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
-                          <image src='../../images/index/playtj/1_09_07.jpg' style=""></image>
+                          <image src='../../images/index/1_09_07.jpg' style=""></image>
                       </view>
                       <view class="title">【海洋世界】惠州海洋生物知识科普基地..</view>
                       <view class="hd_tit_btn">
@@ -218,7 +218,7 @@
                 <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                        <image src='../../images/index/playtj/1_09_09.jpg' style=""></image>
+                        <image src='../../images/index/1_09_09.jpg' style=""></image>
                       </view>
                       <view class="title">【【卡丁车馆】惠州年轻人的轻奢竞技场...</view>
                       <view class="hd_tit_btn">
@@ -234,7 +234,7 @@
                 <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
-                          <image src='../../images/index/playtj/1_09_17.jpg' style=""></image>
+                          <image src='../../images/index/1_09_17.jpg' style=""></image>
                       </view>
                       <view class="title">【奇奇之家】惠州最俱全儿童游乐园..</view>
                       <view class="hd_tit_btn">
@@ -248,7 +248,7 @@
                 <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                        <image src='../../images/index/playtj/1_09_19.jpg' style=""></image>
+                        <image src='../../images/index/1_09_19.jpg' style=""></image>
                       </view>
                       <view class="title">【婚博中心】惠州最有特色婚庆拍摄取景地方...</view>
                       <view class="hd_tit_btn">
@@ -275,7 +275,7 @@
             <view class="new_con">
                 <view class="weui-media-box">
                     <view class="new_con_img">
-                        <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_05.jpg" />
+                        <image class="weui-media-box__thumb" src="../../images/index/1_10_05.jpg" />
                     </view>
                     <view>
                         <view class="new_con_tit">五星级园林式泳池低至8元/次，欧美城天鹅湖畔泳池预售开抢啦！</view>
@@ -284,7 +284,7 @@
                 </view>
                 <view class="weui-media-box">
                     <view class="new_con_img">
-                        <image class="weui-media-box__thumb" src="../../images/index/newinfo/1_10_11.jpg" />
+                        <image class="weui-media-box__thumb" src="../../images/index/1_10_11.jpg" />
                     </view>
                     <view>
                         <view class="new_con_tit">送摇滚文化节门票啦！最后一天躁起来</view>
@@ -308,7 +308,7 @@
                 <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
-                          <image src='../../images/index/xxyl/1_12_07.jpg' style=""></image>
+                          <image src='../../images/index/1_12_07.jpg' style=""></image>
                       </view>
                       <view class="title">【奇奇之家】宇宙飞星</view>
                       <view class="hd_tit_btn">
@@ -321,7 +321,7 @@
                 <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                        <image src='../../images/index/xxyl/1_12_09.jpg' style=""></image>
+                        <image src='../../images/index/1_12_09.jpg' style=""></image>
                       </view>
                       <view class="title">【奇奇之家】海盗船</view>
                       <view class="hd_tit_btn">
@@ -336,7 +336,7 @@
                 <view class="weui-flex__item" style="margin-right:20rpx">
                   <view class="placeholder">
                       <view class="gp_tit">
-                          <image src='../../images/index/xxyl/1_12_17.jpg' style=""></image>
+                          <image src='../../images/index/1_12_17.jpg' style=""></image>
                       </view>
                       <view class="title">【奇奇主题酒店】KTV豪华间</view>
                       <view class="hd_tit_btn">
@@ -349,7 +349,7 @@
                 <view class="weui-flex__item">
                   <view class="placeholder">
                       <view class="gp_tit">
-                        <image src='../../images/index/xxyl/1_12_19.jpg' style=""></image>
+                        <image src='../../images/index/1_12_19.jpg' style=""></image>
                       </view>
                       <view class="title">户外电玩</view>
                       <view class="hd_tit_btn">
@@ -376,7 +376,7 @@
                   <view class="weui-flex__item" style="margin-right:20rpx;">
                     <view class="placeholder1">
                         <view class="gp_tit1">
-                           <image src='../../images/index/foods/1_11_09.jpg'></image>
+                           <image src='../../images/index/1_11_09.jpg'></image>
                            <view class="gp_title">鱼子酱寿司</view> 
                         </view>
                         <!-- <view class="title">鱼子酱寿司</view> -->
@@ -390,7 +390,7 @@
                   <view class="weui-flex__item" style="margin-right:20rpx;">
                     <view class="placeholder1">
                         <view class="gp_tit1">
-                          <image src='../../images/index/foods/1_11_11.jpg'></image>
+                          <image src='../../images/index/1_11_11.jpg'></image>
                           <view class="gp_title">鱼子酱寿司</view> 
                         </view>
                         <!-- <view class="title">梅菜鸡蛋饭</view> -->
@@ -404,7 +404,7 @@
                   <view class="weui-flex__item">
                     <view class="placeholder1">
                         <view class="gp_tit1">
-                          <image src='../../images/index/foods/1_11_13.jpg'></image>
+                          <image src='../../images/index/1_11_13.jpg'></image>
                           <view class="gp_title">鱼子酱寿司</view> 
                         </view>
                         <!-- <view class="title"> 蜜汁猪扒</view> -->
@@ -421,11 +421,11 @@
                     <view class="placeholder goupiao1">
                        <view class="gp_content">
                           <view class="gp_img1">
-                              <image src='../../images/index/foods/1_11_07.jpg' style="width:400rpx;height:285rpx;"></image>
+                              <image src='../../images/index/1_11_07.jpg' style="width:400rpx;height:285rpx;"></image>
                           </view>
                           <view>
-                              <image src='../../images/index/foods/1_11_09_01.jpg' style="width:200rpx;height:138rpx;"></image>
-                              <image src='../../images/index/foods/1_11_09_03.jpg' style="width:200rpx;height:138rpx;"></image>
+                              <image src='../../images/index/1_11_09_01.jpg' style="width:200rpx;height:138rpx;"></image>
+                              <image src='../../images/index/1_11_09_03.jpg' style="width:200rpx;height:138rpx;"></image>
                           </view>
                        </view>
                       <view class="gp_titlte">
@@ -455,7 +455,7 @@
                   <view class="weui-flex__item" style="margin-right:20rpx">
                     <view class="placeholder">
                         <view class="gp_tit">
-                           <image src='../../images/index/hold/1_13_07.jpg' style=""></image>
+                           <image src='../../images/index/1_13_07.jpg' style=""></image>
                         </view>
                         <view class="title">【奇奇主题酒店】豪华客房</view>
                         <view class="hd_tit_btn">
@@ -470,7 +470,7 @@
                   <view class="weui-flex__item">
                     <view class="placeholder">
                         <view class="gp_tit">
-                          <image src='../../images/index/hold/1_13_09.jpg' style=""></image>
+                          <image src='../../images/index/1_13_09.jpg' style=""></image>
                         </view>
                         <view class="title">【奇奇主题酒店】单人客房</view>
                         <view class="hd_tit_btn">
@@ -488,11 +488,11 @@
                     <view class="placeholder goupiao1">
                         <view style="display:flex;">
                             <view class="gp_img1" style="margin-right:10rpx;">
-                                <image src='../../images/index/hold/1_13_06.jpg' style="width:400rpx;height:285rpx;"></image>
+                                <image src='../../images/index/1_13_06.jpg' style="width:400rpx;height:285rpx;"></image>
                             </view>
                             <view>
-                                <image src='../../images/index/hold/1_13_07_01.jpg' style="width:200rpx;height:138rpx;"></image>
-                                <image src='../../images/index/hold/1_13_07_03.jpg' style="width:200rpx;height:138rpx;"></image>
+                                <image src='../../images/index/1_13_07_01.jpg' style="width:200rpx;height:138rpx;"></image>
+                                <image src='../../images/index/1_13_07_03.jpg' style="width:200rpx;height:138rpx;"></image>
                             </view>
                         </view>
                           <view class="" style="width:100%;text-align:left; margin-bottom:10rpx;">

@@ -1,0 +1,18 @@
+<view>
+  <image src='{{thumb}}' mode='aspectFill'></image>
+  <view class='title'>
+    <text># 想法</text>
+    <i-icon type="editor" size="24" color="#000" />
+  </view>
+  <textarea auto-focus class='desc' maxlength='50' bindinput='getDesc' placeholder="说一说你此时此刻的想法吧~"></textarea>
+  <i-button i-class='publish-button' bind:click="publish" type="success">
+    <text class='publish-text'>发布</text>
+    <i-icon type="send" size="24" color="#fff" />
+  </i-button>
+</view>
+
+<!-- 弹出提示对象 -->
+<i-toast id="toast" />
+
+<!-- 遮罩对象 -->
+<mask-modal hidden="{{hidden}}"></mask-modal>

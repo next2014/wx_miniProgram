@@ -1,0 +1,9 @@
+<view class='container'>
+  <image src="../../images/in-bg.gif"></image>
+  <i-spin custom class='in-load'>
+    <i-icon color='#ff3399' type="refresh" size="40" i-class="icon-load"></i-icon>
+    <i-panel hide-border="true">
+      <view class='in-text'>骆音，谪仙之音</view>
+    </i-panel>
+  </i-spin>
+</view>

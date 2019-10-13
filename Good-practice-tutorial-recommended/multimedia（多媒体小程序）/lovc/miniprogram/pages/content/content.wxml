@@ -1,0 +1,88 @@
+<view class='content-area'>
+
+  <!-- 视频视图 -->
+  <view wx:if="{{bar === 'video'}}">
+    <view wx:for="{{videoFiles}}" wx:key="{{item.id}}" class='video-image-warpper'>
+      <image class='video-image' mode='aspectFill' src='{{item.thumb}}' bindtap='playVideo' data-origin="video" data-index="{{item.id}}"></image>
+      <view class="video-like-icon">
+        <i-icon type="like_fill" size="28" color="#ff5050" />
+        <text>99k+</text>
+      </view>
+      <i-icon class="play-icon" type="play" size="28" color="#fff" />
+    </view>
+  </view>
+
+  <!-- 声音视图 -->
+  <view wx:if="{{bar === 'audio'}}" class='audio-area'>
+    <audio class='audio' name="催眠" src='https://7465-test-d518bb-1253713003.tcb.qcloud.la/催眠.mp3?sign=58de811698c2f1e847a0d4df68cb6413&t=1540996979cloud://test-d518bb.7465-test-d518bb/催眠.mp3' author='lois' controls></audio>
+  </view>
+
+  <!-- 新增视图 -->
+  <i-action-sheet visible="{{ showAdd }}" actions="{{ addActions }}" show-cancel bind:cancel="cancelAdd" bind:click="handleChooseMedia" />
+
+  <view wx:if="{{bar === 'notice'}}">
+    <i-panel>
+      <i-notice-bar icon="systemprompt" loop>天冷了，多喝热水，多穿衣服</i-notice-bar>
+    </i-panel>
+
+    <view>
+      <view class='notice-item'>
+        <text>wch向你发送了99k+消息~</text>
+        <i-icon i-class='msg-icon' type="like_fill" size="28" color="#ff5050" />
+      </view>
+      <view class='notice-item'>
+        <text>wch向你发送了99k+消息~</text>
+        <i-icon i-class='msg-icon' type="like_fill" size="28" color="#ff5050" />
+      </view>
+      <view class='notice-item'>
+        <text>wch向你发送了99k+消息~</text>
+        <i-icon i-class='msg-icon' type="like_fill" size="28" color="#ff5050" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 我的视图 -->
+  <view class='mine' wx:if="{{bar === 'mine'}}">
+    <!-- 登录区 -->
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="user-avatar" style="background-image: url({{avatarUrl}})"></button>
+
+    <!-- 选择tab -->
+    <i-tabs current="{{ item }}" color="#f759ab" bindchange="handleTabsChange">
+      <i-tab key="tiktok" title="视频"></i-tab>
+      <i-tab key="album" title="相册"></i-tab>
+    </i-tabs>
+
+    <!-- 抖音二级视图 -->
+    <view wx:if="{{item === 'tiktok'}}">
+      <view wx:for="{{tiktokFiles}}" wx:key="{{item.id}}" class='video-image-warpper'>
+        <image class='video-image' mode='aspectFill' src='{{item.thumb}}' bindtap='playVideo' data-origin="tiktok" data-index="{{item.id}}"></image>
+        <view class="video-like-icon">
+          <i-icon type="like_fill" size="28" color="#ff5050" />
+          <text>99k+</text>
+        </view>
+        <i-icon class="play-icon" type="play" size="28" color="#fff" />
+      </view>
+    </view>
+
+    <!-- 相册二级视图 -->
+    <view wx:if="{{item === 'album'}}">
+      <image class='album-image' mode='aspectFill' wx:for="{{albumFiles}}" wx:key="{{item.id}}" src='{{item.fileID}}' bindtap='imageToPreview' data-current="{{item.fileID}}" />
+    </view>
+  </view>
+
+</view>
+
+<!-- tab-bar区域 -->
+<i-tab-bar i-class="bar-high" fixed="true" current="{{ bar }}" bindchange="clickTabBar">
+  <i-tab-bar-item key="video" icon="live" current-icon="live_fill" title="视频"></i-tab-bar-item>
+  <i-tab-bar-item key="audio" icon="play" current-icon="play_fill" title="声音"></i-tab-bar-item>
+  <i-tab-bar-item key="add" icon="add" current-icon="add" color="#ffff00"></i-tab-bar-item>
+  <i-tab-bar-item key="notice" icon="remind" current-icon="remind_fill" title="通知"></i-tab-bar-item>
+  <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+</i-tab-bar>
+
+<!-- 弹出提示对象 -->
+<i-toast id="toast" />
+
+<!-- 遮罩对象 -->
+<mask-modal hidden="{{hidden}}"></mask-modal>

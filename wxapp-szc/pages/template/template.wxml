@@ -1,5 +1,5 @@
 <!--pages/template/template.wxml-->
-<template name="detailTemplate">
+<!-- <template name="detailTemplate">
   <view class="tmpContainer">
     <image class="content_img" src="{{headImgSrc}}"></image>
     <view class="love_attention">
@@ -7,4 +7,4 @@
       <text class='price'>￥{{price}}</text>
     </view>
   </view>
-</template>
+</template> -->
