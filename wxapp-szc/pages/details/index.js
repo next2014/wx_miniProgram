@@ -5,8 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    detailObj: {},
+    isCollected: false,
+    index: 0
   },
+
+  bbDetail: function (e) {
+    wx.switchTab({
+      url: ''
+    });
+  },
+  ddOrder: function (e) {
+    wx.switchTab({
+      url: ''
+    })
+  },
+  nowBuy: function (e) {
+    wx.navigateTo({
+      url: ''
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

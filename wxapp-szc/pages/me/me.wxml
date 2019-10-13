@@ -34,7 +34,7 @@
         </view>
         <view class="bind-phone-number">
           <input class="weui-input" placeholder="找不到订单和优惠券？试下绑定手机号码" ></input>
-          <button class="weui-btn gmbtn" type="submit">立刻绑定</button>
+          <view class="gmbtn">立刻绑定</view>
         </view>
     </view>
     <!-- start 功能栏目 -->
@@ -75,7 +75,7 @@
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
-          <navigator url="/pages/share/index" class="weui-cell" hover-class="navigator-hover">
+          <navigator url="/pages/share/index" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_10.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
                   <view style="font-size:30rpx">分享赚</view>

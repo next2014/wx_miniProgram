@@ -2,18 +2,18 @@
 <!-- <text>pages/details/index.wxml</text> -->
 <view class="page">
   <view class="swiper">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper indicator-dots="true" indicator-color="gray" indicator-active-color="blue">
         <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_07.jpg" class="slide-image"/>
+            <image bindtap="tapBanner" src="../../images/index/1_09_07.jpg" class="slide-image"/>
         </swiper-item>
         <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_09.jpg" class="slide-image"/>
+            <image bindtap="tapBanner" src="../../images/index/1_09_09.jpg" class="slide-image"/>
         </swiper-item>
         <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_17.jpg" class="slide-image"/>
+            <image bindtap="tapBanner" src="../../images/index/1_09_17.jpg" class="slide-image"/>
         </swiper-item>
         <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/playtj/1_09_19.jpg" class="slide-image"/>
+            <image bindtap="tapBanner" src="../../images/index/1_09_19.jpg" class="slide-image"/>
         </swiper-item>
     </swiper>
   </view>
@@ -126,7 +126,28 @@
   <!-- end 详情内容 -->
 
   <!-- 底部购买按钮 -->
-  <view class="page__bd bottom_buybtn">
+<van-goods-action>
+    <van-goods-action-icon
+        icon="chat-o"
+        text="客服"
+        bind:click="onClickIcon"
+    />
+    <van-goods-action-icon
+        icon="cart-o"
+        text="购物车"
+        bind:click="bbDetail"
+    />
+    <van-goods-action-button
+        text="加入购物车"
+        type="warning"
+        bind:click="ddOrder"
+    />
+    <van-goods-action-button
+        text="立即购买"
+        bind:click="nowBuy"
+    />
+</van-goods-action>
+  <!-- <view class="page__bd bottom_buybtn">
     <view class="weui-grids">
       <navigator url="" class="weui-grid" hover-class="weui-grid_active">
         <image class="weui-grid__icon" src="../../images/icon/1_15_13.jpg" />
@@ -144,6 +165,6 @@
         <view class="weui-grid__label" style="padding-top:30rpx;">立刻购买</view>
       </navigator>
     </view>
-  </view>
+  </view> -->
 
 </view>

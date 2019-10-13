@@ -1,7 +1,7 @@
 /* pages/me/me.wxss */
 .page{
   background-color: #FDE024;
-  padding-bottom: 20px;
+  padding-bottom: 55rpx;
 }
 
 .taoxiang{
@@ -10,7 +10,7 @@
   margin-left:30px;
   margin-right: 16px;
   vertical-align:middle;
-  border-radius: 60rpx;
+  border-radius: 80rpx;
 }
 
 .user_name{
@@ -124,12 +124,13 @@
    margin-bottom: 0;
 }
 .order-title{
-  padding:20rpx 10rpx 30rpx 10rpx;
+  padding:30rpx 20rpx 30rpx 20rpx;
   font-size: 30rpx;
   color:#666666;
 }
 .order-shortcut {
   display: flex;
+  margin-bottom: 20rpx;
 }
 .order-shortcut .item {
   display: flex;
@@ -172,13 +173,15 @@
 
 .gmbtn{
   margin: 0;
-  border-radius: 60rpx;
-  background-color: #FD5107;
-  color:#ffffff;
+  border-radius: 30rpx;
+  border:0;
+  background-color: #FFEBEA;
+  color:#FF2744;
   width: 160rpx;
   height: 45rpx;
-  line-height: 1.8!important;
+  line-height: 45rpx!important;
   font-size: 24rpx;
+  text-align: center;
 }
 
 .weui-cell{

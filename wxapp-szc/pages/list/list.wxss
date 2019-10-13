@@ -67,12 +67,12 @@ swiper image {
 }
 
 .taoxiang{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-left: 20rpx;
   margin-right: 26rpx;
   vertical-align:middle;
-  border-radius: 40rpx;
+  border-radius: 50rpx;
 }
 
 .user{
@@ -121,10 +121,9 @@ swiper image {
 }
 
 .gonggao-icon image{
-   margin-right: 5px;
    vertical-align: middle;
-   width: 15px; 
-   height: 15px;
+   width: 20px; 
+   height: 20px;
 }
 
 .gonggao{
@@ -173,17 +172,16 @@ swiper image {
 }
 
 .page-tit image{
-  width: 55rpx;
-  height: 55rpx;
+  width: 45rpx;
+  height: 45rpx;
   position: absolute;
   left: 0;
-  bottom: 0;
-  margin-right: 10rpx;
+  bottom: 10rpx;
+  margin-right: 15rpx;
 }
 
 .page-tit text{
-  padding-left: 60rpx;
-  font-weight: bold;
+  padding-left: 50rpx;
   color:#101010;
 }
 
@@ -390,4 +388,39 @@ swiper image {
 .new_con_date{
   font-size: 30rpx;
   color: #999999;
+}
+
+/* 公告 */
+.notice{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 750rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.notice_swiper{
+  padding-top: 15rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 80%;
+}
+.notice_iteml {
+  padding-left: 25rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  font-size: 26rpx;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #999;
+}
+.notice_itemr {
+  font-size: 30rpx;
+  overflow: hidden;
+  /* width: 75%; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

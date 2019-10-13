@@ -14,11 +14,6 @@ Page({
   onLoad: function (options) {
 
   },
-  nowPlay: function (e) {
-    wx.navigateTo({
-      url: '/pages/nowPlay/nowPlay'
-    })
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

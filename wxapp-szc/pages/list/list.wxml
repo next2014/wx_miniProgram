@@ -11,14 +11,31 @@
             <view class="weui-flex__item"><view class="placeholder more">全部</view></view>
         </view>
         <image src="../../images/home/3.jpg" class="topImg"></image>
+        <!-- <view wx:if="{{noticeList}}" class="notice">
+          <view class="notice_iteml">公告：</view>
+          <swiper class="notice_swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+            <navigator wx:for-items="{{noticeList.dataList}}" wx:key="id" url="" open-type="navigate">
+              <swiper-item >
+                <view class="notice_itemr">【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....</view>
+              </swiper-item>
+            </navigator>
+          </swiper>
+        </view> -->
         <view class="weui-cells weui-cells_after-title hdgg">
           <view class="weui-cell weui-cell_access">
               <view class="weui-cell__hd gonggao-icon">
-                  <image src="../../images/icon/gg.png"></image><text style="margin-right:20rpx;">公告</text> 
+                  <view style="font-size:30rpx;line-height:50rpx;"><image src="../../images/icon/gg.png"></image> 公告</view>
               </view>
-              <navigator url="" class="weui-cell__bd gonggao">
-                【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....
-              </navigator>
+              <swiper class="notice_swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+                <navigator url="" class="weui-cell__bd gonggao">
+                  <swiper-item>
+                      <view class="notice_itemr">【惠州狮子城·活动1】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....</view>
+                  </swiper-item>
+                  <swiper-item>
+                      <view class="notice_itemr">【惠州狮子城·活动2】藏在星空下的新晋烤吧，颜值美味兼备！天亮之前不想走....</view>
+                  </swiper-item>
+                </navigator>
+              </swiper>
           </view>
         </view>
     </view>
@@ -52,35 +69,35 @@
         </view>
         <!-- 所有项目入口 -->
         <view class="weui-grids">
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="toDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_03.jpg" />
                 <view class="weui-grid__label">海洋世界</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="proDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_05.jpg" />
                 <view class="weui-grid__label">婚博中心</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="toDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_07.jpg" />
                 <view class="weui-grid__label">卡丁车馆</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="toDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_09.jpg" />
                 <view class="weui-grid__label">真人CS体验馆</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="proDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_15.jpg" />
                 <view class="weui-grid__label">奇奇之家</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="toDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_16.jpg" />
                 <view class="weui-grid__label">美食天地</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="proDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_18.jpg" />
                 <view class="weui-grid__label">奇奇主题酒店</view>
             </view>
-            <view class="weui-grid">
+            <view class="weui-grid" catchtap="toDetail">
                 <image class="weui-grid__icon" src="../../images/icon/1_06_19.jpg" />
                 <view class="weui-grid__label">充值中心</view>
             </view>
@@ -117,7 +134,7 @@
                 </swiper-item>
             </swiper>
             <view class="hd_tit_pr">
-                <view class="hd_tit">【惠州狮子城▪活动】藏在星空下的新晋烤吧，颜值美味兼备......</view>
+                <view class="hd_tit">【惠州狮子城·活动】藏在星空下的新晋烤吧，颜值美味兼备......</view>
                 <view class="hd_tit_btn" style="width:100%;">
                     <text class="price">￥30</text>
                     <view class="gmbtn">立刻购买</view>
@@ -220,7 +237,7 @@
                       <view class="gp_tit">
                         <image src='../../images/index/1_09_09.jpg' style=""></image>
                       </view>
-                      <view class="title">【【卡丁车馆】惠州年轻人的轻奢竞技场...</view>
+                      <view class="title">【卡丁车馆】惠州年轻人的轻奢竞技场...</view>
                       <view class="hd_tit_btn">
                         <view>
                           <text class="price">￥88.00</text>
@@ -351,7 +368,7 @@
                       <view class="gp_tit">
                         <image src='../../images/index/1_12_19.jpg' style=""></image>
                       </view>
-                      <view class="title">户外电玩</view>
+                      <view class="title">【胜利广场】户外电玩</view>
                       <view class="hd_tit_btn">
                           <view>
                             <text class="price">￥20.00</text>起
@@ -446,7 +463,7 @@
                 <view class="page__title">
                    <view>
                     <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>奇奇主题酒店</text></view>
-                    <view class="bottom-line"></view>
+                    <view class="bottom-line" style="width:310rpx;"></view>
                    </view>
                 </view>
                 <view class="page__desc">查看更多></view>

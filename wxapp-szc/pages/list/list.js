@@ -17,5 +17,17 @@ Page({
   onLoad: function (options) {
     
   },
+  toDetail(event) {
+    console.log(event);
+    wx.navigateTo({
+      url: '/pages/details/index'
+    })
+  },
+  proDetail(event) {
+    console.log(event);
+    wx.navigateTo({
+      url: '/pages/pro-details/index'
+    })
+  }
 
 })

@@ -35,10 +35,11 @@ swiper-item image {
 }
 .new_con_tit{
   font-size:34rpx;
-  height: 80rpx;
-  line-height: 30rpx;
-  margin-top: 20rpx;
-  display: flex
+  height: 60rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
 }
 .new_con_date{
   font-size: 30rpx;
