@@ -8,21 +8,18 @@
              <view class="placeholder">
                 <text>上线时间</text>
                 <image class="bottom_icon" src="../../images/share/bottom_icon.jpg"></image>
-                <!-- <text class="bottom_icon">▼</text> -->
              </view>
           </view>
           <view class="weui-flex__item">
              <view class="placeholder">
                 <text>销售</text>
                 <image class="bottom_icon" src="../../images/share/bottom_icon_1.jpg"></image>
-                <!-- <text class="bottom_icon">▼</text> -->
              </view>
           </view>
           <view class="weui-flex__item">
              <view class="placeholder">
                 <text>收益</text>
                 <image class="bottom_icon" src="../../images/share/bottom_icon_1.jpg"></image>
-                <!-- <text class="bottom_icon">▼</text> -->
              </view>
           </view>
       </view>
@@ -45,7 +42,6 @@
                             <text class="money">￥10.00</text>
                           </view>
                           <view class="gmbtn">分享赚</view>
-                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
@@ -66,7 +62,6 @@
                             <text class="money">￥10.00</text>
                           </view>
                           <view class="gmbtn">分享赚</view>
-                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
@@ -87,7 +82,6 @@
                             <text class="money">￥10.00</text>
                           </view>
                           <view class="gmbtn">分享赚</view>
-                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
@@ -108,7 +102,6 @@
                             <text class="money">￥10.00</text>
                           </view>
                           <view class="gmbtn">分享赚</view>
-                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>
@@ -129,7 +122,6 @@
                             <text class="money">￥10.00</text>
                           </view>
                           <view class="gmbtn">分享赚</view>
-                          <!-- <button class="weui-btn gmbtn" type="primary" size="mini">分享赚</button> -->
                       </view>
                     </view>
                 </view>

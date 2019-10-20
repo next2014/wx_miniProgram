@@ -1,20 +1,14 @@
 <!--pages/details/index.wxml-->
 <!-- <text>pages/details/index.wxml</text> -->
 <view class="page">
+  <!-- 轮播图 -->
   <view class="swiper">
-    <swiper indicator-dots="true" indicator-color="gray" indicator-active-color="blue">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{images}}" wx:key="*this">
         <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/1_09_07.jpg" class="slide-image"/>
+           <image bindtap="tapBanner" src="../../images/index/{{item}}.jpg" class="slide-image"/>
         </swiper-item>
-        <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/1_09_09.jpg" class="slide-image"/>
-        </swiper-item>
-        <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/1_09_17.jpg" class="slide-image"/>
-        </swiper-item>
-        <swiper-item>
-            <image bindtap="tapBanner" src="../../images/index/1_09_19.jpg" class="slide-image"/>
-        </swiper-item>
+      </block>
     </swiper>
   </view>
   <!-- start 详情内容 -->
@@ -22,7 +16,7 @@
      <view class="page__bd page__bd_spacing">
         <!-- 场馆购票 -->
         <view class="new_con" style="padding:20rpx">
-            <view class="">
+            <view>
                <view class="hd_tit_btn">
                 <view class="price">
                   <text>￥120.00</text>起
@@ -31,13 +25,18 @@
                </view>
             </view>
             <view class="new_con_tit">【成人票】海洋世界</view>
-            <view class="">
-              <view class="new_con_date">限购100份</view>
-              <view class="hd_tit_btn">
-                <view class="price">
-                  <text>￥120.00</text>起
+            <view>
+              <view class="new_con_date" style="padding:10px 0">限购100份</view>
+              <view class="hd_tit_btn yqshare">
+                <view class="yaoqing">
+                  <!-- <text>￥120.00</text>起 -->
+                  <image src="../../images/user/xuwei.jpg" class="taoxiang l-10"/>
+                  <image src="../../images/user/xuwei.jpg" class="taoxiang l-15"/>
+                  <image src="../../images/user/xuwei.jpg" class="taoxiang l-25"/>
+                  <image src="../../images/user/xuwei.jpg" class="taoxiang l-35"/>
+                  <image src="../../images/user/xuwei.jpg" class="taoxiang l-45"/>
                 </view>
-                <view class="gmbtn">邀请好友一起抢</view>
+                <view class="gmbtn">邀请好友一起参与</view>
               </view>
             </view>
         </view>

@@ -7,7 +7,14 @@ Page({
   data: {
     detailObj: {},
     isCollected: false,
-    index: 0
+    index: 0,
+
+    images: ['1_09_07', '1_09_09', '1_09_17', '1_09_19'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500
   },
 
   bbDetail: function (e) {

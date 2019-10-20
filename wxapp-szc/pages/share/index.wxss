@@ -25,7 +25,7 @@
 
 .weui-media-box__title{
   margin-bottom:10rpx;
-  font-size:34rpx;
+  font-size:28rpx;
 }
 
 .hd_tit_btn {
@@ -62,7 +62,7 @@
    background-color: #FDE024;
    width: 150rpx;
    height: 50rpx;
-   font-size: 30rpx;
+   font-size: 28rpx;
    color: #333;
    line-height: 1.8;
    text-align: center;

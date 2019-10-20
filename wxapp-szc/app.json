@@ -1,16 +1,17 @@
 {
   "pages": [
     "pages/list/list",
+    "pages/haoping/haoping",
     "pages/details/index",
     "pages/pro-details/index",
     "pages/me/me",
     "pages/gp/gp",
     "pages/zx/zx",
     "pages/share/index",
-    "pages/haoping/haoping",
     "pages/index/index",
     "pages/hd/hd",
-    "pages/haowan/haowan"
+    "pages/haowan/haowan",
+    "pages/zzCenter/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FDE024",

@@ -8,3 +8,19 @@
     </view>
   </view>
 </template> -->
+<template name="detailTemplate">
+    <view class="weui-flex__item">
+      <view class="placeholder">
+          <view class="gp_tit">
+            <image src='../../images/index/{{images}}.jpg' style=""></image>
+          </view>
+          <view class="title">【{{type}}】{{title}}</view>
+          <view class="hd_tit_btn">
+              <view>
+                <text class="price">￥{{price}}</text>起
+              </view>
+            <view class="gmbtn">立刻购买</view>
+          </view>
+      </view>
+    </view>
+</template>

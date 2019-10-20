@@ -63,7 +63,7 @@ swiper-item image {
    margin: 0 10rpx 0 0;
    border-radius: 60rpx;
    background-color: #FDE024;
-   width:230rpx;
+   /* width:230rpx; */
    height: 45rpx;
    font-size: 30rpx;
    color: #333333;
@@ -76,7 +76,7 @@ swiper-item image {
    background-color: #FD5107;
    width: 190rpx;
    height: 45rpx;
-   line-height: 1.8!important;
+   line-height: 1.6!important;
    font-size: 30rpx;
    color: #ffffff;
    text-align: center;
@@ -190,4 +190,41 @@ swiper-item image {
 .weui-grid__icon{
   width: 50rpx;
   height: 50rpx;
+}
+
+/* 邀请一起参与 */
+.taoxiang{
+  width: 25px;
+  height: 25px;
+  border-radius: 30rpx;
+}
+
+.yqshare{
+  position: relative;
+}
+
+.yaoqing image{
+  position: absolute;
+  bottom: 0;
+  border:1px solid #ffffff;
+}
+
+.yaoqing .l-10{
+  left: 0;
+}
+
+.yaoqing .l-15{
+  left: 15px;
+}
+
+.yaoqing .l-25{
+  left: 25px;
+}
+
+.yaoqing .l-35{
+  left: 35px;
+}
+
+.yaoqing .l-45{
+  left: 45px;
 }

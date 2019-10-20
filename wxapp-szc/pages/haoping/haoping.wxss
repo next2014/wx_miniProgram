@@ -133,8 +133,7 @@
    color: #FD5107;
    border:1px solid #FD5107;
    width: 130rpx;
-   height: 45rpx;
-   line-height: 1.8!important;
+   height: 35rpx;
    font-size: 24rpx;
    text-align: center;
 }
@@ -151,7 +150,8 @@
 .hp_tit{
    width: 97%;
    font-size: 30rpx;
-   margin-bottom: 20rpx;
+   line-height: 45rpx;
+   /* margin-bottom: 20rpx; */
 }
 
 .hp_food_img image{
@@ -164,7 +164,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 40rpx 30rpx 40rpx;
+    padding:0 50rpx 30rpx 50rpx;
 }
 
 .hp_foods_fx image{
@@ -177,4 +177,8 @@
 .fx text{
     font-size: 30rpx;
     color: #666666;
+}
+
+.page__bd{
+  min-height:200rpx;
 }

@@ -1,4 +1,4 @@
-// datas/list-datasjson.js
+// pages/zzCenter/index.js
 Page({
 
   /**
