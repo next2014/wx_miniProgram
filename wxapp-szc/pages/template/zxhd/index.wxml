@@ -1,0 +1,33 @@
+<!--pages/template/zxhd/index.wxml-->
+<template name="zxhdTemplate">
+    <view class="page__bd page__bd_spacing">
+      <view class="page__hd zxhd">
+        <view class="page__title">
+          <view>
+              <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>最新活动</text></view>
+              <view class="bottom-line"></view>
+          </view>
+          <view class="tab-nav">
+              <view class="hd-pro" catchtap="qzyou">亲子游</view>
+              <view class="hd-pro" catchtap="xlying">夏令营</view>
+            </view>
+        </view>
+        <!-- <view class="page__desc">1/4</view> -->
+      </view>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="yellow">
+        <block wx:for="{{images}}" wx:key="*this">
+          <swiper-item>
+            <image data-detailId="{{index}}" src="../../images/detail/carousel/{{item}}.jpg"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="hd_tit_pr">
+          <view class="hd_tit">【惠州狮子城·活动】藏在星空下的新晋烤吧，颜值美味兼备......</view>
+          <view class="hd_tit_btn" style="width:100%;">
+              <text class="price">￥30</text>
+              <view class="gmbtn">立刻购买</view>
+              <!-- <button class="weui-btn gmbtn" type="primary" size="mini">立刻购买</button> -->
+          </view>
+      </view>
+    </view>
+</template>

@@ -1,0 +1,74 @@
+<!--pages/template/ywtj/index.wxml-->
+<template name="ywtjTemplate">
+  <view class="page__bd page__bd_spacing">
+    <!-- <view class="page__hd ywtj">
+      <view class="page__title">
+          <view>
+            <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>游玩推荐</text></view>
+            <view class="bottom-line"></view>
+          </view>
+      </view>
+      <view class="page__desc">查看更多></view>
+    </view> -->
+    <view class="weui-flex zxgp-item">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/1_09_07.jpg' style=""></image>
+              </view>
+              <view class="title">【海洋世界】惠州海洋生物知识科普基地..</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥78.00</text>
+                  <text class="g_price">￥130.00</text>
+                </view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/1_09_09.jpg' style=""></image>
+              </view>
+              <view class="title">【卡丁车馆】惠州年轻人的轻奢竞技场...</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥88.00</text>
+                  <text class="g_price">￥130.00</text>
+                </view>
+              </view>
+          </view>
+        </view>
+    </view>
+    <view class="weui-flex zxgp-item">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/1_09_17.jpg' style=""></image>
+              </view>
+              <view class="title">【奇奇之家】惠州最俱全儿童游乐园..</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥78.00</text>
+                  <text class="g_price">￥130.00</text>
+                </view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/1_09_19.jpg' style=""></image>
+              </view>
+              <view class="title">【婚博中心】惠州最有特色婚庆拍摄取景地方...</view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥88.00</text>
+                  <text class="g_price">￥130.00</text>
+                </view>
+              </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</template>

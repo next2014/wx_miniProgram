@@ -1,0 +1,70 @@
+<!--pages/template/xxyl/index.wxml-->
+<template name="xxylTemplate">
+  <view class="page__bd page__bd_spacing">
+    <!-- <view class="page__hd xxyl">
+      <view class="page__title">
+          <view>
+            <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>休闲娱乐</text></view>
+            <view class="bottom-line"></view>
+          </view>
+      </view>
+      <view class="page__desc">查看更多></view>
+    </view> -->
+    <view class="weui-flex zxgp-item">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/1_12_07.jpg' style=""></image>
+              </view>
+              <view class="title">【奇奇之家】宇宙飞星</view>
+              <view class="hd_tit_btn">
+                  <view>
+                    <text class="price">￥30.00</text>起
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/1_12_09.jpg' style=""></image>
+              </view>
+              <view class="title">【奇奇之家】海盗船</view>
+              <view class="hd_tit_btn">
+                  <view>
+                    <text class="price">￥30.00</text>起
+                  </view>
+              </view>
+          </view>
+        </view>
+    </view>
+    <view class="weui-flex">
+        <view class="weui-flex__item" style="margin-right:20rpx">
+          <view class="placeholder">
+              <view class="gp_tit">
+                  <image src='../../images/index/1_12_17.jpg' style=""></image>
+              </view>
+              <view class="title">【奇奇主题酒店】KTV豪华间</view>
+              <view class="hd_tit_btn">
+                  <view>
+                    <text class="price">￥100.00</text>起
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">
+              <view class="gp_tit">
+                <image src='../../images/index/1_12_19.jpg' style=""></image>
+              </view>
+              <view class="title">【胜利广场】户外电玩</view>
+              <view class="hd_tit_btn">
+                  <view>
+                    <text class="price">￥20.00</text>起
+                  </view>
+              </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</template>

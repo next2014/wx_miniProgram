@@ -1,0 +1,65 @@
+/* pages/share/share.wxss */
+.placeholder{
+  text-align: center;
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.bottom_icon{
+  color:#999999;
+  font-size:24rpx;
+  margin-left:10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.weui-panel{
+  margin-top: 0;
+}
+
+.weui-media-box__hd{
+  width:220rpx;
+  height:150rpx;
+}
+
+.weui-media-box__title{
+  margin-bottom:10rpx;
+  font-size: 30rpx;
+}
+
+.hd_tit_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 10rpx;
+}
+
+.y_price{
+  font-szie: 240rpx;
+  color:#999999;
+}
+
+.price{
+  font-size: 34rpx;
+  color:#FD5107;
+  margin-top: 10rpx;
+}
+
+.price image{
+  margin-right: 10rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.hd_tit_btn .gmbtn1{
+   margin: 0;
+   border-radius: 10rpx;
+   background-color: rgb(253, 134, 36);
+   width: 150rpx;
+   height: 40rpx;
+   font-size: 28rpx;
+   color: #333;
+   line-height: 1.8;
+   text-align: center;
+}

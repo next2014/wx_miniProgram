@@ -1,0 +1,71 @@
+<!--pages/template/qqztjd/index.wxml-->
+<template name="qqztjdTemplate">
+    <view class="page__bd page__bd_spacing">
+        <!-- <view class="page__hd qqztjd">
+          <view class="page__title">
+            <view>
+              <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>奇奇主题酒店</text></view>
+              <view class="bottom-line" style="width:310rpx;"></view>
+            </view>
+          </view>
+          <view class="page__desc">查看更多></view>
+        </view> -->
+        <view class="weui-flex zxgp-item">
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                  <view class="gp_tit">
+                    <image src='../../images/index/1_13_07.jpg' style=""></image>
+                  </view>
+                  <view class="title">【奇奇主题酒店】豪华客房</view>
+                  <view class="hd_tit_btn">
+                    <view>
+                      <text class="price">￥120.00</text>起
+                    </view>
+                    <view class="gmbtn">购买</view>
+                    <!-- <button class="weui-btn gmbtn" type="primary" size="mini">购买</button> -->
+                  </view>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+              <view class="placeholder">
+                  <view class="gp_tit">
+                    <image src='../../images/index/1_13_09.jpg' style=""></image>
+                  </view>
+                  <view class="title">【奇奇主题酒店】单人客房</view>
+                  <view class="hd_tit_btn">
+                    <view>
+                      <text class="price">￥100.00</text>起
+                    </view>
+                    <view class="gmbtn">购买</view>
+                    <!-- <button class="weui-btn gmbtn" type="primary" size="mini">购买</button> -->
+                  </view>
+              </view>
+            </view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view class="placeholder goupiao1">
+                  <view style="display:flex;">
+                      <view class="gp_img1" style="margin-right:10rpx;">
+                          <image src='../../images/index/1_13_06.jpg' style="width:400rpx;height:285rpx;"></image>
+                      </view>
+                      <view>
+                          <image src='../../images/index/1_13_07_01.jpg' style="width:200rpx;height:138rpx;"></image>
+                          <image src='../../images/index/1_13_07_03.jpg' style="width:200rpx;height:138rpx;"></image>
+                      </view>
+                  </view>
+                    <view class="" style="width:100%;text-align:left; margin-bottom:10rpx;">
+                      【奇奇主题酒店】豪华双人大客房
+                    </view>
+                    <view class="hd_tit_btn">
+                      <view>
+                        <text class="price">￥200.00</text>起
+                      </view>
+                      <view class="gmbtn">购买</view>
+                      <!-- <button class="weui-btn gmbtn" type="primary" size="mini">购买</button> -->
+                  </view>
+              </view>
+            </view>
+        </view>
+    </view>
+</template>

@@ -11,7 +11,18 @@
     "pages/index/index",
     "pages/hd/hd",
     "pages/haowan/haowan",
-    "pages/zzCenter/index"
+    "pages/zzCenter/index",
+    "pages/order/index",
+    "pages/hongbao /index",
+    "pages/jifen/index",
+    "pages/template/zxgp/index",
+    "pages/template/ywtj/index",
+    "pages/template/news/index",
+    "pages/template/xxyl/index",
+    "pages/template/mstd/index",
+    "pages/template/qqztjd/index",
+    "pages/template/zxhd/index",
+    "pages/more/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FDE024",

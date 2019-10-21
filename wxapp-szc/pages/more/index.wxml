@@ -1,0 +1,36 @@
+<!--pages/more/index.wxml-->
+<!-- <text>查看更多</text> -->
+<import src='/pages/template/template' />
+<view class="page">
+  <view class="page__bd">
+      <!-- 顶部栏目 -->
+      <!-- <view class="weui-flex">
+          <view class="weui-flex__item">
+             <view class="placeholder">
+                <text>上线时间</text>
+                <image class="bottom_icon" src="../../images/share/bottom_icon.jpg"></image>
+             </view>
+          </view>
+          <view class="weui-flex__item">
+             <view class="placeholder">
+                <text>销售</text>
+                <image class="bottom_icon" src="../../images/share/bottom_icon_1.jpg"></image>
+             </view>
+          </view>
+          <view class="weui-flex__item">
+             <view class="placeholder">
+                <text>收益</text>
+                <image class="bottom_icon" src="../../images/share/bottom_icon_1.jpg"></image>
+             </view>
+          </view>
+      </view> -->
+      <!-- 分享列表 -->
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+            <block wx:for="{{datas}}" wx:key="{{index}}">
+                <template is="moreTemplate" data="{{...item}}"></template>
+            </block>
+        </view>
+      </view>
+  </view>
+</view>

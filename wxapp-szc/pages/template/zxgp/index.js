@@ -1,4 +1,4 @@
-// pages/details/index.js
+// pages/template/zxgp/index.js
 
 Page({
 
@@ -6,32 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detailObj: {},
-    isCollected: false,
-    index: 0,
-
-    images: ['1_09_07', '1_09_09', '1_09_17', '1_09_19'],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: false,
-    interval: 2000,
-    duration: 500
-  },
-
-  bbDetail: function (e) {
-    wx.switchTab({
-      url: ''
-    });
-  },
-  ddOrder: function (e) {
-    wx.switchTab({
-      url: ''
-    })
-  },
-  nowBuy: function (e) {
-    wx.navigateTo({
-      url: ''
-    })
+    datas: [],
   },
 
   /**
@@ -45,7 +20,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

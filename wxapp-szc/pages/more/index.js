@@ -1,4 +1,5 @@
-// pages/details/index.js
+// pages/more/index.js
+let datas = require('../../datas/list-more');
 
 Page({
 
@@ -6,39 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detailObj: {},
-    isCollected: false,
-    index: 0,
-
-    images: ['1_09_07', '1_09_09', '1_09_17', '1_09_19'],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: false,
-    interval: 2000,
-    duration: 500
-  },
-
-  bbDetail: function (e) {
-    wx.switchTab({
-      url: ''
-    });
-  },
-  ddOrder: function (e) {
-    wx.switchTab({
-      url: ''
-    })
-  },
-  nowBuy: function (e) {
-    wx.navigateTo({
-      url: ''
-    })
+    datas:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({ datas: datas.list_more})
   },
 
   /**
