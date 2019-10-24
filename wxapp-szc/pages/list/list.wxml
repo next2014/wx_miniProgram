@@ -20,7 +20,8 @@
         <view class="weui-cells weui-cells_after-title hdgg">
           <view class="weui-cell weui-cell_access">
               <view class="weui-cell__hd gonggao">
-                  <view class="gonggao-tit"><image src="../../images/icon/gg.png"></image> 公告</view>
+                  <image src="../../images/icon/gg.png"></image> 
+                  <view class="gonggao-tit">公告</view>
               </view>
               <swiper class="notice_swiper" vertical="true" autoplay="true" circular="true" interval="3000">
                   <view class="weui-cell__bd gonggao">
