@@ -83,7 +83,7 @@
       </view>
     </van-tab>
     <van-tab title="好店推荐">
-      <view class="page__bd">
+      <view class="page__bd" style="border:1rpx solid #d9d9d9;margin:40rpx;border-radius:20rpx;">
           <view class="hd_img">
             <image src="../../images/haoping/hd-1.jpg" style="" />
           </view>
