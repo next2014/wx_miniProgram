@@ -32,7 +32,7 @@
    white-space: nowrap;
    text-overflow:ellipsis;
    text-align: left;
-   font-size: 34rpx;
+   font-size: 28rpx;
 }
 
 .hd_tit_btn {

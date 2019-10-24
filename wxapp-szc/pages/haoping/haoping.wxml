@@ -83,7 +83,34 @@
       </view>
     </van-tab>
     <van-tab title="好店推荐">
-       <view class="page__bd">好店推荐</view>
+      <view class="page__bd">
+          <view class="hd_img">
+            <image src="../../images/haoping/hd-1.jpg" style="" />
+          </view>
+          <view class="hp_content">
+              <view class="weui-cell__bd weui-cell_primary user">
+                  <view class='user_name'>
+                     奇爸爸食堂
+                  </view>
+                  <view class="date">广东省惠州市惠城区金龙大道青塘村</view>
+              </view>
+              <view class="weui-cell__ft xingxing">
+                  <view>9.09km</view>
+              </view>
+          </view>
+          <view class="page__bd hp_con">
+            <view class="weui-cells weui-cells_after-title">
+                <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">【欧欧西餐厅】138元限量抢购！西餐厅周末...</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">【小樱日本料理】138元限量抢购！西餐厅...</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+            </view>
+          </view>
+      </view>
     </van-tab>
   </van-tabs>
 

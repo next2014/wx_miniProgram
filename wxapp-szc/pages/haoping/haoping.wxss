@@ -53,6 +53,7 @@
 
 .user_name{
   margin-bottom: 5rpx;
+  font-size:40rpx;
 }
 
 .xingxing{
@@ -111,7 +112,16 @@
 
 .hp_con{
   font-size:30rpx;
-  padding:20rpx 60rpx;
+  padding:20rpx 40rpx;
+}
+
+.hp_con .weui-cell{
+  padding:0;
+  height: 30px;
+}
+
+.hp_con .weui-cell__bd{
+  font-size: 30rpx;
 }
 
 .hd_tit_btn {
@@ -122,7 +132,7 @@
 }
 
 .price{
-  font-szie: 40rpx;
+  font-size: 40rpx;
   color:#FD5107;
   margin-right:5rpx;
 }
@@ -181,4 +191,12 @@
 
 .page__bd{
   min-height:200rpx;
+}
+
+.hd_img{
+  padding:0 10px;
+}
+
+.hd_img image{
+  width: 100%;
 }

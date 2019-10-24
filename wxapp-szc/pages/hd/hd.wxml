@@ -7,28 +7,54 @@
     </view>
   </view>
   <view class="page__bd page__bd_spacing">
-      <view class="weui-flex">
-          <view class="weui-flex__item">
+      <view class="weui-flex" style="height:350rpx">
+          <view class="weui-flex__item" style="width:50%">
             <view class="placeholder">
                 <view class="gp_tit">
                     <image src='../../images/index/1_08_07.jpg' style=""></image>
                 </view>
-                <view class="title">【平日】园区大门票</view>
+                <view class="title">【夏日旅行季】49.9元超值价抢购欧美城海洋世界套票..</view>
                 <view class="hd_tit_btn">
-                    <text class="price">￥20.00</text>
-                    <text class="g_price">￥20.00</text>
+                    <text class="price">￥88.00</text>
+                    <!-- <text class="g_price">￥20.00</text> -->
                 </view>
             </view>
           </view>
-          <view class="weui-flex__item">
+          <view class="weui-flex__item" style="width:50%">
             <view class="placeholder">
                 <view class="gp_tit">
                   <image src='../../images/index/1_08_09.jpg' style=""></image>
                 </view>
-                <view class="title">【成人】海洋世界</view>
+                <view class="title">【五一节】直击欧美城超嗨音乐节现场..</view>
                 <view class="hd_tit_btn">
-                    <text class="price">￥20.00</text>
-                    <text class="g_price">￥20.00</text>
+                    <text class="price">￥74.00</text>
+                    <!-- <text class="g_price">￥20.00</text> -->
+                </view>
+            </view>
+          </view>
+      </view>
+      <view class="weui-flex" style="height:350rpx">
+        <view class="weui-flex__item" style="width:50%">
+            <view class="placeholder">
+                <view class="gp_tit">
+                    <image src='../../images/index/1_08_07.jpg' style=""></image>
+                </view>
+                <view class="title">【童欢乐棕动员】穿古装、行古礼、包靓粽..</view>
+                <view class="hd_tit_btn">
+                    <text class="price">￥88.00</text>
+                    <!-- <text class="g_price">￥20.00</text> -->
+                </view>
+            </view>
+          </view>
+          <view class="weui-flex__item" style="width:50%">
+            <view class="placeholder">
+                <view class="gp_tit">
+                  <image src='../../images/index/1_08_09.jpg' style=""></image>
+                </view>
+                <view class="title">【六一节】亲子趣味嘉年华&童趣缤纷乐园..</view>
+                <view class="hd_tit_btn">
+                    <text class="price">￥74.00</text>
+                    <!-- <text class="g_price">￥20.00</text> -->
                 </view>
             </view>
           </view>

@@ -1,20 +1,18 @@
-// pages/share/share.js
-let datas = require('../../datas/list-share');
-
+// pages/template/share/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    datas:{}
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ datas: datas.list_share })
+
   },
 
   /**
