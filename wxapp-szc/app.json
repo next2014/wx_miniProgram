@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/list/list",
     "pages/haoping/haoping",
+    "pages/hd/hd",
+    "pages/list/list",
     "pages/details/index",
     "pages/pro-details/index",
     "pages/me/me",
@@ -9,7 +10,6 @@
     "pages/zx/zx",
     "pages/share/index",
     "pages/index/index",
-    "pages/hd/hd",
     "pages/haowan/haowan",
     "pages/zzCenter/index",
     "pages/order/index",
@@ -22,7 +22,8 @@
     "pages/template/mstd/index",
     "pages/template/qqztjd/index",
     "pages/template/zxhd/index",
-    "pages/more/index"
+    "pages/more/index",
+    "pages/template/share/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FDE024",

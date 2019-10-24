@@ -9,7 +9,7 @@ Page({
   data: {
     datas: [],
 
-    images: ['01', '02', '03', '04'],
+    images: ['01', '02'],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
