@@ -122,8 +122,9 @@ swiper image {
 
 .gonggao image{
    vertical-align: middle;
-   width: 20px; 
-   height: 20px;
+   width: 45rpx; 
+   height: 45rpx;
+   margin-right: 5rpx;
 }
 
 .gonggao{
@@ -138,7 +139,8 @@ swiper image {
 
 .gonggao-tit{
   font-size:30rpx;
-  line-height:30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
 }
 
 .zxgp,.ywtj,.news,.zxhd,.xxyl,.mstd,.qqztjd{
