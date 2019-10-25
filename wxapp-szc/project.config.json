@@ -20,7 +20,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
+	"libVersion": "2.9.0",
 	"appid": "wxf4346269b2e05957",
 	"projectname": "wxapp-szc",
 	"isGameTourist": false,
