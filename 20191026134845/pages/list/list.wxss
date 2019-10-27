@@ -1,0 +1,432 @@
+/* pages/list/list.wxss */
+
+swiper{
+  width:100%;
+  height:440rpx;
+}
+
+swiper image {
+  width:100%;
+  height:400rpx;
+}
+
+.weui-grid{
+  padding:20rpx!important;
+}
+
+.weui-grid image{
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.weui-grid__label{
+  font-size:24rpx;
+}
+
+.weui-flex .placeholder{
+  text-align: center;
+  font-size:30rpx; 
+}
+
+.topNav{
+  background-color: #FDE024;
+  display: flex;
+  align-items: center;
+}
+
+.topNav .active{
+  font-size: 36rpx;
+  font-weight: 400;
+  color:#000000;
+}
+
+.topNav .more{
+   border-left: 1px solid #dddddd;
+}
+
+.topImg{
+  width:100%;
+  height:120rpx;
+  padding-top:10rpx;
+}
+
+.user_meg{
+  padding:15px;
+}
+
+.weui-cells:before{
+  border-top:0;
+}
+
+.weui-cells::after{
+  border-bottom:0;
+}
+
+/* .page__bd_spacing{
+   padding:40rpx 0 0 0;
+} */
+
+.taoxiang{
+  width: 50px;
+  height: 50px;
+  margin-left: 20rpx;
+  margin-right: 26rpx;
+  vertical-align:middle;
+  border-radius: 50rpx;
+}
+
+.user{
+  font-size:24rpx;
+  width: 100%;
+}
+
+.user_name{
+  padding:0 20rpx 0 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.user_member{
+  width: 130rpx;
+  padding:5rpx;
+  margin-top:10rpx;
+  border:1px solid #dddddd;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color:#999;
+}
+
+.dhj .weui-flex__item{
+  text-align: center;
+  font-size: 24rpx;
+  padding:0 20rpx;
+}
+
+.dhj .dhj_num{
+  font-size: 34rpx;
+}
+
+.dhj .dhj_tit{
+  color: #666666;
+}
+
+.hdgg{
+  background-color: #FDE024;
+}
+
+.gonggao{
+  font-size: 24rpx;
+  display: flex;
+}
+
+.gonggao image{
+   vertical-align: middle;
+   width: 45rpx; 
+   height: 45rpx;
+   margin-right: 5rpx;
+}
+
+.gonggao{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-top:0;
+}
+
+.gonggao-tit{
+  font-size:30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.zxgp,.ywtj,.news,.zxhd,.xxyl,.mstd,.qqztjd{
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 20rpx;
+  padding:40rpx 0 0 0;
+}
+.zxgp-item{
+  margin-bottom: 20rpx;
+}
+.zxgp-item .weui-flex__item:first-child{
+  margin-right: 20rpx;
+}
+
+/* 
+.zxhd .page__hd{
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 60rpx;
+  line-height: 60rpx;
+} */
+.page__title{
+  width: 70%;
+  position: relative;
+}
+
+.page__desc{
+  color: #999999;
+  font-size: 24rpx;
+  padding-right: 10rpx;
+}
+
+.page-tit{
+  position: absolute;
+  left:0;
+  bottom:-10rpx;
+  font-size:34rpx;
+  z-index: 100;
+}
+
+.page-tit image{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  left: 0;
+  bottom: 10rpx;
+}
+
+.page-tit text{
+  padding-left: 40rpx;
+  color:#101010;
+}
+
+.bottom-line{
+  width: 200rpx;
+  height: 15rpx;
+  background-color:#FDE024;
+  border-radius: 15rpx;
+  position: absolute;
+  left:0;
+  bottom:0;
+}
+
+.tab-nav{
+  padding-left:220rpx;
+  display: flex;
+}
+
+.tab-nav .hd-pro{
+  width: 110rpx;
+  display: block;
+  font-size: 24rpx;
+  text-align: center;
+  color: #666666;
+}
+
+.hd_tit_pr{
+  padding:10px 0;
+}
+
+.hd_tit{
+  font-size:34rpx;
+  line-height: 50rpx;
+  margin-bottom:20rpx;
+}
+
+.price{
+  font-size: 34rpx;
+  color:#FD5107;
+  margin-right:5rpx;
+}
+
+.g_price{
+  color: #dddddd;
+  text-decoration: line-through;
+}
+
+.hd_tit_btn .gmbtn{
+   margin: 0 10rpx 0 0;
+   border-radius: 60rpx;
+   background-color: #FD5107;
+   width: 130rpx;
+   height: 45rpx;
+   line-height: 1.8!important;
+   font-size: 24rpx;
+   color: #ffffff;
+   text-align: center;
+}
+
+.title{
+   width:320rpx;
+   height: 30px;
+   line-height: 30px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow:ellipsis;
+   text-align: left;
+   margin-bottom: 10rpx;
+}
+
+.gp_tit {
+   width:320rpx;
+   height:220rpx;
+}
+
+.gp_tit image{
+   width:320rpx;
+   height:220rpx;
+}
+
+.gp_img image{
+   width: 185rpx;
+   height: 185rpx;
+}
+
+.placeholder1{
+  text-align: center;
+  font-size:30rpx; 
+  width:200rpx;
+  border: 1px solid #dddddd;
+}
+
+.hd_tit_btn {
+  width:320rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.placeholder1 .hd_tit_btn{
+   width: 180rpx;
+   height: 80rpx;
+   padding:0 10rpx;
+}
+
+.gp_tit1 {
+   width:200rpx;
+   height:200rpx;
+   position: relative;
+}
+
+.gp_tit1 image{
+   width:200rpx;
+   height:200rpx;
+}
+
+.gp_title{
+   width: 100%;
+   height: 50rpx;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   color: #ffffff;
+   background-color: rgba(78, 78, 78, 0.5)
+}
+
+.goupiao{
+   margin-top: 20rpx;
+   border:1px solid #dddddd;
+   border-radius: 5px;
+   padding:30rpx 0;
+}
+
+.goupiao .hd_tit_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.goupiao1{
+   margin-top: 20rpx;
+   border:1px solid #dddddd;
+   border-radius: 10rpx;
+   padding: 20rpx;
+}
+
+.goupiao1 .hd_tit_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gp_titlte{
+  width:100%;
+  text-align:left; 
+  margin-bottom:10rpx;
+}
+
+.content{
+   padding:0 20px;
+}
+
+.footer{
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  color:#999999;
+  line-height: 50rpx;
+}
+
+.new_con{
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+
+.new_con .weui-media-box{
+   padding:20rpx 0;
+   overflow: hidden;
+}
+
+.new_con_img{
+  width:200rpx;
+  height:200rpx;
+  float:left;
+  margin-right:20rpx;
+}
+
+.new_con_tit{
+  margin-bottom:20rpx;
+  font-size:30rpx;
+  padding-right:10rpx;
+}
+
+.new_con_date{
+  font-size: 30rpx;
+  color: #999999;
+}
+
+/* 公告 */
+.notice{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 750rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.notice_swiper{
+  padding-top: 15rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 80%;
+}
+.notice_iteml {
+  padding-left: 25rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  font-size: 26rpx;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #999;
+}
+.notice_itemr {
+  font-size: 30rpx;
+  overflow: hidden;
+  /* width: 75%; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
