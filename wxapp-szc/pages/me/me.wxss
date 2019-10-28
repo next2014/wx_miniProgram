@@ -4,13 +4,16 @@
   padding-bottom: 55rpx;
 }
 
-.taoxiang{
-  width: 60px;
-  height: 60px;
-  margin-left:30px;
-  margin-right: 16px;
+.userInfo{
+  margin: 0 30rpx;
+}
+
+.txImg{
+  width: 120rpx;
+  height: 120rpx;
   vertical-align:middle;
   border-radius: 80rpx;
+  margin: 0 30rpx;
 }
 
 .user_name{
@@ -33,12 +36,17 @@
 }
 
 .weui-cell__hd .icon{
-  margin-left: 30rpx;
-  margin-right: 20rpx;
+  margin-left: 50rpx;
+  margin-right: 30rpx;
 }
 
 .weui-media-box__hd_in-appmsg:last-child {
   margin-right:0;
+}
+
+.weui-media-box__hd_in-appmsg{
+    padding: 20rpx 0;
+    border-radius: 80rpx;
 }
 
 /* 个人中心  */
@@ -114,18 +122,19 @@
 }
 .order{
    background-color:#ffffff;
-   padding:10rpx 20rpx;
-   margin-left:40rpx;
-   margin-right:40rpx;
-   margin-bottom: 40rpx;
+   /* padding:0 20rpx; */
+   margin:0 30rpx 30rpx 30rpx;
    border-radius:10px;
+}
+.order_text{
+  font-size:30rpx
 }
 .order:last-child{
    margin-bottom: 0;
 }
 .order-title{
-  padding:30rpx 20rpx 30rpx 20rpx;
-  font-size: 30rpx;
+  padding: 30rpx;
+  font-size: 34rpx;
   color:#666666;
 }
 .order-shortcut {
@@ -157,18 +166,17 @@
 }
 
 .bind-phone-number{
-  margin:20rpx 0;
-  padding: 0 10rpx;
+  padding: 20rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .bind-phone-number input{
-  font-size: 24rpx;
+  font-size: 30rpx;
   margin-right: 10rpx;
   margin-left:20rpx;
-  width:400rpx;
+  width:430rpx;
 }
 
 .gmbtn{
@@ -188,6 +196,19 @@
   padding-left: 0;
 }
 
+.weui-cell:before{
+  left: 0;
+  border-top: 1px solid #eee;
+}
+
+.weui-cells{
+  background-color: rgba(0, 0, 0, 0)!important;
+}
+
 .weui-cells:after{
    border-bottom:0!important;
+}
+
+.weui-cells_in-small-appmsg{
+  padding: 15rpx 0;
 }

@@ -181,27 +181,26 @@ swiper image {
 .page-tit{
   position: absolute;
   left:0;
-  bottom:0;
-  font-size:40rpx;
+  bottom:-10rpx;
+  font-size:34rpx;
   z-index: 100;
 }
 
 .page-tit image{
-  width: 45rpx;
-  height: 45rpx;
+  width: 35rpx;
+  height: 35rpx;
   position: absolute;
   left: 0;
   bottom: 10rpx;
-  margin-right: 15rpx;
 }
 
 .page-tit text{
-  padding-left: 50rpx;
+  padding-left: 40rpx;
   color:#101010;
 }
 
 .bottom-line{
-  width: 230rpx;
+  width: 200rpx;
   height: 15rpx;
   background-color:#FDE024;
   border-radius: 15rpx;
@@ -211,7 +210,7 @@ swiper image {
 }
 
 .tab-nav{
-  padding-left:260rpx;
+  padding-left:220rpx;
   display: flex;
 }
 
@@ -234,7 +233,7 @@ swiper image {
 }
 
 .price{
-  font-szie: 40rpx;
+  font-size: 34rpx;
   color:#FD5107;
   margin-right:5rpx;
 }
@@ -327,7 +326,12 @@ swiper image {
    margin-top: 20rpx;
    border:1px solid #dddddd;
    border-radius: 5px;
-   padding:10px;
+   padding:30rpx 0;
+}
+
+.goupiao .title{
+  width:93%;
+  padding:0 10rpx;
 }
 
 .goupiao .hd_tit_btn{
@@ -335,6 +339,7 @@ swiper image {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding:0 10rpx;
 }
 
 .goupiao1{
@@ -355,14 +360,6 @@ swiper image {
   width:100%;
   text-align:left; 
   margin-bottom:10rpx;
-}
-
-.gp_content{
-  display: flex;
-}
-
-.gp_content .gp_img{
-  margin-right:10rpx;
 }
 
 .content{
@@ -403,6 +400,15 @@ swiper image {
 .new_con_date{
   font-size: 30rpx;
   color: #999999;
+}
+
+/* 美食天地 */
+.mstd-item .weui-flex__item{
+  margin-right:20rpx;
+}
+
+.mstd-item .weui-flex__item:last-child{
+  margin-right:0;
 }
 
 /* 公告 */

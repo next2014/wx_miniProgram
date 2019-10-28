@@ -65,8 +65,8 @@ App({
     // request_url: 'https://test.shopxo.net/',
 
     // 基础信息
-    application_title: "瑞通源人文家居",
-    application_describe: "我们售卖商品类型有红木家具、风水摆件、生活美学、家纺布艺、日用杂货、小件家具、创意数码、餐厨用具、文化艺术、茶道系列等家居用品。",
+    application_title: "",
+    application_describe: "",
   },
 
   /**

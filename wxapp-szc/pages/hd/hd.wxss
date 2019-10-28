@@ -3,9 +3,24 @@
   padding:40rpx 20rpx;
 }
 
-.placeholder{
+.hd_tab{
+  background-color:#424242;
+  color:#ffffff;
+}
+
+
+.hd_tab .weui-flex__item{
   height: 100rpx;
   line-height: 100rpx;
+  text-align: center;
+  padding:0;
+}
+
+.hd_list .weui-flex__item{
+  width:50%
+}
+
+.placeholder{
   text-align: center;
   padding:0 20rpx;
 }
@@ -26,8 +41,8 @@
 
 .title{
    width: 100%;
-   height: 35px;
-   line-height: 35px;
+   height: 30px;
+   line-height: 30px;
    overflow: hidden;
    white-space: nowrap;
    text-overflow:ellipsis;
@@ -42,10 +57,10 @@
   text-align: left;
 }
 
-.price{
+.hd_list .price{
    font-size: 34rpx;
    color:#FD5107;
-   margin-right:10rpx;
+   text-align: left;
 }
 
 .g_price{

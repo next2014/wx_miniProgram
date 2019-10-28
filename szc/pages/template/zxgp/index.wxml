@@ -41,18 +41,17 @@
                   </view>
               </view>
             </view>
-
           </view>
           <view class="weui-flex">
               <view class="weui-flex__item">
                 <view class="placeholder goupiao">
                       <view class="gp_img">
                           <image src='../../images/index/1_08_12.jpg' style=""></image>
-                          <image src='../../images/index/1_08_14.jpg' style=""></image>
+                          <image src='../../images/index/1_08_14.jpg' style="padding:0 10px;"></image>
                           <image src='../../images/index/1_08_16.jpg' style=""></image>
                       </view>
-                      <view class="title" style="width:94%;padding:0 20rpx">【平日】园区大门票</view>
-                      <view class="hd_tit_btn" style="width:94%;padding:0 20rpx">
+                      <view class="title">【平日】园区大门票</view>
+                      <view class="hd_tit_btn" style="width:93%;">
                           <view>
                             <text class="price">￥80.00</text>
                             <text class="g_price">￥20.00</text>

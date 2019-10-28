@@ -5,6 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
+    gong_list: [
+      { 
+        images: 'm_05',
+        title:'砍价订单'
+      },
+      {
+        images: 'm_06',
+        title: '优惠券'
+      },
+      {
+        images: 'm_07',
+        title: '转赠订单'
+      },
+      {
+        images: 'm_08',
+        title: '我的红包'
+      },
+      {
+        images: 'm_09',
+        title: '商品兑换'
+      },
+      {
+        images: 'm_10',
+        title: '分享赚'
+      },
+      {
+        images: 'm_11',
+        title: '联系客服'
+      }
+    ]
 
   },
 

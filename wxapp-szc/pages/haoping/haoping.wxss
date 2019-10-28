@@ -53,7 +53,7 @@
 
 .user_name{
   margin-bottom: 5rpx;
-  font-size:40rpx;
+  font-size:34rpx;
 }
 
 .xingxing{
@@ -82,10 +82,10 @@
   background:#FDEBD3;
 }
 
-.hp_content{
+.hp_text{
   display: flex;
   align-items: center;
-  padding:20rpx 40rpx;
+  padding: 20rpx;
 }
 
 .weui-grids{
@@ -113,7 +113,7 @@
 .hp_con{
   font-size:30rpx;
   padding:0 20rpx;
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
   margin-bottom: 20rpx;
 }
 
@@ -212,4 +212,10 @@
 
 .weui-cells:after{
   border-bottom:0;
+}
+
+.haodian{
+  border:1rpx solid #d9d9d9;
+  margin:40rpx;
+  border-radius:20rpx;
 }

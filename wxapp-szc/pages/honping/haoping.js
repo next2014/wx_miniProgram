@@ -1,4 +1,4 @@
-// pages/hongbao/haoping.js
+// pages/honping/haoping.js
 Page({
 
   /**

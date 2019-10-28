@@ -1,36 +1,34 @@
 <!--pages/me/me.wxml-->
 <!-- <text>我的</text> -->
 <view class="page">
-    <view class="page__bd">
-        <view class="weui-cell">
-            <view class="weui-cell__hd">
-              <image src="../../images/user/xuwei.jpg" class="taoxiang"/>
-            </view>
-            <view class="weui-cell__bd user">
-                <view class='user_name'>用户名</view>
-            </view>
+    <view class="weui-cell userInfo">
+        <view class="weui-cell__hd">
+         <image src="../../images/user/xuwei.jpg" class="txImg"/>
+        </view>
+        <view class="weui-cell__bd user">
+          <view class='user_name'>用户名</view>
         </view>
     </view>
     <!-- start 订单流程 -->
     <view class="page__bd order">
         <view class="weui-panel__hd order-title">我的订单</view>
         <view class="weui-panel__bd order-shortcut">
-            <view class="weui-media-box__hd item">
+            <navigator url="" class="weui-media-box__hd item" hover-class="navigator-hover">
                 <image class="weui-media-box__thumb icon" src="../../images/me/m_01.png"/>
                 <view class="weui-media-box__title text">待付款</view>
-            </view>
-            <view class="weui-media-box__hd item">
+            </navigator>
+            <navigator url="" class="weui-media-box__hd item" hover-class="navigator-hover">
                 <image class="weui-media-box__thumb icon" src="../../images/me/m_02.png"/>
                 <view class="weui-media-box__title text">待使用</view>
-            </view>
-            <view class="weui-media-box__hd item">
+            </navigator>
+            <navigator url="" class="weui-media-box__hd item" hover-class="navigator-hover">
                 <image class="weui-media-box__thumb icon" src="../../images/me/m_03.png"/>
                 <view class="weui-media-box__title text">待收货</view>
-            </view>
-            <view class="weui-media-box__hd item">
+            </navigator>
+            <navigator url="" class="weui-media-box__hd item" hover-class="navigator-hover">
                 <image class="weui-media-box__thumb icon" src="../../images/me/m_04.png"/>
                 <view class="weui-media-box__title text">待评价</view>
-            </view>
+            </navigator>
         </view>
         <view class="bind-phone-number">
           <input class="weui-input" placeholder="找不到订单和优惠券？试下绑定手机号码" ></input>
@@ -40,55 +38,65 @@
     <!-- start 功能栏目 -->
     <view class="page__bd order">
       <view class="weui-cells weui-cells_in-small-appmsg">
-          <navigator url="" class="weui-cell">
+      <block wx:for="{{gong_list}}" wx:key="key">
+          <navigator url="{{item.url}}" class="weui-cell" hover-class="navigator-hover">
+              <view class="weui-cell__hd"><image class="icon" src="../../images/me/{{item.images}}.png" /></view>
+              <view class="weui-cell__bd weui-cell_primary">
+                  <view class="order_text">{{item.title}}</view>
+              </view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+      </block>
+          <!-- <navigator url="" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_05.png" /></view>
               <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">砍价订单</view>
+                  <view class="order_text">砍价订单</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_06.png" /></view>
-              <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">优惠券</view>
+              <view class="weui-cell__bd">
+                  <view class="order_text">优惠券</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_07.png" /></view>
-              <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">转赠订单</view>
+              <view class="weui-cell__bd">
+                  <view class="order_text">转赠订单</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_08.png" /></view>
-              <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">我的红包</view>
+              <view class="weui-cell__bd">
+                  <view class="order_text">我的红包</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_09.png" /></view>
-              <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">商品兑换</view>
+              <view class="weui-cell__bd">
+                  <view class="order_text">商品兑换</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="/pages/share/index" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_10.png" /></view>
-              <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">分享赚</view>
+              <view class="weui-cell__bd">
+                  <view class="order_text">分享赚</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="" class="weui-cell">
               <view class="weui-cell__hd"><image class="icon" src="../../images/me/m_11.png" /></view>
-              <view class="weui-cell__bd weui-cell_primary">
-                  <view style="font-size:30rpx">联系客服</view>
+              <view class="weui-cell__bd">
+                  <view class="order_text">联系客服</view>
               </view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
+          </navigator> -->
+
       </view>
     </view>
 </view>
