@@ -329,11 +329,17 @@ swiper image {
    padding:30rpx 0;
 }
 
+.goupiao .title{
+  width:93%;
+  padding:0 10rpx;
+}
+
 .goupiao .hd_tit_btn{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding:0 10rpx;
 }
 
 .goupiao1{
@@ -394,6 +400,15 @@ swiper image {
 .new_con_date{
   font-size: 30rpx;
   color: #999999;
+}
+
+/* 美食天地 */
+.mstd-item .weui-flex__item{
+  margin-right:20rpx;
+}
+
+.mstd-item .weui-flex__item:last-child{
+  margin-right:0;
 }
 
 /* 公告 */

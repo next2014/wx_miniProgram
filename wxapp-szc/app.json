@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/details/index",
+    "pages/me/me",
+    "pages/list/list",
     "pages/haoping/haoping",
     "pages/hd/hd",
-    "pages/list/list",
-    "pages/details/index",
     "pages/pro-details/index",
-    "pages/me/me",
     "pages/gp/gp",
     "pages/zx/zx",
     "pages/share/index",
@@ -13,7 +13,7 @@
     "pages/haowan/haowan",
     "pages/zzCenter/index",
     "pages/order/index",
-    "pages/hongbao/haoping",
+    "pages/honping/haoping",
     "pages/jifen/index",
     "pages/template/zxgp/index",
     "pages/template/ywtj/index",
@@ -31,7 +31,9 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "position": "bottom",
+    "color": "#8a8a8a",
+    "selectedColor": "#FFAE35",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/list/list",

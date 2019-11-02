@@ -16,13 +16,9 @@
      <view class="page__bd page__bd_spacing">
         <!-- 场馆购票 -->
         <view class="new_con" style="padding:20rpx">
-            <view>
-               <view class="hd_tit_btn">
-                <view class="price">
-                  <text>￥120.00</text>起
-                </view>
-                <view class="gmbtn1">♥300000人喜欢</view>
-               </view>
+            <view class="hd_tit_btn">
+              <view class="price">￥120.00</view>
+              <view class="gmbtn1">♥ 300000人喜欢</view>
             </view>
             <view class="new_con_tit">【成人票】海洋世界</view>
             <view>

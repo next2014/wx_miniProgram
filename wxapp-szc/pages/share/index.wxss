@@ -36,7 +36,7 @@
 }
 
 .y_price{
-  font-szie: 240rpx;
+  font-size: 30rpx;
   color:#999999;
 }
 

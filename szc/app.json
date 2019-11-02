@@ -26,12 +26,12 @@
     "pages/user-goods-browse/user-goods-browse"
   ],
   "window": {
-    "navigationBarTitleText": "瑞通源人文家居",
-    "navigationBarBackgroundColor": "#d2364c"
+    "navigationBarTitleText": "狮子城",
+    "navigationBarBackgroundColor": "#FDE024"
   },
   "tabBar": {
     "color": "#8a8a8a",
-    "selectedColor": "#d2364c",
+    "selectedColor": "#FFAE35",
     "backgroundColor": "#fff",
     "list": [
       {
