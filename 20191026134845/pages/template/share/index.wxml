@@ -1,0 +1,103 @@
+<!--pages/template/share/index.wxml-->
+<template name="shareTemplate">  
+  <view class="weui-media-box weui-media-box_appmsg">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="../../images/share/{{images}}.jpg" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">
+              {{title}}
+          </view>
+          <view class="weui-media-box__desc">
+            <view class="y_price">￥{{price}}</view>
+            <view class="hd_tit_btn">
+                <view class="price">
+                  <image src="../../images/icon/zhuan.png"/> 
+                  <text class="money">￥{{money}}</text>
+                </view>
+                <view class="gmbtn">分享赚</view>
+            </view>
+          </view>
+      </view>
+  </view>
+</template>
+<!-- <view class="weui-media-box weui-media-box_appmsg">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">
+            【惠州狮子城·活动】藏在星空下的新晋烤吧，颜值美味兼备......
+        </view>
+        <view class="weui-media-box__desc">
+          <view class="y_price">￥108.00</view>
+          <view class="hd_tit_btn">
+              <view class="price">
+                <image src="../../images/icon/zhuan.png"/> 
+                <text class="money">￥10.00</text>
+              </view>
+              <view class="gmbtn">分享赚</view>
+          </view>
+        </view>
+    </view>
+</view>
+<view class="weui-media-box weui-media-box_appmsg">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">
+            【惠州狮子城·活动】藏在星空下的新晋烤吧，颜值美味兼备......
+        </view>
+        <view class="weui-media-box__desc">
+          <view class="y_price">￥108.00</view>
+          <view class="hd_tit_btn">
+              <view class="price">
+                <image src="../../images/icon/zhuan.png"/> 
+                <text class="money">￥10.00</text>
+              </view>
+              <view class="gmbtn">分享赚</view>
+          </view>
+        </view>
+    </view>
+</view>
+<view class="weui-media-box weui-media-box_appmsg">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">
+            【惠州狮子城·活动】藏在星空下的新晋烤吧，颜值美味兼备......
+        </view>
+        <view class="weui-media-box__desc">
+          <view class="y_price">￥108.00</view>
+          <view class="hd_tit_btn">
+              <view class="price">
+                <image src="../../images/icon/zhuan.png"/> 
+                <text class="money">￥10.00</text>
+              </view>
+              <view class="gmbtn">分享赚</view>
+          </view>
+        </view>
+    </view>
+</view>
+<view class="weui-media-box weui-media-box_appmsg">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../images/share/1_13_07_01.jpg" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">
+            【惠州狮子城·活动】藏在星空下的新晋烤吧，颜值美味兼备......
+        </view>
+        <view class="weui-media-box__desc">
+          <view class="y_price">￥108.00</view>
+          <view class="hd_tit_btn">
+              <view class="price">
+                <image src="../../images/icon/zhuan.png"/> 
+                <text class="money">￥10.00</text>
+              </view>
+              <view class="gmbtn">分享赚</view>
+          </view>
+        </view>
+    </view>
+</view> -->

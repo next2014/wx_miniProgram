@@ -1,0 +1,78 @@
+<!--pages/template/mstd/index.wxml-->
+<template name="mstdTemplate">
+  <view class="page__bd page__bd_spacing">
+      <!-- <view class="page__hd zxgp">
+          <view class="page__title">
+            <view>
+              <view class="page-tit"> <image src="../../images/icon/title_icon.png" ></image> <text>美食天地</text></view>
+              <view class="bottom-line"></view>
+            </view>
+          </view>
+          <view class="page__desc">查看更多></view>
+      </view> -->
+      <view class="weui-flex mstd-item">
+        <view class="weui-flex__item">
+          <view class="placeholder1">
+              <view class="gp_tit1">
+                <image src='../../images/index/1_11_09.jpg'></image>
+                <view class="gp_title">鱼子酱寿司</view> 
+              </view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥88.00</text>起
+                </view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder1">
+              <view class="gp_tit1">
+                <image src='../../images/index/1_11_11.jpg'></image>
+                <view class="gp_title">鱼子酱寿司</view> 
+              </view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥68.00</text>起
+                </view>
+              </view>
+          </view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder1">
+              <view class="gp_tit1">
+                <image src='../../images/index/1_11_13.jpg'></image>
+                <view class="gp_title">鱼子酱寿司</view> 
+              </view>
+              <view class="hd_tit_btn">
+                <view>
+                  <text class="price">￥78.00</text>起
+                </view>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="placeholder goupiao1">
+              <view class="gp_content" style="display:flex">
+                  <view class="gp_img1" style="margin-right:10rpx">
+                      <image src='../../images/index/1_11_07.jpg' style="width:400rpx;height:285rpx;"></image>
+                  </view>
+                  <view>
+                      <image src='../../images/index/1_11_09_01.jpg' style="width:200rpx;height:138rpx;"></image>
+                      <image src='../../images/index/1_11_09_03.jpg' style="width:200rpx;height:138rpx;"></image>
+                  </view>
+              </view>
+              <view class="gp_titlte">
+                【美食天地】早茶拿铁咖啡炸油条蒸排骨早茶拿铁咖啡炸油条蒸排骨早茶拿铁咖啡炸油条蒸排骨
+              </view>
+              <view class="hd_tit_btn">
+                  <view>
+                    <text class="price">￥78.00</text>起
+                  </view>
+              </view>
+            </view>
+          </view>
+      </view>
+  </view>
+</template>
